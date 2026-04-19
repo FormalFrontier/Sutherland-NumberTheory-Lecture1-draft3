@@ -1,0 +1,79 @@
+# pod configuration — all values have sensible defaults.
+# Edit this file to customise agent behaviour.
+
+[project]
+worktree_base = "worktrees"        # Where git worktrees are created
+session_dir = "sessions"           # Session stdout capture directory
+build_cache_dir = ".lake"          # Build cache to rsync into worktrees
+protected_files = ["PLAN.md"]      # Files agents may not modify in PRs
+
+[merge]
+# Status check contexts that must pass before a PR can auto-merge.
+# These are the `name:` field of jobs in .github/workflows/*.yml.
+# Leave empty to skip branch-protection setup.
+#
+# Why this matters: `coordination create-pr` runs `gh pr merge --auto` on
+# every PR it opens, but GitHub only honours --auto when the default branch
+# has branch protection with at least one required status check. Without
+# that, PRs go green but never merge.
+#
+# Example: required_checks = ["build-and-test"]
+required_checks = ["build"]
+
+[agent]
+backend = "codex"                  # "claude" or "codex"
+
+[agent.claude]
+model = "opus"                     # Claude model to use
+quota_check = "~/.claude/skills/claude-usage/claude-available-model"
+quota_check_required = true        # Hard-fail if quota unavailable
+quota_retry_seconds = 60           # Sleep duration when quota unavailable
+isolated_config = true             # Use isolated CLAUDE_CONFIG_DIR for agents
+
+[agent.codex]
+model = "gpt-5.4"                  # Codex model to use
+quota_check = "~/.claude/skills/claude-usage/codex-available-model"
+quota_check_required = false       # Proceed if quota cache missing/stale
+quota_retry_seconds = 60           # Sleep duration when quota unavailable
+isolated_config = true             # Use isolated CODEX_HOME for agents
+
+[pricing]
+# Dollars per million tokens
+input = 5.00
+output = 25.00
+cache_read = 0.50
+cache_create = 6.25
+
+[dispatch]
+# Built-in strategies: "queue_balance", "round_robin"
+# Or a path to a custom script (receives env vars, prints worker type name)
+strategy = "queue_balance"
+min_queue = 3                      # queue_balance: below this → planner-type
+
+[monitor]
+poll_interval = 2                  # Seconds between status updates
+jsonl_stale_warning = 300          # Warn if JSONL unchanged for this many seconds
+jsonl_missing_warning = 60         # Warn if JSONL not created after this many seconds
+max_claim_restarts = 1             # Max times to auto-restart a dead session before releasing claim
+show_costs = false                 # Show estimated API costs in TUI and status
+stuck_initial_timeout = 3600       # Seconds since last assistant output before first stuck check
+stuck_confirm_timeout = 1200       # Seconds to wait before confirming kill (after first detection)
+stuck_check_interval = 30          # Seconds between process health checks during stuck detection
+
+# --- Worker Types ---
+# Each [worker_types.<name>] defines a type of agent session.
+# The dispatch strategy chooses among these.
+
+[worker_types.plan]
+prompt = "/plan"
+lock = "planner"                   # Acquire this lock before running
+copy_build_cache = false
+
+[worker_types.work]
+prompt = "/work"
+copy_build_cache = true
+
+# Example additional worker type:
+# [worker_types.review]
+# prompt = "/review"
+# copy_build_cache = true
