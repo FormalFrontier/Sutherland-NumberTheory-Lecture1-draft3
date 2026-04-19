@@ -39,7 +39,7 @@ If the book's proof says "by Lemma X.Y.Z" or "the result follows from [earlier r
 1. Find that earlier result in the project (search `blobs/` and the Lean files)
 2. Use it in your proof — even if it still has a `sorry`. A sorry'd dependency is not a blocker.
 
-**Never say "not in Mathlib" without first checking the book.** The book's proofs build on earlier results in the book. Those results are what you should be using — not searching Mathlib for advanced infrastructure like Schur functors or Schur-Weyl duality when the book uses an elementary lemma from the previous page.
+**Never say "not in Mathlib" without first checking the book.** The book's proofs build on earlier results in the book. Those results are what you should be using — not searching Mathlib for sophisticated infrastructure when the book uses an elementary lemma from the previous page.
 
 ### Escalation ladder
 

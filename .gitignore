@@ -5,4 +5,3 @@ build/
 /.lake
 .claude/.pod-checksums
 .pod-codex-home/
-AGENTS.md
