@@ -17,6 +17,12 @@
     "issue": "#12",
     "notes": "Stage 1.4 transcription completed using page 2 PR context for notation continuity."
   },
+  "pages/5.md": {
+    "status": "transcribed",
+    "last_updated": "2026-04-20",
+    "issue": "#14",
+    "notes": "Stage 1.4 transcription completed using prior-page context from open PR #21 for page 4."
+  },
   "pages/6.md": {
     "status": "transcribed",
     "last_updated": "2026-04-20",
