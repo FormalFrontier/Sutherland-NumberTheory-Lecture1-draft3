@@ -144,106 +144,106 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_09a_Discussion.refs.md, identifying `Valuation` and `IsDiscreteValuationRing` as the next-section Mathlib anchors while marking the heading itself as likely non-formalizable."
   },
   "Chapter1/01_10_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lectures 1 and 8, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 for the valuation, valuation-ring, and DVR background used here."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_10_Definition.refs.md, linking the valuation and DVR definitions to `Valuation`, `AddValuation`, `Valuation.valuationSubring`, and the main course/reference sources."
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json identifies MIT Lecture 1, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 as the main sources for the unit-group and locality facts used in this discussion."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_10a_Discussion.refs.md, centering the valuation-subring membership and unit lemmas that package the sign-based partition of elements."
   },
   "Chapter1/01_11_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1 plus the Stacks valuation-ring section as the best references for the abstract valuation-ring definition."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_11_Definition.refs.md, pointing directly to Mathlib's exact `ValuationRing` predicate and the supporting prose references."
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 for the uniformizer, ideal-power, and unique-maximal-ideal facts in this discussion."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_11a_Discussion.refs.md, recording the existing uniformizer API and the remaining ideal-power/DVR-structure facts that may need Stage 3 bridge lemmas."
   },
   "Chapter1/01_12_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json uses MIT Lecture 1 and the Stacks local-rings section as the main references for the local-ring definition."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_12_Definition.refs.md, linking the definition directly to `IsLocalRing` and `IsLocalRing.maximalIdeal`."
   },
   "Chapter1/01_13_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json uses MIT Lecture 1 and the Stacks local-rings section as the main references for the residue-field definition."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_13_Definition.refs.md, pointing to `IsLocalRing.ResidueField` and the quotient map `IsLocalRing.residue`."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 as the main sources for reconstructing the valuation from a DVR."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_13a_Discussion.refs.md, emphasizing the valuation-subring correspondence declarations and the likely need for local reconstruction lemmas from maximal-ideal powers."
   },
   "Chapter1/01_14_Example": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1, the Stacks local-rings section, and Atiyah-Macdonald Chapter 9 for the localization example Z_(p) and its residue field."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_14_Example.refs.md, tying the `Z_(p)` example to `Localization.AtPrime` and residue-field comparison lemmas plus the lecture's cited commutative-algebra references."
   },
   "Chapter1/01_15_Example": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json keeps MIT Lecture 1 as the exact source for the Laurent-series valuation example and records later course notes as downstream context."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_15_Example.refs.md, pointing workers to the Laurent-series and power-series APIs already in Mathlib for the order-of-vanishing example."
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lectures 1 and 8, the Stacks valuation-ring section, Altman-Kleiman Chapter 23, and Atiyah-Macdonald Chapter 9 for the DVR-property vocabulary summarized here."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_15a_Discussion.refs.md, collecting the bundled predicates for the standard DVR properties and flagging the maximal-subring characterization as the least packaged part."
   },
   "Chapter1/01_16_Theorem": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1 for the theorem statement and the bibliography references Altman-Kleiman Chapter 23 and Atiyah-Macdonald Chapter 9 as the primary deferred-proof sources."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_16_Theorem.refs.md, making `IsDiscreteValuationRing.TFAE` the primary Mathlib anchor while preserving the two bibliography references for the exact lecture formulation."
   },
   "Chapter1/01_16_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json identifies Altman-Kleiman Chapter 23 and Atiyah-Macdonald Chapter 9 as the explicit outsourced proof references for this blob."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_16_Proof.refs.md, recording that the deferred proof should start from `IsDiscreteValuationRing.TFAE` and use the bibliography references only for any remaining bridging implications."
   },
   "Chapter1/01_16a_Discussion": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json keeps MIT Lectures 1 and 8 as the main continuation sources from the DVR discussion into later integral-extension material."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_16a_Discussion.refs.md, preserving the continuation sources into the integral-extension section while marking the transition note as likely non-formalizable."
   },
   "Chapter1/01_17_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1 and the Stacks finite-and-integral-extensions section for the definition of integral elements."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_17_Definition.refs.md, linking the definition directly to Mathlib's exact predicate `IsIntegral` and the Stacks integral-extension reference."
   },
   "Chapter1/01_18_Proposition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json uses MIT Lecture 1 for the exact proposition statement and the Stacks finite-and-integral-extensions section for a streamlined closure-under-addition-and-multiplication formalization route."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_18_Proposition.refs.md, pointing directly to `IsIntegral.add` and `IsIntegral.mul` so Stage 3 can cite Mathlib instead of reproducing the textbook argument."
   },
   "Chapter1/01_18_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1 for the stated symmetric-polynomial proof and the Stacks finite-and-integral-extensions section for the alternative finite-subalgebra route that should formalize more directly."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_18_Proof.refs.md, recording the exact closure lemmas already in Mathlib and the Stacks section as the best prose replacement for the textbook's symmetric-polynomial proof."
   },
   "Chapter1/01_19_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#75",
-    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1 and the Stacks finite-and-integral-extensions section as the main references for integral closure and normalization."
+    "issue": "#86",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_19_Definition.refs.md, mapping the definition cleanly onto `integralClosure` and `IsIntegrallyClosed` with the Stacks integral-extension section as prose backup."
   },
   "Chapter1/01_20_Proposition": {
     "status": "external_sources_researched",
