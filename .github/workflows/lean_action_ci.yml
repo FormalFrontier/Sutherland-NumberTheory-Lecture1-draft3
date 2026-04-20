@@ -17,5 +17,30 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+      - name: Decide whether to deploy docs
+        if: github.event_name == 'push'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          should_deploy=false
+
+          if [ "${GITHUB_REF_NAME}" = "${{ github.event.repository.default_branch }}" ]; then
+            pages_status="$(
+              curl -s -o /dev/null -w "%{http_code}" \
+                -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+                -H "Accept: application/vnd.github+json" \
+                "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages"
+            )"
+
+            if [ "${pages_status}" = "200" ]; then
+              should_deploy=true
+            else
+              echo "::notice::Skipping GitHub Pages deployment because Pages is not enabled or not accessible for ${GITHUB_REPOSITORY} (status ${pages_status})."
+            fi
+          fi
+
+          echo "SHOULD_DEPLOY_DOCS=${should_deploy}" >> "${GITHUB_ENV}"
       - uses: leanprover/lean-action@v1
       - uses: leanprover-community/docgen-action@v1
+        with:
+          deploy: ${{ env.SHOULD_DEPLOY_DOCS || 'false' }}
