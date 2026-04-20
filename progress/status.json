@@ -85,9 +85,9 @@
   "Chapter1/01_01_Remark": {
     "status": "non_formalizable",
     "last_updated": "2026-04-20",
-    "issue": "#93",
-    "notes": "Stage 3.1 setup reviewed blobs/Chapter1/01_01_Remark.md and treated it as ambient convention rather than a standalone Lean declaration target.",
-    "reason": "Enumerated candidate claims reviewed in Stage 3.1: (1) rings are assumed to have a multiplicative identity; excluded because Lean's ring typeclasses already build this into the ambient assumptions rather than as a theorem or definition for this blob. (2) ring homomorphisms preserve the identity; excluded because this is part of the standard `RingHom` API and not a blob-specific declaration. (3) rings are commutative unless stated otherwise; excluded because this is a textbook convention that should be encoded by choosing `[CommRing R]` in downstream files, not by formalizing a separate proposition.",
+    "issue": "#123",
+    "notes": "Stage 3.2 review under issue #123 re-audited blobs/Chapter1/01_01_Remark.md claim-by-claim and confirmed that the blob contains only ambient ring conventions already represented by Lean typeclasses and the standard `RingHom` API, not a standalone declaration target.",
+    "reason": "Stage 3.1 and Stage 3.2 both enumerate exactly the three sentences in the blob: (1) rings are assumed to have a multiplicative identity; excluded because Lean's ring typeclasses already build this into the ambient assumptions rather than as a theorem or definition for this blob. (2) ring homomorphisms preserve the identity; excluded because this is part of the standard `RingHom` API and not a blob-specific declaration. (3) rings are commutative unless stated otherwise; excluded because this is a textbook convention that should be encoded by choosing `[CommRing R]` in downstream files, not by formalizing a separate proposition.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
       "claims": [
@@ -110,14 +110,39 @@
           "reason": "Module-level convention to express through assumptions, not a declaration to scaffold."
         }
       ]
+    },
+    "stage3_2_review": {
+      "issue": "#123",
+      "decision": "confirmed_non_formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "All rings have a multiplicative identity.",
+          "classification": "excluded",
+          "reason": "Already encoded by the ambient `Ring`/`CommRing` typeclass assumptions rather than as a blob-local theorem."
+        },
+        {
+          "n": 2,
+          "text": "Ring homomorphisms preserve the multiplicative identity.",
+          "classification": "excluded",
+          "reason": "Already built into Lean's existing `RingHom` structure and lemmas."
+        },
+        {
+          "n": 3,
+          "text": "Except where noted otherwise, the rings considered are commutative.",
+          "classification": "excluded",
+          "reason": "A modeling convention to express via downstream `[CommRing R]` assumptions, not a mathematical declaration belonging to this blob."
+        }
+      ],
+      "summary": "The Stage 3.1 enumeration was complete: every sentence in the blob is either ambient typeclass setup or a project-wide convention, so the `non_formalizable` classification stands."
     }
   },
   "Chapter1/01_01a_Discussion": {
     "status": "non_formalizable",
     "last_updated": "2026-04-20",
-    "issue": "#93",
-    "notes": "Stage 3.1 setup reviewed blobs/Chapter1/01_01a_Discussion.md and confirmed it is only a section heading plus bibliography pointer.",
-    "reason": "Enumerated candidate claims reviewed in Stage 3.1: (1) 'Absolute values' section heading; excluded because headings are organizational metadata, not mathematical declarations. (2) much of the material in the section is referenced in [3, Chapter 1]; excluded because this is bibliographic guidance, not a formalizable mathematical claim.",
+    "issue": "#123",
+    "notes": "Stage 3.2 review under issue #123 re-audited blobs/Chapter1/01_01a_Discussion.md and confirmed that it contains only the section heading plus a bibliography pointer, with no mathematical assertion to scaffold.",
+    "reason": "Stage 3.1 and Stage 3.2 both enumerate the complete blob: (1) the 'Absolute values' section heading; excluded because headings are organizational metadata, not mathematical declarations. (2) the sentence citing [3, Chapter 1] as a reference; excluded because it is bibliographic guidance, not a formalizable mathematical claim.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
       "claims": [
@@ -134,6 +159,25 @@
           "reason": "Bibliographic note, not mathematics."
         }
       ]
+    },
+    "stage3_2_review": {
+      "issue": "#123",
+      "decision": "confirmed_non_formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Section heading: '1.2 Absolute values'.",
+          "classification": "excluded",
+          "reason": "Organizational metadata only."
+        },
+        {
+          "n": 2,
+          "text": "A reference for much of this section is [3, Chapter 1].",
+          "classification": "excluded",
+          "reason": "Bibliographic guidance, not a mathematical claim."
+        }
+      ],
+      "summary": "The Stage 3.1 enumeration was complete: this blob contains no standalone mathematical content beyond a heading and citation note, so the `non_formalizable` classification stands."
     }
   },
   "Chapter1/01_02_Definition": {
@@ -240,9 +284,9 @@
   "Chapter1/01_09a_Discussion": {
     "status": "non_formalizable",
     "last_updated": "2026-04-20",
-    "issue": "#93",
-    "notes": "Stage 3.1 setup reviewed blobs/Chapter1/01_09a_Discussion.md and confirmed that it is only the section heading for the upcoming discrete-valuation development.",
-    "reason": "Enumerated candidate claims reviewed in Stage 3.1: (1) 'Discrete valuations' section heading; excluded because the blob introduces no standalone mathematical assertion beyond naming the next topic. Later valuation declarations belong to subsequent numbered items, not this heading blob.",
+    "issue": "#123",
+    "notes": "Stage 3.2 review under issue #123 re-audited blobs/Chapter1/01_09a_Discussion.md and confirmed that it is only the section heading for the upcoming discrete-valuation development.",
+    "reason": "Stage 3.1 and Stage 3.2 both enumerate the full blob as a single heading, 'Discrete valuations'; it introduces no standalone mathematical assertion beyond naming the next topic, so later valuation declarations belong to subsequent numbered items rather than this heading blob.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
       "claims": [
@@ -253,6 +297,19 @@
           "reason": "Topic label only, with no standalone claim to formalize."
         }
       ]
+    },
+    "stage3_2_review": {
+      "issue": "#123",
+      "decision": "confirmed_non_formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Section heading: '1.4 Discrete valuations'.",
+          "classification": "excluded",
+          "reason": "Topic label only, with no standalone declaration or proposition to formalize."
+        }
+      ],
+      "summary": "The Stage 3.1 enumeration was complete: the blob is only a section heading, so the `non_formalizable` classification stands."
     }
   },
   "Chapter1/01_10_Definition": {
