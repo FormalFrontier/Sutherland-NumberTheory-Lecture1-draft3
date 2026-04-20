@@ -246,111 +246,111 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_19_Definition.refs.md, mapping the definition cleanly onto `integralClosure` and `IsIntegrallyClosed` with the Stacks integral-extension section as prose backup."
   },
   "Chapter1/01_20_Proposition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_20_Proposition.refs.md, recording the exact tower-integrality lemma in Mathlib together with the two cited commutative-algebra sources used by the text."
   },
   "Chapter1/01_20_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_20_Proof.refs.md, narrowing the proof to `isIntegral_trans` with the lecture notes and cited books as prose backup."
   },
   "Chapter1/01_21_Corollary": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_21_Corollary.refs.md, mapping the corollary directly onto `integralClosure` and `IsIntegrallyClosedIn.of_isIntegralClosure`."
   },
   "Chapter1/01_21_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_21_Proof.refs.md, showing the proof should combine transitivity of integrality with Mathlib's bundled integral-closure theorem."
   },
   "Chapter1/01_22_Proposition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_22_Proposition.refs.md, identifying the existing UFD-to-integrally-closed instance as the direct Lean target for `Z`."
   },
   "Chapter1/01_22_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_22_Proof.refs.md, recording the rational-root API needed if Stage 3 reconstructs the proof rather than using the instance directly."
   },
   "Chapter1/01_23_Corollary": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_23_Corollary.refs.md, pointing the UFD and PID corollary straight at Mathlib's integrally-closed instance chain."
   },
   "Chapter1/01_23_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_23_Proof.refs.md, tying the abbreviated proof to the same rational-root and UFD infrastructure used in Proposition 1.22."
   },
   "Chapter1/01_24_Example": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_24_Example.refs.md, preserving the `Z[sqrt 5]` witness example as custom arithmetic work on top of the ambient integrality API."
   },
   "Chapter1/01_24a_Discussion": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_24a_Discussion.refs.md, connecting the DVR discussion to Mathlib's stronger valuation-ring integrally-closed infrastructure."
   },
   "Chapter1/01_25_Proposition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_25_Proposition.refs.md, recording the valuation-ring declarations and external references needed to bridge the book's statement to Mathlib."
   },
   "Chapter1/01_25_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_25_Proof.refs.md, emphasizing that Stage 3 should likely derive the result from Mathlib's bundled valuation-ring theorem rather than replay the handwritten contradiction proof."
   },
   "Chapter1/01_26_Definition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_26_Definition.refs.md, matching the definition exactly with `NumberField` and `NumberField.RingOfIntegers`."
   },
   "Chapter1/01_27_Remark": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_27_Remark.refs.md, documenting the partial Mathlib coverage for orders and the best external source for the maximal-order discussion."
   },
   "Chapter1/01_28_Proposition": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_28_Proposition.refs.md, pointing the minimal-polynomial criterion directly at the existing integrally-closed `minpoly` lemmas."
   },
   "Chapter1/01_28_Proof": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_28_Proof.refs.md, recording the exact `minpoly` and integrally-closed declarations that subsume the textbook proof."
   },
   "Chapter1/01_29_Example": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_29_Example.refs.md, preserving the `(1 + sqrt 7) / 2` computation as custom arithmetic on top of Proposition 1.28's minimal-polynomial criterion."
   },
   "Chapter1/01_29a_Bibliography": {
-    "status": "external_sources_researched",
+    "status": "references_attached",
     "last_updated": "2026-04-20",
-    "issue": "#78",
-    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
+    "issue": "#90",
+    "notes": "Stage 2.6 attached blobs/Chapter1/01_29a_Bibliography.refs.md, preserving the lecture bibliography as metadata and linking the cited sources used across the tail batch."
   }
 }
