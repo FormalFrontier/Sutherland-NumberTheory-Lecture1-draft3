@@ -1,0 +1,1 @@
+**Proposition 1.28.** Let $A$ be an integrally closed domain with fraction field $K$. Let $\alpha$ be an element of a finite extension $L/K$, and let $f \in K[x]$ be its minimal polynomial over $K$. Then $\alpha$ is integral over $A$ if and only if $f \in A[x]$.
