@@ -2,7 +2,7 @@
   "package_inventory": {
     "non_mathlib_requirements": [],
     "external_lean_libraries": [],
-    "notes": "lakefile.toml declares only mathlib, so there is no non-Mathlib package inventory to record for the opening Chapter 1 batch."
+    "notes": "lakefile.toml declares only mathlib, so there is no non-Mathlib package inventory to record for the completed Chapter 1 research batches so far."
   },
   "sources": [
     {
@@ -113,6 +113,145 @@
       "formalization_leads": [
         "Use it when later stages need a durable book reference rather than course-specific notes for the opening-batch absolute-value material.",
         "It is the best source in the lecture bibliography for filling in background that the lecture states but does not prove."
+      ]
+    },
+    {
+      "id": "mit_18_785_2021_lecture1_middle",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Lecture #1: Absolute values and discrete valuations (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes1.pdf",
+      "supports": [
+        "Chapter1/01_10_Definition",
+        "Chapter1/01_10a_Discussion",
+        "Chapter1/01_11_Definition",
+        "Chapter1/01_11a_Discussion",
+        "Chapter1/01_12_Definition",
+        "Chapter1/01_13_Definition",
+        "Chapter1/01_13a_Discussion",
+        "Chapter1/01_14_Example",
+        "Chapter1/01_15_Example",
+        "Chapter1/01_15a_Discussion",
+        "Chapter1/01_16_Theorem",
+        "Chapter1/01_16_Proof",
+        "Chapter1/01_16a_Discussion",
+        "Chapter1/01_17_Definition",
+        "Chapter1/01_18_Proposition",
+        "Chapter1/01_18_Proof",
+        "Chapter1/01_19_Definition"
+      ],
+      "reason": "The middle-batch blobs are transcribed almost verbatim from pages 4-5 of this lecture, including the valuation and DVR definitions, the Z_(p) and k((t)) examples, the DVR characterization theorem statement with its deferred proof citation, and the integral-extension discussion through Proposition 1.18 and Definition 1.19.",
+      "formalization_leads": [
+        "Use this as the canonical statement-level source for the entire middle batch before consulting broader commutative-algebra references.",
+        "It confirms that Theorem 1.16 is intentionally deferred to bibliography references [1, Section 23] and [2, Chapter 9], while Proposition 1.18 is meant to be proved by the symmetric-polynomial argument stated here."
+      ]
+    },
+    {
+      "id": "mit_18_785_2021_lecture8",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Lecture #8: Complete fields and valuation rings (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes8.pdf",
+      "supports": [
+        "Chapter1/01_10_Definition",
+        "Chapter1/01_10a_Discussion",
+        "Chapter1/01_11_Definition",
+        "Chapter1/01_11a_Discussion",
+        "Chapter1/01_15a_Discussion",
+        "Chapter1/01_16a_Discussion"
+      ],
+      "reason": "These later course notes revisit valuation rings and DVRs from the localization/completion perspective used in the rest of the course, so they are the best course-internal continuation source once the introductory statements from Lecture 1 need downstream context.",
+      "formalization_leads": [
+        "Use this when later reference blobs need the connection between DVRs, localizations at primes, and completions that is only hinted at in the middle batch.",
+        "It gives the same course vocabulary for moving from the elementary valuation-ring examples to local-field formalization."
+      ]
+    },
+    {
+      "id": "stacks_valuation_rings",
+      "kind": "reference",
+      "citation": "The Stacks Project, Section 10.50: Valuation rings.",
+      "url": "https://stacks.math.columbia.edu/tag/00I8",
+      "supports": [
+        "Chapter1/01_10_Definition",
+        "Chapter1/01_10a_Discussion",
+        "Chapter1/01_11_Definition",
+        "Chapter1/01_11a_Discussion",
+        "Chapter1/01_13a_Discussion",
+        "Chapter1/01_15a_Discussion"
+      ],
+      "reason": "This gives a freely accessible commutative-algebra reference for the valuation-ring criterion, locality, value groups, the associated valuation, and the characterization of valuation rings via principal finitely generated ideals.",
+      "formalization_leads": [
+        "Use Lemmas 10.50.4-10.50.5 and 10.50.12-10.50.15 as the cleanest prose guide for rebuilding the valuation-ring facts that the lecture states without proof.",
+        "It is especially useful when Stage 3 needs a source for proving that the valuation ring attached to a valuation is local and for comparing the abstract valuation-ring definition with the valuation-theoretic one."
+      ]
+    },
+    {
+      "id": "altman_kleiman_term_comm_alg_ch23",
+      "kind": "book",
+      "citation": "Allen Altman and Steven Kleiman, A Term of Commutative Algebra, Chapter 23: Discrete valuations, Worldwide Center of Mathematics, 2013.",
+      "url": "https://web.mit.edu/18.705/www/13Ed.pdf",
+      "supports": [
+        "Chapter1/01_10_Definition",
+        "Chapter1/01_10a_Discussion",
+        "Chapter1/01_11_Definition",
+        "Chapter1/01_11a_Discussion",
+        "Chapter1/01_13a_Discussion",
+        "Chapter1/01_15a_Discussion",
+        "Chapter1/01_16_Theorem",
+        "Chapter1/01_16_Proof"
+      ],
+      "reason": "Reference [1, Section 23] cited in the lecture bibliography develops discrete valuations, valuation rings, uniformizers, and the standard DVR characterizations in the exact commutative-algebra range needed for the middle batch.",
+      "formalization_leads": [
+        "Use Chapter 23 as the main deferred-proof source for Theorem 1.16, especially for the equivalence between DVRs, local PIDs, and one-dimensional normal local rings.",
+        "Its valuation-first development is also a good backup source for the lecture's claims about units, ideals, and generators in a DVR."
+      ]
+    },
+    {
+      "id": "atiyah_macdonald_intro_comm_alg_ch9",
+      "kind": "book",
+      "citation": "M. F. Atiyah and I. G. Macdonald, Introduction to Commutative Algebra, Chapter 9: Discrete valuation rings and Dedekind domains, Addison-Wesley, 1969.",
+      "url": "https://search.worldcat.org/title/Introduction-to-commutative-algebra/oclc/7491",
+      "supports": [
+        "Chapter1/01_14_Example",
+        "Chapter1/01_15a_Discussion",
+        "Chapter1/01_16_Theorem",
+        "Chapter1/01_16_Proof"
+      ],
+      "reason": "Reference [2, Chapter 9] cited in the lecture bibliography is the standard short source for local-domain/DVR equivalences and the ideal-theoretic structure of DVRs that underlies Theorem 1.16.",
+      "formalization_leads": [
+        "Use Proposition 9.7 and the surrounding chapter as the second deferred-proof source for Theorem 1.16 when the lecture's bibliography is followed literally.",
+        "This source is also useful for the localization example Z_(p) and for matching the lecture's PID, local, and dimension-one characterizations against a standard text."
+      ]
+    },
+    {
+      "id": "stacks_local_rings",
+      "kind": "reference",
+      "citation": "The Stacks Project, Section 10.18: Local rings.",
+      "url": "https://stacks.math.columbia.edu/tag/07BH",
+      "supports": [
+        "Chapter1/01_12_Definition",
+        "Chapter1/01_13_Definition",
+        "Chapter1/01_14_Example"
+      ],
+      "reason": "This supplies a stable, freely accessible reference for the basic definitions of local rings and residue fields, together with the localization example used in Example 1.14.",
+      "formalization_leads": [
+        "Use it when later scaffolding needs an explicit source for the local-ring and residue-field terminology that the lecture treats as standard background.",
+        "It is the quickest prose reference for identifying the maximal ideal and residue field of a localization."
+      ]
+    },
+    {
+      "id": "stacks_finite_integral_extensions",
+      "kind": "reference",
+      "citation": "The Stacks Project, Section 10.36: Finite and integral ring extensions.",
+      "url": "https://stacks.math.columbia.edu/tag/00GH",
+      "supports": [
+        "Chapter1/01_17_Definition",
+        "Chapter1/01_18_Proposition",
+        "Chapter1/01_18_Proof",
+        "Chapter1/01_19_Definition"
+      ],
+      "reason": "This section gives a direct definition of integral elements and proves that the set of elements integral over a base ring is a subalgebra, matching exactly the mathematical content of Definition 1.17, Proposition 1.18, and Definition 1.19.",
+      "formalization_leads": [
+        "Use Lemmas 10.36.4-10.36.7 as the cleanest replacement for the lecture's algebraic-closure argument when formalizing closure of integral elements under addition and multiplication.",
+        "Definition 10.36.9 is the exact prose model for the integral-closure definition in 1.19, and Lemma 10.36.11 is the natural next source once localization of integral closure becomes relevant."
       ]
     }
   ]

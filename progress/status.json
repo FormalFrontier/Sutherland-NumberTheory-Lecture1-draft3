@@ -144,106 +144,106 @@
     "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records MIT Lectures 9 and 13 as the best continuation references for the valuation and place language that follows the opening batch."
   },
   "Chapter1/01_10_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lectures 1 and 8, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 for the valuation, valuation-ring, and DVR background used here."
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json identifies MIT Lecture 1, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 as the main sources for the unit-group and locality facts used in this discussion."
   },
   "Chapter1/01_11_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1 plus the Stacks valuation-ring section as the best references for the abstract valuation-ring definition."
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 for the uniformizer, ideal-power, and unique-maximal-ideal facts in this discussion."
   },
   "Chapter1/01_12_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json uses MIT Lecture 1 and the Stacks local-rings section as the main references for the local-ring definition."
   },
   "Chapter1/01_13_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json uses MIT Lecture 1 and the Stacks local-rings section as the main references for the residue-field definition."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1, the Stacks valuation-ring section, and Altman-Kleiman Chapter 23 as the main sources for reconstructing the valuation from a DVR."
   },
   "Chapter1/01_14_Example": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1, the Stacks local-rings section, and Atiyah-Macdonald Chapter 9 for the localization example Z_(p) and its residue field."
   },
   "Chapter1/01_15_Example": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json keeps MIT Lecture 1 as the exact source for the Laurent-series valuation example and records later course notes as downstream context."
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lectures 1 and 8, the Stacks valuation-ring section, Altman-Kleiman Chapter 23, and Atiyah-Macdonald Chapter 9 for the DVR-property vocabulary summarized here."
   },
   "Chapter1/01_16_Theorem": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1 for the theorem statement and the bibliography references Altman-Kleiman Chapter 23 and Atiyah-Macdonald Chapter 9 as the primary deferred-proof sources."
   },
   "Chapter1/01_16_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json identifies Altman-Kleiman Chapter 23 and Atiyah-Macdonald Chapter 9 as the explicit outsourced proof references for this blob."
   },
   "Chapter1/01_16a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json keeps MIT Lectures 1 and 8 as the main continuation sources from the DVR discussion into later integral-extension material."
   },
   "Chapter1/01_17_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1 and the Stacks finite-and-integral-extensions section for the definition of integral elements."
   },
   "Chapter1/01_18_Proposition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json uses MIT Lecture 1 for the exact proposition statement and the Stacks finite-and-integral-extensions section for a streamlined closure-under-addition-and-multiplication formalization route."
   },
   "Chapter1/01_18_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json records MIT Lecture 1 for the stated symmetric-polynomial proof and the Stacks finite-and-integral-extensions section for the alternative finite-subalgebra route that should formalize more directly."
   },
   "Chapter1/01_19_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#74",
-    "notes": "Stages 1.7 through 2.3 are complete for the middle batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#75",
+    "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1 and the Stacks finite-and-integral-extensions section as the main references for integral closure and normalization."
   },
   "Chapter1/01_20_Proposition": {
     "status": "mathlib_coverage_researched",
