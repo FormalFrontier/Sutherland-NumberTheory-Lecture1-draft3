@@ -42,106 +42,106 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the introductory outside algebraic and local-field background this blob assumes."
   },
   "Chapter1/01_01_Remark": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the unital commutative ring conventions assumed by this remark."
   },
   "Chapter1/01_01a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; this transition note cites an external source but introduces no distinct prerequisite beyond the section-level background already logged."
   },
   "Chapter1/01_02_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the basic field and real-valued inequality background assumed by the absolute-value definition."
   },
   "Chapter1/01_03_Example": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; this trivial-absolute-value example relies only on the section's general field background."
   },
   "Chapter1/01_04_Lemma": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; no additional external prerequisite beyond the absolute-value setup was isolated for this lemma statement."
   },
   "Chapter1/01_04_Proof": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; the proof is deferred to Problem Set 1, but no separate external prerequisite was named in the text beyond the surrounding section background."
   },
   "Chapter1/01_05_Corollary": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the positive-characteristic and finite-field background assumed by this corollary."
   },
   "Chapter1/01_05_Proof": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the finite-field Frobenius identities used in this proof."
   },
   "Chapter1/01_06_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; this equivalence definition adds no distinct external prerequisite beyond the real-valued absolute-value framework."
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the needed background on the usual absolute value on Q, its relation to R, and p-adic completions."
   },
   "Chapter1/01_07_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the factorization and p-adic valuation facts this definition assumes."
   },
   "Chapter1/01_08_Theorem": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records Ostrowski's theorem as an externally sourced classification result in this slice."
   },
   "Chapter1/01_08_Proof": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; the proof is deferred to Problem Set 1 and dependencies/external.json records the outside classification result it relies on."
   },
   "Chapter1/01_09_Theorem": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; dependencies/external.json records the product-formula background from unique factorization on Q."
   },
   "Chapter1/01_09_Proof": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; the proof is deferred to Problem Set 1 and dependencies/external.json records the finitely supported-place argument it assumes."
   },
   "Chapter1/01_09a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#45",
-    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/3.md."
+    "issue": "#50",
+    "notes": "Stages 1.7 and 2.2 complete for the opening batch; this section heading introduces no new external prerequisite beyond the completed opening analysis."
   },
   "Chapter1/01_10_Definition": {
     "status": "extracted",
