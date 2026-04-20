@@ -2,27 +2,31 @@
 
 ## Completed Stages
 
-- Stage 1.1 source extraction is complete: the source PDF has been split into per-page files under `pdf/pages/`.
-- Stage 1.2 build bootstrap is complete: the Lean/Mathlib project builds with the FormalFrontier harness in place.
-- Stage 1.3 frontmatter detection is complete: page boundaries and frontmatter/backmatter handling were established.
-- Stage 1.4 transcription is complete for logical pages `1` through `7`, and all seven pages are on `master`.
-- Stage 1.5 validation is complete for logical pages `1` through `7`; `progress/status.json` now marks each of those page markdown files as `validated`.
-
-## In-Flight Work
-
-- PR `#39` / issue `#38` is the active frontier: Stage 1.6 structure analysis for pages `1` through `7`, producing the first `items.json` for the lecture opening.
-- The PR is currently `MERGEABLE` with auto-merge enabled and only waiting on CI. Issue `#40` was created when the PR briefly appeared conflicted, but that premise is now stale because the repair commit already lives on the PR branch.
-
-## Outstanding Gaps
-
-- Stage 1.6 is not yet merged, so `items.json` and the downstream blob frontier are still branch-local until PR `#39` lands.
-- Issue `#40` should be retired once PR `#39` either merges successfully or fails for a new reason; the current repair-plan body no longer matches the GitHub state.
+- Stage `1.1` page extraction is complete.
+- Stage `1.2` Lean/Mathlib bootstrap is complete.
+- Stage `1.3` frontmatter detection and `pdf/pages/` mapping are complete.
+- Stage `1.4` transcription is complete for logical pages `1` through `7`.
+- Stage `1.5` validation is complete for logical pages `1` through `7`.
+- Stage `1.6` structure analysis is complete for logical pages `1` through `7`, producing `items.json` with `52` Chapter 1 items.
+- Stage `1.7` blob extraction is complete for `Chapter1/01_00_Introduction` through `Chapter1/01_29a_Bibliography`; `blobs/Chapter1/` now contains all `52` extracted blob files from the opening lecture segment.
+- Stage `2.1` internal dependency mapping is merged across the full current Chapter 1 frontier:
+  opening batch `01_00`-`01_09a`, middle batch `01_10`-`01_19`, and tail batch `01_20`-`01_29a`.
+- Stage `2.2` external dependency mapping is merged for the opening and middle Chapter 1 batches (`34` items total).
+- Stage `2.3` Mathlib-coverage research is merged for the opening batch `01_00`-`01_09a`.
 
 ## Current Frontier
 
-- Let PR `#39` finish CI and auto-merge its Stage 1.6 output.
-- As soon as `items.json` is on `master`, queue Stage 1.7 blob extraction directly from that artifact. The current PR's `items.json` has `52` items, which is close enough to the "roughly 50 blobs per issue" target that the next planner can open a single extraction issue for pages `1` through `7` without extra decomposition.
+- Opening-batch Phase 2 research is expanding from Mathlib coverage into Stage `2.4` external-source research on PR `#71`, which is `MERGEABLE` and waiting on CI.
+- Tail-batch external dependency mapping exists on PR `#70`, but that PR is currently `CONFLICTING` despite a green CI run, so the next repair cycle should focus there.
 
-## Planning Note
+## In-Flight Work
 
-- Next planner cycle: first confirm whether PR `#39` has merged. If yes, close or retire issue `#40` as stale and immediately queue one Stage 1.7 extraction issue based on the merged `items.json`. If PR `#39` fails CI for a new reason, treat that as a fresh repair problem rather than following issue `#40`'s obsolete conflict narrative.
+- PR `#71` / issue `#69`: Stage `2.4` external-source research for `Chapter1/01_00_Introduction` through `Chapter1/01_09a`.
+- PR `#70` / issue `#62`: Stage `2.2` external dependency mapping for `Chapter1/01_20_Proposition` through `Chapter1/01_29a_Bibliography`.
+- Summary issue `#68` captures this status refresh.
+
+## Queue Health And Risks
+
+- The planner snapshot that mentioned PR-repair issue `#66` is stale. PR `#60` already merged after its repair, so `#66` was skipped rather than executed.
+- There are currently no unclaimed work items in `coordination list-unclaimed`, which means queue pressure has dropped to zero even though PR `#70` still needs repair and PR `#71` may create follow-on work once it lands.
+- The immediate sequencing risk is a planner gap: if no automatic PR-fix issue appears for `#70`, the next planning cycle should create one before opening fresh downstream Phase `2.3` or `2.4` work on the tail batch.
