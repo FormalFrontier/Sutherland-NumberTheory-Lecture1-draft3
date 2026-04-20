@@ -4,5 +4,11 @@
     "last_updated": "2026-04-20",
     "issue": "#10",
     "notes": "Stage 1.4 transcription completed and initial shared conventions established."
+  },
+  "pages/2.md": {
+    "status": "transcribed",
+    "last_updated": "2026-04-20",
+    "issue": "#11",
+    "notes": "Stage 1.4 transcription completed on top of the page 1 transcription branch to preserve sequential context."
   }
 }
