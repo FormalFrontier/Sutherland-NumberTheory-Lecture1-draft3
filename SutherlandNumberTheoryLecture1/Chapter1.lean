@@ -5,6 +5,7 @@ Authors: FormalFrontier contributors
 -/
 import Mathlib
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_03_Example»
 
 /-!
 # Chapter 1 import spine
