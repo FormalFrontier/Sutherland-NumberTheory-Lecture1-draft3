@@ -40,5 +40,107 @@
     "last_updated": "2026-04-20",
     "issue": "#38",
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
+  },
+  "Chapter1/01_00_Introduction": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+  },
+  "Chapter1/01_01_Remark": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+  },
+  "Chapter1/01_01a_Discussion": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+  },
+  "Chapter1/01_02_Definition": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/1.md."
+  },
+  "Chapter1/01_03_Example": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_04_Lemma": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_04_Proof": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_05_Corollary": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_05_Proof": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_06_Definition": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_06a_Discussion": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_07_Definition": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_08_Theorem": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_08_Proof": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_09_Theorem": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_09_Proof": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/2.md."
+  },
+  "Chapter1/01_09a_Discussion": {
+    "status": "extracted",
+    "last_updated": "2026-04-20",
+    "issue": "#45",
+    "notes": "Stage 1.7 blob extraction created this blob from items.json and pages/3.md."
   }
 }
