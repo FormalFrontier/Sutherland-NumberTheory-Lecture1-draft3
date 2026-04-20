@@ -42,106 +42,106 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json gives this introduction an explicit empty direct-dependency list, and dependencies/external.json records the introductory outside algebraic and local-field background it assumes."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_01_Remark": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the chapter introduction, and dependencies/external.json records the unital commutative ring conventions assumed by this remark."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_01a_Discussion": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the local predecessor dependency chain, and this transition note adds no distinct external prerequisite beyond the section-level background already logged in dependencies/external.json."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_02_Definition": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the preceding discussion blob, and dependencies/external.json records the basic field and real-valued inequality background assumed by the absolute-value definition."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_03_Example": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on Definition 1.2, and dependencies/external.json records that this example relies only on the section's general field background."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_04_Lemma": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json makes the direct dependency on the absolute-value definition explicit, and no additional external prerequisite beyond that setup was isolated for this lemma statement."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_04_Proof": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the lemma statement, and the deferred proof introduces no separate external prerequisite beyond the surrounding section background."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_05_Corollary": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on Lemma 1.4, and dependencies/external.json records the positive-characteristic and finite-field background assumed by this corollary."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_05_Proof": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependencies on the corollary statement and cited lemma, and dependencies/external.json records the finite-field Frobenius identities used in this proof."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_06_Definition": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on Definition 1.2, and this equivalence definition adds no distinct external prerequisite beyond the real-valued absolute-value framework."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the preceding equivalence definition, and dependencies/external.json records the needed background on the usual absolute value on Q, its relation to R, and p-adic completions."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_07_Definition": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the preceding discussion of factorizations on Q, and dependencies/external.json records the factorization and p-adic valuation facts this definition assumes."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_08_Theorem": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependencies on equivalence of absolute values and the p-adic absolute value, and dependencies/external.json records Ostrowski's theorem as an externally sourced classification result in this slice."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_08_Proof": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the theorem statement, and dependencies/external.json records the outside classification result used by the deferred proof."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_09_Theorem": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the p-adic absolute-value definition, and dependencies/external.json records the product-formula background from unique factorization on Q."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_09_Proof": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependencies on the theorem statement and the p-adic absolute-value definition, and dependencies/external.json records the finitely supported-place argument assumed by the deferred proof."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_09a_Discussion": {
-    "status": "external_dependencies_mapped",
+    "status": "mathlib_coverage_researched",
     "last_updated": "2026-04-20",
-    "issue": "#50",
-    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the immediate-predecessor dependency, and this section heading introduces no new external prerequisite beyond the completed opening analysis."
+    "issue": "#61",
+    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
   },
   "Chapter1/01_10_Definition": {
     "status": "internal_dependencies_mapped",
