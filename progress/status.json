@@ -23,6 +23,12 @@
     "issue": "#14",
     "notes": "Stage 1.4 transcription completed using prior-page context from open PR #21 for page 4."
   },
+  "pages/4.md": {
+    "status": "transcribed",
+    "last_updated": "2026-04-20",
+    "issue": "#13",
+    "notes": "Stage 1.4 transcription completed for logical page 4, including the transition into Section 1.5 on discrete valuation rings."
+  },
   "pages/6.md": {
     "status": "transcribed",
     "last_updated": "2026-04-20",
