@@ -246,111 +246,111 @@
     "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Proposition 1.18, and dependencies/external.json records the normalization and integrally-closed-domain background assumed by this definition."
   },
   "Chapter1/01_20_Proposition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 mapped this proposition directly to Definition 1.17, since the statement only needs the notion of integrality in a tower of ring extensions."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_20_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 records the direct dependency on Proposition 1.20; the proof itself is deferred to external references rather than additional in-book lemmas."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_21_Corollary": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 links this corollary to Definition 1.19 and Proposition 1.20, which together provide the integral-closure language and the transitivity result used by the statement."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_21_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 records the direct dependencies on the corollary statement, Proposition 1.20, and Definition 1.19, matching the explicit use of transitivity and the definition of integral closure."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_22_Proposition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 maps this statement directly to Definition 1.19 because it asserts that Z is integrally closed."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_22_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 records the direct dependencies on Proposition 1.22 and Definition 1.17, reflecting the rational-root argument for an element integral over Z."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_23_Corollary": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 links this corollary directly to Proposition 1.22, whose proof is immediately generalized from Z to any UFD."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_23_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 records the direct dependencies on the corollary statement and Proposition 1.22's proof, exactly as the text says that the earlier proof works for any UFD."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_24_Example": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 ties this example to Corollary 1.23 and Definition 1.17: the example uses the UFD implies integrally closed criterion together with an explicit integral element."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_24a_Discussion": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 links this transition note to Theorem 1.16 and Corollary 1.23, since the claim that every DVR is integrally closed combines the DVR/PID characterization with the UFD corollary."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_25_Proposition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 maps this statement directly to Definition 1.11 and Definition 1.19, which provide the notions of valuation ring and integrally closed."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_25_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 records the direct dependencies on Proposition 1.25, Definition 1.11, and Definition 1.17, matching the proof's use of the valuation-ring dichotomy and integrality."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_26_Definition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 links the ring-of-integers definition directly to Definition 1.19, since O_K is defined as an integral closure."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_27_Remark": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 keeps the direct dependency on Definition 1.26, because this remark only elaborates the just-defined ring of integers."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_28_Proposition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 maps this statement to Definitions 1.17 and 1.19, which supply the notions of integrality and integrally closed domains used in the criterion."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_28_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 records the direct dependencies on Proposition 1.28, Proposition 1.18, and Definition 1.19, since the proof uses closure of integral elements under sums/products inside the integral closure."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_29_Example": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 links this example to Example 1.24 and Proposition 1.28, since it explicitly reuses the earlier quadratic-integrality example and the minimal-polynomial criterion."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   },
   "Chapter1/01_29a_Bibliography": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#63",
-    "notes": "Stage 2.1 keeps the conservative predecessor dependency on Example 1.29; the bibliography itself introduces no new mathematical claim but remains in the ordered Chapter 1 chain."
+    "issue": "#62",
+    "notes": "Stage 2.2 external dependency analysis recorded the tail-batch prerequisite and reference needs for this blob in dependencies/external.json."
   }
 }
