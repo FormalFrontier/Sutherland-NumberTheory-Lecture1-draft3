@@ -1,0 +1,60 @@
+[
+  {
+    "category": "undergraduate_prerequisite",
+    "description": "Basic algebraic language for unital commutative rings and fields, including ideals, maximal ideals, residue fields, fraction fields, characteristic, and prime fields.",
+    "items": [
+      "Chapter1/01_00_Introduction",
+      "Chapter1/01_01_Remark",
+      "Chapter1/01_02_Definition",
+      "Chapter1/01_05_Corollary"
+    ]
+  },
+  {
+    "category": "undergraduate_prerequisite",
+    "description": "Standard structure theory for Z, Q, finite fields, and polynomial rings over finite fields: fundamental theorem of arithmetic, unique factorization of rationals, existence of finite fields F_q, irreducible-polynomial quotients F_q[t]/(f), and the basic comparison between number fields and global function fields.",
+    "items": [
+      "Chapter1/01_00_Introduction",
+      "Chapter1/01_06a_Discussion",
+      "Chapter1/01_07_Definition",
+      "Chapter1/01_09_Theorem"
+    ]
+  },
+  {
+    "category": "undergraduate_prerequisite",
+    "description": "Classical real and local-field background: the usual absolute value on Q inherited from R, completions with respect to absolute values, and the existence of the p-adic fields Q_p.",
+    "items": [
+      "Chapter1/01_00_Introduction",
+      "Chapter1/01_06a_Discussion"
+    ]
+  },
+  {
+    "category": "folklore_or_well_known_fact",
+    "description": "Characteristic-p and finite-field identities used without proof, especially n^p = n in F_p and x^q = x in a finite field of cardinality q.",
+    "items": [
+      "Chapter1/01_05_Proof"
+    ]
+  },
+  {
+    "category": "folklore_or_well_known_fact",
+    "description": "The p-adic absolute value is a well-defined absolute value on Q, which requires the standard valuation arithmetic v_p(xy) = v_p(x) + v_p(y) and v_p(x + y) >= min(v_p(x), v_p(y)).",
+    "items": [
+      "Chapter1/01_07_Definition"
+    ]
+  },
+  {
+    "category": "results_from_other_books",
+    "description": "Ostrowski's theorem classifying the nontrivial absolute values on Q up to equivalence; the text explicitly defers the proof to Problem Set 1 and cites Chapter 1 of reference [3] for much of the section.",
+    "items": [
+      "Chapter1/01_08_Theorem",
+      "Chapter1/01_08_Proof"
+    ]
+  },
+  {
+    "category": "folklore_or_well_known_fact",
+    "description": "The product formula on Q depends on unique prime factorization and the fact that only finitely many places p <= infinity contribute nontrivially to the product for a fixed x in Q^times.",
+    "items": [
+      "Chapter1/01_09_Theorem",
+      "Chapter1/01_09_Proof"
+    ]
+  }
+]

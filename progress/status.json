@@ -42,106 +42,106 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this introduction now has an explicit empty direct-dependency list in dependencies/internal.json."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json gives this introduction an explicit empty direct-dependency list, and dependencies/external.json records the introductory outside algebraic and local-field background it assumes."
   },
   "Chapter1/01_01_Remark": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this remark conservatively depends on the chapter introduction."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the chapter introduction, and dependencies/external.json records the unital commutative ring conventions assumed by this remark."
   },
   "Chapter1/01_01a_Discussion": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this discussion note keeps the local predecessor dependency chain."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the local predecessor dependency chain, and this transition note adds no distinct external prerequisite beyond the section-level background already logged in dependencies/external.json."
   },
   "Chapter1/01_02_Definition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this definition currently depends only on the immediately preceding discussion blob."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the preceding discussion blob, and dependencies/external.json records the basic field and real-valued inequality background assumed by the absolute-value definition."
   },
   "Chapter1/01_03_Example": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this example depends directly on Definition 1.2."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on Definition 1.2, and dependencies/external.json records that this example relies only on the section's general field background."
   },
   "Chapter1/01_04_Lemma": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this lemma depends directly on the absolute-value definition rather than the preceding example."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json makes the direct dependency on the absolute-value definition explicit, and no additional external prerequisite beyond that setup was isolated for this lemma statement."
   },
   "Chapter1/01_04_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this proof blob depends on its lemma statement."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the lemma statement, and the deferred proof introduces no separate external prerequisite beyond the surrounding section background."
   },
   "Chapter1/01_05_Corollary": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this corollary explicitly depends on Lemma 1.4."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on Lemma 1.4, and dependencies/external.json records the positive-characteristic and finite-field background assumed by this corollary."
   },
   "Chapter1/01_05_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this proof depends on the corollary statement and the cited lemma."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependencies on the corollary statement and cited lemma, and dependencies/external.json records the finite-field Frobenius identities used in this proof."
   },
   "Chapter1/01_06_Definition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; equivalence of absolute values depends directly on Definition 1.2."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on Definition 1.2, and this equivalence definition adds no distinct external prerequisite beyond the real-valued absolute-value framework."
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this section-transition discussion depends on the preceding equivalence definition."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the preceding equivalence definition, and dependencies/external.json records the needed background on the usual absolute value on Q, its relation to R, and p-adic completions."
   },
   "Chapter1/01_07_Definition": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; the p-adic setup depends on the preceding discussion of factorizations on Q."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the preceding discussion of factorizations on Q, and dependencies/external.json records the factorization and p-adic valuation facts this definition assumes."
   },
   "Chapter1/01_08_Theorem": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; Ostrowski's theorem depends directly on equivalence of absolute values and the p-adic absolute value."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependencies on equivalence of absolute values and the p-adic absolute value, and dependencies/external.json records Ostrowski's theorem as an externally sourced classification result in this slice."
   },
   "Chapter1/01_08_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this proof placeholder depends on the theorem statement."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the theorem statement, and dependencies/external.json records the outside classification result used by the deferred proof."
   },
   "Chapter1/01_09_Theorem": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; the product formula depends directly on the p-adic absolute-value definition."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependency on the p-adic absolute-value definition, and dependencies/external.json records the product-formula background from unique factorization on Q."
   },
   "Chapter1/01_09_Proof": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this proof placeholder depends on the theorem statement and the p-adic absolute-value definition."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the direct dependencies on the theorem statement and the p-adic absolute-value definition, and dependencies/external.json records the finitely supported-place argument assumed by the deferred proof."
   },
   "Chapter1/01_09a_Discussion": {
-    "status": "internal_dependencies_mapped",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#51",
-    "notes": "Stages 1.7 and 2.1 complete for the opening batch; this section heading keeps the immediate-predecessor dependency."
+    "issue": "#50",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the immediate-predecessor dependency, and this section heading introduces no new external prerequisite beyond the completed opening analysis."
   },
   "Chapter1/01_10_Definition": {
     "status": "extracted",
