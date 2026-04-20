@@ -136,6 +136,154 @@
         "IsDiscreteValuationRing"
       ],
       "notes": "Mathlib already has the main valuation and discrete-valuation-ring abstractions needed for the next section, but this heading itself carries no standalone theorem."
+    },
+    "Chapter1/01_10_Definition": {
+      "coverage": "partial",
+      "declarations": [
+        "Valuation",
+        "AddValuation",
+        "Valuation.valuationSubring",
+        "IsDiscreteValuationRing"
+      ],
+      "notes": "Mathlib has bundled multiplicative and additive valuations, valuation subrings, and the DVR predicate. The lecture's exact package of an additive valuation into `R \u222a {\u221e}`, its rescaling-to-`Z` discussion, and the derived absolute value `c^v` are not presented verbatim as one declaration."
+    },
+    "Chapter1/01_10a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "ValuationSubring.valuation_le_one_iff",
+        "ValuationSubring.valuation_eq_one_iff",
+        "ValuationSubring.valuation_lt_one_iff"
+      ],
+      "notes": "The main valuation-ring facts about membership, units, and maximal-ideal elements are already packaged for `ValuationSubring`. The surrounding discussion that identifies the fraction field and partitions all elements by sign of the valuation still needs local exposition glue."
+    },
+    "Chapter1/01_11_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "ValuationRing"
+      ],
+      "notes": "Mathlib's `ValuationRing` predicate matches the defining property that for every element of the fraction field, either it or its inverse lies in the ring."
+    },
+    "Chapter1/01_11a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "IsDiscreteValuationRing.exists_irreducible",
+        "IsDiscreteValuationRing.irreducible_iff_uniformizer",
+        "IsDiscreteValuationRing.not_isField"
+      ],
+      "notes": "Mathlib exposes uniformizer existence and the characterization of uniformizers via irreducibility inside a DVR. The fuller textbook discussion about unique `u * \u03c0^n` factorization, every nonzero ideal being `(\u03c0^n)`, and the total ordering of ideals is only partially packaged at this level."
+    },
+    "Chapter1/01_12_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsLocalRing",
+        "IsLocalRing.maximalIdeal"
+      ],
+      "notes": "The lecture's definition of a local ring is exactly Mathlib's `IsLocalRing`, with the unique maximal ideal available as `IsLocalRing.maximalIdeal`."
+    },
+    "Chapter1/01_13_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsLocalRing.ResidueField",
+        "IsLocalRing.residue"
+      ],
+      "notes": "Mathlib defines the residue field of a local ring and its quotient map exactly in the form used here."
+    },
+    "Chapter1/01_13a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "ValuationSubring.valuation",
+        "Valuation.isEquiv_valuation_valuationSubring",
+        "ValuationSubring.valuationSubring_valuation",
+        "ValuationSubring.integer_valuation"
+      ],
+      "notes": "Mathlib has the valuation-subring correspondence in both directions and shows that passing from a valuation to its valuation subring and back recovers an equivalent valuation. The lecture's specific reconstruction from powers of the maximal ideal and its uniqueness proof for DVRs are not bundled exactly as stated."
+    },
+    "Chapter1/01_14_Example": {
+      "coverage": "partial",
+      "declarations": [
+        "Localization.AtPrime",
+        "Localization.AtPrime.map_eq_maximalIdeal",
+        "Ideal.bijective_algebraMap_quotient_residueField"
+      ],
+      "notes": "Mathlib has the general localization-at-a-prime construction, identifies the image of the prime as the maximal ideal, and compares quotient and residue fields. The concrete notation `Z_(p)` and the explicit identification with `F_p` still need item-specific specialization."
+    },
+    "Chapter1/01_15_Example": {
+      "coverage": "partial",
+      "declarations": [
+        "LaurentSeries",
+        "PowerSeries",
+        "PowerSeries.order",
+        "PowerSeries.residueFieldOfPowerSeries"
+      ],
+      "notes": "Mathlib already has Laurent series, power series, the order function on power series, and the residue-field identification for `k[[X]]`. The lecture's exact valuation on `k((t))` and its extension to order of vanishing at arbitrary `\u03b1` are not exposed as one ready-made theorem."
+    },
+    "Chapter1/01_15a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "IsNoetherianRing",
+        "IsPrincipalIdealRing",
+        "IsLocalRing",
+        "ringKrullDim",
+        "IsRegularLocalRing",
+        "IsIntegrallyClosed"
+      ],
+      "notes": "Mathlib has predicates for the structural properties listed in the survey of DVRs: noetherian, PID, local, dimension, regular local, and integrally closed. The textbook's prose about DVRs being \"maximal\" among subrings of their fraction field is not packaged as a single standard declaration."
+    },
+    "Chapter1/01_16_Theorem": {
+      "coverage": "partial",
+      "declarations": [
+        "IsDiscreteValuationRing.TFAE",
+        "ValuationRing",
+        "IsIntegrallyClosed",
+        "IsRegularLocalRing",
+        "ringKrullDim"
+      ],
+      "notes": "Mathlib already proves a substantial TFAE for DVRs, covering the local-PID viewpoint together with valuation-ring, integrally-closed, cotangent-space, and maximal-ideal-power formulations. The lecture's exact seven-bullet theorem is close but not verbatim identical, so downstream formalization will still need some statement-bridging."
+    },
+    "Chapter1/01_16_Proof": {
+      "coverage": "partial",
+      "declarations": [
+        "IsDiscreteValuationRing.TFAE"
+      ],
+      "notes": "The book defers the proof externally, but Mathlib already contains an internal TFAE proof for many equivalent DVR characterizations. Because the list of equivalences is not word-for-word the same as the lecture, the proof obligation is largely bridged rather than eliminated outright."
+    },
+    "Chapter1/01_16a_Discussion": {
+      "coverage": "gap",
+      "declarations": [],
+      "notes": "This is only a section-transition remark introducing integral extensions; it does not carry a standalone mathematical API target."
+    },
+    "Chapter1/01_17_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsIntegral"
+      ],
+      "notes": "The lecture's definition of an element being integral over a subring is exactly Mathlib's predicate `IsIntegral`."
+    },
+    "Chapter1/01_18_Proposition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsIntegral.add",
+        "IsIntegral.mul"
+      ],
+      "notes": "Mathlib already proves exactly that sums and products of integral elements remain integral."
+    },
+    "Chapter1/01_18_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "IsIntegral.add",
+        "IsIntegral.mul",
+        "Polynomial.isIntegral_iff_isIntegral_coeff",
+        "IsIntegral.of_aeval_monic_of_isIntegral_coeff"
+      ],
+      "notes": "The abstract closure lemmas `IsIntegral.add` and `IsIntegral.mul` already discharge the claim. The supporting polynomial-integrality lemmas in Mathlib explain how the library avoids the textbook's explicit algebraic-closure and symmetric-polynomial argument."
+    },
+    "Chapter1/01_19_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "integralClosure",
+        "IsIntegrallyClosed"
+      ],
+      "notes": "Mathlib has both the bundled integral closure `integralClosure R A` and the predicate `IsIntegrallyClosed`, matching the lecture's definition directly."
     }
   },
   "external_dependencies": [
