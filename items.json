@@ -184,8 +184,35 @@
     "type": "discussion",
     "title": "Uniformizers, ideals in DVRs, and uniqueness of the induced valuation",
     "start_page": "3",
-    "end_page": "4",
+    "end_page": "3",
     "start_line": 33,
+    "end_line": 53
+  },
+  {
+    "id": "Chapter1/01_12_Definition",
+    "type": "definition",
+    "title": "Local ring",
+    "start_page": "4",
+    "end_page": "4",
+    "start_line": 1,
+    "end_line": 2
+  },
+  {
+    "id": "Chapter1/01_13_Definition",
+    "type": "definition",
+    "title": "Residue field",
+    "start_page": "4",
+    "end_page": "4",
+    "start_line": 3,
+    "end_line": 4
+  },
+  {
+    "id": "Chapter1/01_13a_Discussion",
+    "type": "discussion",
+    "title": "Recovering the valuation from a DVR",
+    "start_page": "4",
+    "end_page": "4",
+    "start_line": 5,
     "end_line": 8
   },
   {

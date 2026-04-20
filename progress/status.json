@@ -27,7 +27,7 @@
     "status": "structured",
     "last_updated": "2026-04-20",
     "issue": "#38",
-    "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 4 completes the page 3 valuation discussion, then covers Examples 1.14-1.15 and the start of the Section 1.5 discussion that continues onto page 5."
+    "notes": "Stage 1.5 validation under issue #36 is preserved, and Stage 1.6 structure analysis under issue #38 assigns every line on logical pages 1 through 7 to ordered items in items.json; page 4 completes the page 3 valuation discussion, then covers Definitions 1.12-1.13, a discussion blob on recovering the valuation, Examples 1.14-1.15, and the start of the Section 1.5 discussion that continues onto page 5."
   },
   "pages/6.md": {
     "status": "structured",
