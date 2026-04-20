@@ -144,106 +144,106 @@
     "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the immediate-predecessor dependency, and this section heading introduces no new external prerequisite beyond the completed opening analysis."
   },
   "Chapter1/01_10_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on the preceding section heading, and dependencies/external.json records the valuation-theory and commutative-algebra background assumed by the valuation and DVR definitions."
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the local predecessor chain, and dependencies/external.json records the unstated valuation-ring facts about units, fraction fields, and locality used in this discussion."
   },
   "Chapter1/01_11_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on the preceding valuation-ring discussion, and this abstract valuation-ring definition adds no external prerequisite beyond the commutative-algebra background already logged in dependencies/external.json."
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Definition 1.11, and dependencies/external.json records the standard discrete-valuation facts about uniformizers, principal ideals, and the unique maximal ideal used without proof."
   },
   "Chapter1/01_12_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on the preceding DVR discussion, and the local-ring definition relies only on standard commutative-ring terminology recorded in dependencies/external.json."
   },
   "Chapter1/01_13_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Definition 1.12, and the residue-field definition adds no extra external prerequisite beyond the local-ring background logged in dependencies/external.json."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the local predecessor chain, and dependencies/external.json records the standard reconstruction of the discrete valuation from the powers of the maximal ideal in a DVR."
   },
   "Chapter1/01_14_Example": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 example blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on the preceding discussion, and dependencies/external.json records the localization and finite-field background behind the example Z_(p) and its residue field F_p."
   },
   "Chapter1/01_15_Example": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 example blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Example 1.14, and dependencies/external.json records the Laurent-series and order-of-vanishing background assumed by this example."
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the local predecessor chain, and dependencies/external.json records the commutative-algebra vocabulary for noetherian, PID, dimension, regularity, normality, and maximality used to summarize DVR properties."
   },
   "Chapter1/01_16_Theorem": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 theorem blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on the preceding DVR-properties discussion, and dependencies/external.json records the cited external classification theorem for DVRs from references [1, §23] and [2, §9]."
   },
   "Chapter1/01_16_Proof": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 proof blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Theorem 1.16, and dependencies/external.json records that the deferred proof is wholly outsourced to the cited references."
   },
   "Chapter1/01_16a_Discussion": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the immediate-predecessor dependency, and this section transition note introduces no distinct external prerequisite beyond the completed middle-batch analysis."
   },
   "Chapter1/01_17_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on the integral-extensions section heading, and dependencies/external.json records the standard ring-extension and monic-polynomial background assumed by the definition of integral elements."
   },
   "Chapter1/01_18_Proposition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 proposition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Definition 1.17, and dependencies/external.json records the algebraic-closure and symmetric-polynomial background used to justify closure of integral elements under addition and multiplication."
   },
   "Chapter1/01_18_Proof": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 proof blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependencies on Proposition 1.18 and Definition 1.17, and dependencies/external.json records the standard elimination argument via roots in an algebraic closure and symmetric polynomials."
   },
   "Chapter1/01_19_Definition": {
-    "status": "extracted",
+    "status": "external_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#54",
+    "notes": "Stages 1.7, 2.1, and 2.2 complete for the middle batch; dependencies/internal.json keeps the direct dependency on Proposition 1.18, and dependencies/external.json records the normalization and integrally-closed-domain background assumed by this definition."
   },
   "Chapter1/01_20_Proposition": {
     "status": "extracted",
