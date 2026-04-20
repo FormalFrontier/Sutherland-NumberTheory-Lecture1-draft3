@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: FormalFrontier contributors
 -/
 import Mathlib
+import SutherlandNumberTheoryLecture1.Chapter1.«01_00_Introduction»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_03_Example»
 
