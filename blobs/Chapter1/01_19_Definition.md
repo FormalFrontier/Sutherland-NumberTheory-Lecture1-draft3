@@ -1,0 +1,2 @@
+**Definition 1.19.** Given a ring extension $B/A$, the ring $\widetilde{A} = \{b \in B : b \text{ is integral over } A\}$ is the *integral closure of $A$ in $B$*. When $\widetilde{A} = A$ we say that $A$ is *integrally closed in $B$*. For a domain $A$, its *integral closure* (or *normalization*) is its integral closure in its fraction field, and $A$ is *integrally closed* (or *normal*) if it is integrally closed in its fraction field.
+
