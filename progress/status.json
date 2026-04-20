@@ -24,10 +24,10 @@
     "notes": "Stage 1.4 transcription completed using prior-page context from open PR #21 for page 4."
   },
   "pages/4.md": {
-    "status": "transcribed",
+    "status": "validated",
     "last_updated": "2026-04-20",
-    "issue": "#13",
-    "notes": "Stage 1.4 transcription completed for logical page 4, including the transition into Section 1.5 on discrete valuation rings."
+    "issue": "#36",
+    "notes": "Stage 1.5 validation against pdf/pages/4.pdf confirmed the transcription is faithful as written, including the page 3 continuation and Section 1.5 transition; pages 1 through 4 are now ready for Stage 1.6 structure analysis of the opening batch."
   },
   "pages/6.md": {
     "status": "transcribed",
