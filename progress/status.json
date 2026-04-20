@@ -246,111 +246,111 @@
     "notes": "Stages 1.7 through 2.4 are complete for the middle batch; research/external-sources.json points to MIT Lecture 1 and the Stacks finite-and-integral-extensions section as the main references for integral closure and normalization."
   },
   "Chapter1/01_20_Proposition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_20_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_21_Corollary": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_21_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_22_Proposition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_22_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_23_Corollary": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_23_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_24_Example": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_24a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_25_Proposition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_25_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_26_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_27_Remark": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_28_Proposition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_28_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_29_Example": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   },
   "Chapter1/01_29a_Bibliography": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#77",
-    "notes": "Stages 1.7 through 2.3 are complete for the tail batch; research/mathlib-coverage.json now records the verified Mathlib declarations, coverage level, and remaining mismatches for this item, while Stage 2.4 external-source research is still pending for the same slice."
+    "issue": "#78",
+    "notes": "Stages 1.7 through 2.4 are complete for the tail batch; research/external-sources.json now records the verified package inventory check, prose references, and downstream formalization leads for this item alongside the existing Mathlib coverage notes."
   }
 }

@@ -2,7 +2,7 @@
   "package_inventory": {
     "non_mathlib_requirements": [],
     "external_lean_libraries": [],
-    "notes": "lakefile.toml declares only mathlib, so there is no non-Mathlib package inventory to record for the completed Chapter 1 research batches so far."
+    "notes": "lakefile.toml declares only mathlib, so there is no non-Mathlib package inventory to record for the Chapter 1 external-source research completed so far."
   },
   "sources": [
     {
@@ -252,6 +252,115 @@
       "formalization_leads": [
         "Use Lemmas 10.36.4-10.36.7 as the cleanest replacement for the lecture's algebraic-closure argument when formalizing closure of integral elements under addition and multiplication.",
         "Definition 10.36.9 is the exact prose model for the integral-closure definition in 1.19, and Lemma 10.36.11 is the natural next source once localization of integral closure becomes relevant."
+      ]
+    },
+    {
+      "id": "mit_18_785_2021_lecture1_integrality_tail",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Lecture #1: Absolute values and discrete valuations (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes1.pdf",
+      "supports": [
+        "Chapter1/01_20_Proposition",
+        "Chapter1/01_20_Proof",
+        "Chapter1/01_21_Corollary",
+        "Chapter1/01_21_Proof",
+        "Chapter1/01_22_Proposition",
+        "Chapter1/01_22_Proof",
+        "Chapter1/01_23_Corollary",
+        "Chapter1/01_23_Proof",
+        "Chapter1/01_24_Example",
+        "Chapter1/01_24a_Discussion",
+        "Chapter1/01_25_Proposition",
+        "Chapter1/01_25_Proof",
+        "Chapter1/01_26_Definition",
+        "Chapter1/01_27_Remark",
+        "Chapter1/01_28_Proposition",
+        "Chapter1/01_28_Proof",
+        "Chapter1/01_29_Example",
+        "Chapter1/01_29a_Bibliography"
+      ],
+      "reason": "These notes are the exact prose source for the tail batch: they contain the same sequence of results on transitivity of integrality, integrally closed rings, valuation rings, number fields, rings of integers, and the two quadratic examples.",
+      "formalization_leads": [
+        "Use this as the canonical statement-level reference when Stage 3 formalizes the tail batch, especially for the valuation-ring proof and the explicit quadratic witnesses (1 + sqrt(5)) / 2 and (1 + sqrt(7)) / 2.",
+        "The notes also identify which arguments are meant to be textbook citations rather than in-lecture proofs, which helps distinguish proof scaffolding from external dependencies."
+      ]
+    },
+    {
+      "id": "altman_kleiman_term_comm_alg_integrality",
+      "kind": "book",
+      "citation": "Allen Altman and Steven Kleiman, A Term of Commutative Algebra, Worldwide Center of Mathematics, 2013.",
+      "url": "https://www.mi.fu-berlin.de/en/math/groups/arithmetic_geometry/teaching/exercises/Altman_-Kleiman---A-term-of-commutative-algebra-_2017_.pdf",
+      "supports": [
+        "Chapter1/01_20_Proposition",
+        "Chapter1/01_20_Proof",
+        "Chapter1/01_21_Corollary",
+        "Chapter1/01_21_Proof",
+        "Chapter1/01_29a_Bibliography"
+      ],
+      "reason": "The book is cited explicitly in Proposition 1.20, and its integral-dependence chapter is the direct external source for transitivity of integrality in towers and the resulting integrally-closed corollary.",
+      "formalization_leads": [
+        "Use the proof strategy behind Theorem 10.27 when a downstream formalization needs an unbundled tower argument rather than invoking Mathlib's ready-made `isIntegral_trans` lemma.",
+        "This source is also the most natural prose backup for showing that the integral closure of A in B is already integrally closed in B."
+      ]
+    },
+    {
+      "id": "atiyah_macdonald_intro_comm_alg_ch5",
+      "kind": "book",
+      "citation": "Michael F. Atiyah and Ian G. Macdonald, Introduction to Commutative Algebra, Addison-Wesley, 1969.",
+      "url": "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/AtiyahMacDonald.pdf",
+      "supports": [
+        "Chapter1/01_20_Proposition",
+        "Chapter1/01_20_Proof",
+        "Chapter1/01_21_Corollary",
+        "Chapter1/01_21_Proof",
+        "Chapter1/01_22_Proposition",
+        "Chapter1/01_22_Proof",
+        "Chapter1/01_23_Corollary",
+        "Chapter1/01_23_Proof",
+        "Chapter1/01_25_Proposition",
+        "Chapter1/01_25_Proof",
+        "Chapter1/01_28_Proposition",
+        "Chapter1/01_28_Proof",
+        "Chapter1/01_29a_Bibliography"
+      ],
+      "reason": "Chapter 5 is the lecture's other explicit citation for Proposition 1.20, and it also collects the surrounding commutative-algebra background on integral dependence, integrally closed domains, valuations, and minimal-polynomial arguments used across the tail batch.",
+      "formalization_leads": [
+        "Use Corollary 5.4 as the prose source for transitivity of integrality and the associated closure argument in Corollary 1.21.",
+        "Its Chapter 5 discussion is also a compact reference for the rational-root style proof that UFDs are integrally closed and for the integrally-closed/minimal-polynomial criterion behind Proposition 1.28."
+      ]
+    },
+    {
+      "id": "mit_18_783_2025_lecture12_orders",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.783 Elliptic Curves, Lecture #12 (MIT, Fall 2025).",
+      "url": "https://math.mit.edu/classes/18.783/2025/LectureNotes12.pdf",
+      "supports": [
+        "Chapter1/01_26_Definition",
+        "Chapter1/01_27_Remark"
+      ],
+      "reason": "These notes give a clean standalone treatment of orders in finite-dimensional Q-algebras and prove that the ring of integers O_K is the unique maximal order, which is exactly the background compressed into Remark 1.27.",
+      "formalization_leads": [
+        "Use the lattice-based proof that every element of an order is integral to justify the remark that every order sits inside O_K.",
+        "This is the best source in the current search pass for later Stage 3 work on the order/maximal-order language that Mathlib only partially packages."
+      ]
+    },
+    {
+      "id": "serre_local_fields_tail",
+      "kind": "book",
+      "citation": "Jean-Pierre Serre, Local Fields, Springer, 1979.",
+      "url": "https://link.springer.com/book/10.1007/978-1-4757-5673-9",
+      "supports": [
+        "Chapter1/01_24a_Discussion",
+        "Chapter1/01_25_Proposition",
+        "Chapter1/01_25_Proof",
+        "Chapter1/01_26_Definition",
+        "Chapter1/01_27_Remark",
+        "Chapter1/01_29a_Bibliography"
+      ],
+      "reason": "The lecture bibliography names Serre as the durable background text for the local and valuation-theoretic material surrounding valuation rings and rings of integers, even when the lecture itself gives only a short proof sketch.",
+      "formalization_leads": [
+        "Use it as the long-form background source for valuation-ring terminology and for the local-field perspective implicit in the discussion after Example 1.24.",
+        "It also provides a book-level reference for the notation O_K and the arithmetic role of rings of integers once formalization moves beyond the lecture's introductory examples."
       ]
     }
   ]
