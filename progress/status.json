@@ -11,6 +11,12 @@
     "issue": "#11",
     "notes": "Stage 1.4 transcription completed on top of the page 1 transcription branch to preserve sequential context."
   },
+  "pages/3.md": {
+    "status": "transcribed",
+    "last_updated": "2026-04-20",
+    "issue": "#12",
+    "notes": "Stage 1.4 transcription completed using page 2 PR context for notation continuity."
+  },
   "pages/6.md": {
     "status": "transcribed",
     "last_updated": "2026-04-20",
