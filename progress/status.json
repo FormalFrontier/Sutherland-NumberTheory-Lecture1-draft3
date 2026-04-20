@@ -96,10 +96,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_05_Proof.refs.md, centering `FiniteField.pow_card` and the small follow-up lemmas needed to complete the finite-field argument."
   },
   "Chapter1/01_06_Definition": {
-    "status": "references_attached",
+    "status": "scaffolded",
     "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_06_Definition.refs.md, pointing directly to `AbsoluteValue.IsEquiv` and the matching lecture/Serre references."
+    "issue": "#100",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean by recalling `AbsoluteValue.IsEquiv` as the core notion of equivalent absolute values and adding `isEquiv_iff_exists_forall_rpow_eq` to match the lecture's `|x|' = |x|^α` formulation."
   },
   "Chapter1/01_06a_Discussion": {
     "status": "references_attached",
