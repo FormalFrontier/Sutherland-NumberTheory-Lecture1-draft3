@@ -144,106 +144,106 @@
     "notes": "Stages 1.7, 2.1, and 2.2 complete for the opening batch; dependencies/internal.json keeps the immediate-predecessor dependency, and this section heading introduces no new external prerequisite beyond the completed opening analysis."
   },
   "Chapter1/01_10_Definition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_11_Definition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_12_Definition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_13_Definition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_14_Example": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 example blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_15_Example": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 example blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_16_Theorem": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 theorem blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_16_Proof": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 proof blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_16a_Discussion": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 discussion blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_17_Definition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_18_Proposition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 proposition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_18_Proof": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 proof blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_19_Definition": {
-    "status": "extracted",
+    "status": "internal_dependencies_mapped",
     "last_updated": "2026-04-20",
-    "issue": "#43",
-    "notes": "Stage 1.7 blob extraction created this Chapter 1 definition blob from the structured page corpus."
+    "issue": "#55",
+    "notes": "Stage 2.1 internal dependency analysis mapped the direct prerequisite for the middle Chapter 1 valuation-definition batch."
   },
   "Chapter1/01_20_Proposition": {
     "status": "extracted",
