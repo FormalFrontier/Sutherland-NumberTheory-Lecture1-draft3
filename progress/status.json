@@ -42,106 +42,106 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/mathlib-coverage.json captures the Mathlib side and research/external-sources.json records the MIT notes/problem sets and Serre references that support later formalization of the global-field introduction."
   },
   "Chapter1/01_01_Remark": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json notes that this ambient convention travels with the opening MIT lecture notes rather than needing a separate external library."
   },
   "Chapter1/01_01a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json points back to the same MIT lecture notes that supply the bibliographic and section-transition context for the absolute-value material."
   },
   "Chapter1/01_02_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records the exact matching MIT lecture notes and Serre's Local Fields as the main prose references for the absolute-value definition."
   },
   "Chapter1/01_03_Example": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json keeps the opening MIT lecture notes as the source-level reference for the trivial absolute-value example."
   },
   "Chapter1/01_04_Lemma": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json identifies MIT Problem Set 1 as the primary proof source for the nonarchimedean criterion, with Lecture 1 and Serre supplying the surrounding statement context."
   },
   "Chapter1/01_04_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records the exact external proof lead for this deferred proof in MIT Problem Set 1."
   },
   "Chapter1/01_05_Corollary": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json ties the positive-characteristic and finite-field argument to the opening MIT lecture notes and Serre reference, while Mathlib coverage remains partial."
   },
   "Chapter1/01_05_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json points to the opening MIT lecture notes and Serre for the finite-field absolute-value argument that complements the existing Mathlib Frobenius facts."
   },
   "Chapter1/01_06_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records the opening MIT lecture notes and Serre as the main references for equivalence of absolute values."
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records MIT Lectures 9 and 13 as the best course-level references for the completion/local-field discussion that extends beyond current Mathlib packaging."
   },
   "Chapter1/01_07_Definition": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records the opening MIT lecture notes and Serre as the prose references for the p-adic valuation convention layered on top of the existing Mathlib APIs."
   },
   "Chapter1/01_08_Theorem": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records MIT Problem Set 1, MIT Lecture 13, and Serre as the main external references for Ostrowski's theorem, even though Mathlib already covers the theorem exactly."
   },
   "Chapter1/01_08_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records the same problem-set and book references that justify the lecture's deferred proof, providing backup prose even though Mathlib already has the result."
   },
   "Chapter1/01_09_Theorem": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json identifies MIT Problem Set 1 as the primary proof source for the rational product formula, with MIT Lecture 13 providing the later global-field normalization."
   },
   "Chapter1/01_09_Proof": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records the exact external proof leads for this deferred product-formula proof in MIT Problem Set 1 and the later global-field lecture notes."
   },
   "Chapter1/01_09a_Discussion": {
-    "status": "mathlib_coverage_researched",
+    "status": "external_sources_researched",
     "last_updated": "2026-04-20",
-    "issue": "#61",
-    "notes": "Stages 1.7 through 2.3 are complete for the opening batch; research/mathlib-coverage.json records the strongest Mathlib declarations and remaining gaps for this item."
+    "issue": "#69",
+    "notes": "Stages 1.7 through 2.4 are complete for the opening batch; research/external-sources.json records MIT Lectures 9 and 13 as the best continuation references for the valuation and place language that follows the opening batch."
   },
   "Chapter1/01_10_Definition": {
     "status": "external_dependencies_mapped",

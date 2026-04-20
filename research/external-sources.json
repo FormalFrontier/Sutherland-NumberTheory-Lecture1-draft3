@@ -1,0 +1,119 @@
+{
+  "package_inventory": {
+    "non_mathlib_requirements": [],
+    "external_lean_libraries": [],
+    "notes": "lakefile.toml declares only mathlib, so there is no non-Mathlib package inventory to record for the opening Chapter 1 batch."
+  },
+  "sources": [
+    {
+      "id": "mit_18_785_2021_lecture1",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Lecture #1: Absolute values and discrete valuations (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes1.pdf",
+      "supports": [
+        "Chapter1/01_00_Introduction",
+        "Chapter1/01_01_Remark",
+        "Chapter1/01_01a_Discussion",
+        "Chapter1/01_02_Definition",
+        "Chapter1/01_03_Example",
+        "Chapter1/01_04_Lemma",
+        "Chapter1/01_04_Proof",
+        "Chapter1/01_05_Corollary",
+        "Chapter1/01_05_Proof",
+        "Chapter1/01_06_Definition",
+        "Chapter1/01_06a_Discussion",
+        "Chapter1/01_07_Definition",
+        "Chapter1/01_08_Theorem",
+        "Chapter1/01_08_Proof",
+        "Chapter1/01_09_Theorem",
+        "Chapter1/01_09_Proof",
+        "Chapter1/01_09a_Discussion"
+      ],
+      "reason": "This is the closest statement-level match to the opening-batch blobs: it contains the introduction, the absolute-value definitions, the nonarchimedean criterion, the p-adic definition, Ostrowski's theorem, and the product formula in essentially the same form as the transcribed lecture.",
+      "formalization_leads": [
+        "Use this as the canonical prose reference when Stage 3 formalization needs the exact wording or surrounding context of the opening batch.",
+        "It confirms that Lemma 1.4, Theorem 1.8, and Theorem 1.9 are intentionally deferred to Problem Set 1 rather than proved in the lecture notes."
+      ]
+    },
+    {
+      "id": "mit_18_785_2021_problem_set1",
+      "kind": "problem_set",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Problem Set #1 (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/ProblemSet1.pdf",
+      "supports": [
+        "Chapter1/01_04_Lemma",
+        "Chapter1/01_04_Proof",
+        "Chapter1/01_08_Theorem",
+        "Chapter1/01_08_Proof",
+        "Chapter1/01_09_Theorem",
+        "Chapter1/01_09_Proof"
+      ],
+      "reason": "This source contains the exact proof obligations omitted from the lecture: the nonarchimedean characterization in Lemma 1.4, Ostrowski's theorem on Q, and the product formula on Q.",
+      "formalization_leads": [
+        "Treat it as the primary natural-language proof source for the current Mathlib gaps around Lemma 1.4 and the product formula on Q.",
+        "Its parallel F_q(t) exercises are useful for keeping the lecture's number-field and function-field analogies aligned in later formalization."
+      ]
+    },
+    {
+      "id": "mit_18_785_2021_lecture9",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Lecture #9: Local fields and Hensel's lemmas (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes9.pdf",
+      "supports": [
+        "Chapter1/01_00_Introduction",
+        "Chapter1/01_06a_Discussion",
+        "Chapter1/01_09a_Discussion"
+      ],
+      "reason": "The introduction frames local fields as completions of global fields, and these later notes supply that completion-to-local-field background in the same course vocabulary.",
+      "formalization_leads": [
+        "Use it when later blobs need the precise local-field facts alluded to in the introduction's discussion of R and Q_p.",
+        "It gives the natural follow-on source for completion and valuation-ring language that reappears after the opening batch."
+      ]
+    },
+    {
+      "id": "mit_18_785_2021_lecture13",
+      "kind": "course_notes",
+      "citation": "Andrew V. Sutherland, 18.785 Number Theory I, Lecture #13: Global fields and the product formula (MIT, Fall 2021).",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes13.pdf",
+      "supports": [
+        "Chapter1/01_00_Introduction",
+        "Chapter1/01_06a_Discussion",
+        "Chapter1/01_08_Theorem",
+        "Chapter1/01_08_Proof",
+        "Chapter1/01_09_Theorem",
+        "Chapter1/01_09_Proof",
+        "Chapter1/01_09a_Discussion"
+      ],
+      "reason": "These notes revisit the same place/completion language from the opening lecture and then package the product formula in the broader global-field setting, which is useful once the local Q result is formalized.",
+      "formalization_leads": [
+        "Use it to normalize terminology around places, completions, and finite versus infinite places before writing later reference blobs.",
+        "It provides the clearest course-internal bridge from the opening-batch Q statements to the later global-field product-formula formalization."
+      ]
+    },
+    {
+      "id": "serre_local_fields",
+      "kind": "book",
+      "citation": "Jean-Pierre Serre, Local Fields, Springer, 1979.",
+      "url": "https://link.springer.com/book/10.1007/978-1-4757-5673-9",
+      "supports": [
+        "Chapter1/01_02_Definition",
+        "Chapter1/01_04_Lemma",
+        "Chapter1/01_04_Proof",
+        "Chapter1/01_05_Corollary",
+        "Chapter1/01_05_Proof",
+        "Chapter1/01_06_Definition",
+        "Chapter1/01_06a_Discussion",
+        "Chapter1/01_07_Definition",
+        "Chapter1/01_08_Theorem",
+        "Chapter1/01_08_Proof",
+        "Chapter1/01_09_Theorem",
+        "Chapter1/01_09_Proof"
+      ],
+      "reason": "The lecture explicitly cites Serre as a reference for much of Section 1.2, so this is the natural book-level source for the absolute-value background, p-adic constructions, and surrounding local-field context.",
+      "formalization_leads": [
+        "Use it when later stages need a durable book reference rather than course-specific notes for the opening-batch absolute-value material.",
+        "It is the best source in the lecture bibliography for filling in background that the lecture states but does not prove."
+      ]
+    }
+  ]
+}
