@@ -460,9 +460,33 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_29_Example.refs.md, preserving the `(1 + sqrt 7) / 2` computation as custom arithmetic on top of Proposition 1.28's minimal-polynomial criterion."
   },
   "Chapter1/01_29a_Bibliography": {
-    "status": "references_attached",
+    "status": "non_formalizable",
     "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_29a_Bibliography.refs.md, preserving the lecture bibliography as metadata and linking the cited sources used across the tail batch."
+    "issue": "#154",
+    "notes": "Stage 3.1 audited blobs/Chapter1/01_29a_Bibliography.md claim-by-claim and confirmed that it is citation metadata only, with no standalone mathematical declaration to scaffold.",
+    "reason": "Enumerated candidate claims reviewed in Stage 3.1: (1) Altman and Kleiman's A term of commutative algebra is a cited reference; excluded because bibliographic entries identify sources rather than assert mathematics inside the lecture formalization. (2) Atiyah and Macdonald's Introduction to commutative algebra is a cited reference; excluded for the same reason. (3) Serre's Local fields is a cited reference; excluded for the same reason.",
+    "stage3_1_decision": {
+      "decision": "non_formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Allen Altman and Steven Kleiman, A term of commutative algebra, Worldwide Center of Mathematics, 2013.",
+          "classification": "excluded",
+          "reason": "Bibliographic metadata only, not a mathematical statement to encode in Lean."
+        },
+        {
+          "n": 2,
+          "text": "Michael Atiyah and Ian MacDonald, Introduction to commutative algebra, Addison-Wesley, 1969.",
+          "classification": "excluded",
+          "reason": "Bibliographic metadata only, not a mathematical statement to encode in Lean."
+        },
+        {
+          "n": 3,
+          "text": "Jean-Pierre Serre, Local fields, Springer, 1979.",
+          "classification": "excluded",
+          "reason": "Bibliographic metadata only, not a mathematical statement to encode in Lean."
+        }
+      ]
+    }
   }
 }
