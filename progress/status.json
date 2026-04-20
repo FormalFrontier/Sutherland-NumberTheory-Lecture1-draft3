@@ -256,10 +256,10 @@
     }
   },
   "Chapter1/01_10_Definition": {
-    "status": "references_attached",
+    "status": "scaffolded",
     "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_10_Definition.refs.md, linking the valuation and DVR definitions to `Valuation`, `AddValuation`, `Valuation.valuationSubring`, and the main course/reference sources."
+    "issue": "#134",
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_10_Definition.lean` by identifying the lecture's valuation with `AddValuation k (WithTop ℝ)`, recording the normalized discrete-value-group predicate on units, exposing `derivedAbsoluteValue`, and reusing `valuationSubring` plus `IsDiscreteValuationRing` for the valuation-ring/DVR clauses."
   },
   "Chapter1/01_10a_Discussion": {
     "status": "references_attached",
