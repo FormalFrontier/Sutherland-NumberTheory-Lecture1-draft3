@@ -18,4 +18,54 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: leanprover/lean-action@v1
-      - uses: leanprover-community/docgen-action@v1
+      - name: Build API docs
+        run: |
+          NAME="$(python3 - <<'PY'
+          import tomllib
+          with open("lakefile.toml", "rb") as f:
+              data = tomllib.load(f)
+          print(data["name"])
+          PY
+          )"
+          DOCS_FACETS="$(python3 - <<'PY'
+          import tomllib
+          with open("lakefile.toml", "rb") as f:
+              data = tomllib.load(f)
+          print(" ".join(f"{target}:docs" for target in data["defaultTargets"]))
+          PY
+          )"
+          HOMEPAGE=docs
+
+          mkdir -p docbuild
+
+          cat <<EOF > docbuild/lakefile.toml
+          name = "docbuild"
+          reservoir = false
+          version = "0.1.0"
+          packagesDir = "../.lake/packages"
+
+          [[require]]
+          name = "$NAME"
+          path = "../"
+
+          [[require]]
+          scope = "leanprover"
+          name = "doc-gen4"
+          rev = "$(< lean-toolchain cut -f 2 -d: )"
+          EOF
+
+          cd docbuild
+          MATHLIB_NO_CACHE_ON_UPDATE=1 ~/.elan/bin/lake update "$NAME"
+          ~/.elan/bin/lake build $DOCS_FACETS
+          cd ..
+
+          mkdir -p "$HOMEPAGE"
+          cp -r docbuild/.lake/build/doc "$HOMEPAGE/docs"
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref_name == github.event.repository.default_branch
+        uses: actions/deploy-pages@v4
