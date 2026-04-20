@@ -18,10 +18,10 @@
     "notes": "Stage 1.5 validation against pdf/pages/3.pdf restored the omitted running footer and otherwise confirmed the transcription is faithful; page 3 is validated, but downstream Stage 1.6 analysis should wait for page 4 context because items continue across the boundary."
   },
   "pages/5.md": {
-    "status": "transcribed",
+    "status": "validated",
     "last_updated": "2026-04-20",
     "issue": "#14",
-    "notes": "Stage 1.4 transcription completed using prior-page context from open PR #21 for page 4."
+    "notes": "Stage 1.4 transcription completed using prior-page context from open PR #21 for page 4. Stage 1.5 validation under issue #32 confirmed the page matches the source PDF."
   },
   "pages/4.md": {
     "status": "transcribed",
@@ -30,15 +30,15 @@
     "notes": "Stage 1.4 transcription completed for logical page 4, including the transition into Section 1.5 on discrete valuation rings."
   },
   "pages/6.md": {
-    "status": "transcribed",
+    "status": "validated",
     "last_updated": "2026-04-20",
     "issue": "#15",
-    "notes": "Stage 1.4 transcription completed using prior-page context recovered from open PR #22 for page 5."
+    "notes": "Stage 1.4 transcription completed using prior-page context recovered from open PR #22 for page 5. Stage 1.5 validation under issue #32 corrected the final displayed equation in Proposition 1.25 to match the source PDF."
   },
   "pages/7.md": {
-    "status": "transcribed",
+    "status": "validated",
     "last_updated": "2026-04-20",
     "issue": "#16",
-    "notes": "Stage 1.4 transcription completed using the established conventions and the open page 6 transcription PR for sequential context."
+    "notes": "Stage 1.4 transcription completed using the established conventions and the open page 6 transcription PR for sequential context. Stage 1.5 validation under issue #32 confirmed the page matches the source PDF."
   }
 }
