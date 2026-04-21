@@ -798,10 +798,43 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_15_Example.refs.md, pointing workers to the Laurent-series and power-series APIs already in Mathlib for the order-of-vanishing example."
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_15a_Discussion.refs.md, collecting the bundled predicates for the standard DVR properties and flagging the maximal-subring characterization as the least packaged part."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#279",
+    "notes": "Stage 3.1 scaffolding for issue #279 created `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean`, splitting the DVR survey prose into explicit declarations for the noetherian, PID, local, Krull-dimension-one, regular-local, and integrally-closed consequences together with alternative-characterization bridges from `IsDiscreteValuationRing.TFAE`. The fraction-field maximal-subalgebra clause is recorded as a theorem-level placeholder rather than as a definition-level gap.",
+    "stage3_1_decision": {
+      "decision": "formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every discrete valuation ring is noetherian, a principal ideal domain, local, regular, and integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_isNoetherianRing; dvr_isPrincipalIdealRing; dvr_isLocalRing; dvr_isRegularLocalRing; dvr_isIntegrallyClosed",
+          "reason": "These are direct structural consequences already exposed by Mathlib instances for `IsDiscreteValuationRing`."
+        },
+        {
+          "n": 2,
+          "text": "Every discrete valuation ring has Krull dimension one, equivalently cotangent-space dimension one over its residue field.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_ringKrullDim_eq_one; dvr_finrank_cotangentSpace_eq_one",
+          "reason": "The lecture's dimension statements map directly to Mathlib's Krull-dimension theorem for PIDs and the DVR cotangent-space criterion."
+        },
+        {
+          "n": 3,
+          "text": "In the noetherian local domain setting, being integrally closed with a unique nonzero prime ideal characterizes DVRs; likewise a regular local domain of dimension one is a DVR.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_prime; isDiscreteValuationRing_iff_finrank_cotangentSpace_eq_one; isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one",
+          "reason": "These are the bundled alternative-definition bridges referenced by the lecture's \"various combinations\" remark."
+        },
+        {
+          "n": 4,
+          "text": "A DVR is maximal among subrings of its fraction field, with no proper intermediate ring between the DVR and the fraction field.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_fractionRing_maximal_subalgebra",
+          "reason": "The lecture's maximal-subring clause is formalizable as a theorem about `Subalgebra A (FractionRing A)`, but Mathlib does not package this characterization directly, so the proof is deferred at theorem level."
+        }
+      ]
+    }
   },
   "Chapter1/01_16_Theorem": {
     "status": "references_attached",
