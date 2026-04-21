@@ -35,12 +35,25 @@ theorem padicValuationRing_isLocalization :
 theorem padicValuationRing_maximalIdeal_eq_span_p :
     IsLocalRing.maximalIdeal (padicValuationRing p) =
       Ideal.span ({(((p : ℤ) : padicValuationRing p))} : Set (padicValuationRing p)) := by
-  sorry
+  calc
+    IsLocalRing.maximalIdeal (padicValuationRing p) =
+        (Ideal.span ({(p : ℤ)} : Set ℤ)).map (algebraMap ℤ (padicValuationRing p)) := by
+      symm
+      exact IsLocalization.AtPrime.map_eq_maximalIdeal
+        (p := Ideal.span ({(p : ℤ)} : Set ℤ)) (Rₚ := padicValuationRing p)
+    _ = Ideal.span ({(((p : ℤ) : padicValuationRing p))} : Set (padicValuationRing p)) := by
+      simp [Ideal.map_span]
 
 /-- The residue field of `ℤ_(p)` is `𝔽_p`, modeled in Mathlib as `ZMod p`. -/
 theorem padicValuationRing_residueField_equiv_zmod :
     Nonempty (IsLocalRing.ResidueField (padicValuationRing p) ≃+* ZMod p) := by
-  sorry
+  let P : Ideal ℤ := Ideal.span ({(p : ℤ)} : Set ℤ)
+  haveI : P.IsMaximal := by
+    simpa [P] using (Int.ideal_span_isMaximal_of_prime p : P.IsMaximal)
+  refine ⟨?_⟩
+  exact
+    (IsLocalization.AtPrime.equivQuotMaximalIdeal (p := P) (Rₚ := padicValuationRing p)).symm.trans
+      (Int.quotientSpanNatEquivZMod p)
 
 end Example_01_14
 
