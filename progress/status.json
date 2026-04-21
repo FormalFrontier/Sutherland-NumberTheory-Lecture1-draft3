@@ -871,10 +871,59 @@
     "notes": "Stage 3.2 review for issue #142 confirmed that blobs/Chapter1/01_13_Definition.md has one mathematical claim, fully covered by `residueField_eq_quotient`. The scaffold uses `IsLocalRing.ResidueField` and `IsLocalRing.residue` directly, makes the quotient field and canonical quotient map explicit via `residueField_eq_quotient` and `residue_eq_idealQuotient_mk`, introduces no project-local duplicate construction, and contains no definition-level `sorry`."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#271",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean` around Mathlib's DVR/valuation correspondence. The new file defines the maximal-ideal adic valuation on the DVR and its extension to the fraction field, records the `v(x) ≤ 1` characterization of the recovered valuation ring, packages the recovery of `A` inside the fraction field via `equivValuationSubring` and `map_algebraMap_eq_valuationSubring`, and states the uniqueness and uniformizer-generator equivalence claims explicitly without introducing any definition-level `sorry`."
+    "issue": "#292",
+    "notes": "Stage 3.2 review for issue #292 confirmed that `blobs/Chapter1/01_13a_Discussion.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. The file packages the maximal-ideal adic valuation on the DVR and its extension to the fraction field, records the `v(x) ≤ 1` characterization of the recovered valuation ring and the reconstruction of `A` via `equivValuationSubring` and `map_algebraMap_eq_valuationSubring`, and now makes the recovered valuation's uniformizer existence explicit before the uniqueness and uniformizer-generator equivalence claims. No definition-level `sorry` was found.",
+    "stage3_2_review": {
+      "issue": "#292",
+      "decision": "passes_with_bridge_added",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For a DVR `A` with maximal ideal `m`, the valuation on `A` is defined by the powers of `m` via `(a) = m^n`, with `v(0) = infinity`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.maximalIdealIntValuation; SutherlandNumberTheoryLecture1.Chapter1.maximalIdealIntValuation_le_pow_iff_mem",
+          "reason": "The file exposes the adic valuation attached to the distinguished maximal ideal and states the lecture's powers-of-the-maximal-ideal membership characterization explicitly."
+        },
+        {
+          "n": 2,
+          "text": "Extending that valuation to the fraction field by `v(a/b) = v(a) - v(b)` gives a discrete valuation on `Frac(A)`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvrValuation",
+          "reason": "Mathlib's DVR adic-valuation API already provides the induced fraction-field valuation, and the scaffold names that construction directly."
+        },
+        {
+          "n": 3,
+          "text": "The recovered valuation ring is exactly `A = {x in k : v(x) >= 0}`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.mem_dvrValuationSubring_iff; SutherlandNumberTheoryLecture1.Chapter1.dvrValuationSubring_eq_setOf_nonnegative; SutherlandNumberTheoryLecture1.Chapter1.dvrValuationSubring_toSubring_eq_image; SutherlandNumberTheoryLecture1.Chapter1.dvrValuation_integer_eq_image; SutherlandNumberTheoryLecture1.Chapter1.equivDvrValuationSubring",
+          "reason": "The file records both the set-theoretic cutoff condition and the canonical identification of the resulting valuation subring with the original DVR inside its fraction field."
+        },
+        {
+          "n": 4,
+          "text": "Any discrete valuation on `k` with valuation ring `A` must be the same recovered valuation.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isEquiv_dvrValuation_of_valuationSubring_eq",
+          "reason": "The lecture's uniqueness statement is represented by equivalence of valuations determined by equality of valuation subrings."
+        },
+        {
+          "n": 5,
+          "text": "There exists `pi` with valuation `1`, and `v(pi) = 1` exactly when `pi` generates the maximal ideal.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.exists_uniformizer_dvrValuation; SutherlandNumberTheoryLecture1.Chapter1.maximalIdeal_eq_span_iff_isUniformizer",
+          "reason": "The review added the missing explicit existence bridge for a uniformizer of the recovered valuation and confirmed the generator/uniformizer equivalence already present."
+        },
+        {
+          "n": 6,
+          "text": "A uniformizer could equivalently be defined as any generator of the maximal ideal, without referencing the valuation.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.maximalIdeal_eq_span_iff_isUniformizer",
+          "reason": "The iff theorem directly identifies the lecture's two formulations."
+        }
+      ],
+      "summary": "The Stage 3.2 review found one missing explicit bridge, namely existence of a uniformizer for the recovered valuation. After adding `exists_uniformizer_dvrValuation`, every mathematical sentence in the blob is represented by a declaration or direct Mathlib dependency, and the file remains free of definition-level `sorry`."
+    }
   },
   "Chapter1/01_14_Example": {
     "status": "scaffolded",
