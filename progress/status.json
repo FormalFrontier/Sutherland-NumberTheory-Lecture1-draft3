@@ -602,16 +602,44 @@
     "notes": "Stage 3.2 review in issue #368 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_08_Proof.lean accurately represents the blob's deferred proof sentence as the direct citation `ostrowski_theorem_proof := Rat.AbsoluteValue.equiv_real_or_padic`."
   },
   "Chapter1/01_09_Theorem": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#111",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_09_Theorem.lean by defining the finite prime support of a rational number from `x.num.natAbs` and `x.den`, stating the outside-support triviality lemma for `Rat.AbsoluteValue.padic`, and recording the rational product formula as a finite product over the nonarchimedean places."
+    "issue": "#373",
+    "notes": "Stage 3.2 review in issue #373 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_09_Theorem.lean` faithfully captures the lecture's product formula: `rationalPrimeSupport` isolates the finitely many places where a nonzero rational can contribute a nontrivial `p`-adic factor, `padicAbsoluteValue_eq_one_of_not_mem_rationalPrimeSupport` records the triviality outside that support, and `product_formula` states the resulting finite-support version of the textbook's Euler product.",
+    "stage3_2_review": {
+      "issue": "#373",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For every nonzero rational number x, we have ∏_{p ≤ ∞} |x|_p = 1.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_09_Theorem.rationalPrimeSupport; SutherlandNumberTheoryLecture1.Chapter1.01_09_Theorem.padicAbsoluteValue_eq_one_of_not_mem_rationalPrimeSupport; SutherlandNumberTheoryLecture1.Chapter1.01_09_Theorem.product_formula",
+          "reason": "The Lean scaffold makes the lecture's infinite product precise by isolating the finite prime support of a nonzero rational and proving that every omitted finite place contributes the trivial factor `1`, so the displayed theorem is represented honestly as an equivalent finite product."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for Theorem 1.9. The blob contains only the product-formula statement, and the existing finite-support formulation records that statement faithfully without introducing extra mathematical content."
+    }
   },
   "Chapter1/01_09_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#112",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_09_Proof.lean as a proof-item wrapper around the product-formula obligations deferred to Problem Set 1, exposing named declarations for the outside-support triviality lemma and the finite-support product formula imported from Chapter1/01_09_Theorem."
+    "issue": "#373",
+    "notes": "Stage 3.2 review in issue #373 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_09_Proof.lean` treats the proof blob honestly as a Problem Set 1 citation: it introduces no new mathematics beyond wrapper theorems that expose the deferred outside-support triviality lemma and finite-support product formula imported from `Chapter1/01_09_Theorem`.",
+    "stage3_2_review": {
+      "issue": "#373",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Proof. See Problem Set 1.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_09_Proof.problemSet1_padicAbsoluteValue_eq_one_of_not_mem_rationalPrimeSupport; SutherlandNumberTheoryLecture1.Chapter1.01_09_Proof.problemSet1_product_formula",
+          "reason": "The blob contributes only a citation to deferred work, and the Lean file already packages the referenced obligations as explicit wrapper theorems rather than pretending to contain a local argument."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for the proof blob. Its only formalizable content is the Problem Set 1 deferral, and the existing wrapper theorems represent that deferral explicitly and faithfully."
+    }
   },
   "Chapter1/01_09a_Discussion": {
     "status": "non_formalizable",
