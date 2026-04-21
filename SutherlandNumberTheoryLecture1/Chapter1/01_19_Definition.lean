@@ -21,6 +21,11 @@ section Definition_01_19
 
 variable {A B : Type*} [CommRing A] [CommRing B] [Algebra A B]
 
+/-- Definition 1.19's ambient-extension construction is the bundled integral closure. -/
+theorem integralClosure_isIntegralClosure :
+    IsIntegralClosure (integralClosure A B) A B :=
+  integralClosure.isIntegralClosure A B
+
 /-- Definition 1.19's ambient-extension object is Mathlib's `integralClosure A B`. -/
 theorem mem_integralClosure_iff_isIntegral {b : B} :
     b ∈ integralClosure A B ↔ IsIntegral A b := by
@@ -37,6 +42,11 @@ end Definition_01_19
 section Definition_01_19_FractionField
 
 variable (A : Type*) [CommRing A]
+
+/-- For a domain, the lecture's normalization is the integral closure in its fraction field. -/
+theorem normalization_isIntegralClosure [IsDomain A] :
+    IsIntegralClosure (integralClosure A (FractionRing A)) A (FractionRing A) :=
+  integralClosure.isIntegralClosure A (FractionRing A)
 
 /-- For a domain, the lecture's normalization is the integral closure in its fraction field. -/
 theorem mem_normalization_iff_isIntegral [IsDomain A] {x : FractionRing A} :
