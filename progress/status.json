@@ -415,7 +415,8 @@
         }
       ],
       "summary": "The Stage 3.3 audit found no missing claim. `01_04_Proof` is only a citation to Problem Set 1, and the existing wrapper theorems already capture the full formalizable content of that citation."
-    }
+    },
+    "upstreaming_status": "rejected"
   },
   "Chapter1/01_05_Corollary": {
     "status": "dependency_trimmed",
