@@ -617,10 +617,10 @@
     }
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#248",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` by making the valuation-ring discussion explicit as named declarations: the valuation subring is an integral domain whose ambient field is its fraction field, every `kˣ` element or its inverse lies in the ring, valuation-zero elements identify the unit locus, and sign-based positive/negative cases are exposed as separate lemmas plus a trichotomy theorem. The additive-valuation bridge lemmas `isUnit_iff_valuation_eq_zero`, `mem_maximalIdeal_iff_valuation_pos`, and `inv_mem_maximalIdeal_of_neg` remain theorem-level `sorry`s for later proof work, but there are no definition-level gaps.",
+    "issue": "#276",
+    "notes": "Stage 3.2 review under issue #276 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` already covers the blob cleanly. The valuation-ring structure claim is ambient in the imported `ValuationSubring` API, while the local scaffold explicitly covers the integral-domain/fraction-field facts, the `x` or `x⁻¹` membership dichotomy, the valuation-zero unit characterization, the unit-locus set equality, the positive-valuation maximal-ideal bridge, and the sign partition. The remaining gaps are theorem-level `sorry`s only in `isUnit_iff_valuation_eq_zero`, `mem_maximalIdeal_iff_valuation_pos`, and `inv_mem_maximalIdeal_of_neg`; no Lean repair was needed and there are no definition-level gaps.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -667,6 +667,62 @@
           "reason": "This is a genuine case-split theorem about membership and units/non-units, not merely motivational prose."
         }
       ]
+    },
+    "stage3_2_review": {
+      "issue": "#276",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every valuation ring A is a ring.",
+          "classification": "ambient_api",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10_Definition.valuationSubring",
+          "reason": "The blob's `A` is defined as Mathlib's bundled `ValuationSubring`, so the commutative-ring structure is part of the ambient object rather than a missing local declaration."
+        },
+        {
+          "n": 2,
+          "text": "Every valuation ring A is an integral domain, because nonzero x and y have nonzero product.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.valuationSubring_isDomain",
+          "reason": "The local scaffold states the integral-domain conclusion explicitly; the textbook's proof sentence is explanatory motivation for this structural theorem."
+        },
+        {
+          "n": 3,
+          "text": "The ambient field k is the fraction field of the valuation ring A.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.valuationSubring_isFractionRing",
+          "reason": "The discussion file already exposes the fraction-field relation as its own theorem."
+        },
+        {
+          "n": 4,
+          "text": "For every x in k^times, at least one of x and 1 / x has nonnegative valuation and lies in A.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.mem_or_inv_mem_valuationSubring",
+          "reason": "The local theorem packages the exact membership dichotomy, and the inverse-valuation algebra used in the prose is supplied by the imported valuation API."
+        },
+        {
+          "n": 5,
+          "text": "An element x in A is invertible in A if and only if v(x) = 0.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.isUnit_iff_valuation_eq_zero",
+          "reason": "The scaffold includes this exact equivalence as a named theorem, with only theorem-level proof work left."
+        },
+        {
+          "n": 6,
+          "text": "The unit group of A is A^times = {x in k : v(x) = 0}.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.unitGroup_eq_zeroValuation_set",
+          "reason": "The set-level reformulation of the unit characterization is already present as its own declaration."
+        },
+        {
+          "n": 7,
+          "text": "The nonzero elements of k partition according to whether their valuation is zero, positive, or negative: zero gives units of A, positive gives non-units in A, and negative gives elements outside A whose inverses are non-units in A.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.mem_maximalIdeal_iff_valuation_pos; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.mem_valuationSubring_of_pos; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.not_mem_valuationSubring_of_neg; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.not_isUnit_of_pos; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.inv_mem_maximalIdeal_of_neg; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.valuation_sign_partition",
+          "reason": "The file already splits the prose trichotomy into reusable positive/negative lemmas and a final partition theorem, so no additional scaffold declaration is missing."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for every mathematical sentence in the blob. No Lean file changes were required; the only remaining work is proof completion for the three pre-existing theorem-level placeholders."
     }
   },
   "Chapter1/01_11_Definition": {
