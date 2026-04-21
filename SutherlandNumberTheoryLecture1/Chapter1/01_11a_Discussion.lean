@@ -1,6 +1,5 @@
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10a_Discussion»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_11_Definition»
 
 /-!
 # Discussion 1.11a: structural consequences of a discrete valuation
