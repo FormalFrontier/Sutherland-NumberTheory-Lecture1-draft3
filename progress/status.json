@@ -1500,10 +1500,28 @@
     }
   },
   "Chapter1/01_16a_Discussion": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_16a_Discussion.refs.md, preserving the continuation sources into the integral-extension section while marking the transition note as likely non-formalizable."
+    "status": "non_formalizable",
+    "last_updated": "2026-04-21",
+    "issue": "#352",
+    "notes": "Stage 3.1 classification under issue #352 re-read `blobs/Chapter1/01_16a_Discussion.md` against its refs note and the adjacent integrality files, confirming that the blob is only a section heading plus a motivational transition sentence into Definition 1.17. The actual mathematical content starts in `01_17_Definition`, so this blob should close as prose-only with no dedicated Lean module.",
+    "reason": "The blob has two sentences: (1) the section heading `1.6 Integral extensions`, which is organizational text rather than a mathematical proposition or definition. (2) `Integrality plays a key role in number theory, so it is worth discussing it in more detail.`, which is a motivational transition sentence announcing the topic rather than asserting any formalizable mathematical claim. The neighboring file `SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean` already begins the actual formal content with the definition of integral elements and integral extensions, so there is no hidden claim to scaffold here.",
+    "stage3_1_decision": {
+      "decision": "non_formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Section heading for integral extensions.",
+          "classification": "excluded",
+          "reason": "Organizational text only; headings are tracked structurally but do not become Lean declarations."
+        },
+        {
+          "n": 2,
+          "text": "Integrality plays a key role in number theory, so it is worth discussing it in more detail.",
+          "classification": "excluded",
+          "reason": "Motivational transition prose introducing the upcoming definition, with no standalone mathematical assertion to formalize."
+        }
+      ]
+    }
   },
   "Chapter1/01_17_Definition": {
     "status": "claims_audited",
