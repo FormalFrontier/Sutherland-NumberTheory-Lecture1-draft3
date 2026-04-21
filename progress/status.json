@@ -384,10 +384,10 @@
     }
   },
   "Chapter1/01_04_Proof": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_04_Proof.refs.md, marking MIT Problem Set 1 as the primary proof reference and keeping the partial Mathlib support visible."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#110",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean by turning the proof blob's Problem Set 1 citation into explicit Lean declarations for the converse direction of Lemma 1.4, both in the all-natural-numbers helper form and in the lecture's original `n ≥ 1` phrasing."
   },
   "Chapter1/01_05_Corollary": {
     "status": "scaffolded",
