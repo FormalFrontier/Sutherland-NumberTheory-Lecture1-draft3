@@ -719,10 +719,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean by formalizing Proposition 1.22 as the bundled instance `IsIntegrallyClosed ℤ`, relying on Mathlib's unique-factorization-to-integrally-closed instance chain."
   },
   "Chapter1/01_22_Proof": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_22_Proof.refs.md, recording the rational-root API needed if Stage 3 reconstructs the proof rather than using the instance directly."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#146",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_22_Proof.lean by formalizing the lecture's rational-root-test proof via `isInteger_of_is_root_of_monic`, then extracting the textbook denominator-one conclusion with `Rat.den_eq_one_iff` and `Rat.coe_int_num_of_den_eq_one`."
   },
   "Chapter1/01_23_Corollary": {
     "status": "references_attached",
