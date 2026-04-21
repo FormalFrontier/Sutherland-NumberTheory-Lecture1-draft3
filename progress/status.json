@@ -786,16 +786,16 @@
     "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean` around Mathlib's DVR/valuation correspondence. The new file defines the maximal-ideal adic valuation on the DVR and its extension to the fraction field, records the `v(x) ≤ 1` characterization of the recovered valuation ring, packages the recovery of `A` inside the fraction field via `equivValuationSubring` and `map_algebraMap_eq_valuationSubring`, and states the uniqueness and uniformizer-generator equivalence claims explicitly without introducing any definition-level `sorry`."
   },
   "Chapter1/01_14_Example": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_14_Example.refs.md, tying the `Z_(p)` example to `Localization.AtPrime` and residue-field comparison lemmas plus the lecture's cited commutative-algebra references."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#281",
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean` for the `p`-adic example. The file models `\\mathbf{Z}_{(p)}` as `Localization.AtPrime (Ideal.span {(p : ℤ)})`, records the localization-at-`(p)` fact explicitly, and states the maximal-ideal and residue-field identifications with theorem-level placeholders only; no definition-level `sorry` was introduced."
   },
   "Chapter1/01_15_Example": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_15_Example.refs.md, pointing workers to the Laurent-series and power-series APIs already in Mathlib for the order-of-vanishing example."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#281",
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean` around Mathlib's Laurent-series valuation. The file packages `k((t))`, its bundled valuation, the valuation subring, the embedded power-series subring, and `PowerSeries.order` as order of vanishing, then states the valuation-ring and order-of-vanishing identifications explicitly with theorem-level placeholders only."
   },
   "Chapter1/01_15a_Discussion": {
     "status": "scaffolded",
