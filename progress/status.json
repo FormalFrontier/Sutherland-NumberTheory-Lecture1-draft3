@@ -276,10 +276,10 @@
     }
   },
   "Chapter1/01_02_Definition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#378",
-    "notes": "Issue #378 re-checked blobs/Chapter1/01_02_Definition.md against SutherlandNumberTheoryLecture1/Chapter1/01_02_Definition.lean, confirmed that the Mathlib-backed `AbsoluteValue` recall plus `isNonarchimedean_iff` fully cover the blob, found no theorem-level `sorry`, and verified the project still builds.",
+    "issue": "#468",
+    "notes": "Issue #468 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_02_Definition`. Re-reading blobs/Chapter1/01_02_Definition.md against SutherlandNumberTheoryLecture1/Chapter1/01_02_Definition.lean showed that the file imports only `Mathlib`, recalls `AbsoluteValue`, and proves `isNonarchimedean_iff` by `Iff.rfl`, so the conservative placeholder dependency on `Chapter1/01_01a_Discussion` was removed and the trimmed direct dependency set is `[]`.",
     "stage3_3_audit": {
       "issue": "#172",
       "decision": "clean",
