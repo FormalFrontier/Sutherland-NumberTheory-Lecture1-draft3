@@ -629,10 +629,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean by recalling Mathlib's element-level predicate `IsIntegral` and the extension-level typeclass `Algebra.IsIntegral`, with explicit declarations for both parts of Definition 1.17."
   },
   "Chapter1/01_18_Proposition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_18_Proposition.refs.md, pointing directly to `IsIntegral.add` and `IsIntegral.mul` so Stage 3 can cite Mathlib instead of reproducing the textbook argument."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#114",
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean` with explicit closure-under-addition and closure-under-multiplication declarations citing Mathlib's `IsIntegral.add` and `IsIntegral.mul` directly."
   },
   "Chapter1/01_18_Proof": {
     "status": "references_attached",
