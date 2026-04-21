@@ -998,10 +998,10 @@
     }
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#293",
-    "notes": "Stage 3.2 review for issue #293 confirmed that `blobs/Chapter1/01_15a_Discussion.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean`. The file states the DVR consequence bundle (noetherian, PID, local, dimension-one, regular-local, integrally closed), records the cotangent-space and `IsDiscreteValuationRing.TFAE` characterization bridges explicitly, and keeps the fraction-field maximal-subalgebra clause as a theorem-level placeholder only. No definition-level `sorry` or missing bridge theorem was found.",
+    "issue": "#302",
+    "notes": "Stage 3.3 audit for issue #302 re-read `blobs/Chapter1/01_15a_Discussion.md` against `blobs/Chapter1/01_15a_Discussion.refs.md` and `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean`. The existing scaffold already covers every formalizable sentence in the blob: the DVR consequence bundle, the dimension/cotangent-space equivalence, the characterization bridges, and the fraction-field maximal-subalgebra clause as an explicit theorem-level placeholder. No additional declaration or repair was needed.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1069,6 +1069,41 @@
         }
       ],
       "summary": "Stage 3.2 review found the scaffold complete: every claim in the DVR survey blob maps to an explicit Lean declaration or named bridge theorem, the characterization equivalences are spelled out rather than left implicit, and the only remaining placeholder is the intended theorem-level proof of the maximal intermediate-subring statement."
+    },
+    "stage3_3_audit": {
+      "issue": "#302",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every discrete valuation ring is noetherian, a principal ideal domain, local, regular, and integrally closed.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_isNoetherianRing; dvr_isPrincipalIdealRing; dvr_isLocalRing; dvr_isRegularLocalRing; dvr_isIntegrallyClosed",
+          "reason": "The audit found no missing aside or omitted consequence in the prose beyond the existing structural bundle theorems."
+        },
+        {
+          "n": 2,
+          "text": "Every discrete valuation ring has Krull dimension one, equivalently cotangent-space dimension one over its residue field.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_ringKrullDim_eq_one; dvr_finrank_cotangentSpace_eq_one",
+          "reason": "Both formulations in the blob are already named explicitly, so the explanatory parenthetical does not hide a separate formalization gap."
+        },
+        {
+          "n": 3,
+          "text": "Various combinations of the listed properties characterize DVRs, including the integrally closed plus unique nonzero prime criterion and the regular local dimension-one criterion.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_prime; isDiscreteValuationRing_iff_finrank_cotangentSpace_eq_one; isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one",
+          "reason": "The skeptical reread did not reveal any further characterization sentence needing its own bridge theorem."
+        },
+        {
+          "n": 4,
+          "text": "A discrete valuation ring is maximal among subrings of its fraction field, with no proper intermediate ring.",
+          "classification": "already_covered_as_theorem_placeholder",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_fractionRing_maximal_subalgebra",
+          "reason": "The only unfinished part of the blob remains the already-declared theorem-level proof obligation; there is no missing declaration behind the lecture's maximality sentence."
+        }
+      ],
+      "summary": "The Stage 3.3 audit was clean. Re-reading the blob against the refs file and Lean scaffold found no missing claim, aside, or bridge theorem. Every formalizable sentence is already accounted for, and the remaining incompleteness stays confined to the explicit theorem placeholder for fraction-field maximality."
     }
   },
   "Chapter1/01_16_Theorem": {
