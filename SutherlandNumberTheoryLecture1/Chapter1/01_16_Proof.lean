@@ -113,7 +113,29 @@ bridging the dimension-one hypothesis to the unique-prime clause in
 theorem isDvr_of_isIntegrallyClosedNoetherianLocalDimOne
     (hA : IsIntegrallyClosedNoetherianLocalDimOne A) :
     IsDvr A := by
-  sorry
+  rcases hA with ⟨_hNoetherian, hLocal, hIntegrallyClosed, hDim⟩
+  letI : IsNoetherianRing A := _hNoetherian
+  letI : IsLocalRing A := hLocal
+  have hNotField : ¬ IsField A := by
+    intro hField
+    exact zero_ne_one ((ringKrullDim_eq_zero_of_isField hField).symm.trans hDim)
+  have hUniquePrime : ∃! P : Ideal A, P ≠ ⊥ ∧ P.IsPrime := by
+    refine ⟨IsLocalRing.maximalIdeal A, ?_, ?_⟩
+    · refine ⟨IsLocalRing.isField_iff_maximalIdeal_eq.not.mp hNotField, inferInstance⟩
+    · intro P hP
+      obtain ⟨x, hxP, hx0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot hP.1
+      have hDimCriterion :=
+        (ringKrullDim_eq_one_iff_of_isLocalRing_isDomain (R := A)).mp hDim
+      have hMaxLeRad :
+          IsLocalRing.maximalIdeal A ≤ Ideal.radical (Ideal.span {x}) :=
+        hDimCriterion.2 x hx0
+      have hRadLeP : Ideal.radical (Ideal.span {x}) ≤ P := by
+        exact (Ideal.IsRadical.radical_le_iff hP.2.isRadical).mpr
+          ((Ideal.span_singleton_le_iff_mem P).mpr hxP)
+      letI : P.IsPrime := hP.2
+      exact le_antisymm (IsLocalRing.le_maximalIdeal_of_isPrime P) (le_trans hMaxLeRad hRadLeP)
+  exact ((isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_prime
+    (A := A) hNotField).mpr ⟨hIntegrallyClosed, hUniquePrime⟩)
 
 /-- The lecture's maximal-subring reformulation remains as a theorem-level gap in
 the scaffold. -/
