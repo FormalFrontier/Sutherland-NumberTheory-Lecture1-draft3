@@ -2402,10 +2402,10 @@
     }
   },
   "Chapter1/01_25_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#443",
-    "notes": "Issue #443 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean`. Re-reading `blobs/Chapter1/01_25_Proof.md` against the Lean file confirmed that the proof blob's contradiction step is already captured by `proof_integral_element_mem`, while the closing sentence is restated explicitly by `proof_valuationRing_isIntegrallyClosed`; `lake build` succeeded after the session cache bootstrap.",
+    "issue": "#447",
+    "notes": "Issue #447 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean`. Re-reading `blobs/Chapter1/01_25_Proof.md` against the Lean file confirmed that the proof blob still contributes exactly two mathematical claims: the contradiction-step membership theorem `proof_integral_element_mem` and the concluding integrally-closed theorem `proof_valuationRing_isIntegrallyClosed`. `lake exe cache get` reused the session cache and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#443",
       "decision": "verified",
@@ -2426,6 +2426,27 @@
         }
       ],
       "summary": "The Stage 3.2 review found the proof scaffold complete: the blob contributes exactly the contradiction-to-membership step and the concluding valuation-ring integrally-closed theorem, and both already appear explicitly in Lean."
+    },
+    "stage3_3_audit": {
+      "issue": "#447",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If an element of the fraction field of a valuation ring is integral over the ring, then it lies in the image of the ring.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_integral_element_mem",
+          "reason": "The audit re-read the contradiction argument in the blob and found no extra omitted subclaim: the Lean theorem already packages the valuation-ring dichotomy together with integrality into the exact membership conclusion."
+        },
+        {
+          "n": 2,
+          "text": "Every valuation ring is integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_valuationRing_isIntegrallyClosed",
+          "reason": "The final sentence of the proof blob is already restated as an explicit theorem, so the audit found no additional formalizable claim beyond the witness theorem and this concluding corollary."
+        }
+      ],
+      "summary": "The Stage 3.3 audit is clean: `01_25_Proof` contributes exactly the contradiction-step membership theorem and the concluding integrally-closed statement, and both are already explicit in Lean."
     }
   },
   "Chapter1/01_26_Definition": {
