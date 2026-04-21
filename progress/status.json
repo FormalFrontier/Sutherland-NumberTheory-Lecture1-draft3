@@ -252,10 +252,10 @@
     }
   },
   "Chapter1/01_07_Definition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_07_Definition.refs.md, linking the lecture's p-adic valuation notation to `padicValRat`, `padicNorm`, and `Rat.AbsoluteValue.padic`."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#105",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean with a real `WithTop ℤ` wrapper for the lecture's convention `v_p(0) = ∞`, together with explicit zero/nonzero declarations relating the induced absolute value to `Rat.AbsoluteValue.padic`, `padicNorm`, and `padicValRat`."
   },
   "Chapter1/01_08_Theorem": {
     "status": "references_attached",
