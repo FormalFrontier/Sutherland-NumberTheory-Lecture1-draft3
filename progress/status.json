@@ -131,7 +131,7 @@
     }
   },
   "Chapter1/01_01_Remark": {
-    "status": "claims_audited",
+    "status": "non_formalizable",
     "last_updated": "2026-04-21",
     "issue": "#172",
     "notes": "Stage 3.3 audit under issue #172 re-read blobs/Chapter1/01_01_Remark.md against neighboring Lean files and confirmed that every sentence is still an ambient convention already carried by Lean's ring typeclasses and `RingHom` API, so there is no missing import or missing declaration.",
@@ -214,7 +214,7 @@
     }
   },
   "Chapter1/01_01a_Discussion": {
-    "status": "claims_audited",
+    "status": "non_formalizable",
     "last_updated": "2026-04-21",
     "issue": "#172",
     "notes": "Stage 3.3 audit under issue #172 re-read blobs/Chapter1/01_01a_Discussion.md and confirmed that it still contains only a section heading and bibliography pointer, with no missing import or missing declaration.",
@@ -1953,7 +1953,7 @@
     }
   },
   "Chapter1/01_20_Proof": {
-    "status": "claims_audited",
+    "status": "non_formalizable",
     "last_updated": "2026-04-21",
     "issue": "#428",
     "notes": "Issue #428 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean`. A skeptical re-read of the one-line proof blob against the Lean module confirmed that the citation contributes no hidden formalizable claim beyond the existing wrappers `isIntegral_of_isIntegral_tower` and `integral_extension_trans_from_proof`; `lake build` succeeds after the session cache bootstrap.",
