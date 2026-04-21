@@ -374,10 +374,10 @@
     "notes": "Stage 3.2 review for issue #124 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean covers the blob's explicit claims with declarations: `padicValuation` gives the lecture's `WithTop ℤ` wrapper with `v_p(0) = ∞`, `padicValuation_of_ne_zero` exposes the nonzero `padicValRat` branch, `padicAbsoluteValue_apply_zero` and `padicAbsoluteValue_apply_of_ne_zero` make the zero and nonzero formulas for `|·|_p` explicit, and `padicAbsoluteValue_isNonarchimedean` records the nonarchimedean property. No review repair was needed."
   },
   "Chapter1/01_08_Theorem": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_08_Theorem.refs.md, making the exact Mathlib Ostrowski declarations primary while retaining the problem set and Serre as prose backup."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#106",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_08_Theorem.lean by recalling Mathlib's exact Ostrowski classification on `ℚ`, with `Rat.AbsoluteValue.real` representing the place at infinity, `Rat.AbsoluteValue.padic` representing the finite places, and `Rat.AbsoluteValue.not_real_isEquiv_padic` recording that the archimedean and `p`-adic branches are disjoint."
   },
   "Chapter1/01_08_Proof": {
     "status": "references_attached",
