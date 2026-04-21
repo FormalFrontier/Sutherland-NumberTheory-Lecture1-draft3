@@ -9,6 +9,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_03_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_05_Corollary»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_05_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_06_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_06a_Discussion»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
