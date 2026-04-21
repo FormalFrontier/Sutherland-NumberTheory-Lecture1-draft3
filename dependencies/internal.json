@@ -93,8 +93,7 @@
   "Chapter1/01_22_Proof": [],
   "Chapter1/01_23_Corollary": [],
   "Chapter1/01_23_Proof": [
-    "Chapter1/01_23_Corollary",
-    "Chapter1/01_22_Proof"
+    "Chapter1/01_23_Corollary"
   ],
   "Chapter1/01_24_Example": [
     "Chapter1/01_23_Corollary",
