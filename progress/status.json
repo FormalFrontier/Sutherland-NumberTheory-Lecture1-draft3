@@ -623,10 +623,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_16a_Discussion.refs.md, preserving the continuation sources into the integral-extension section while marking the transition note as likely non-formalizable."
   },
   "Chapter1/01_17_Definition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_17_Definition.refs.md, linking the definition directly to Mathlib's exact predicate `IsIntegral` and the Stacks integral-extension reference."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#113",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean by recalling Mathlib's element-level predicate `IsIntegral` and the extension-level typeclass `Algebra.IsIntegral`, with explicit declarations for both parts of Definition 1.17."
   },
   "Chapter1/01_18_Proposition": {
     "status": "references_attached",
