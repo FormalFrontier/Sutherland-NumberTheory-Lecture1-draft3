@@ -83,10 +83,10 @@
     }
   },
   "Chapter1/01_01_Remark": {
-    "status": "non_formalizable",
-    "last_updated": "2026-04-20",
-    "issue": "#123",
-    "notes": "Stage 3.2 review under issue #123 re-audited blobs/Chapter1/01_01_Remark.md claim-by-claim and confirmed that the blob contains only ambient ring conventions already represented by Lean typeclasses and the standard `RingHom` API, not a standalone declaration target.",
+    "status": "claims_audited",
+    "last_updated": "2026-04-21",
+    "issue": "#172",
+    "notes": "Stage 3.3 audit under issue #172 re-read blobs/Chapter1/01_01_Remark.md against neighboring Lean files and confirmed that every sentence is still an ambient convention already carried by Lean's ring typeclasses and `RingHom` API, so there is no missing import or missing declaration.",
     "reason": "Stage 3.1 and Stage 3.2 both enumerate exactly the three sentences in the blob: (1) rings are assumed to have a multiplicative identity; excluded because Lean's ring typeclasses already build this into the ambient assumptions rather than as a theorem or definition for this blob. (2) ring homomorphisms preserve the identity; excluded because this is part of the standard `RingHom` API and not a blob-specific declaration. (3) rings are commutative unless stated otherwise; excluded because this is a textbook convention that should be encoded by choosing `[CommRing R]` in downstream files, not by formalizing a separate proposition.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
@@ -135,13 +135,41 @@
         }
       ],
       "summary": "The Stage 3.1 enumeration was complete: every sentence in the blob is either ambient typeclass setup or a project-wide convention, so the `non_formalizable` classification stands."
+    },
+    "stage3_3_audit": {
+      "issue": "#172",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "All rings have a multiplicative identity.",
+          "classification": "already_covered",
+          "location": "ambient Lean typeclass assumptions",
+          "reason": "This is supplied by the `Ring` / `CommRing` structures rather than by a blob-local declaration."
+        },
+        {
+          "n": 2,
+          "text": "Ring homomorphisms preserve the multiplicative identity.",
+          "classification": "already_covered",
+          "location": "ambient Lean `RingHom` API",
+          "reason": "The claim is built into the bundled homomorphism structure, so no extra import or declaration is missing."
+        },
+        {
+          "n": 3,
+          "text": "Except where noted otherwise, the rings considered are commutative.",
+          "classification": "already_covered",
+          "location": "downstream `[CommRing R]` assumptions",
+          "reason": "This is a modeling convention, not a standalone mathematical declaration for this blob."
+        }
+      ],
+      "summary": "No formalizable claim was missed. The blob remains prose-only setup, but it has now passed the Stage 3.3 audit gate."
     }
   },
   "Chapter1/01_01a_Discussion": {
-    "status": "non_formalizable",
-    "last_updated": "2026-04-20",
-    "issue": "#123",
-    "notes": "Stage 3.2 review under issue #123 re-audited blobs/Chapter1/01_01a_Discussion.md and confirmed that it contains only the section heading plus a bibliography pointer, with no mathematical assertion to scaffold.",
+    "status": "claims_audited",
+    "last_updated": "2026-04-21",
+    "issue": "#172",
+    "notes": "Stage 3.3 audit under issue #172 re-read blobs/Chapter1/01_01a_Discussion.md and confirmed that it still contains only a section heading and bibliography pointer, with no missing import or missing declaration.",
     "reason": "Stage 3.1 and Stage 3.2 both enumerate the complete blob: (1) the 'Absolute values' section heading; excluded because headings are organizational metadata, not mathematical declarations. (2) the sentence citing [3, Chapter 1] as a reference; excluded because it is bibliographic guidance, not a formalizable mathematical claim.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
@@ -178,19 +206,107 @@
         }
       ],
       "summary": "The Stage 3.1 enumeration was complete: this blob contains no standalone mathematical content beyond a heading and citation note, so the `non_formalizable` classification stands."
+    },
+    "stage3_3_audit": {
+      "issue": "#172",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Section heading: '1.2 Absolute values'.",
+          "classification": "excluded",
+          "reason": "Organizational metadata only, not a mathematically formalizable claim."
+        },
+        {
+          "n": 2,
+          "text": "A reference for much of this section is [3, Chapter 1].",
+          "classification": "excluded",
+          "reason": "Bibliographic guidance only, with no declaration target in Lean."
+        }
+      ],
+      "summary": "The earlier non-formalizable assessment remains complete; Stage 3.3 found no hidden mathematical content."
     }
   },
   "Chapter1/01_02_Definition": {
-    "status": "definition_verified",
-    "last_updated": "2026-04-20",
-    "issue": "#117",
-    "notes": "Stage 3.2 review passed for SutherlandNumberTheoryLecture1/Chapter1/01_02_Definition.lean: the lecture's absolute-value axioms (1)-(3) are covered directly by Mathlib's bundled `AbsoluteValue`, the nonarchimedean strengthening is exposed explicitly by `isNonarchimedean_iff`, no bridge theorem beyond the review note was needed because the recalled definition unfolds to the lecture wording, and no definition-level `sorry` was found."
+    "status": "claims_audited",
+    "last_updated": "2026-04-21",
+    "issue": "#172",
+    "notes": "Stage 3.3 audit under issue #172 re-read blobs/Chapter1/01_02_Definition.md against SutherlandNumberTheoryLecture1/Chapter1/01_02_Definition.lean and confirmed that axioms (1)-(3) are covered by Mathlib's bundled `AbsoluteValue`, the stronger nonarchimedean axiom is covered by `isNonarchimedean_iff`, and the trailing lecture-credit line is non-mathematical.",
+    "stage3_3_audit": {
+      "issue": "#172",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "An absolute value on a field is a map `k → ℝ≥0` satisfying positive-definiteness, multiplicativity, and the triangle inequality.",
+          "classification": "already_covered",
+          "location": "Mathlib `AbsoluteValue`",
+          "reason": "The bundled structure directly packages the lecture's axioms (1) through (3)."
+        },
+        {
+          "n": 2,
+          "text": "If `|x + y| ≤ max (|x|, |y|)` for all `x, y`, then the absolute value is nonarchimedean.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_02_Definition.isNonarchimedean_iff",
+          "reason": "The file exposes the lecture's stronger axiom as an explicit iff theorem."
+        },
+        {
+          "n": 3,
+          "text": "Otherwise the absolute value is archimedean.",
+          "classification": "already_covered",
+          "location": "logical complement of `IsNonarchimedean`",
+          "reason": "The blob introduces terminology only; no separate theorem is required beyond the explicit nonarchimedean predicate."
+        },
+        {
+          "n": 4,
+          "text": "Lecture by Andrew V. Sutherland.",
+          "classification": "excluded",
+          "reason": "Authorship metadata, not mathematics."
+        }
+      ],
+      "summary": "No missing import or declaration was found. The file's existing declarations cover every formalizable sentence in the blob."
+    }
   },
   "Chapter1/01_03_Example": {
-    "status": "definition_verified",
-    "last_updated": "2026-04-20",
-    "issue": "#119",
-    "notes": "Stage 3.2 review for SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean passed after replacing anonymous declarations with named bridges: `trivialAbsoluteValue`, its zero/nonzero branch lemmas matching the textbook's piecewise formula, and `trivialAbsoluteValue_isNonarchimedean`."
+    "status": "claims_audited",
+    "last_updated": "2026-04-21",
+    "issue": "#172",
+    "notes": "Stage 3.3 audit under issue #172 re-read blobs/Chapter1/01_03_Example.md against SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean and confirmed that the trivial absolute value, both branches of its piecewise formula, and its nonarchimedean property are all explicitly formalized.",
+    "stage3_3_audit": {
+      "issue": "#172",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The displayed map is the trivial absolute value on `k`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_03_Example.trivialAbsoluteValue",
+          "reason": "The file names the textbook's example as a dedicated definition."
+        },
+        {
+          "n": 2,
+          "text": "If `x = 0`, then the trivial absolute value returns `0`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_03_Example.trivialAbsoluteValue_apply_zero",
+          "reason": "The zero branch of the piecewise formula is exposed as a named simp theorem."
+        },
+        {
+          "n": 3,
+          "text": "If `x ≠ 0`, then the trivial absolute value returns `1`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_03_Example.trivialAbsoluteValue_apply_of_ne_zero",
+          "reason": "The nonzero branch is a named theorem matching the blob's displayed formula."
+        },
+        {
+          "n": 4,
+          "text": "The trivial absolute value is nonarchimedean.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_03_Example.trivialAbsoluteValue_isNonarchimedean",
+          "reason": "The concluding sentence of the example is formalized directly."
+        }
+      ],
+      "summary": "Every formalizable claim in the blob already has an explicit Lean declaration, so the example clears the Stage 3.3 gate without follow-up work."
+    }
   },
   "Chapter1/01_04_Lemma": {
     "status": "scaffolded",
