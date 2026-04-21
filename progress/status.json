@@ -149,10 +149,10 @@
     "notes": "Stage 3.2 review for SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean passed after replacing anonymous declarations with named bridges: `trivialAbsoluteValue`, its zero/nonzero branch lemmas matching the textbook's piecewise formula, and `trivialAbsoluteValue_isNonarchimedean`."
   },
   "Chapter1/01_04_Lemma": {
-    "status": "references_attached",
+    "status": "scaffolded",
     "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_04_Lemma.refs.md, combining `AbsoluteValue.apply_nat_le_self` with Problem Set 1 and Serre to document the missing local converse lemma needed in Stage 3."
+    "issue": "#104",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean with the lecture's full nonarchimedean iff criterion, using Mathlib for the forward direction and isolating the converse as `isNonarchimedean_of_natCast_le_one` for later proof work."
   },
   "Chapter1/01_04_Proof": {
     "status": "references_attached",
