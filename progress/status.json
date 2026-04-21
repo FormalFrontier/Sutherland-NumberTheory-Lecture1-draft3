@@ -1391,10 +1391,10 @@
     }
   },
   "Chapter1/01_15_Example": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#334",
-    "notes": "Stage 3.4 proof work for issue #334 discharged the three remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean`. The file now proves the valuation-ring identification with the embedded power-series subring, derives coefficient vanishing below `PowerSeries.order`, and constructs the valuation at a point `\\alpha` from the height-one prime `(X - \\alpha)` in `k[X]`. `Chapter1/01_15_Example` is now theorem-level `sorry` free.",
+    "issue": "#517",
+    "notes": "Issue #517 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean` against `blobs/Chapter1/01_15_Example.md`. The finalized Laurent-series example no longer has any genuine direct earlier-book dependencies: its valuation object, valuation-ring characterization, order-of-vanishing wrapper, and valuation-at-`\\alpha` theorem all use Mathlib's bundled `LaurentSeries`, `PowerSeries`, and `RatFunc` APIs directly, so the old conservative edge to `Chapter1/01_10_Definition` trims away. The Stage 3.4 proof completion from issue #334 remains in force with no scaffold changes.",
     "stage3_2_review": {
       "issue": "#298",
       "decision": "clean",
