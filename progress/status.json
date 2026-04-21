@@ -926,16 +926,79 @@
     }
   },
   "Chapter1/01_14_Example": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#281",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean` for the `p`-adic example. The file models `\\mathbf{Z}_{(p)}` as `Localization.AtPrime (Ideal.span {(p : ℤ)})`, records the localization-at-`(p)` fact explicitly, and states the maximal-ideal and residue-field identifications with theorem-level placeholders only; no definition-level `sorry` was introduced."
+    "issue": "#298",
+    "notes": "Stage 3.2 review for issue #298 confirmed that `blobs/Chapter1/01_14_Example.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean`. The scaffold keeps the lecture's `\\mathbf{Z}_{(p)}` example in the canonical `Localization.AtPrime` model, spells out the localization-at-`(p)` identification explicitly, and leaves only the maximal-ideal and residue-field identifications at theorem level. No definition-level `sorry` or missing equivalence bridge was found.",
+    "stage3_2_review": {
+      "issue": "#298",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For the `p`-adic valuation on `\\mathbf{Q}`, the valuation ring is `\\mathbf{Z}_{(p)}`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing; SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing_isLocalization",
+          "reason": "The scaffold records the example's valuation ring by the canonical localization model `Localization.AtPrime (Ideal.span {(p : ℤ)})`; Definition 1.7 already supplies the named `p`-adic valuation, so no extra data construction is missing here."
+        },
+        {
+          "n": 2,
+          "text": "The maximal ideal of `\\mathbf{Z}_{(p)}` is `(p)`.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing_maximalIdeal_eq_span_p",
+          "reason": "The maximal-ideal identification is present as an explicit theorem statement, with the remaining proof deferred at theorem level only."
+        },
+        {
+          "n": 3,
+          "text": "The residue field `\\mathbf{Z}_{(p)} / p\\mathbf{Z}_{(p)}` is isomorphic to `\\mathbf{Z}/p\\mathbf{Z} \\simeq \\mathbf{F}_p`.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing_residueField_equiv_zmod",
+          "reason": "The scaffold exposes the residue-field comparison directly as a ring-equivalence target `ZMod p`, which is Mathlib's model for `\\mathbf{F}_p`; only the proof remains open."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for the `p`-adic example. The localization model is explicit, all remaining incompleteness is confined to the two intended theorem-level identifications, and no additional bridge theorem or definition repair is needed before Stage 3.3."
+    }
   },
   "Chapter1/01_15_Example": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#281",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean` around Mathlib's Laurent-series valuation. The file packages `k((t))`, its bundled valuation, the valuation subring, the embedded power-series subring, and `PowerSeries.order` as order of vanishing, then states the valuation-ring and order-of-vanishing identifications explicitly with theorem-level placeholders only."
+    "issue": "#298",
+    "notes": "Stage 3.2 review for issue #298 confirmed that `blobs/Chapter1/01_15_Example.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean`. The scaffold packages the bundled `t`-adic valuation on `k((t))`, its valuation subring, the embedded power-series subring, and `PowerSeries.order` as order of vanishing at zero, while keeping the valuation-ring identification, the coefficient-vanishing consequence, and the expansion-at-`\\alpha` valuation as theorem-level placeholders only. No definition-level `sorry` or missing bridge theorem was found.",
+    "stage3_2_review": {
+      "issue": "#298",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For any field `k`, the Laurent series field `k((t))` carries the standard valuation given by the lowest exponent.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.laurentSeriesValuation",
+          "reason": "The scaffold names Mathlib's bundled `X`-adic valuation on `LaurentSeries k` directly, so the lecture's valuation object is explicit rather than implicit ambient API."
+        },
+        {
+          "n": 2,
+          "text": "The valuation ring of this valuation is `k[[t]]`.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.mem_laurentSeriesValuationRing_iff_exists_powerSeries; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.laurentSeriesValuationRing_eq_powerSeriesSubring",
+          "reason": "The file already includes both the elementwise membership characterization and the final subring equality identifying the valuation ring with the embedded power-series subring; the equality proof is the remaining theorem-level placeholder."
+        },
+        {
+          "n": 3,
+          "text": "For `f \\in k((t))^\\times`, the valuation is the order of vanishing of `f` at zero.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero_eq_order; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.coeff_eq_zero_of_lt_orderOfVanishingAtZero",
+          "reason": "The scaffold introduces an explicit order-of-vanishing wrapper and a companion coefficient-vanishing theorem. The behavioral theorem is present, but one proof is still deferred at theorem level."
+        },
+        {
+          "n": 4,
+          "text": "For every `\\alpha \\in k`, one can similarly define an order-of-vanishing valuation by Laurent expansion about `\\alpha`.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.exists_orderOfVanishingAtPoint_valuation",
+          "reason": "The expansion-at-`\\alpha` sentence is represented explicitly as an existence theorem for the corresponding valuation on `RatFunc k`, with the proof intentionally deferred."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for the Laurent-series example. Every formalizable sentence is represented by a named declaration or explicit theorem placeholder, with no hidden definition gap and no need to widen the scaffold before Stage 3.3."
+    }
   },
   "Chapter1/01_15a_Discussion": {
     "status": "definition_verified",
