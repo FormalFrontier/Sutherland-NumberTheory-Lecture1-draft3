@@ -42,10 +42,10 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "definition_verified",
+    "status": "needs_definition",
     "last_updated": "2026-04-21",
-    "issue": "#126",
-    "notes": "Stage 3.2 review for issue #126 tightened SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean so the introduction's blob-level claims map to explicit declarations: `ℤ` as a PID with fraction field `ℚ`, the quotient `ℤ/(p)` as `𝔽_p`, the prime-field embeddings by characteristic, the `ℚ[X]` PID / irreducible-maximal-ideal presentation of number fields, the `F_q[t]` PID analogy, and the function-field finite-extension statement. The completion/local-field survey sentence remains intentionally deferred as Stage 3.1's previously recorded `formalizable_later` claim rather than an unreviewed coverage gap.",
+    "issue": "#182",
+    "notes": "Stage 3.3 audit under issue #171 re-read blobs/Chapter1/01_00_Introduction.md against SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean and found four mathematically formalizable claims that are still missing explicit declarations or recalls: the fundamental theorem of arithmetic over `ℤ`, maximality of `(p)` in `ℤ`, the converse quotient presentation of arbitrary number fields, and the dimension/characteristic comparison sentences for `F_q[t]`. Follow-up issue #182 now tracks the required missing-claim repair. The completion/local-field survey sentence remains separately recorded as the existing `formalizable_later` claim rather than as a newly discovered gap.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -80,6 +80,54 @@
           "reason": "Mathematical, but it depends on later local-field/completion infrastructure and should not be the first declaration in the opening-batch scaffold."
         }
       ]
+    },
+    "stage3_3_audit": {
+      "issue": "#171",
+      "decision": "gaps_found",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every field contains exactly one prime field, namely Q in characteristic zero or F_p in characteristic p.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.charZero_contains_rat; SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.charP_contains_zmod",
+          "reason": "The prime-field classification is still represented explicitly in the current scaffold."
+        },
+        {
+          "n": 2,
+          "text": "By the fundamental theorem of arithmetic, every element of Z can be written uniquely as a product of primes up to multiplication by a unit.",
+          "classification": "missing_declaration",
+          "issue": "#182",
+          "reason": "The introduction uses this as mathematical setup, but the current Lean file has no declaration or recall for the factorization statement."
+        },
+        {
+          "n": 3,
+          "text": "If p is a prime, the ideal (p) in Z is maximal.",
+          "classification": "missing_declaration",
+          "issue": "#182",
+          "reason": "The quotient/residue-field side is formalized, but the maximal-ideal claim itself is not yet stated."
+        },
+        {
+          "n": 4,
+          "text": "Finite extensions of Q are number fields and each number field can be presented as Q[x]/(f) for a monic irreducible polynomial.",
+          "classification": "partially_formalized",
+          "issue": "#182",
+          "reason": "The current file formalizes the forward example direction via `AdjoinRoot`, but it does not yet state the converse quotient presentation for an arbitrary number field."
+        },
+        {
+          "n": 5,
+          "text": "F_q[t] is a PID of dimension one, and its residue fields have the same characteristic as F_q(t).",
+          "classification": "partially_formalized",
+          "issue": "#182",
+          "reason": "PID-ness, finite residue fields, and the global-function-field finite-extension statement are present, but the dimension-one and characteristic-comparison claims are still missing."
+        },
+        {
+          "n": 6,
+          "text": "The completions of Q are R and the p-adic fields Q_p.",
+          "classification": "deferred_existing_claim",
+          "reason": "This sentence was already recorded in Stage 3.1 as `formalizable_later`, so it is not a newly discovered Stage 3.3 omission."
+        }
+      ],
+      "summary": "The introduction does not clear the Stage 3.3 gate yet. Issue #182 groups the missing declaration work needed before this blob can return to `claims_audited`."
     }
   },
   "Chapter1/01_01_Remark": {
@@ -309,10 +357,31 @@
     }
   },
   "Chapter1/01_04_Lemma": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#122",
-    "notes": "Stage 3.2 reviewed SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean against the blob's single iff claim, kept the explicit converse bridge `isNonarchimedean_of_natCast_le_one`, and added the lecture-exact `n ≥ 1` criterion as `isNonarchimedean_iff_natCast_pos_le_one` alongside the stronger all-`ℕ` helper."
+    "issue": "#171",
+    "notes": "Stage 3.3 audit under issue #171 re-read blobs/Chapter1/01_04_Lemma.md against SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean and confirmed that the blob's single iff claim is fully covered by explicit Lean declarations, with both the lecture-exact `n ≥ 1` form and the stronger all-`ℕ` helper present.",
+    "stage3_3_audit": {
+      "issue": "#171",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "An absolute value on a field k is nonarchimedean if and only if |1 + ... + 1| <= 1 for all n >= 1.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_04_Lemma.isNonarchimedean_iff_natCast_pos_le_one",
+          "reason": "The blob's exact statement is present as its own theorem."
+        },
+        {
+          "n": 2,
+          "text": "The same criterion may be stated with the stronger all-natural-numbers bound |n| <= 1.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_04_Lemma.isNonarchimedean_iff_natCast_le_one",
+          "reason": "The scaffold also records the stronger helper form used to bridge the proof."
+        }
+      ],
+      "summary": "No missing import or missing declaration remains. The lemma is ready for downstream proof work."
+    }
   },
   "Chapter1/01_04_Proof": {
     "status": "references_attached",
@@ -680,10 +749,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_29_Example.refs.md, preserving the `(1 + sqrt 7) / 2` computation as custom arithmetic on top of Proposition 1.28's minimal-polynomial criterion."
   },
   "Chapter1/01_29a_Bibliography": {
-    "status": "non_formalizable",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#167",
-    "notes": "Stage 3.2 review for issue #167 re-read blobs/Chapter1/01_29a_Bibliography.md against the Stage 3.1 audit and confirmed that the blob contains only three bibliographic citations. The candidate-claim enumeration from issue #154 is complete, each exclusion reason is technically sound, and no standalone mathematical declaration was missed.",
+    "issue": "#171",
+    "notes": "Stage 3.3 audit under issue #171 re-read blobs/Chapter1/01_29a_Bibliography.md and confirmed that it still contains only the three citation entries already enumerated in Stage 3.1/3.2, with no hidden mathematical claim and no missing `.lean` file.",
     "reason": "Enumerated candidate claims reviewed in Stage 3.1: (1) Altman and Kleiman's A term of commutative algebra is a cited reference; excluded because bibliographic entries identify sources rather than assert mathematics inside the lecture formalization. (2) Atiyah and Macdonald's Introduction to commutative algebra is a cited reference; excluded for the same reason. (3) Serre's Local fields is a cited reference; excluded for the same reason.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
@@ -707,6 +776,31 @@
           "reason": "Bibliographic metadata only, not a mathematical statement to encode in Lean."
         }
       ]
+    },
+    "stage3_3_audit": {
+      "issue": "#171",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Allen Altman and Steven Kleiman, A term of commutative algebra, Worldwide Center of Mathematics, 2013.",
+          "classification": "excluded",
+          "reason": "Bibliographic metadata only, not a mathematically formalizable claim."
+        },
+        {
+          "n": 2,
+          "text": "Michael Atiyah and Ian MacDonald, Introduction to commutative algebra, Addison-Wesley, 1969.",
+          "classification": "excluded",
+          "reason": "Bibliographic metadata only, not a mathematically formalizable claim."
+        },
+        {
+          "n": 3,
+          "text": "Jean-Pierre Serre, Local fields, Springer, 1979.",
+          "classification": "excluded",
+          "reason": "Bibliographic metadata only, not a mathematically formalizable claim."
+        }
+      ],
+      "summary": "The bibliography remains terminal reference metadata, but it has now passed the Stage 3.3 audit gate."
     }
   }
 }
