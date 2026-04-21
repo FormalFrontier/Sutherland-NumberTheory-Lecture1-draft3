@@ -2263,6 +2263,7 @@
     "status": "proof_polished",
     "last_updated": "2026-04-21",
     "issue": "#584",
+    "upstreaming_status": "mathlib_covered",
     "notes": "Issue #584 completed the Stage 3.6 proof-polish pass for `Chapter1/01_23_Proof`. Re-reading `blobs/Chapter1/01_23_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean` confirmed that the file should stay as a single wrapper theorem over `ufd_isIntegrallyClosed`; the proof was tightened to direct term style while keeping the existing minimal import on `Chapter1/01_23_Corollary`, and `lake build` still succeeds after the cleanup.",
     "stage3_2_review": {
       "issue": "#439",
