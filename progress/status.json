@@ -623,10 +623,31 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_16a_Discussion.refs.md, preserving the continuation sources into the integral-extension section while marking the transition note as likely non-formalizable."
   },
   "Chapter1/01_17_Definition": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#113",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean by recalling Mathlib's element-level predicate `IsIntegral` and the extension-level typeclass `Algebra.IsIntegral`, with explicit declarations for both parts of Definition 1.17."
+    "issue": "#129",
+    "notes": "Stage 3.2 review for issue #129 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean covers both claims in the blob with explicit declarations: `integral_element_iff` bridges the textbook root-of-a-monic-polynomial wording to `IsIntegral A b`, and `integral_extension_iff` records the extension-level quantification as `Algebra.IsIntegral A B ↔ ∀ b, IsIntegral A b`. No review repair was needed.",
+    "stage3_2_review": {
+      "issue": "#129",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "An element b in a ring extension A ⊆ B is integral over A iff it is a root of a monic polynomial in A[x].",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_element_iff",
+          "reason": "The file states the exact equivalence between `IsIntegral A b` and the textbook root-of-a-monic-polynomial formulation."
+        },
+        {
+          "n": 2,
+          "text": "The ring B is integral over A iff every element of B is integral over A.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_extension_iff",
+          "reason": "The file exposes the extension-level notion explicitly via `Algebra.isIntegral_def`."
+        }
+      ],
+      "summary": "The Stage 3.1 scaffold was complete: each claim in the blob has an explicit Lean declaration, the extension-level wording has a local bridge theorem, and the file contains no definition-level `sorry`."
+    }
   },
   "Chapter1/01_18_Proposition": {
     "status": "scaffolded",
