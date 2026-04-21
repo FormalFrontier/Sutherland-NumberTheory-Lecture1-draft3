@@ -2127,10 +2127,10 @@
     }
   },
   "Chapter1/01_27_Remark": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#272",
-    "notes": "Stage 3.3 audit under issue #272 re-read `blobs/Chapter1/01_27_Remark.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean`. The audit found one omitted sentence from the blob: the alternate notation `\\mathbf{Z}_K` for the ring of integers. The Lean file now repairs that gap with the abbreviation `ZK` and theorem `zk_eq_ringOfIntegers`; the existing order, lattice, and maximal-order declarations already covered the rest of the remark.",
+    "issue": "#418",
+    "notes": "Stage 3.4 verification under issue #418 re-read `blobs/Chapter1/01_27_Remark.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean`, confirming that the file still captures all three mathematical sentences of the remark: the alternate notation `\\mathbf{Z}_K`, the equivalence between orders and full-rank `\\mathbf{Z}`-lattices that are also rings, and the maximal-order containment statement for `\\mathcal{O}_K`. `rg -n \"sorry\" SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean` is empty, `lake exe cache get` ran for the session bootstrap, and `lake build` succeeded.",
     "stage3_3_audit": {
       "issue": "#272",
       "decision": "clean_after_repair",
