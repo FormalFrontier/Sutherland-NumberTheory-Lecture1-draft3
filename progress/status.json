@@ -1329,10 +1329,10 @@
     }
   },
   "Chapter1/01_14_Example": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#335",
-    "notes": "Stage 3.4 proof work for issue #335 discharged the two remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean`. The maximal-ideal statement now rewrites the local maximal ideal via `IsLocalization.AtPrime.map_eq_maximalIdeal`, and the residue-field claim composes `IsLocalization.AtPrime.equivQuotMaximalIdeal` with `Int.quotientSpanNatEquivZMod`, leaving the item sorry-free. Earlier Stage 3.3 audit issue #323 still applies: no scaffold repair beyond proof completion was required.",
+    "issue": "#513",
+    "notes": "Issue #513 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean` against `blobs/Chapter1/01_14_Example.md`. The finished example still depends directly on `Chapter1/01_10_Definition` for the lecture's valuation-ring viewpoint and on `Chapter1/01_13_Definition` for the residue-field wrapper used by the closing identification, but `Chapter1/01_07_Definition` is only contextual: the finalized declarations never invoke the project-specific `p`-adic valuation construction, so that edge trims away. The Stage 3.4 proof completion from issue #335 remains in force with no further scaffold changes.",
     "stage3_2_review": {
       "issue": "#298",
       "decision": "clean",
