@@ -2131,10 +2131,10 @@
     }
   },
   "Chapter1/01_22_Proof": {
-    "status": "dependency_trimmed",
+    "status": "proof_polished",
     "last_updated": "2026-04-21",
-    "issue": "#548",
-    "notes": "Issue #548 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_22_Proof`. Re-reading `blobs/Chapter1/01_22_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proof.lean` confirmed that `rat_isInteger_of_isIntegral`, `rat_den_eq_one_of_isIntegral`, `rat_num_eq_of_isIntegral`, and `rat_exists_int_of_isIntegral` are all direct wrappers around Mathlib's integral-rational API, so no earlier-book dependency survives; the stale `Chapter1/01_22_Proposition` and `Chapter1/01_17_Definition` dependencies were removed, `dependencies/internal.json[\"Chapter1/01_22_Proof\"]` trims to `[]`, and `lake build` succeeded after the cleanup.",
+    "issue": "#582",
+    "notes": "Issue #582 completed the Stage 3.6 proof-polish pass for `Chapter1/01_22_Proof`. Re-reading `blobs/Chapter1/01_22_Proof.md` confirmed that the file should stay a four-theorem wrapper around Mathlib's integral-rational API, so the cleanup tightened the proofs to direct range/destructuring arguments, reused `rat_num_eq_of_isIntegral` for the final existential wrapper, replaced `import Mathlib` with the specific rational-localization and rational-root imports, and preserved the empty direct dependency set; `lake build` succeeded after the polish pass.",
     "stage3_2_review": {
       "issue": "#432",
       "decision": "verified",
