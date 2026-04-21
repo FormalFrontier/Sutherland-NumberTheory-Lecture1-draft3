@@ -26,6 +26,10 @@ section Remark_01_27
 
 variable (K : Type*) [Field K] [NumberField K]
 
+/-- Remark 1.27 notes that `\mathbf{Z}_K` is also used for the ring of integers
+of `K`; we record that alternate textbook notation as a local abbreviation. -/
+abbrev ZK : Type _ := NumberField.RingOfIntegers K
+
 /-- In the lecture, an order in a finite-dimensional `ℚ`-algebra `K` is a
 `ℤ`-subalgebra that is free and finite as a `ℤ`-module, with rank equal to
 `[K : ℚ]`. -/
@@ -45,6 +49,11 @@ def IsZLattice (L : Submodule ℤ K) : Prop :=
 contains `1` and is closed under multiplication. -/
 def IsRingSubmodule (L : Submodule ℤ K) : Prop :=
   (1 : K) ∈ L ∧ ∀ ⦃x y : K⦄, x ∈ L → y ∈ L → x * y ∈ L
+
+/-- The alternate notation `\mathbf{Z}_K` denotes the same ring of integers as
+`\mathcal{O}_K`. -/
+theorem zk_eq_ringOfIntegers : ZK K = NumberField.RingOfIntegers K :=
+  rfl
 
 /-- Remark 1.27's two descriptions of an order are equivalent for a bundled
 `ℤ`-subalgebra: the order predicate is exactly the statement that the underlying
