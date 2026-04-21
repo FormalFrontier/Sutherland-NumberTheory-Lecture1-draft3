@@ -8,6 +8,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_00_Introduction»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_03_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_06_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
 
 /-!
