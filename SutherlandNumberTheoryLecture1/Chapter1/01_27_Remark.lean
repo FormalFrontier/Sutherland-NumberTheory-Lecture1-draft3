@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_26_Definition»
 
 /-!
 # Remark 1.27: orders and the maximal order `O_K`
