@@ -19,6 +19,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Theorem»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_10a_Discussion»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_11_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_12_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_13_Definition»
