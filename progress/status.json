@@ -418,10 +418,10 @@
     }
   },
   "Chapter1/01_05_Corollary": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#377",
-    "notes": "Stage 3.3 audit in issue #377 confirmed that `blobs/Chapter1/01_05_Corollary.md` still has no missing formalizable claim relative to `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean`: the positive-characteristic and finite-field conclusions, together with the explicit Frobenius helper lemmas the lecture uses, already cover the full blob.",
+    "issue": "#389",
+    "notes": "Issue #389 discharged all Stage 3.4 proof placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean`: the positive-characteristic side now proves the Frobenius fixed-point identity on nat-casts and feeds the resulting `|n| ≤ 1` bound into Lemma 1.4, while the finite-field side uses `FiniteField.pow_card_sub_one_eq_one` to show every nonzero element has absolute value `1` and hence the absolute value is trivial. `rg -n \"sorry\"` is empty for the corollary/proof pair, and `lake build` succeeds.",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
@@ -466,10 +466,10 @@
     }
   },
   "Chapter1/01_05_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#377",
-    "notes": "Stage 3.3 audit in issue #377 confirmed that `blobs/Chapter1/01_05_Proof.md` has no omitted formalizable sentence relative to `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean`: the positive-characteristic route through Lemma 1.4 and the finite-field Frobenius-to-triviality route are both already explicit.",
+    "issue": "#389",
+    "notes": "Issue #389 completed the remaining Stage 3.4 helper proof in `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean`, proving that a nonnegative real fixed by a power `> 1` must be `0` or `1`. This now makes the proof blob's positive-characteristic and finite-field Frobenius routes fully explicit without theorem-level `sorry`, and the full project still builds after the change.",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
