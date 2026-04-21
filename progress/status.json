@@ -795,10 +795,10 @@
     "notes": "Stage 3.2 review confirmed SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean already matches Definition 1.26 exactly: `NumberField K` provides the finite extension of `ℚ`, and `NumberField.RingOfIntegers K` is definitionally the integral closure of `ℤ` in `K`."
   },
   "Chapter1/01_27_Remark": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
     "issue": "#151",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean` by formalizing the lecture's order language as predicates on `Subalgebra ℤ K`, identifying the equivalent full-rank `ℤ`-lattice formulation on the underlying submodule, and expressing the maximal-order claim for `NumberField.RingOfIntegers K` via the canonical `orderToRingOfIntegers` map."
+    "notes": "Stage 3.2 review confirmed `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean` stays within the lecture's scope: `IsOrder` records the full-rank free `ℤ`-subalgebra formulation, `isOrder_iff_isZLattice_and_isRingSubmodule` makes the equivalent lattice-plus-ring viewpoint explicit for bundled subalgebras, and `orderToRingOfIntegers` with `ringOfIntegers_contains_every_order` expresses the maximal-order remark using `NumberField.RingOfIntegers K` without importing stronger order-theory infrastructure."
   },
   "Chapter1/01_28_Proposition": {
     "status": "definition_verified",
