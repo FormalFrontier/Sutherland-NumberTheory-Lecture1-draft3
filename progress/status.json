@@ -1643,10 +1643,10 @@
     }
   },
   "Chapter1/01_16_Proof": {
-    "status": "dependency_trimmed",
+    "status": "proof_polished",
     "last_updated": "2026-04-21",
-    "issue": "#520",
-    "notes": "Issue #520 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_16_Proof`. Re-reading `blobs/Chapter1/01_16_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean` showed that the proof item is now only a citation-style wrapper with no declarations of its own; the file merely re-exports `01_16_Theorem`, so the theorem import is implementation plumbing rather than a direct earlier-book dependency of the proof blob itself. `dependencies/internal.json[\"Chapter1/01_16_Proof\"]` therefore trims to `[]`.",
+    "issue": "#597",
+    "notes": "Issue #597 completed the Stage 3.6 proof-polish pass for `Chapter1/01_16_Proof`. Re-reading `blobs/Chapter1/01_16_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean` confirmed that the cleanest honest formalization is still the existing import-only wrapper over `01_16_Theorem`: the file has no declarations of its own, no direct earlier-book dependencies, and no redundant imports or wrapper theorems to trim further.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
