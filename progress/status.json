@@ -2055,16 +2055,65 @@
     }
   },
   "Chapter1/01_22_Proposition": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#131",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean by formalizing Proposition 1.22 as the bundled instance `IsIntegrallyClosed ℤ`, relying on Mathlib's unique-factorization-to-integrally-closed instance chain."
+    "issue": "#432",
+    "notes": "Issue #432 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean`. Re-reading `blobs/Chapter1/01_22_Proposition.md` against the Lean file confirmed that the proposition contributes exactly the single claim `IsIntegrallyClosed ℤ`, already exposed by `integers_isIntegrallyClosed`; `lake build` succeeded after the session cache bootstrap.",
+    "stage3_2_review": {
+      "issue": "#432",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The ring `\\mathbf{Z}` is integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integers_isIntegrallyClosed",
+          "reason": "The proposition file states the lecture's claim directly as the bundled theorem `IsIntegrallyClosed ℤ`, discharging it through Mathlib's standard instance chain with no missing auxiliary declaration."
+        }
+      ],
+      "summary": "The Stage 3.2 review found the proposition scaffold complete as written: Proposition 1.22 contains one mathematical claim, and `integers_isIntegrallyClosed` already formalizes it exactly."
+    }
   },
   "Chapter1/01_22_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#146",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_22_Proof.lean by formalizing the lecture's rational-root-test proof via `isInteger_of_is_root_of_monic`, then extracting the textbook denominator-one conclusion with `Rat.den_eq_one_iff` and `Rat.coe_int_num_of_den_eq_one`."
+    "issue": "#432",
+    "notes": "Issue #432 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proof.lean`. Re-reading `blobs/Chapter1/01_22_Proof.md` against the Lean file confirmed that the rational-root-test argument is fully represented by the existing denominator and numerator lemmas `rat_isInteger_of_isIntegral`, `rat_den_eq_one_of_isIntegral`, `rat_num_eq_of_isIntegral`, and `rat_exists_int_of_isIntegral`; `lake build` succeeded after the session cache bootstrap.",
+    "stage3_2_review": {
+      "issue": "#432",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If `q : \\mathbf{Q}` is integral over `\\mathbf{Z}`, then the rational-root test shows `q` is an integer in the localization sense.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.rat_isInteger_of_isIntegral",
+          "reason": "The first proof step is stated explicitly by unpacking integrality into a monic polynomial and applying Mathlib's `isInteger_of_is_root_of_monic`."
+        },
+        {
+          "n": 2,
+          "text": "If `q : \\mathbf{Q}` is integral over `\\mathbf{Z}`, then its denominator is `1`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.rat_den_eq_one_of_isIntegral",
+          "reason": "The denominator-one conclusion is isolated as its own theorem, translating the localization witness into membership in the image of `Int.cast` and then using `Rat.den_intCast`."
+        },
+        {
+          "n": 3,
+          "text": "If `q : \\mathbf{Q}` is integral over `\\mathbf{Z}`, then `q = q.num` in `\\mathbf{Q}`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.rat_num_eq_of_isIntegral",
+          "reason": "The file keeps the lecture's final equality-to-the-numerator step explicit by rewriting the denominator-one result through `Rat.den_eq_one_iff`."
+        },
+        {
+          "n": 4,
+          "text": "If `q : \\mathbf{Q}` is integral over `\\mathbf{Z}`, then there exists `z : \\mathbf{Z}` with `(z : \\mathbf{Q}) = q`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.rat_exists_int_of_isIntegral",
+          "reason": "The proof concludes with the textbook membership statement as a separate existential theorem, using the explicit numerator witness once the denominator is known to be `1`."
+        }
+      ],
+      "summary": "The Stage 3.2 review found the proof scaffold complete: the Lean file spells out each step of the lecture's rational-root-test argument as an explicit theorem, with no missing intermediate claim or hidden construction."
+    }
   },
   "Chapter1/01_23_Corollary": {
     "status": "scaffolded",
