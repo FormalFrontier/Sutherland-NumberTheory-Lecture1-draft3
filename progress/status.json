@@ -2402,10 +2402,10 @@
     }
   },
   "Chapter1/01_25_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#447",
-    "notes": "Issue #447 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean`. Re-reading `blobs/Chapter1/01_25_Proof.md` against the Lean file confirmed that the proof blob still contributes exactly two mathematical claims: the contradiction-step membership theorem `proof_integral_element_mem` and the concluding integrally-closed theorem `proof_valuationRing_isIntegrallyClosed`. `lake exe cache get` reused the session cache and `lake build` succeeded.",
+    "issue": "#456",
+    "notes": "Stage 3.4 verification under issue #456 re-read `blobs/Chapter1/01_25_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean`, confirming that the proof blob still contributes exactly the contradiction-step membership theorem `proof_integral_element_mem` and the concluding integrally-closed theorem `proof_valuationRing_isIntegrallyClosed`. `rg -n \"\\bsorry\\b\"` is empty for the module, `lake exe cache get` reused the session cache, and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#443",
       "decision": "verified",
@@ -2531,10 +2531,10 @@
     }
   },
   "Chapter1/01_28_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#450",
-    "notes": "Issue #450 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`. Re-reading `blobs/Chapter1/01_28_Proof.md` against the Lean file confirmed that the proof blob still contributes exactly three formalized declarations: `minpoly_dvd_of_monic_lifted_root` for the divisibility step coming from a monic annihilating polynomial, `minpoly_coeff_lifts_to_base` for the coefficient descent through the integrally closed intersection argument, and `proof_isIntegral_iff_exists_map_eq_minpoly` for the concluding integrality criterion. `lake exe cache get` reused the session cache and `lake build` succeeded.",
+    "issue": "#456",
+    "notes": "Stage 3.4 verification under issue #456 re-read `blobs/Chapter1/01_28_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`, confirming that the proof blob still contributes exactly three formalized declarations: `minpoly_dvd_of_monic_lifted_root` for the divisibility step coming from a monic annihilating polynomial, `minpoly_coeff_lifts_to_base` for the coefficient descent through the integrally closed intersection argument, and `proof_isIntegral_iff_exists_map_eq_minpoly` for the concluding integrality criterion. `rg -n \"\\bsorry\\b\"` is empty for the module, `lake exe cache get` reused the session cache, and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#442",
       "decision": "verified_complete",
