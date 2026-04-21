@@ -418,16 +418,65 @@
     }
   },
   "Chapter1/01_05_Corollary": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#107",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean by making both corollary claims explicit: `absoluteValue_isNonarchimedean_of_pos_char` derives the positive-characteristic conclusion from Lemma 1.4 plus Frobenius on nat-casts, and `absoluteValue_eq_trivial_of_finite` packages the finite-field conclusion via `FiniteField.pow_card_sub_one_eq_one` and an explicit nonzero-value bridge lemma."
+    "issue": "#367",
+    "notes": "Stage 3.2 review in issue #367 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` already captures both sentences of Corollary 1.5 faithfully: the positive-characteristic branch is stated as `absoluteValue_isNonarchimedean_of_pos_char`, and the finite-field branch is stated as `absoluteValue_eq_trivial_of_finite`, with the Frobenius nat-cast and nonzero-element helper lemmas exposed explicitly for downstream proof use.",
+    "stage3_2_review": {
+      "issue": "#367",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "In a field of positive characteristic every absolute value is nonarchimedean.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_isNonarchimedean_of_pos_char; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.natCast_absoluteValue_pow_char",
+          "reason": "The file states the corollary's positive-characteristic conclusion directly and keeps the Frobenius-on-nat-casts step as an explicit supporting theorem rather than leaving it implicit in a proof."
+        },
+        {
+          "n": 2,
+          "text": "The only absolute value on a finite field is the trivial one.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_trivial_of_finite; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_one_of_ne_zero",
+          "reason": "The file includes the exact finite-field conclusion plus the intermediate nonzero-value lemma that matches the lecture's route through Frobenius on finite fields."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for Corollary 1.5. Both mathematical sentences in the blob already have explicit Lean counterparts, so no declaration repair was needed before later proof work."
+    }
   },
   "Chapter1/01_05_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#109",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean by making the proof blob explicit: `eq_zero_or_one_of_nonneg_of_pow_eq_self` records the local real-valued helper, `natCast_absoluteValue_eq_zero_or_one` packages the positive-characteristic Frobenius step from `Chapter1/01_05_Corollary`, and `absoluteValue_eq_zero_or_one` cites `FiniteField.pow_card` for the finite-field fixed-point argument before concluding with the trivial absolute value."
+    "issue": "#367",
+    "notes": "Stage 3.2 review in issue #367 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean` already mirrors the proof blob faithfully: it isolates the real-number fixed-point helper, packages the positive-characteristic Frobenius argument into `natCast_absoluteValue_eq_zero_or_one`, and packages the finite-field Frobenius argument into `absoluteValue_eq_zero_or_one` before citing the corollary-level triviality theorem.",
+    "stage3_2_review": {
+      "issue": "#367",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If k has positive characteristic p, then every n in the prime field satisfies n^p = n, hence |n|^p = |n| and |n| is 0 or 1, so k is nonarchimedean by Lemma 1.4.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.eq_zero_or_one_of_nonneg_of_pow_eq_self; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.natCast_absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.positiveCharacteristic_nonarchimedean_proof",
+          "reason": "The proof file keeps the fixed-point-over-ℝ helper explicit, then exposes the positive-characteristic Frobenius step and the final citation of Lemma 1.4's criterion as separate reusable theorems."
+        },
+        {
+          "n": 2,
+          "text": "If k is finite of cardinality q, then x^q = x for all x, so |x|^q = |x| is 0 or 1, with 0 occurring only for x = 0.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_one_of_ne_zero",
+          "reason": "The proof file packages the Frobenius fixed-point argument for arbitrary x, and the imported corollary helper records the stronger nonzero-element conclusion used by the lecture."
+        },
+        {
+          "n": 3,
+          "text": "Therefore the only absolute value on a finite field is the trivial one.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.finiteField_absoluteValue_eq_trivial; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_trivial_of_finite",
+          "reason": "The proof blob's closing sentence is represented explicitly as a wrapper theorem in the proof file, which cites the corollary-level statement rather than leaving the conclusion implicit."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for the proof blob. Every formalizable sentence in the lecture's proof is already represented explicitly, with no missing declaration or assumption mismatch to repair before Stage 3.3."
+    }
   },
   "Chapter1/01_06_Definition": {
     "status": "claims_audited",
