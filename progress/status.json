@@ -42,10 +42,10 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "scaffolded",
-    "last_updated": "2026-04-20",
-    "issue": "#121",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean by packaging the introduction's formalizable claims as explicit declarations: characteristic-zero and characteristic-p prime-field embeddings, the number-field/irreducible-quotient framing via `NumberField` and `AdjoinRoot`, the `F_q[t]` PID/residue-field analogy, and the definition-level `FunctionField` finite-extension statement. The local-field/completion survey remains deferred commentary in the file rather than a fake placeholder theorem.",
+    "status": "definition_verified",
+    "last_updated": "2026-04-21",
+    "issue": "#126",
+    "notes": "Stage 3.2 review for issue #126 tightened SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean so the introduction's blob-level claims map to explicit declarations: `ℤ` as a PID with fraction field `ℚ`, the quotient `ℤ/(p)` as `𝔽_p`, the prime-field embeddings by characteristic, the `ℚ[X]` PID / irreducible-maximal-ideal presentation of number fields, the `F_q[t]` PID analogy, and the function-field finite-extension statement. The completion/local-field survey sentence remains intentionally deferred as Stage 3.1's previously recorded `formalizable_later` claim rather than an unreviewed coverage gap.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [

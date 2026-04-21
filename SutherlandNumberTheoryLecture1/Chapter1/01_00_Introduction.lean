@@ -22,6 +22,19 @@ section Introduction_01_00
 
 variable (K : Type*) [Field K]
 
+/-- The lecture's ambient starting ring `ℤ` is a principal ideal domain. -/
+theorem int_isPID : IsPrincipalIdealRing ℤ := by
+  infer_instance
+
+/-- The lecture's field of fractions of `ℤ` is Mathlib's `ℚ`. -/
+theorem int_fractionRing_isRat : IsFractionRing ℤ ℚ := by
+  infer_instance
+
+/-- Quotienting `ℤ` by the principal ideal `(p)` gives the prime field `𝔽_p`. -/
+def int_quotient_span_nat_equiv_zmod (p : ℕ) :
+    (ℤ ⧸ Ideal.span ({(p : ℤ)} : Set ℤ)) ≃+* ZMod p := by
+  exact Int.quotientSpanNatEquivZMod p
+
 /-- In characteristic zero, the lecture's prime field is `ℚ`. -/
 theorem charZero_contains_rat [CharZero K] : Nonempty (Algebra ℚ K) := by
   exact ⟨inferInstance⟩
@@ -46,6 +59,17 @@ theorem quotient_by_irreducible_isNumberField (f : Polynomial ℚ) [Fact (Irredu
     NumberField (AdjoinRoot f) := by
   infer_instance
 
+/-- The lecture's presentation of number fields uses that `ℚ[X]` is a PID. -/
+theorem rational_polynomial_isPID : IsPrincipalIdealRing (Polynomial ℚ) := by
+  infer_instance
+
+/-- Over a field, irreducible polynomials generate maximal ideals, matching the quotient
+presentation used for the lecture's number-field examples. -/
+theorem irreducible_generates_maximal_ideal_over_rat
+    (f : Polynomial ℚ) [Fact (Irreducible f)] :
+    (Ideal.span ({f} : Set (Polynomial ℚ))).IsMaximal := by
+  sorry
+
 variable (Fq F : Type*) [Field Fq] [Field F] [Algebra (RatFunc Fq) F]
 
 /-- Mathlib's `FunctionField` predicate packages the lecture's definition of a global function
@@ -69,6 +93,13 @@ theorem quotientByIrreducibleOverFunctionFieldBaseField
 finite fields. We isolate that claim here for later proof refinement. -/
 theorem quotient_by_irreducible_over_finite_field_isFinite
     [Finite Fq] (f : Polynomial Fq) [Fact (Irreducible f)] : Finite (AdjoinRoot f) := by
+  sorry
+
+/-- The lecture sharpens the previous residue-field claim by identifying the quotient with a
+finite field of size `q^d`, where `q = |F_q|` and `d = deg f`. -/
+theorem quotient_by_irreducible_over_finite_field_card
+    [Finite Fq] (f : Polynomial Fq) [Fact (Irreducible f)] :
+    Nat.card (AdjoinRoot f) = Nat.card Fq ^ f.natDegree := by
   sorry
 
 end Introduction_01_00
