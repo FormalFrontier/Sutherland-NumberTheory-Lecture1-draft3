@@ -384,10 +384,10 @@
     }
   },
   "Chapter1/01_04_Proof": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#384",
-    "notes": "Issue #384 re-checked `blobs/Chapter1/01_04_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean`, confirmed that the proof blob's only content is the Problem Set 1 citation already exposed by the two wrapper theorems, found no theorem-level `sorry`, and verified the project still builds.",
+    "issue": "#473",
+    "notes": "Issue #473 re-checked `blobs/Chapter1/01_04_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean` and confirmed that the proof blob's wrapper theorems depend directly on `Chapter1/01_04_Lemma` via `isNonarchimedean_of_natCast_le_one` and `isNonarchimedean_iff_natCast_pos_le_one`, so the trimmed dependency set remains exactly that lemma item.",
     "stage3_2_review": {
       "issue": "#359",
       "decision": "clean",
