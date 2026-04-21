@@ -2289,10 +2289,10 @@
     }
   },
   "Chapter1/01_24_Example": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#351",
-    "notes": "Stage 3.4 proof work under issue #351 discharged the remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean`. The file now proves the explicit quadratic relation `((1 + √5) / 2)^2 - (1 + √5) / 2 - 1 = 0` inside `FractionRing (ℤ√5)`, packages that witness as integral over `ℤ` and hence over `ℤ[√5]`, and completes the parity-based argument that `(1 + √5) / 2` cannot come from any element of `ℤ[√5]`, leaving the non-integrally-closed / non-UFD / non-PID consequences sorry-free.",
+    "issue": "#557",
+    "notes": "Issue #557 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_24_Example`. Re-reading `blobs/Chapter1/01_24_Example.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean` showed that the finalized example is self-contained except for its use of `ufd_isIntegrallyClosed` and `pid_isIntegrallyClosed` from `Chapter1/01_23_Corollary` in the closing non-UFD / non-PID consequences, so the stale transitive dependency on `Chapter1/01_17_Definition` was removed and the direct dependency set trims to `[\"Chapter1/01_23_Corollary\"]`.",
     "stage3_2_review": {
       "issue": "#258",
       "decision": "verified_after_minor_repair",
