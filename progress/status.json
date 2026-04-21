@@ -2001,10 +2001,10 @@
     }
   },
   "Chapter1/01_21_Corollary": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#436",
-    "notes": "Issue #436 completed the Stage 3.3 missing-claims audit for `Chapter1/01_21_Corollary`. Re-reading `blobs/Chapter1/01_21_Corollary.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_21_Corollary.lean` confirmed that the blob contains exactly the bundled integrally-closed-in-`B` statement for `integralClosure A B`, with no omitted claim beyond the existing declaration.",
+    "issue": "#455",
+    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_21_Corollary`. Re-reading `blobs/Chapter1/01_21_Corollary.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_21_Corollary.lean` confirmed that the blob still matches `integralClosure_isIntegrallyClosedIn` exactly; `rg -n \"\\\\bsorry\\\\b\"` on the `01_21`-`01_23` cluster returned clean, `lake exe cache get` reused the local Mathlib cache, and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#433",
       "decision": "verified",
@@ -2035,10 +2035,10 @@
     }
   },
   "Chapter1/01_21_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#436",
-    "notes": "Issue #436 completed the Stage 3.3 missing-claims audit for `Chapter1/01_21_Proof`. Re-reading `blobs/Chapter1/01_21_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_21_Proof.lean` confirmed that the proof's nested-closure idempotence argument and final integrally-closed conclusion are already captured by the existing declarations, with no omitted claim requiring a new theorem.",
+    "issue": "#455",
+    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_21_Proof`. Re-reading `blobs/Chapter1/01_21_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_21_Proof.lean` confirmed that the nested-closure idempotence step and final integrally-closed conclusion still match `integralClosure_idempotent_in_ambient` and `integralClosure_isIntegrallyClosedIn_from_proof`; the targeted `rg -n \"\\\\bsorry\\\\b\"` check was clean and `lake build` succeeded after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#433",
       "decision": "verified",
@@ -2097,10 +2097,10 @@
     }
   },
   "Chapter1/01_22_Proposition": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#438",
-    "notes": "Issue #438 completed the Stage 3.3 missing-claims audit for the `01_22` proposition/proof pair. Re-reading `blobs/Chapter1/01_22_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean` confirmed that the blob still contributes exactly the single claim `IsIntegrallyClosed ℤ`, already exposed by `integers_isIntegrallyClosed`; `lake exe cache get` reused the local Mathlib cache and `lake build` succeeded.",
+    "issue": "#455",
+    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_22_Proposition`. Re-reading `blobs/Chapter1/01_22_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean` confirmed that the proposition still contributes exactly `integers_isIntegrallyClosed : IsIntegrallyClosed ℤ`; the targeted `rg -n \"\\\\bsorry\\\\b\"` check was clean, `lake exe cache get` reused the local cache, and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#432",
       "decision": "verified",
@@ -2131,10 +2131,10 @@
     }
   },
   "Chapter1/01_22_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#438",
-    "notes": "Issue #438 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proof.lean`. Re-reading `blobs/Chapter1/01_22_Proof.md` confirmed that the full rational-root-test inventory is still covered by `rat_isInteger_of_isIntegral`, `rat_den_eq_one_of_isIntegral`, `rat_num_eq_of_isIntegral`, and `rat_exists_int_of_isIntegral`; `lake exe cache get` reused the local Mathlib cache and `lake build` succeeded.",
+    "issue": "#455",
+    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_22_Proof`. Re-reading `blobs/Chapter1/01_22_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proof.lean` confirmed that the rational-root-test steps are still fully represented by `rat_isInteger_of_isIntegral`, `rat_den_eq_one_of_isIntegral`, `rat_num_eq_of_isIntegral`, and `rat_exists_int_of_isIntegral`; the targeted `rg -n \"\\\\bsorry\\\\b\"` check was clean and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#432",
       "decision": "verified",
@@ -2207,10 +2207,10 @@
     }
   },
   "Chapter1/01_23_Corollary": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#446",
-    "notes": "Issue #446 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_23_Corollary.lean`. Re-reading `blobs/Chapter1/01_23_Corollary.md` against the Lean file confirmed that the corollary still contributes exactly two mathematical claims, both already stated explicitly as `ufd_isIntegrallyClosed` and `pid_isIntegrallyClosed`; no additional formalizable aside was found, and `lake build` succeeded after the session cache bootstrap.",
+    "issue": "#455",
+    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_23_Corollary`. Re-reading `blobs/Chapter1/01_23_Corollary.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_23_Corollary.lean` confirmed that the corollary still contributes exactly the two claims already formalized by `ufd_isIntegrallyClosed` and `pid_isIntegrallyClosed`; the targeted `rg -n \"\\\\bsorry\\\\b\"` check was clean and `lake build` succeeded.",
     "stage3_2_review": {
       "issue": "#439",
       "decision": "verified",
@@ -2255,10 +2255,10 @@
     }
   },
   "Chapter1/01_23_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#446",
-    "notes": "Issue #446 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean`. Re-reading `blobs/Chapter1/01_23_Proof.md` against the Lean file confirmed that the proof blob's sole mathematical sentence is still captured completely by `proof_ufd_isIntegrallyClosed`, with no missing formalizable aside; `lake build` succeeded after the session cache bootstrap.",
+    "issue": "#455",
+    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_23_Proof`. Re-reading `blobs/Chapter1/01_23_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean` confirmed that the proof blob's sole sentence still matches `proof_ufd_isIntegrallyClosed` exactly; the targeted `rg -n \"\\\\bsorry\\\\b\"` check was clean and `lake build` succeeded after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#439",
       "decision": "verified",
