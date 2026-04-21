@@ -1837,6 +1837,7 @@
     "last_updated": "2026-04-21",
     "issue": "#577",
     "notes": "Issue #577 completed the Stage 3.6 proof-polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean`. The wrapper remains a narrow citation of `Chapter1/01_18_Proposition.integral_add` and `.integral_mul`, but the redundant top-level `Mathlib` import is gone and both declarations now use direct term-style proofs while preserving the single direct book-item dependency on `Chapter1/01_18_Proposition` recorded during Stage 3.5.",
+    "upstreaming_status": "mathlib_covered",
     "stage3_2_review": {
       "issue": "#400",
       "decision": "verified",
