@@ -528,10 +528,10 @@
     }
   },
   "Chapter1/01_06_Definition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#384",
-    "notes": "Issue #384 re-checked `blobs/Chapter1/01_06_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean`, confirmed that the Mathlib-backed equivalence criterion is fully represented in both pointwise and textbook orientations, found no theorem-level `sorry`, and verified the project still builds.",
+    "issue": "#483",
+    "notes": "Issue #483 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean` against `blobs/Chapter1/01_06_Definition.md`. The conservative direct dependency on `Chapter1/01_02_Definition` is genuine: Definition 1.6 introduces equivalence only for previously defined absolute values, and both finalized theorems are parameterized by `AbsoluteValue k ℝ`, so `dependencies/internal.json[\"Chapter1/01_06_Definition\"]` correctly remains `[\"Chapter1/01_02_Definition\"]`.",
     "stage3_3_audit": {
       "issue": "#262",
       "decision": "clean",
