@@ -2207,10 +2207,10 @@
     }
   },
   "Chapter1/01_23_Corollary": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#439",
-    "notes": "Issue #439 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_23_Corollary.lean`. Re-reading `blobs/Chapter1/01_23_Corollary.md` against the Lean file confirmed that the corollary contributes exactly the lecture's UFD and PID integrally-closed claims, already exposed by `ufd_isIntegrallyClosed` and `pid_isIntegrallyClosed`; `lake build` succeeded after the session cache bootstrap.",
+    "issue": "#446",
+    "notes": "Issue #446 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_23_Corollary.lean`. Re-reading `blobs/Chapter1/01_23_Corollary.md` against the Lean file confirmed that the corollary still contributes exactly two mathematical claims, both already stated explicitly as `ufd_isIntegrallyClosed` and `pid_isIntegrallyClosed`; no additional formalizable aside was found, and `lake build` succeeded after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#439",
       "decision": "verified",
@@ -2231,13 +2231,34 @@
         }
       ],
       "summary": "The Stage 3.2 review found the corollary scaffold complete as written: Corollary 1.23 contains exactly the UFD statement and its PID specialization, and both are already formalized explicitly in the Lean file."
+    },
+    "stage3_3_audit": {
+      "issue": "#446",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every unique factorization domain is integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.ufd_isIntegrallyClosed",
+          "reason": "The Lean file still states the corollary's main sentence directly as a theorem returning `IsIntegrallyClosed R` under the UFD hypotheses."
+        },
+        {
+          "n": 2,
+          "text": "Every principal ideal domain is integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.pid_isIntegrallyClosed",
+          "reason": "The `In particular` clause is kept as its own explicit theorem, so the corollary does not hide any extra specialization or omitted claim."
+        }
+      ],
+      "summary": "The Stage 3.3 audit is clean: the corollary blob contains exactly the UFD integrally-closed claim and its PID specialization, and both are already formalized explicitly with no missing claim."
     }
   },
   "Chapter1/01_23_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#439",
-    "notes": "Issue #439 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean`. Re-reading `blobs/Chapter1/01_23_Proof.md` against the Lean file confirmed that the proof blob's sole sentence is already captured by `proof_ufd_isIntegrallyClosed`, an explicit wrapper reusing the preceding corollary theorem; `lake build` succeeded after the session cache bootstrap.",
+    "issue": "#446",
+    "notes": "Issue #446 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean`. Re-reading `blobs/Chapter1/01_23_Proof.md` against the Lean file confirmed that the proof blob's sole mathematical sentence is still captured completely by `proof_ufd_isIntegrallyClosed`, with no missing formalizable aside; `lake build` succeeded after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#439",
       "decision": "verified",
@@ -2251,6 +2272,20 @@
         }
       ],
       "summary": "The Stage 3.2 review found the proof scaffold complete as written: the blob has one mathematical sentence, and `proof_ufd_isIntegrallyClosed` formalizes that exact reuse-of-Proposition-1.22 claim."
+    },
+    "stage3_3_audit": {
+      "issue": "#446",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The proof of Proposition 1.22 works for any unique factorization domain.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_ufd_isIntegrallyClosed",
+          "reason": "The proof blob contains only this reuse sentence, and the Lean file keeps it as an explicit wrapper theorem rather than burying it in prose or imports."
+        }
+      ],
+      "summary": "The Stage 3.3 audit is clean: the proof blob contains one mathematical claim, and `proof_ufd_isIntegrallyClosed` already formalizes it with no omitted side remark."
     }
   },
   "Chapter1/01_24_Example": {
