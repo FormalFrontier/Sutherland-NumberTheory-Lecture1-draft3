@@ -2593,10 +2593,10 @@
     }
   },
   "Chapter1/01_29_Example": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#296",
-    "notes": "Stage 3.4 proof work under issue #296 discharged the remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean`. The file now explicitly proves the quadratic coefficient computation, verifies `((1 + √7) / 2)^2 - (1 + √7) / 2 - 3/2 = 0` in `FractionRing (ℤ√7)`, identifies `X^2 - X - 3/2` as the irreducible minimal polynomial over `ℚ`, rules out any lift from `ℤ[X]` by the constant-term denominator argument, and concludes that `(1 + √7) / 2` is not integral over `ℤ` via the integrally-closed minimal-polynomial criterion.",
+    "issue": "#570",
+    "notes": "Issue #570 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_29_Example`. Re-reading `blobs/Chapter1/01_29_Example.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean` confirmed that the finalized file still directly uses both `goldenRatio_isIntegral_over_int` from `Chapter1/01_24_Example` for the opening comparison and Proposition `1.28` from `Chapter1/01_28_Proposition` in the final non-integrality argument, so the existing direct dependency set `[\"Chapter1/01_24_Example\", \"Chapter1/01_28_Proposition\"]` was already minimal and was retained unchanged.",
     "stage3_3_audit": {
       "issue": "#282",
       "decision": "clean",
