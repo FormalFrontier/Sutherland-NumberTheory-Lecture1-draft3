@@ -569,10 +569,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_11a_Discussion.refs.md, recording the existing uniformizer API and the remaining ideal-power/DVR-structure facts that may need Stage 3 bridge lemmas."
   },
   "Chapter1/01_12_Definition": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#137",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_12_Definition.lean` directly against `IsLocalRing`; the file states the lecture's unique-maximal-ideal characterization as `localRing_iff_existsUnique_maximalIdeal` and exposes the distinguished maximal ideal through `maximalIdeal_isMaximal`."
+    "issue": "#141",
+    "notes": "Stage 3.2 review for issue #141 confirmed that blobs/Chapter1/01_12_Definition.md has one mathematical claim, fully covered by `localRing_iff_existsUnique_maximalIdeal` together with `maximalIdeal_isMaximal`. The scaffold uses `IsLocalRing` and `IsLocalRing.maximalIdeal` directly, keeps the unique-maximal-ideal criterion explicit in Lean, and contains no definition-level `sorry`."
   },
   "Chapter1/01_13_Definition": {
     "status": "references_attached",
