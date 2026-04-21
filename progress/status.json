@@ -384,10 +384,10 @@
     }
   },
   "Chapter1/01_04_Proof": {
-    "status": "dependency_trimmed",
+    "status": "proof_polished",
     "last_updated": "2026-04-21",
-    "issue": "#473",
-    "notes": "Issue #473 re-checked `blobs/Chapter1/01_04_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean` and confirmed that the proof blob's wrapper theorems depend directly on `Chapter1/01_04_Lemma` via `isNonarchimedean_of_natCast_le_one` and `isNonarchimedean_iff_natCast_pos_le_one`, so the trimmed dependency set remains exactly that lemma item.",
+    "issue": "#591",
+    "notes": "Issue #591 completed the Stage 3.6 proof-polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean`, trimming the redundant `Mathlib` import and reducing both wrapper theorems to direct citations of the corresponding results from `Chapter1/01_04_Lemma` while keeping that lemma as the only direct book-item dependency.",
     "stage3_2_review": {
       "issue": "#359",
       "decision": "clean",
