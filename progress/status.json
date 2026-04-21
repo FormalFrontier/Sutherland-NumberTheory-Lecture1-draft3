@@ -1939,10 +1939,31 @@
     }
   },
   "Chapter1/01_20_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
     "issue": "#135",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean by formalizing the proof blob as the elementwise tower-transitivity step `isIntegral_of_isIntegral_tower`, citing Mathlib's `isIntegral_trans` and re-exporting Proposition 1.20 through `integral_extension_trans_from_proof`."
+    "notes": "Issue #417 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean`. Re-reading `blobs/Chapter1/01_20_Proof.md` confirmed that the proof blob contributes only the standard citation for transitivity of integrality in towers, and the existing wrappers `isIntegral_of_isIntegral_tower` and `integral_extension_trans_from_proof` already capture that content without any definition-level repair; `lake build` succeeds after the session cache bootstrap.",
+    "stage3_2_review": {
+      "issue": "#417",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If `B` is integral over `A` and `c` is integral over `B`, then `c` is integral over `A`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isIntegral_of_isIntegral_tower",
+          "reason": "The proof file records the citation's core elementwise transitivity step directly, using Mathlib's `isIntegral_trans` under the same tower and integrality hypotheses."
+        },
+        {
+          "n": 2,
+          "text": "If `C / B / A` is a tower of ring extensions with `B` integral over `A` and `C` integral over `B`, then `C` is integral over `A`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_extension_trans_from_proof; SutherlandNumberTheoryLecture1.Chapter1.integral_extension_trans",
+          "reason": "The proof module re-exports Proposition 1.20 through `integral_extension_trans_from_proof`, so the blob's cited proof content is present without introducing any extra theorem beyond the textbook statement."
+        }
+      ],
+      "summary": "The Stage 3.2 review found the proof scaffold complete as written. The blob is only a citation to the standard transitivity argument, and the existing elementwise and extension-level wrappers already represent that formalizable content exactly."
+    }
   },
   "Chapter1/01_21_Corollary": {
     "status": "scaffolded",
