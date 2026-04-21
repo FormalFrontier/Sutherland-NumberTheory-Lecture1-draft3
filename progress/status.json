@@ -755,10 +755,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean by recording the valuation-ring fraction-field dichotomy as `valuationRing_integer_or_inv_integer` and the lecture's main claim as `valuationRing_isIntegrallyClosed`, both routed through Mathlib's bundled `ValuationRing` / `IsIntegrallyClosed` API rather than a bespoke reconstruction."
   },
   "Chapter1/01_25_Proof": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_25_Proof.refs.md, emphasizing that Stage 3 should likely derive the result from Mathlib's bundled valuation-ring theorem rather than replay the handwritten contradiction proof."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#153",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean by turning the lecture's contradiction argument into the explicit witness theorem `proof_integral_element_mem` and then rebuilding the final proof item `proof_valuationRing_isIntegrallyClosed` from `isIntegrallyClosed_iff`, reusing the bundled valuation-ring theorem from `01_25_Proposition` rather than replaying the coefficient manipulation."
   },
   "Chapter1/01_26_Definition": {
     "status": "scaffolded",
