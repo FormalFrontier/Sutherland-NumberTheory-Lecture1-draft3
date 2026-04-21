@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
+import Mathlib.RingTheory.IntegralClosure.Algebra.Basic
 
 /-!
 # Proof of Proposition 1.18
@@ -6,9 +6,9 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
 The lecture proves closure of integral elements under addition and
 multiplication by reducing to a universal quotient and then constructing the
 annihilating polynomials from the roots of the input monic polynomials. Mathlib
-already provides the same conclusions abstractly, so this proof blob is
-formalized as explicit Lean declarations citing the established closure lemmas
-rather than reconstructing the symmetric-polynomial argument.
+already provides the same conclusions abstractly as `IsIntegral.add` and
+`IsIntegral.mul`, so this proof blob cites those declarations directly rather
+than routing through an extra project-local wrapper layer.
 -/
 
 namespace SutherlandNumberTheoryLecture1
@@ -18,15 +18,15 @@ section Proof_01_18
 
 variable {A B : Type*} [CommRing A] [CommRing B] [Algebra A B]
 
-/-- The proof blob's sum claim is discharged by the previously scaffolded proposition. -/
+/-- The proof blob's sum claim is Mathlib's closure of integral elements under addition. -/
 theorem proof_integral_add {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
-    IsIntegral A (α + β) :=
-  integral_add hα hβ
+    IsIntegral A (α + β) := by
+  simpa using IsIntegral.add (R := A) (A := B) hα hβ
 
-/-- The proof blob's product claim is discharged by the previously scaffolded proposition. -/
+/-- The proof blob's product claim is Mathlib's closure of integral elements under multiplication. -/
 theorem proof_integral_mul {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
-    IsIntegral A (α * β) :=
-  integral_mul hα hβ
+    IsIntegral A (α * β) := by
+  simpa using IsIntegral.mul (R := A) (A := B) hα hβ
 
 end Proof_01_18
 
