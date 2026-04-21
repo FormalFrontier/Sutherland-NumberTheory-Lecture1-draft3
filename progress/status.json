@@ -1734,10 +1734,10 @@
     }
   },
   "Chapter1/01_17_Definition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#399",
-    "notes": "Issue #399 completed Stage 3.4 verification for `SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean`. Re-reading `blobs/Chapter1/01_17_Definition.md` confirmed that `integral_element_iff` and `integral_extension_iff` still cover the lecture text exactly, `rg -n \"sorry\"` is empty on the file, and `lake build` succeeds after the session cache bootstrap.",
+    "issue": "#524",
+    "notes": "Issue #524 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_17_Definition`. Re-reading `blobs/Chapter1/01_17_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean` showed that the file only recalls Mathlib's `IsIntegral` / `Algebra.IsIntegral` notions and packages them into the two equivalence theorems `integral_element_iff` and `integral_extension_iff`; it does not invoke any earlier book-specific declaration. The previous dependency on `Chapter1/01_16a_Discussion` was therefore motivational context rather than a direct formal dependency, so `dependencies/internal.json[\"Chapter1/01_17_Definition\"]` trims to `[]`.",
     "stage3_2_review": {
       "issue": "#129",
       "decision": "verified",
