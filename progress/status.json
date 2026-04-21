@@ -917,10 +917,10 @@
     "notes": "Stage 3.2 review for issue #142 confirmed that blobs/Chapter1/01_13_Definition.md has one mathematical claim, fully covered by `residueField_eq_quotient`. The scaffold uses `IsLocalRing.ResidueField` and `IsLocalRing.residue` directly, makes the quotient field and canonical quotient map explicit via `residueField_eq_quotient` and `residue_eq_idealQuotient_mk`, introduces no project-local duplicate construction, and contains no definition-level `sorry`."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#292",
-    "notes": "Stage 3.2 review for issue #292 confirmed that `blobs/Chapter1/01_13a_Discussion.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. The file packages the maximal-ideal adic valuation on the DVR and its extension to the fraction field, records the `v(x) ≤ 1` characterization of the recovered valuation ring and the reconstruction of `A` via `equivValuationSubring` and `map_algebraMap_eq_valuationSubring`, and now makes the recovered valuation's uniformizer existence explicit before the uniqueness and uniformizer-generator equivalence claims. No definition-level `sorry` was found.",
+    "issue": "#342",
+    "notes": "Stage 3.3 audit for issue #342 confirmed that `blobs/Chapter1/01_13a_Discussion.md` is now fully represented by `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. The scaffold already covered the adic valuation, its fraction-field extension, the recovered valuation ring, and uniqueness up to valuation equivalence; the audit added explicit DVR-side bridge theorems stating that a generator of the maximal ideal has reconstructed valuation `1` and that such a generator exists in `A` itself. The item is ready for downstream proof work, with no definition-level `sorry` introduced.",
     "stage3_2_review": {
       "issue": "#292",
       "decision": "passes_with_bridge_added",
@@ -969,6 +969,55 @@
         }
       ],
       "summary": "The Stage 3.2 review found one missing explicit bridge, namely existence of a uniformizer for the recovered valuation. After adding `exists_uniformizer_dvrValuation`, every mathematical sentence in the blob is represented by a declaration or direct Mathlib dependency, and the file remains free of definition-level `sorry`."
+    },
+    "stage3_3_audit": {
+      "issue": "#342",
+      "decision": "bridge_added",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For a DVR `A` with maximal ideal `m`, the valuation on `A` is defined by the powers of `m` via `(a) = m^n`, with `v(0) = infinity`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.maximalIdealIntValuation; SutherlandNumberTheoryLecture1.Chapter1.maximalIdealIntValuation_le_pow_iff_mem",
+          "reason": "The file already names the maximal-ideal adic valuation and records the lecture's power-of-`m` membership characterization explicitly."
+        },
+        {
+          "n": 2,
+          "text": "Extending that valuation to the fraction field by `v(a/b) = v(a) - v(b)` gives a discrete valuation on `Frac(A)`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvrValuation",
+          "reason": "Mathlib's DVR adic-valuation API already supplies the induced fraction-field valuation, and the scaffold packages it directly."
+        },
+        {
+          "n": 3,
+          "text": "The recovered valuation ring is exactly `A = {x in k : v(x) >= 0}`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.mem_dvrValuationSubring_iff; SutherlandNumberTheoryLecture1.Chapter1.dvrValuationSubring_eq_setOf_nonnegative; SutherlandNumberTheoryLecture1.Chapter1.dvrValuationSubring_toSubring_eq_image; SutherlandNumberTheoryLecture1.Chapter1.dvrValuation_integer_eq_image; SutherlandNumberTheoryLecture1.Chapter1.equivDvrValuationSubring",
+          "reason": "The scaffold already includes both the cutoff characterization and the identification of the resulting valuation ring with the image of `A` in its fraction field."
+        },
+        {
+          "n": 4,
+          "text": "Any discrete valuation on `k` with valuation ring `A` must be the same recovered valuation.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isEquiv_dvrValuation_of_valuationSubring_eq",
+          "reason": "The uniqueness sentence is already represented via equivalence of valuations determined by equality of valuation subrings."
+        },
+        {
+          "n": 5,
+          "text": "There exists `pi` with valuation `1`, and a generator of the maximal ideal has valuation `1`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.exists_uniformizer_dvrValuation; SutherlandNumberTheoryLecture1.Chapter1.dvrValuation_eq_exp_neg_one_of_maximalIdeal_eq_span; SutherlandNumberTheoryLecture1.Chapter1.exists_maximalIdeal_generator_with_dvrValuation_eq_exp_neg_one",
+          "reason": "The audit added the missing explicit DVR-side bridge from maximal-ideal generators in `A` to the reconstructed valuation value `1`, together with an existence statement inside `A` itself."
+        },
+        {
+          "n": 6,
+          "text": "A uniformizer could equivalently be defined as any generator of the maximal ideal, without referencing the valuation.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.maximalIdeal_eq_span_iff_isUniformizer; SutherlandNumberTheoryLecture1.Chapter1.dvrValuation_eq_exp_neg_one_of_maximalIdeal_eq_span",
+          "reason": "The scaffold already had the valuation-subring generator/uniformizer equivalence, and the audit now makes the corresponding generator-to-value-one bridge explicit back on the original DVR."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found the valuation/subring correspondence and uniqueness claims already present, but the final sentence of the blob was still too implicit on the original-ring side. Adding explicit theorems for maximal-ideal generators in `A` closed that gap, so `01_13a_Discussion` now advances to `claims_audited` without broadening beyond the blob."
     }
   },
   "Chapter1/01_14_Example": {
