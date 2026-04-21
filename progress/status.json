@@ -316,10 +316,10 @@
     }
   },
   "Chapter1/01_03_Example": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#378",
-    "notes": "Issue #378 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean already formalizes the trivial absolute value, both branches of its piecewise definition, and its nonarchimedean property with no theorem-level `sorry`; no Lean repair was needed and the full build still succeeds.",
+    "issue": "#467",
+    "notes": "Issue #467 performed the Stage 3.5 dependency review for SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean against blobs/Chapter1/01_03_Example.md and confirmed that the direct dependency on Chapter1/01_02_Definition survives trimming because the example's claims are precisely that the displayed map is an absolute value and that it is nonarchimedean, both notions introduced in Definition 1.2; the conservative dependency entry therefore remains unchanged.",
     "stage3_3_audit": {
       "issue": "#172",
       "decision": "clean",
