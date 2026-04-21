@@ -17,6 +17,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Theorem»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Theorem»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
 
@@ -43,6 +44,7 @@ queue after this setup lands is:
 - `Chapter1/01_08_Theorem`
 - `Chapter1/01_08_Proof`
 - `Chapter1/01_09_Theorem`
+- `Chapter1/01_09_Proof`
 
 The remaining opening-batch prose blobs were assessed in `progress/status.json`
 and are currently terminal `non_formalizable` candidates pending Stage 3.2 review:
