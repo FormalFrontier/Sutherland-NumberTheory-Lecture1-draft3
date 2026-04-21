@@ -1177,10 +1177,10 @@
     }
   },
   "Chapter1/01_13_Definition": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#347",
-    "notes": "Stage 3.3 audit under issue #347 confirmed that `blobs/Chapter1/01_13_Definition.md` is fully covered by the existing scaffold: `residueField_eq_quotient` states the textbook definition directly, and `residue_eq_idealQuotient_mk` keeps the canonical quotient map explicit without introducing any project-local duplicate construction.",
+    "issue": "#398",
+    "notes": "Issue #398 completed the Stage 3.4 sorry-free verification for `SutherlandNumberTheoryLecture1/Chapter1/01_13_Definition.lean`. Re-reading the blob against the Lean file confirmed that the lecture's residue-field definition is represented exactly by `residueField_eq_quotient` together with the explicit quotient-map wrapper `residue_eq_idealQuotient_mk`; `rg -n \"sorry\"` is empty on the file and `lake build` succeeds.",
     "stage3_2_review": {
       "issue": "#142",
       "decision": "clean",
@@ -1225,10 +1225,10 @@
     }
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#342",
-    "notes": "Stage 3.3 audit for issue #342 confirmed that `blobs/Chapter1/01_13a_Discussion.md` is now fully represented by `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. The scaffold already covered the adic valuation, its fraction-field extension, the recovered valuation ring, and uniqueness up to valuation equivalence; the audit added explicit DVR-side bridge theorems stating that a generator of the maximal ideal has reconstructed valuation `1` and that such a generator exists in `A` itself. The item is ready for downstream proof work, with no definition-level `sorry` introduced.",
+    "issue": "#398",
+    "notes": "Issue #398 completed the Stage 3.4 sorry-free verification for `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. Re-reading the blob against the Lean file confirmed that the lecture's valuation reconstruction, valuation-ring identification, uniqueness-up-to-equivalence, and maximal-ideal-generator versus uniformizer bridge are all represented explicitly; `rg -n \"sorry\"` is empty on the file and `lake build` succeeds.",
     "stage3_2_review": {
       "issue": "#292",
       "decision": "passes_with_bridge_added",
