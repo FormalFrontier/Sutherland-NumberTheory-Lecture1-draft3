@@ -745,10 +745,10 @@
     }
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "proof_formalized",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#318",
-    "notes": "Stage 3.4 proof work under issue #318 discharged the fraction-field uniformizer factorization theorem together with the change-of-uniformizer, nonzero-ideal classification, total-ordering, and unique-maximal-ideal proofs in `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean`. The file is not yet `sorry_free`: `span_pow_uniformizer_eq_valuation_ge` remains a theorem-level placeholder because its current statement appears to require an additional normalization hypothesis or an invariant restatement, now tracked in issue `#326`.",
+    "issue": "#330",
+    "notes": "Stage 3.4 proof work under issues #318 and #330 completed `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean`. The final step in issue #330 repaired the overstated valuation-cutoff theorem by proving an invariant cutoff statement `span_pow_uniformizer_eq_valuation_ge` in terms of `asValuation v`, together with the lecture-form normalized corollary `span_pow_uniformizer_eq_valuation_ge_normalized` under the explicit hypothesis `v (π : k) = 1`.",
     "stage3_2_review": {
       "issue": "#291",
       "decision": "passes_with_minor_repairs",
