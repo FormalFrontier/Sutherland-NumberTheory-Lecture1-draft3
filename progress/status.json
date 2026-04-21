@@ -466,10 +466,10 @@
     }
   },
   "Chapter1/01_05_Proof": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#389",
-    "notes": "Issue #389 completed the remaining Stage 3.4 helper proof in `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean`, proving that a nonnegative real fixed by a power `> 1` must be `0` or `1`. This now makes the proof blob's positive-characteristic and finite-field Frobenius routes fully explicit without theorem-level `sorry`, and the full project still builds after the change.",
+    "issue": "#476",
+    "notes": "Issue #476 completed the Stage 3.5 dependency-trimming pass for `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean`. Re-reading the proof blob against the sorry-free wrapper declarations showed that the file's direct book-item dependency is `Chapter1/01_05_Corollary`: the wrappers discharge their two book-level conclusions by reusing the corollary module's finished theorems, while the blob's citation of Lemma 1.4 is now only indirect provenance through that corollary, so `Chapter1/01_04_Lemma` was removed from `dependencies/internal.json`.",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
