@@ -725,10 +725,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_22_Proof.refs.md, recording the rational-root API needed if Stage 3 reconstructs the proof rather than using the instance directly."
   },
   "Chapter1/01_23_Corollary": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_23_Corollary.refs.md, pointing the UFD and PID corollary straight at Mathlib's integrally-closed instance chain."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#139",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_23_Corollary.lean by exposing the lecture's UFD and PID corollary as explicit `IsIntegrallyClosed` declarations, routing both through Mathlib's bundled unique-factorization-domain instance chain."
   },
   "Chapter1/01_23_Proof": {
     "status": "references_attached",
