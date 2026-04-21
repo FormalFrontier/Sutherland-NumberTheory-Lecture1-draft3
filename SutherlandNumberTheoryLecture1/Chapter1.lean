@@ -36,6 +36,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_23_Corollary»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_23_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_26_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_28_Proposition»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_28_Proof»
 
 /-!
 # Chapter 1 import spine
