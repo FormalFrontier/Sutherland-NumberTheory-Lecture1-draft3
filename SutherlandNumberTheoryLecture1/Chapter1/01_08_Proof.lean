@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Theorem»
 
 /-!
 # Proof of Theorem 1.8
