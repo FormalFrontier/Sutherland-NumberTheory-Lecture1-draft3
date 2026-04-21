@@ -719,6 +719,7 @@
     "last_updated": "2026-04-21",
     "issue": "#594",
     "notes": "Stage 3.6 issue #594 polished `SutherlandNumberTheoryLecture1/Chapter1/01_09_Proof.lean` by removing the redundant `Mathlib` import and rewriting the two proof-wrapper theorems as direct references to `Chapter1/01_09_Theorem`; the file's only direct dependency remains `Chapter1/01_09_Theorem`.",
+    "upstreaming_status": "rejected",
     "stage3_2_review": {
       "issue": "#373",
       "decision": "clean",
