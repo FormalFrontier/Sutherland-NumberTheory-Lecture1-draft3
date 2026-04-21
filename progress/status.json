@@ -920,10 +920,24 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_24a_Discussion.refs.md, connecting the DVR discussion to Mathlib's stronger valuation-ring integrally-closed infrastructure."
   },
   "Chapter1/01_25_Proposition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#249",
-    "notes": "Stage 3.2 review for issue #249 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean` faithfully covers the blob's only mathematical claim, Proposition 1.25, via `valuationRing_isIntegrallyClosed`, while keeping the valuation-ring dichotomy available as the explicit bridge theorem `valuationRing_integer_or_inv_integer` used by the downstream proof file. No scaffold repair was needed, and no definition-level gaps remain."
+    "issue": "#272",
+    "notes": "Stage 3.3 audit under issue #272 re-read `blobs/Chapter1/01_25_Proposition.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean`, confirming that the file still captures the blob's only mathematical claim exactly: every valuation ring is integrally closed. The supporting dichotomy theorem remains available as a bridge, but the audit found no missing formalizable claim or import gap.",
+    "stage3_3_audit": {
+      "issue": "#272",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every valuation ring is integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.valuationRing_isIntegrallyClosed",
+          "reason": "The Lean scaffold already states the proposition directly, and the auxiliary dichotomy theorem is additional support rather than a missing textbook sentence."
+        }
+      ],
+      "summary": "No Stage 3.3 repair was needed: Proposition 1.25 contributes exactly one mathematical claim, and the current scaffold already exposes it explicitly."
+    }
   },
   "Chapter1/01_25_Proof": {
     "status": "scaffolded",
@@ -932,16 +946,65 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean by turning the lecture's contradiction argument into the explicit witness theorem `proof_integral_element_mem` and then rebuilding the final proof item `proof_valuationRing_isIntegrallyClosed` from `isIntegrallyClosed_iff`, reusing the bundled valuation-ring theorem from `01_25_Proposition` rather than replaying the coefficient manipulation."
   },
   "Chapter1/01_26_Definition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#132",
-    "notes": "Stage 3.2 review confirmed SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean already matches Definition 1.26 exactly: `NumberField K` provides the finite extension of `ℚ`, and `NumberField.RingOfIntegers K` is definitionally the integral closure of `ℤ` in `K`."
+    "issue": "#272",
+    "notes": "Stage 3.3 audit under issue #272 re-read `blobs/Chapter1/01_26_Definition.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean`, confirming that both sentences from Definition 1.26 remain explicit: `NumberField K` supplies the finite extension of `ℚ`, and `NumberField.RingOfIntegers K` is definitionally the integral closure of `ℤ` in `K`. No missing claim or import gap was found.",
+    "stage3_3_audit": {
+      "issue": "#272",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "A number field is a finite extension of `\\mathbf{Q}`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.numberField_to_finiteDimensional",
+          "reason": "The file makes the finite-dimensional consequence of `NumberField K` explicit, which is the mathematical content of the textbook definition."
+        },
+        {
+          "n": 2,
+          "text": "The ring of integers `\\mathcal{O}_K` is the integral closure of `\\mathbf{Z}` in `K`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.ringOfIntegers_eq_integralClosure; SutherlandNumberTheoryLecture1.Chapter1.ringOfIntegers_isIntegralClosure",
+          "reason": "The definition and its bundled integral-closure structure are both already named explicitly in the Lean scaffold."
+        }
+      ],
+      "summary": "Definition 1.26 was already complete at Stage 3.2, so the Stage 3.3 audit closed cleanly without repairs."
+    }
   },
   "Chapter1/01_27_Remark": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#151",
-    "notes": "Stage 3.2 review confirmed `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean` stays within the lecture's scope: `IsOrder` records the full-rank free `ℤ`-subalgebra formulation, `isOrder_iff_isZLattice_and_isRingSubmodule` makes the equivalent lattice-plus-ring viewpoint explicit for bundled subalgebras, and `orderToRingOfIntegers` with `ringOfIntegers_contains_every_order` expresses the maximal-order remark using `NumberField.RingOfIntegers K` without importing stronger order-theory infrastructure."
+    "issue": "#272",
+    "notes": "Stage 3.3 audit under issue #272 re-read `blobs/Chapter1/01_27_Remark.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean`. The audit found one omitted sentence from the blob: the alternate notation `\\mathbf{Z}_K` for the ring of integers. The Lean file now repairs that gap with the abbreviation `ZK` and theorem `zk_eq_ringOfIntegers`; the existing order, lattice, and maximal-order declarations already covered the rest of the remark.",
+    "stage3_3_audit": {
+      "issue": "#272",
+      "decision": "clean_after_repair",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The notation `\\mathbf{Z}_K` is also used to denote the ring of integers of `K`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.ZK; SutherlandNumberTheoryLecture1.Chapter1.zk_eq_ringOfIntegers",
+          "reason": "Stage 3.3 repaired the only omission by adding an explicit local abbreviation for the alternate notation and a theorem identifying it with Mathlib's bundled ring of integers."
+        },
+        {
+          "n": 2,
+          "text": "In a finite-dimensional `\\mathbf{Q}`-algebra `K`, an order is a subring of `K` that is also a free `\\mathbf{Z}`-module of rank `r`, equivalently a `\\mathbf{Z}`-lattice in `K` that is also a ring.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.IsOrder; SutherlandNumberTheoryLecture1.Chapter1.IsZLattice; SutherlandNumberTheoryLecture1.Chapter1.IsRingSubmodule; SutherlandNumberTheoryLecture1.Chapter1.isOrder_iff_isZLattice_and_isRingSubmodule",
+          "reason": "The existing scaffold already split the order definition into the lattice and ring components and proved the equivalence the remark states."
+        },
+        {
+          "n": 3,
+          "text": "The ring of integers `\\mathcal{O}_K` is the maximal order of `K`: it contains every order in `K`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.orderToRingOfIntegers; SutherlandNumberTheoryLecture1.Chapter1.ringOfIntegers_contains_every_order",
+          "reason": "The canonical algebra map from any order into `NumberField.RingOfIntegers K` already formalized the maximal-order clause before the audit."
+        }
+      ],
+      "summary": "The only Stage 3.3 repair in this batch was to record the alternate `\\mathbf{Z}_K` notation explicitly. With that added, every mathematical sentence in Remark 1.27 is now represented in the Lean scaffold."
+    }
   },
   "Chapter1/01_28_Proposition": {
     "status": "definition_verified",
