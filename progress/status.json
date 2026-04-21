@@ -616,10 +616,10 @@
     }
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#276",
-    "notes": "Stage 3.2 review under issue #276 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` already covers the blob cleanly. The valuation-ring structure claim is ambient in the imported `ValuationSubring` API, while the local scaffold explicitly covers the integral-domain/fraction-field facts, the `x` or `x⁻¹` membership dichotomy, the valuation-zero unit characterization, the unit-locus set equality, the positive-valuation maximal-ideal bridge, and the sign partition. The remaining gaps are theorem-level `sorry`s only in `isUnit_iff_valuation_eq_zero`, `mem_maximalIdeal_iff_valuation_pos`, and `inv_mem_maximalIdeal_of_neg`; no Lean repair was needed and there are no definition-level gaps.",
+    "issue": "#346",
+    "notes": "Stage 3.3 audit under issue #346 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` already covers every formalizable sentence in `blobs/Chapter1/01_10a_Discussion.md` at the right level. The valuation-ring structure claim remains ambient in the imported `ValuationSubring` API, while the local scaffold explicitly covers the integral-domain/fraction-field facts, the `x` or `x⁻¹` membership dichotomy, the valuation-zero unit characterization, the unit-locus set equality, the positive-valuation maximal-ideal bridge, and the sign-based partition. No Lean repair was needed; the only remaining incompleteness is the pre-existing theorem-level `sorry`s in `isUnit_iff_valuation_eq_zero`, `mem_maximalIdeal_iff_valuation_pos`, and `inv_mem_maximalIdeal_of_neg`.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -722,6 +722,62 @@
         }
       ],
       "summary": "The Stage 3.2 review found complete scaffold coverage for every mathematical sentence in the blob. No Lean file changes were required; the only remaining work is proof completion for the three pre-existing theorem-level placeholders."
+    },
+    "stage3_3_audit": {
+      "issue": "#346",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every valuation ring A is a ring.",
+          "classification": "ambient_api",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10_Definition.valuationSubring",
+          "reason": "The discussion still uses Mathlib's bundled `ValuationSubring`, so the ring structure remains part of the ambient object rather than a missing local declaration."
+        },
+        {
+          "n": 2,
+          "text": "Every valuation ring A is an integral domain, because nonzero x and y have nonzero product.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.valuationSubring_isDomain",
+          "reason": "The scaffold already states the integral-domain conclusion explicitly; the prose proof sketch does not force any additional helper theorem at this stage."
+        },
+        {
+          "n": 3,
+          "text": "The ambient field k is the fraction field of the valuation ring A.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.valuationSubring_isFractionRing",
+          "reason": "The fraction-field relation is already exposed as its own theorem."
+        },
+        {
+          "n": 4,
+          "text": "For every x in k^times, at least one of x and 1 / x has nonnegative valuation and lies in A.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.mem_or_inv_mem_valuationSubring",
+          "reason": "The local theorem already packages the exact dichotomy used in the lecture."
+        },
+        {
+          "n": 5,
+          "text": "An element x in A is invertible in A if and only if v(x) = 0.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.isUnit_iff_valuation_eq_zero",
+          "reason": "The scaffold contains this exact equivalence as a named theorem, with only theorem-level proof work left."
+        },
+        {
+          "n": 6,
+          "text": "The unit group of A is A^times = {x in k : v(x) = 0}.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.unitGroup_eq_zeroValuation_set",
+          "reason": "The set-level reformulation remains explicitly represented as its own declaration."
+        },
+        {
+          "n": 7,
+          "text": "The nonzero elements of k partition according to whether their valuation is zero, positive, or negative: zero gives units of A, positive gives non-units in A, and negative gives elements outside A whose inverses are non-units in A.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.mem_maximalIdeal_iff_valuation_pos; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.mem_valuationSubring_of_pos; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.not_mem_valuationSubring_of_neg; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.not_isUnit_of_pos; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.inv_mem_maximalIdeal_of_neg; SutherlandNumberTheoryLecture1.Chapter1.01_10a_Discussion.valuation_sign_partition",
+          "reason": "The file already splits the trichotomy into reusable positive/negative lemmas plus a final partition theorem, and the stronger maximal-ideal statement for the negative branch still captures the lecture's nonunit conclusion explicitly enough."
+        }
+      ],
+      "summary": "The Stage 3.3 missing-claims audit found no new scaffold gaps. Every formalizable sentence in the blob is already represented explicitly or ambiently, so no Lean changes were required before later Stage 3.4 proof work."
     }
   },
   "Chapter1/01_11_Definition": {
