@@ -2454,10 +2454,38 @@
     }
   },
   "Chapter1/01_28_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#148",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`: `minpoly_dvd_of_monic_lifted_root` records the textbook divisibility step via `minpoly.isIntegrallyClosed_dvd`, `minpoly_coeff_lifts_to_base` turns the coefficient argument into repeated uses of `minpoly.isIntegrallyClosed_eq_field_fractions'` plus `IsIntegrallyClosed.isIntegral_iff`, and `proof_isIntegral_iff_exists_map_eq_minpoly` restates the proof blob as an explicit theorem."
+    "issue": "#442",
+    "notes": "Stage 3.2 review under issue #442 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean` already covers the entire proof blob: `minpoly_dvd_of_monic_lifted_root` packages the algebraic-closure divisibility step, `minpoly_coeff_lifts_to_base` captures the coefficient descent through the integrally closed intersection argument, and `proof_isIntegral_iff_exists_map_eq_minpoly` records the blob's final integrality iff. `lake build` succeeds on the reviewed scaffold.",
+    "stage3_2_review": {
+      "issue": "#442",
+      "decision": "verified_complete",
+      "claims": [
+        {
+          "n": 1,
+          "text": "A monic polynomial in `A[x]` vanishing at `α` forces the fraction-field minimal polynomial to divide it after lifting to an algebraic closure.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.minpoly_dvd_of_monic_lifted_root",
+          "reason": "This theorem is the scaffolded replacement for the textbook's factor-by-factor argument with the conjugates `α_i`."
+        },
+        {
+          "n": 2,
+          "text": "If `α` is integral over `A`, then each coefficient of its minimal polynomial over `K` lies in `A` because it is integral and belongs to the fraction field.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.minpoly_coeff_lifts_to_base",
+          "reason": "The theorem packages the proof blob's coefficient argument via the integrally closed fraction-field API."
+        },
+        {
+          "n": 3,
+          "text": "An element is integral over `A` exactly when its minimal polynomial over the fraction field comes from a monic polynomial in `A[x]`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_isIntegral_iff_exists_map_eq_minpoly",
+          "reason": "This explicit iff theorem captures the proof blob's final conclusion without omitting any mathematical step."
+        }
+      ],
+      "summary": "The Stage 3.1 scaffold was already complete for the proof blob, so Stage 3.2 required no Lean changes beyond promotion of the status metadata after a successful build."
+    }
   },
   "Chapter1/01_29_Example": {
     "status": "sorry_free",
