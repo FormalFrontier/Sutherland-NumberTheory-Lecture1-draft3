@@ -2539,6 +2539,7 @@
   },
   "Chapter1/01_28_Proof": {
     "status": "proof_polished",
+    "upstreaming_status": "mathlib_covered",
     "last_updated": "2026-04-21",
     "issue": "#596",
     "notes": "Stage 3.6 proof polish under issue #596 tightened `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean` without changing the proof blob's lighter assumptions: the local divisibility and integrality-criterion wrappers were shortened to cleaner proof terms, while the coefficient-descent step remains the only substantial local argument. The module still imports only `Chapter1/01_28_Proposition` and keeps the same three proof-blob declarations with no new dependencies.",
