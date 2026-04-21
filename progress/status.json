@@ -2531,10 +2531,10 @@
     }
   },
   "Chapter1/01_28_Proof": {
-    "status": "dependency_trimmed",
+    "status": "proof_polished",
     "last_updated": "2026-04-21",
-    "issue": "#567",
-    "notes": "Stage 3.5 dependency review under issue #567 re-read `blobs/Chapter1/01_28_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`, confirmed that the finalized proof still formalizes the divisibility, coefficient-descent, and integrality-criterion steps, and trimmed `dependencies/internal.json` to the lone direct prerequisite `Chapter1/01_28_Proposition`; the older edges to `01_18_Proposition` and `01_19_Definition` are now only transitive through that proposition. The Lean module already imported only `Chapter1/01_28_Proposition`, so no code changes were needed.",
+    "issue": "#596",
+    "notes": "Stage 3.6 proof polish under issue #596 tightened `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean` without changing the proof blob's lighter assumptions: the local divisibility and integrality-criterion wrappers were shortened to cleaner proof terms, while the coefficient-descent step remains the only substantial local argument. The module still imports only `Chapter1/01_28_Proposition` and keeps the same three proof-blob declarations with no new dependencies.",
     "stage3_2_review": {
       "issue": "#442",
       "decision": "verified_complete",
