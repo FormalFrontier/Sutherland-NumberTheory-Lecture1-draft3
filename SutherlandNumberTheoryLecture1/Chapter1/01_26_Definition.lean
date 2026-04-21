@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
 
 /-!
 # Definition 1.26: Number fields and rings of integers
