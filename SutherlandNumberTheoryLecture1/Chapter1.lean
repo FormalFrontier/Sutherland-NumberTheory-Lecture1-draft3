@@ -22,6 +22,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_20_Proposition»
 
 /-!
 # Chapter 1 import spine
