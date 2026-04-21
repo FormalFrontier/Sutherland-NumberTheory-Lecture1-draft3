@@ -1576,10 +1576,10 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#325",
-    "notes": "Issue #325 moved the theorem/proof package into `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean` to break the import cycle, then discharged `dvr_characterization_tfae` by proving the maximal-subring converse and the full seven-way `List.TFAE`. `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean` is now a thin wrapper import with no remaining `sorry`.",
+    "issue": "#521",
+    "notes": "Issue #521 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean` against `blobs/Chapter1/01_16_Theorem.md` and the imported core implementation in `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean`. The theorem wrapper is still just a re-export, but the finalized seven-way DVR characterization genuinely depends on `Chapter1/01_15a_Discussion`: `01_16_Core.lean` imports that discussion and uses its direct helper theorems `dvr_isIntegrallyClosed`, `dvr_ringKrullDim_eq_one`, `dvr_fractionRing_maximal_subalgebra`, `isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_prime`, and `isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one`. No further earlier-book dependency is referenced, so the Stage 3.5 pass retains the single direct edge while preserving the Stage 3.4 proof completion from issue #325.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
