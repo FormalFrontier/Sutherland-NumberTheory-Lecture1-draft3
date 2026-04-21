@@ -2450,10 +2450,10 @@
     }
   },
   "Chapter1/01_26_Definition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#409",
-    "notes": "Stage 3.4 verification under issue #409 re-read `blobs/Chapter1/01_26_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean`, confirming that the blob's two sentences remain fully represented: `NumberField K` records the finite extension of `ℚ`, and `NumberField.RingOfIntegers K` is definitionally the integral closure of `ℤ` in `K`. `rg -n \"sorry\"` is empty for the module, `lake exe cache get` was run for this session, and `lake build` succeeded.",
+    "issue": "#563",
+    "notes": "Stage 3.5 dependency trimming under issue #563 re-read `blobs/Chapter1/01_26_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean`, confirming that the finalized module uses only Mathlib's bundled `NumberField` and `NumberField.RingOfIntegers` APIs. The stale `Chapter1/01_19_Definition` import and internal dependency were removed, leaving no direct local dependencies for this item.",
     "stage3_3_audit": {
       "issue": "#272",
       "decision": "clean",
