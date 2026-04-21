@@ -1857,10 +1857,10 @@
     }
   },
   "Chapter1/01_19_Definition": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#280",
-    "notes": "Stage 3.3 audit under issue #280 re-read `blobs/Chapter1/01_19_Definition.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean`, confirming that the ambient integral-closure construction, the `\\widetilde A = A` integrally-closed-in-`B` criterion, and the domain/fraction-field normalization specialization all remain explicit. No missing formalizable claim or import gap was found.",
+    "issue": "#406",
+    "notes": "Issue #406 completed Stage 3.4 verification for `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean`. Re-reading `blobs/Chapter1/01_19_Definition.md` confirmed that the ambient integral-closure construction, the `\\widetilde A = A` integrally-closed-in-`B` criterion, and the domain/fraction-field normalization specialization remain explicit, `rg -n \"sorry\"` is empty on the file, and `lake build` succeeds after the session cache bootstrap.",
     "stage3_3_audit": {
       "issue": "#280",
       "decision": "clean",
