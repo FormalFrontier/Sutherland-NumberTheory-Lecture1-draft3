@@ -1710,10 +1710,28 @@
     }
   },
   "Chapter1/01_24a_Discussion": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_24a_Discussion.refs.md, connecting the DVR discussion to Mathlib's stronger valuation-ring integrally-closed infrastructure."
+    "status": "non_formalizable",
+    "last_updated": "2026-04-21",
+    "issue": "#348",
+    "notes": "Stage 3.1 classification under issue #348 re-read `blobs/Chapter1/01_24a_Discussion.md` against the refs note and neighboring Chapter 1 formalizations, concluding that the blob is only a rhetorical bridge into Proposition 1.25 rather than an item that should get its own Lean module. The sentence about DVRs being integrally closed is an immediate corollary already subsumed by the stronger valuation-ring proposition and the existing DVR infrastructure, while the final sentence is pure transition text.",
+    "reason": "The blob has two sentences: (1) \"It follows that every discrete valuation ring is integrally closed.\" This is mathematically true, but in context it is a forward-link corollary already covered by the surrounding formalization rather than a standalone declaration target for this blob: Theorem 1.16 already packages the DVR equivalences and Proposition 1.25 states the stronger result that every valuation ring is integrally closed, from which the DVR sentence follows immediately. Adding a separate `01_24a_Discussion.lean` theorem would duplicate that coverage instead of formalizing new book content. (2) \"In fact, more is true.\" This is purely motivational transition text introducing the stronger proposition that follows, with no mathematical assertion to formalize.",
+    "stage3_1_decision": {
+      "decision": "non_formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every discrete valuation ring is integrally closed.",
+          "classification": "excluded",
+          "reason": "Rhetorical bridge corollary already subsumed by the adjacent stronger proposition `SutherlandNumberTheoryLecture1.Chapter1.valuationRing_isIntegrallyClosed` together with the existing DVR formalization, so a blob-local declaration would be redundant."
+        },
+        {
+          "n": 2,
+          "text": "In fact, more is true.",
+          "classification": "excluded",
+          "reason": "Pure transition sentence introducing Proposition 1.25, with no standalone mathematical content."
+        }
+      ]
+    }
   },
   "Chapter1/01_25_Proposition": {
     "status": "claims_audited",
