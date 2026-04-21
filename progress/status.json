@@ -479,10 +479,10 @@
     }
   },
   "Chapter1/01_07_Definition": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#262",
-    "notes": "Stage 3.3 audit under issue #262 found one missing bridge in SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean: the file now adds `padicValuation_eq_exponent_of_factorization` so the lecture's defining formula `v_p(± ∏ q^{e_q}) = e_p` is represented explicitly, alongside the existing zero/nonzero formulas for `v_p` and `|.|_p`.",
+    "issue": "#309",
+    "notes": "Issue #309 completed the remaining Stage 3.4 proof work in `SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean`. The file now proves `padicValuation_eq_exponent_of_factorization` by reducing the lecture's `WithTop ℤ` valuation to `padicValRat`, splitting the signed prime-power product into the `p`-term and the erased support, and showing the off-`p` factors contribute zero valuation. This removes the last theorem-level `sorry` from the file.",
     "stage3_3_audit": {
       "issue": "#262",
       "decision": "repaired",
