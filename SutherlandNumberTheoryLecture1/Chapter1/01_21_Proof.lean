@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_21_Corollary»
 
 /-!
 # Proof of Corollary 1.21
