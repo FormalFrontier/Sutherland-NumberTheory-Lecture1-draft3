@@ -24,6 +24,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_12_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_13_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_20_Proposition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_20_Proof»
