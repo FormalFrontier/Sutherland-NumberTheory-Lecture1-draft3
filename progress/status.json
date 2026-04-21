@@ -1075,10 +1075,10 @@
     }
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#302",
-    "notes": "Stage 3.3 audit for issue #302 re-read `blobs/Chapter1/01_15a_Discussion.md` against `blobs/Chapter1/01_15a_Discussion.refs.md` and `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean`. The existing scaffold already covers every formalizable sentence in the blob: the DVR consequence bundle, the dimension/cotangent-space equivalence, the characterization bridges, and the fraction-field maximal-subalgebra clause as an explicit theorem-level placeholder. No additional declaration or repair was needed.",
+    "issue": "#324",
+    "notes": "Stage 3.4 proof work for issue #324 discharged `dvr_fractionRing_maximal_subalgebra` in `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean`. The proof converts an intermediate `A`-subalgebra of `FractionRing A` into a valuation subring over the DVR image, applies Mathlib's one-dimensional valuation-subring maximality theorem, and concludes that any proper intermediate subalgebra is the bottom subalgebra. The file is now theorem-level `sorry` free.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
