@@ -2035,10 +2035,10 @@
     }
   },
   "Chapter1/01_21_Proof": {
-    "status": "dependency_trimmed",
+    "status": "proof_polished",
     "last_updated": "2026-04-21",
-    "issue": "#541",
-    "notes": "Issue #541 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_21_Proof`. Re-reading `blobs/Chapter1/01_21_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_21_Proof.lean` confirmed that both finalized declarations are direct wrappers around Mathlib's `integralClosure_idem` and `IsIntegrallyClosedIn.of_isIntegralClosure`, so no earlier-book dependency survives; the stale `Chapter1/01_21_Corollary` import was removed and `lake build` succeeded after the metadata cleanup.",
+    "issue": "#581",
+    "notes": "Issue #581 completed the Stage 3.6 proof-polish pass for `Chapter1/01_21_Proof` by replacing the blanket `Mathlib` import with the specific integral-closure module and tightening both wrapper proofs to direct term-style applications of `integralClosure_idem` and `IsIntegrallyClosedIn.of_isIntegralClosure`; `lake build` still succeeds with no book-item imports reintroduced.",
     "stage3_2_review": {
       "issue": "#433",
       "decision": "verified",
