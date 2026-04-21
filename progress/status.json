@@ -2382,10 +2382,10 @@
     }
   },
   "Chapter1/01_25_Proposition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#412",
-    "notes": "Stage 3.4 verification under issue #412 re-read `blobs/Chapter1/01_25_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean`, confirming that `valuationRing_isIntegrallyClosed` still states the blob's only mathematical claim exactly: every valuation ring is integrally closed. `rg -n \"sorry\" SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean` is empty, `lake exe cache get` ran for the session bootstrap, and `lake build` succeeded.",
+    "issue": "#558",
+    "notes": "Issue #558 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_25_Proposition`. Re-reading `blobs/Chapter1/01_25_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean` confirmed that the finalized file still uses exactly the direct Chapter 1 notions already recorded: `Chapter1/01_11_Definition` for the valuation-ring dichotomy exposed by `valuationRing_integer_or_inv_integer`, and `Chapter1/01_19_Definition` for the integrally closed predicate in the proposition statement. No stale transitive import or dependency remained to remove, `dependencies/internal.json[\"Chapter1/01_25_Proposition\"]` stays `[\"Chapter1/01_11_Definition\", \"Chapter1/01_19_Definition\"]`, and `lake build` succeeded after the session cache bootstrap.",
     "stage3_3_audit": {
       "issue": "#272",
       "decision": "clean",
