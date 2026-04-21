@@ -724,10 +724,10 @@
     "notes": "Stage 3.2 review for issue #142 confirmed that blobs/Chapter1/01_13_Definition.md has one mathematical claim, fully covered by `residueField_eq_quotient`. The scaffold uses `IsLocalRing.ResidueField` and `IsLocalRing.residue` directly, makes the quotient field and canonical quotient map explicit via `residueField_eq_quotient` and `residue_eq_idealQuotient_mk`, introduces no project-local duplicate construction, and contains no definition-level `sorry`."
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_13a_Discussion.refs.md, emphasizing the valuation-subring correspondence declarations and the likely need for local reconstruction lemmas from maximal-ideal powers."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#271",
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean` around Mathlib's DVR/valuation correspondence. The new file defines the maximal-ideal adic valuation on the DVR and its extension to the fraction field, records the `v(x) ≤ 1` characterization of the recovered valuation ring, packages the recovery of `A` inside the fraction field via `equivValuationSubring` and `map_algebraMap_eq_valuationSubring`, and states the uniqueness and uniformizer-generator equivalence claims explicitly without introducing any definition-level `sorry`."
   },
   "Chapter1/01_14_Example": {
     "status": "references_attached",
