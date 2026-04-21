@@ -1184,10 +1184,10 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#315",
-    "notes": "Stage 3.3 audit for issue #315 re-read `blobs/Chapter1/01_16_Theorem.md` and `blobs/Chapter1/01_16_Theorem.refs.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`. The audit was clean: the seven lecture bullets are already packaged as explicit predicates, the aggregate `List.TFAE` statement is present, and no additional declaration, bridge theorem, or import is needed beyond the existing theorem-level proof obligations.",
+    "issue": "#325",
+    "notes": "Issue #325 moved the theorem/proof package into `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean` to break the import cycle, then discharged `dvr_characterization_tfae` by proving the maximal-subring converse and the full seven-way `List.TFAE`. `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean` is now a thin wrapper import with no remaining `sorry`.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1251,10 +1251,10 @@
     }
   },
   "Chapter1/01_16_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#319",
-    "notes": "Stage 3.4 proof work under issue #319 discharged `isDvr_of_isIntegrallyClosedNoetherianLocalDimOne` by combining the local dimension-one criterion with the uniqueness of the nonzero prime ideal in a local domain. `lake build` now passes with that converse removed. The remaining theorem-level placeholders in the file are the maximal-subring converse and the final packaged `List.TFAE` proof.",
+    "issue": "#325",
+    "notes": "Issue #325 finished the remaining Stage 3.4 work by proving `isDvr_of_isMaximalNoetherianRingOfDimOne`, packaging the full `dvr_characterization_proof`, and routing both `01_16` modules through the new shared core file. `lake build` succeeds, and `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean` now imports the completed theorem module without any residual `sorry`.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
