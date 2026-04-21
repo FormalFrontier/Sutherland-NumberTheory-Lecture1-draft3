@@ -2511,10 +2511,10 @@
     }
   },
   "Chapter1/01_28_Proposition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#414",
-    "notes": "Stage 3.4 verification under issue #414 re-read `blobs/Chapter1/01_28_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`, confirming that the file still captures the blob's only mathematical claim exactly: for an integrally closed domain with fraction field `K`, `α` is integral over the base ring if and only if its minimal polynomial over `K` has coefficients in the base ring. `rg -n \"sorry\"` on the file is empty, and `lake build` succeeded after the session cache bootstrap. The auxiliary divisibility theorem remains proof-support infrastructure rather than an extra textbook claim.",
+    "issue": "#569",
+    "notes": "Stage 3.5 dependency trimming under issue #569 re-read `blobs/Chapter1/01_28_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`, confirmed the finalized module uses only Mathlib's bundled minimal-polynomial and integrally closed APIs, removed the stale import of `Chapter1/01_19_Definition`, and trimmed `dependencies/internal.json` so `Chapter1/01_28_Proposition` now has no direct local dependencies. `lake build` succeeded after the cleanup.",
     "stage3_3_audit": {
       "issue": "#282",
       "decision": "clean",
