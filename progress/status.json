@@ -779,10 +779,10 @@
     "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`: `minpoly_dvd_of_fractionRing_aeval_eq_zero` packages the textbook divisibility step via `minpoly.isIntegrallyClosed_dvd`, and `isIntegral_iff_exists_map_eq_minpoly` records Proposition 1.28 as the equivalence between integrality over `A` and the minimal polynomial over the fraction field lifting from `A[X]`."
   },
   "Chapter1/01_28_Proof": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_28_Proof.refs.md, recording the exact `minpoly` and integrally-closed declarations that subsume the textbook proof."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#148",
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`: `minpoly_dvd_of_monic_lifted_root` records the textbook divisibility step via `minpoly.isIntegrallyClosed_dvd`, `minpoly_coeff_lifts_to_base` turns the coefficient argument into repeated uses of `minpoly.isIntegrallyClosed_eq_field_fractions'` plus `IsIntegrallyClosed.isIntegral_iff`, and `proof_isIntegral_iff_exists_map_eq_minpoly` restates the proof blob as an explicit theorem."
   },
   "Chapter1/01_29_Example": {
     "status": "references_attached",
