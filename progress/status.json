@@ -785,10 +785,10 @@
     "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`: `minpoly_dvd_of_monic_lifted_root` records the textbook divisibility step via `minpoly.isIntegrallyClosed_dvd`, `minpoly_coeff_lifts_to_base` turns the coefficient argument into repeated uses of `minpoly.isIntegrallyClosed_eq_field_fractions'` plus `IsIntegrallyClosed.isIntegral_iff`, and `proof_isIntegral_iff_exists_map_eq_minpoly` restates the proof blob as an explicit theorem."
   },
   "Chapter1/01_29_Example": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#152",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean` by introducing the concrete witness `(1 + √7) / 2` in `FractionRing (ℤ√7)`, defining the explicit polynomial `X^2 - X - 3/2`, recording its visible coefficient calculation, and routing the non-integrality conclusion through Proposition 1.28's minimal-polynomial criterion."
+    "issue": "#254",
+    "notes": "Stage 3.2 review under issue #254 checked `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean` against the textbook blob and refs note, confirming that the scaffold already matches the lecture's example exactly: it names the witness `(1 + √7) / 2`, records the polynomial `X^2 - X - 3/2` with explicit coefficient theorems, and routes the non-integrality conclusion over `ℤ` through Proposition 1.28 without overstatement. No Lean-file edits were needed."
   },
   "Chapter1/01_29a_Bibliography": {
     "status": "claims_audited",
