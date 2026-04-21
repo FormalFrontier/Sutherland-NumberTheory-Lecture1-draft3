@@ -89,6 +89,12 @@ theorem isEquiv_dvrValuation_of_valuationSubring_eq {Γ : Type*}
   rw [Valuation.isEquiv_iff_valuationSubring]
   simpa [dvrValuationSubring] using hA
 
+/-- The recovered valuation admits a uniformizer in its valuation subring. -/
+theorem exists_uniformizer_dvrValuation :
+    ∃ π : dvrValuationSubring A K, (dvrValuation A K).IsUniformizer (π : K) := by
+  simpa [dvrValuationSubring] using
+    (Valuation.exists_isUniformizer_of_isCyclic_of_nontrivial (v := dvrValuation A K))
+
 /-- For the recovered valuation, generators of the maximal ideal are exactly uniformizers. -/
 theorem maximalIdeal_eq_span_iff_isUniformizer (π : dvrValuationSubring A K) :
     IsLocalRing.maximalIdeal (dvrValuationSubring A K) = Ideal.span {π} ↔
