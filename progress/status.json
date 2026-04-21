@@ -396,10 +396,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean by making both corollary claims explicit: `absoluteValue_isNonarchimedean_of_pos_char` derives the positive-characteristic conclusion from Lemma 1.4 plus Frobenius on nat-casts, and `absoluteValue_eq_trivial_of_finite` packages the finite-field conclusion via `FiniteField.pow_card_sub_one_eq_one` and an explicit nonzero-value bridge lemma."
   },
   "Chapter1/01_05_Proof": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_05_Proof.refs.md, centering `FiniteField.pow_card` and the small follow-up lemmas needed to complete the finite-field argument."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#109",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean by making the proof blob explicit: `eq_zero_or_one_of_nonneg_of_pow_eq_self` records the local real-valued helper, `natCast_absoluteValue_eq_zero_or_one` packages the positive-characteristic Frobenius step from `Chapter1/01_05_Corollary`, and `absoluteValue_eq_zero_or_one` cites `FiniteField.pow_card` for the finite-field fixed-point argument before concluding with the trivial absolute value."
   },
   "Chapter1/01_06_Definition": {
     "status": "definition_verified",
