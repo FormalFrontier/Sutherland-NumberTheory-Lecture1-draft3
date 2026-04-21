@@ -28,8 +28,8 @@ theorem proof_integral_element_mem [ValuationRing A] {x : K} (hx : IsIntegral A 
       (valuationRing_isIntegrallyClosed (A := A)) hx
 
 /-- The proof blob's final conclusion: every valuation ring is integrally closed. -/
-theorem proof_valuationRing_isIntegrallyClosed [ValuationRing A] : IsIntegrallyClosed A := by
-  exact (isIntegrallyClosed_iff (FractionRing A)).2 fun {_} hx =>
+theorem proof_valuationRing_isIntegrallyClosed [ValuationRing A] : IsIntegrallyClosed A :=
+  (isIntegrallyClosed_iff (FractionRing A)).2 fun {_} hx =>
     proof_integral_element_mem (A := A) (K := FractionRing A) hx
 
 end Proof_01_25
