@@ -8,50 +8,46 @@
 - Stage `1.4` transcription is complete for logical pages `1` through `7`.
 - Stage `1.5` validation is complete for logical pages `1` through `7`.
 - Stage `1.6` structure analysis is complete for logical pages `1` through `7`, producing `items.json` with `52` Chapter 1 items.
-- Stage `1.7` blob extraction is complete for `Chapter1/01_00_Introduction` through `Chapter1/01_29a_Bibliography`; `blobs/Chapter1/` now contains all `52` extracted blob files from the opening lecture segment.
-- Stage `2.1` internal dependency mapping is merged across the full current Chapter 1 slice.
-- Stage `2.2` external dependency mapping is merged across the full current Chapter 1 slice.
-- Stage `2.3` Mathlib-coverage research is merged across the full current Chapter 1 slice.
-- Stage `2.4` external-source research is merged across the full current Chapter 1 slice.
-- Stage `2.5` formalization planning is complete in [PLANNING.md](/home/kim/Sutherland-NumberTheory-Lecture1-draft3/worktrees/4184d558/PLANNING.md).
-- Stage `2.6` reference attachment is complete for all `52` extracted Chapter 1 blobs. `progress/status.json` tracks the full slice from `Chapter1/01_00_Introduction` through `Chapter1/01_29a_Bibliography`.
+- Stage `1.7` blob extraction is complete for `Chapter1/01_00_Introduction` through `Chapter1/01_29a_Bibliography`; `blobs/Chapter1/` contains all `52` extracted blob files from the opening lecture segment.
+- Stage `2.1` internal dependency mapping is merged across the full extracted Chapter 1 slice.
+- Stage `2.2` external dependency mapping is merged across the full extracted Chapter 1 slice.
+- Stage `2.3` Mathlib-coverage research is merged across the full extracted Chapter 1 slice.
+- Stage `2.4` external-source research is merged across the full extracted Chapter 1 slice.
+- Stage `2.5` formalization planning is complete in [PLANNING.md](/home/kim/Sutherland-NumberTheory-Lecture1-draft3/worktrees/2cbe86e1/PLANNING.md).
+- Stage `2.6` reference attachment is complete for all `52` extracted Chapter 1 blobs.
 
 ## Current Frontier
 
-- Phase `2` is complete for the current extracted slice (logical pages `1` through `7`).
-- Since meditate issue `#270` closed on `2026-04-21T07:00:53Z`, `30` PRs have merged through `#340` (`2026-04-21T09:25:08Z`). Since summarize issue `#297` closed on `2026-04-21T08:15:34Z`, `15` PRs have merged through `#340`.
-- The Chapter 1 valuation/DVR wave is no longer merely in proof completion; most of the local block has already landed:
-  - `01_06a_Discussion`, `01_07_Definition`, `01_11a_Discussion`, `01_14_Example`, `01_15_Example`, `01_15a_Discussion`, `01_16_Theorem`, and `01_16_Proof` are now `sorry_free`,
-  - the remaining nearby unreconciled valuation items are `01_10a_Discussion`, `01_13_Definition`, `01_13a_Discussion`, and `01_16a_Discussion`,
-  - the closest disjoint late-tail follow-on remains `01_24_Example` / `01_24a_Discussion`.
-- The live frontier is now split across three non-overlapping lanes:
-  - middle valuation bridge work: `01_10a_Discussion`, `01_13_Definition`, and `01_13a_Discussion` still need Stage `3.3`,
-  - immediate valuation follow-through: `01_16a_Discussion` is still only `references_attached`,
-  - disjoint late-tail replenishment: `01_24_Example` is `definition_verified` and `01_24a_Discussion` is `references_attached`.
-- Current Chapter 1 status counts from `progress/status.json`:
-  - `17` `claims_audited`,
-  - `4` `definition_verified`,
-  - `18` `scaffolded`,
-  - `2` `references_attached`,
-  - `10` `sorry_free`,
-  - `1` `non_formalizable`.
+- Since summarize issue `#362` closed on `2026-04-21T10:19:12Z`, ten PRs merged through `#388` (`2026-04-21T11:04:13Z`): `#370`, `#371`, `#372`, `#374`, `#379`, `#380`, `#381`, `#382`, `#387`, and `#388`.
+- That merge wave finished the early-Chapter Stage `3.2` and Stage `3.3` passes for the `01_05`, `01_08`, and `01_09` theorem/proof blocks, and also promoted `01_02_Definition`, `01_03_Example`, `01_04_Proof`, and `01_06_Definition` to honest `sorry_free` bookkeeping.
+- The old valuation/DVR queue described here previously is no longer the live bottleneck. The active proof frontier has moved back to the early absolute-value block:
+  - `Chapter1/01_05_Corollary` and `Chapter1/01_05_Proof` are the earliest `claims_audited` items that still contain theorem-level `sorry`s, and feature issue `#389` now covers that Stage `3.4` proof work.
+  - `Chapter1/01_09_Theorem` and `Chapter1/01_09_Proof` are the next hard-proof lane after `#389`; the theorem file still contains two `sorry`s while the proof wrapper is already zero-sorry.
+  - `Chapter1/01_08_Theorem` and `Chapter1/01_08_Proof`, plus several later `claims_audited` definitions/propositions, appear to be zero-sorry and now mainly need explicit verification/promotion passes rather than new theorem proving.
+- Current item-level Chapter 1 counts from `progress/status.json`:
+  - `18` `sorry_free`
+  - `20` `claims_audited`
+  - `11` `scaffolded`
+  - `3` `non_formalizable`
 
 ## In-Flight Work
 
-- There are no open PRs, no broken PRs, and no claimed feature/review/meditate issues.
-- Claimed summarize issue `#336` is the only active `agent-plan` item.
-- Open issue `#326` remains as a stale normalization-sensitive note from the pre-`#333` `01_11a_Discussion` proof attempt; the underlying theorem was repaired and merged in PR `#333`, so this issue should be closed or rewritten rather than treated as live frontier.
+- Open `agent-plan` issues right now:
+  - `#389` `feature`, claimed: prove `Chapter1/01_05_Corollary` / `Chapter1/01_05_Proof`
+  - `#390` `summarize`, claimed: this summary pass
+- Queue-health metrics used for this pass:
+  - At `coordination orient` before claiming `#390`: `1` unclaimed issue (`#390`), `1` claimed issue (`#389`), `0` open PRs, `0` broken PRs, and no `human-oversight` issues.
+  - During the write-up after claiming `#390`: `2` open `agent-plan` issues, both claimed (`#389`, `#390`), `0` open PRs, `0` broken PRs.
 
 ## Queue Health And Risks
 
-- Queue metrics at `2026-04-21T09:26:31Z`: `0` unclaimed feature issues, `0` unclaimed review issues, `0` open PRs, `0` broken PRs, and exactly `1` claimed `agent-plan` issue (`#336`).
-- The main risk is queue starvation. The proof wave landed faster than planners restocked adjacent work, so worker capacity will collapse immediately after this summarize issue closes unless new items are opened.
-- The main sequencing risk is skipping over the unfinished valuation bridge (`01_10a` / `01_13` / `01_13a` / `01_16a`) and jumping into distant proof-heavy scaffolds. That would break the local narrative continuity the recent merge wave just restored.
+- The main risk is no longer an empty queue; it is sequencing drift. The repo now has one active proof feature and no queued follow-on issues behind it.
+- The planner should not reopen work already covered by `#389`. The next action is to prepare the follow-on lane behind that issue, not to duplicate the same `01_05` proof task.
+- A second risk is letting zero-sorry `claims_audited` files sit indefinitely without promotion. That obscures the true proof frontier and makes status counts noisier than the actual Lean debt.
 
 ## Recommended Planner Sequence
 
-1. Open a Stage `3.3` audit batch for `Chapter1/01_10a_Discussion`, `Chapter1/01_13_Definition`, and `Chapter1/01_13a_Discussion`. This is now the most important adjacent lane because it reconnects the cleaned-up valuation examples back to the earlier valuation setup.
-2. Open a small Stage `3.1` issue for `Chapter1/01_16a_Discussion` immediately after that. It is the direct follow-on to the now-`sorry_free` `01_16` theorem/proof pair and the only remaining unscheduled blob in that local DVR thread.
-3. In parallel, queue one disjoint late-tail task: either Stage `3.3` for `Chapter1/01_24_Example` or Stage `3.1` for `Chapter1/01_24a_Discussion`. This gives workers a non-overlapping lane while the valuation bridge is being restocked.
-4. Only after those lanes are open should planners expand into the heavier proof backlog (`01_04`/`01_05`/`01_08`/`01_09`, or later `01_20`-`01_23` / `01_25_Proof` / `01_28_Proof`). The current bottleneck is lack of queued adjacent work, not lack of raw scaffolded material.
-5. Dispatcher posture: keep worker capacity at `2` until planners open at least two real follow-on issues. Raise to `3` once the valuation-bridge batch and one disjoint `01_24`-lane task exist. More than `3` workers would just compete for an empty queue.
+1. Let `#389` run as the current hard-feature lane for `01_05`; do not duplicate it.
+2. Queue the next hard-proof issue for `Chapter1/01_09_Theorem` / `Chapter1/01_09_Proof` once `#389` has a PR or merges.
+3. In parallel with that next proof lane, open small Stage `3.4` verification/promotion issues for zero-sorry `claims_audited` items, starting with `01_08_Theorem` / `01_08_Proof`, then the earliest unchanged `01_11`-`01_13` cluster if still zero-sorry.
+4. After the early absolute-value block is compressed, return to the later scaffold backlog beginning at `01_18_Proof` / `01_20`-`01_23` / `01_25_Proof` / `01_28_Proof`.
