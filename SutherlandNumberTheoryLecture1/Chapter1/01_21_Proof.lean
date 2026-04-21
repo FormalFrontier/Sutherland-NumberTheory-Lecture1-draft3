@@ -7,8 +7,9 @@ The lecture proves Corollary 1.21 by taking the integral closure `A'` of `A`
 in `B`, then the integral closure `A''` of `A'` in `B`, and observing that the
 second closure collapses back to `A'`. Mathlib packages that idempotence as
 `integralClosure_idem`, whose proof uses the same transitivity-of-integrality
-step as the textbook. The final "hence integrally closed" conclusion is exactly
-`IsIntegrallyClosedIn.of_isIntegralClosure`.
+step as the textbook. The corollary file cites Mathlib's ambient
+integrally-closed theorem directly, so this proof blob only retains the
+intermediate idempotence statement that mirrors the lecture's argument.
 -/
 
 namespace SutherlandNumberTheoryLecture1
@@ -21,14 +22,7 @@ variable {A B : Type*} [CommRing A] [CommRing B] [Algebra A B]
 /-- The nested integral closure `A''` from the lecture is equal to `A'` in bundled form. -/
 theorem integralClosure_idempotent_in_ambient :
     integralClosure (integralClosure A B) B = ⊥ := by
-  exact integralClosure_idem (R := A) (A := B)
-
-/-- Repackaging the textbook conclusion: the integral closure of `A` in `B` is integrally
-closed in `B`. -/
-theorem integralClosure_isIntegrallyClosedIn_from_proof :
-    IsIntegrallyClosedIn (integralClosure A B) B := by
-  exact IsIntegrallyClosedIn.of_isIntegralClosure
-    (R := A) (A := integralClosure A B) (B := B)
+  simpa using integralClosure_idem (R := A) (A := B)
 
 end Proof_01_21
 
