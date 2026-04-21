@@ -1,4 +1,3 @@
-import Mathlib
 import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
 
 /-!
@@ -21,14 +20,14 @@ variable {k : Type*} [Field k]
 /-- Problem Set 1 supplies the converse implication in the all-natural-numbers form. -/
 theorem problemSet1_isNonarchimedean_of_natCast_le_one
     (abv : AbsoluteValue k ℝ) (h_nat : ∀ n : ℕ, abv n ≤ 1) :
-    IsNonarchimedean abv := by
-  exact isNonarchimedean_of_natCast_le_one abv h_nat
+    IsNonarchimedean abv :=
+  isNonarchimedean_of_natCast_le_one abv h_nat
 
 /-- The lecture's `n ≥ 1` phrasing recovers the same conclusion. -/
 theorem problemSet1_isNonarchimedean_of_natCast_pos_le_one
     (abv : AbsoluteValue k ℝ) (h_pos : ∀ n : ℕ, 0 < n → abv n ≤ 1) :
-    IsNonarchimedean abv := by
-  exact (isNonarchimedean_iff_natCast_pos_le_one abv).2 h_pos
+    IsNonarchimedean abv :=
+  (isNonarchimedean_iff_natCast_pos_le_one abv).2 h_pos
 
 end Proof_01_04
 
