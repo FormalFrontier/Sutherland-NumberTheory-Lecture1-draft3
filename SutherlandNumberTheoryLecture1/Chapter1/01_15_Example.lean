@@ -49,7 +49,10 @@ theorem mem_laurentSeriesValuationRing_iff_exists_powerSeries (f : LaurentSeries
 /-- The lecture's identification `k[[t]] = {f : k((t)) | v(f) ≥ 0}`. -/
 theorem laurentSeriesValuationRing_eq_powerSeriesSubring :
     (laurentSeriesValuationRing k).toSubring = powerSeriesSubring k := by
-  sorry
+  ext f
+  rw [Subring.mem_map]
+  simpa [powerSeriesSubring] using
+    (mem_laurentSeriesValuationRing_iff_exists_powerSeries (k := k) f)
 
 /-- This wrapper keeps the lecture's "order of vanishing" terminology visible. -/
 theorem orderOfVanishingAtZero_eq_order (f : PowerSeries k) :
@@ -59,14 +62,29 @@ theorem orderOfVanishingAtZero_eq_order (f : PowerSeries k) :
 theorem coeff_eq_zero_of_lt_orderOfVanishingAtZero (f : PowerSeries k) {n : ℕ}
     (hn : n < orderOfVanishingAtZero k f) :
     PowerSeries.coeff n f = 0 := by
-  sorry
+  exact PowerSeries.coeff_of_lt_order n hn
 
 /-- The lecture's order-of-vanishing valuation at a point `α` is the Laurent expansion analogue
 of the `t`-adic case. -/
 theorem exists_orderOfVanishingAtPoint_valuation (α : k) :
     ∃ v : Valuation (RatFunc k) (WithZero (Multiplicative ℤ)),
       v (RatFunc.X - RatFunc.C α) = WithZero.exp (-1 : ℤ) := by
-  sorry
+  let P : IsDedekindDomain.HeightOneSpectrum (Polynomial k) :=
+    { asIdeal := Ideal.span ({Polynomial.X - Polynomial.C α} : Set (Polynomial k))
+      isPrime := by
+        exact (Ideal.span_singleton_prime (Polynomial.X_sub_C_ne_zero α)).mpr
+          (Polynomial.irreducible_X_sub_C α).prime
+      ne_bot := by
+        exact Ideal.span_singleton_eq_bot.not.mpr (Polynomial.X_sub_C_ne_zero α) }
+  have hX_sub_C_ne : Polynomial.X - Polynomial.C α ≠ 0 := Polynomial.X_sub_C_ne_zero α
+  have hP_span :
+      P.asIdeal = Ideal.span ({Polynomial.X - Polynomial.C α} : Set (Polynomial k)) := rfl
+  refine ⟨P.valuation (RatFunc k), ?_⟩
+  rw [show RatFunc.X - RatFunc.C α =
+      algebraMap (Polynomial k) (RatFunc k) (Polynomial.X - Polynomial.C α) by
+        simp [RatFunc.algebraMap_X]]
+  rw [IsDedekindDomain.HeightOneSpectrum.valuation_of_algebraMap,
+    IsDedekindDomain.HeightOneSpectrum.intValuation_singleton _ hX_sub_C_ne hP_span]
 
 end Example_01_15
 
