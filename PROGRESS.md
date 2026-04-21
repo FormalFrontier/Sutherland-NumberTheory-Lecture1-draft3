@@ -19,40 +19,40 @@
 ## Current Frontier
 
 - Phase `2` is complete for the current extracted slice (logical pages `1` through `7`).
-- Since meditate issue `#237` closed on `2026-04-21T05:41:04Z`, `18` PRs have merged through `#275`. Since summarize issue `#238` closed on `2026-04-21T05:46:56Z`, `16` PRs have merged through `#275`.
-- The late Chapter 1 tail is no longer the only active frontier. Recent merges added:
-  - Stage `3.1` scaffolds for `01_10a_Discussion`, `01_11a_Discussion`, and `01_13a_Discussion`,
-  - Stage `3.2` review for `01_24_Example`, `01_25_Proposition`, `01_26_Definition`, `01_27_Remark`, `01_28_Proposition`, and `01_29_Example`,
-  - Stage `3.3` audits for `01_06`-`01_07`, `01_10`-`01_12`, and `01_25`-`01_27`.
-- The live frontier is now split across two lanes:
-  - middle valuation/DVR queue replenishment: `01_10a_Discussion` still needs Stage `3.2`, while `01_14` through `01_16a` remain unscheduled at `references_attached`,
-  - late-tail audit completion: `01_24_Example`, `01_28_Proposition`, and `01_29_Example` remain `definition_verified` and still need Stage `3.3`.
+- Since meditate issue `#270` closed on `2026-04-21T07:00:53Z`, `27` PRs have merged through `#337`. Since summarize issue `#297` closed on `2026-04-21T08:15:34Z`, `13` PRs have merged through `#337`.
+- The Chapter 1 valuation/DVR block has advanced from scaffold/review work into active proof completion:
+  - `01_06a_Discussion`, `01_07_Definition`, `01_11a_Discussion`, `01_15a_Discussion`, and the `01_16` theorem/proof pair are now `sorry_free`,
+  - `01_14_Example` and `01_15_Example` have cleared Stage `3.3` and are in Stage `3.4`,
+  - the remaining nearby unreconciled valuation items are now `01_10a_Discussion`, `01_13_Definition`, `01_13a_Discussion`, and `01_16a_Discussion`.
+- The live frontier is split across three non-overlapping lanes:
+  - active proof completion: `01_14_Example` and `01_15_Example`,
+  - middle valuation follow-through: `01_10a_Discussion`, `01_13_Definition`, and `01_13a_Discussion` still need to move from `definition_verified` to `claims_audited`,
+  - queue replenishment / later isolation: `01_16a_Discussion` and `01_24a_Discussion` remain at `references_attached`, while `01_24_Example` remains `definition_verified`.
 - Current Chapter 1 status counts from `progress/status.json`:
-  - `16` `claims_audited`,
-  - `7` `definition_verified`,
-  - `21` `scaffolded`,
-  - `7` `references_attached`,
+  - `19` `claims_audited`,
+  - `4` `definition_verified`,
+  - `18` `scaffolded`,
+  - `2` `references_attached`,
+  - `8` `sorry_free`,
   - `1` `non_formalizable`.
 
 ## In-Flight Work
 
-- No PRs are currently open, and there are no broken PRs.
-- The only claimed issue is meditate issue `#270`.
-- The only unclaimed work item is review issue `#276` for Stage `3.2` coverage on `Chapter1/01_10a_Discussion`.
+- Open PR `#338` covers Stage `3.4` proof completion for `Chapter1/01_14_Example`; its CI was still in progress when this snapshot was prepared.
+- Claimed feature issue `#334` is the parallel Stage `3.4` proof lane for `Chapter1/01_15_Example`.
+- Unclaimed summarize issue `#336` is the only remaining queued meta item after this meditation closes.
+- There are no broken PRs and no unclaimed feature or review issues right now.
 
 ## Queue Health And Risks
 
-- Queue metrics at `2026-04-21T06:57:29Z`: `16` merged PRs since summarize issue `#238` closed, `18` merged PRs since meditate issue `#237` closed, `1` unclaimed `agent-plan` issue (`#276`), `1` claimed issue (`#270`), `0` open PRs, and `0` broken PRs.
-- This is better stocked than the previous summary, but only barely. The queue has one immediate review task and then a large unscheduled middle tranche.
-- The main planning risk is no longer starvation of the late tail. It is imbalance: if planners keep feeding only Stage `3.3` audit work, the newly reopened middle valuation/DVR tranche (`01_14`-`01_16a`) will remain the largest untouched dependency block.
+- Queue metrics at `2026-04-21T09:22:08Z`: `1` unclaimed `agent-plan` issue (`#336`), `3` claimed issues (`#320`, `#334`, and the open-PR issue `#335`), `1` open PR (`#338`), `0` broken PRs, `0` unclaimed feature issues, and `0` unclaimed review issues.
+- The earlier risk of starvation has been replaced by a different problem: the project now has real proof momentum, but planners have not restocked the next adjacent Chapter 1 work items behind the two active proof lanes.
+- The main sequencing risk is over-concentrating on already-active proofs while leaving the `01_10a` / `01_13` / `01_13a` bridge and the `01_16a` follow-on discussion unscheduled. If that happens, worker capacity collapses again as soon as `01_14` and `01_15` merge.
 
 ## Recommended Planner Sequence
 
-1. Prioritize review issue `#276` immediately so `Chapter1/01_10a_Discussion` joins the reviewed valuation/DVR vocabulary instead of leaving a scaffolded bottleneck in the middle tranche.
-2. After `#276`, restock Stage `3.1` for the middle valuation/DVR sequence before expanding more tail work:
-   - `Chapter1/01_14_Example` and `Chapter1/01_15_Example` next,
-   - then `Chapter1/01_15a_Discussion`,
-   - then `Chapter1/01_16_Theorem`, `Chapter1/01_16_Proof`, and `Chapter1/01_16a_Discussion`.
-3. Keep exactly one late-tail Stage `3.3` lane open in parallel, starting with the remaining reviewed items `Chapter1/01_24_Example`, `Chapter1/01_28_Proposition`, and `Chapter1/01_29_Example`, but do not let those audits become the sole planner focus now that `01_11a` and `01_13a` are scaffolded.
-4. Defer proof-heavy scaffold reviews (`01_20`-`01_23`, `01_25_Proof`, `01_28_Proof`) until the `01_14`-`01_16a` tranche is at least scaffolded. That restores the ordering described in `PLANNING.md` and avoids jumping ahead to later proofs while an earlier vocabulary/examples block is still missing.
-5. Dispatcher posture: run at most `2` workers immediately, rising to `3` only after planners queue one middle-batch Stage `3.1` issue plus one late-tail Stage `3.3` audit alongside `#276`. More than `3` workers would create overlap because the middle tranche is still partly serial.
+1. Let the active Stage `3.4` pair finish, but plan behind it now rather than waiting for those merges. The next adjacent valuation issue should be a Stage `3.3` audit batch for `Chapter1/01_10a_Discussion`, `Chapter1/01_13_Definition`, and `Chapter1/01_13a_Discussion`.
+2. Queue a small Stage `3.1` issue for `Chapter1/01_16a_Discussion` immediately after that audit batch is opened. It is the direct textual follow-on to the completed `01_16` pair and is the most important unscheduled blob in the same local dependency cluster.
+3. Keep one disjoint late-tail lane available in parallel, with `Chapter1/01_24_Example` Stage `3.3` or `Chapter1/01_24a_Discussion` Stage `3.1` as the best low-overlap option. This preserves parallelism without sending workers back into the already-busy `01_14` / `01_15` proof files.
+4. Defer broader late-tail proof batches (`01_20`-`01_23`, `01_25_Proof`, `01_28_Proof`) until the valuation bridge through `01_16a` is queued. The current bottleneck is local continuity in the valuation/DVR narrative, not lack of distant theorem work.
+5. Dispatcher posture: keep total worker capacity at `3` for now. That matches the actual independent work surface: one active `01_14` proof lane, one active `01_15` proof lane, and one non-overlapping meta/planning lane. Raise to `4` only after planners open both the `01_10a`/`01_13`/`01_13a` audit batch and a disjoint `01_24` or `01_24a` issue, because only then are there four genuinely separate tasks without file overlap.
