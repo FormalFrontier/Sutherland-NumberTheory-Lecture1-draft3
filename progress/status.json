@@ -470,6 +470,7 @@
     "last_updated": "2026-04-21",
     "issue": "#575",
     "notes": "Issue #575 completed the Stage 3.6 proof-polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean`. The finite-field wrapper now reuses `Chapter1/01_05_Corollary.absoluteValue_eq_one_of_ne_zero` directly instead of rederiving the Frobenius/cardinality argument locally, and the stale `Chapter1/01_04_Lemma` import remains removed because the polished file's only direct book-item dependency is `Chapter1/01_05_Corollary`.",
+    "upstreaming_status": "rejected",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
