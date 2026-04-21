@@ -1011,10 +1011,10 @@
     }
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#330",
-    "notes": "Stage 3.4 proof work under issues #318 and #330 completed `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean`. The final step in issue #330 repaired the overstated valuation-cutoff theorem by proving an invariant cutoff statement `span_pow_uniformizer_eq_valuation_ge` in terms of `asValuation v`, together with the lecture-form normalized corollary `span_pow_uniformizer_eq_valuation_ge_normalized` under the explicit hypothesis `v (π : k) = 1`.",
+    "issue": "#503",
+    "notes": "Issue #503 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean` against `blobs/Chapter1/01_11a_Discussion.md`. The finished discussion file directly depends on `Chapter1/01_10_Definition` for the lecture's `RealValuation`, `asValuation`, and `valuationSubring` interface, and on `Chapter1/01_10a_Discussion` for the closing theorem `mem_maximalIdeal_iff_valuation_pos`; the `Chapter1/01_11_Definition` import was stale and trimmed away, so `dependencies/internal.json[\"Chapter1/01_11a_Discussion\"]` is now `[\"Chapter1/01_10_Definition\", \"Chapter1/01_10a_Discussion\"]`.",
     "stage3_2_review": {
       "issue": "#291",
       "decision": "passes_with_minor_repairs",
