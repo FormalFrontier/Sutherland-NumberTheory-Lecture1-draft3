@@ -972,10 +972,10 @@
     }
   },
   "Chapter1/01_14_Example": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#298",
-    "notes": "Stage 3.2 review for issue #298 confirmed that `blobs/Chapter1/01_14_Example.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean`. The scaffold keeps the lecture's `\\mathbf{Z}_{(p)}` example in the canonical `Localization.AtPrime` model, spells out the localization-at-`(p)` identification explicitly, and leaves only the maximal-ideal and residue-field identifications at theorem level. No definition-level `sorry` or missing equivalence bridge was found.",
+    "issue": "#323",
+    "notes": "Stage 3.3 audit for issue #323 re-read `blobs/Chapter1/01_14_Example.md` and `blobs/Chapter1/01_14_Example.refs.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean`. The existing scaffold already covers every formalizable sentence in the blob: the localization model for `\\mathbf{Z}_{(p)}`, the maximal-ideal identification, and the residue-field comparison to `\\mathbf{F}_p` via `ZMod p`. No additional declaration or scaffold repair was needed.",
     "stage3_2_review": {
       "issue": "#298",
       "decision": "clean",
@@ -1003,6 +1003,34 @@
         }
       ],
       "summary": "The Stage 3.2 review found complete scaffold coverage for the `p`-adic example. The localization model is explicit, all remaining incompleteness is confined to the two intended theorem-level identifications, and no additional bridge theorem or definition repair is needed before Stage 3.3."
+    },
+    "stage3_3_audit": {
+      "issue": "#323",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For the `p`-adic valuation on `\\mathbf{Q}`, the valuation ring is `\\mathbf{Z}_{(p)}`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing; SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing_isLocalization",
+          "reason": "The scaffold already makes the lecture's valuation ring explicit as `Localization.AtPrime (Ideal.span {(p : ℤ)})` and records the corresponding `IsLocalization.AtPrime` instance."
+        },
+        {
+          "n": 2,
+          "text": "The maximal ideal of `\\mathbf{Z}_{(p)}` is `(p)`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing_maximalIdeal_eq_span_p",
+          "reason": "The blob's maximal-ideal sentence is already represented by an explicit theorem placeholder, so there is no missing Stage 3.3 scaffold."
+        },
+        {
+          "n": 3,
+          "text": "The residue field `\\mathbf{Z}_{(p)} / p\\mathbf{Z}_{(p)}` is isomorphic to `\\mathbf{Z}/p\\mathbf{Z} \\simeq \\mathbf{F}_p`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_14_Example.padicValuationRing_residueField_equiv_zmod",
+          "reason": "The residue-field comparison is already present as a named theorem targeting `ZMod p`, Mathlib's standard model of `\\mathbf{F}_p`, so the audit found no omitted claim."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found no additional formalizable sentence missing from the scaffold. `01_14_Example` is ready to advance from `definition_verified` to `claims_audited`, with the remaining work confined to proving the existing theorem statements."
     }
   },
   "Chapter1/01_15_Example": {
