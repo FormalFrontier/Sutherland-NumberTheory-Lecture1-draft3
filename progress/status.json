@@ -822,10 +822,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_16a_Discussion.refs.md, preserving the continuation sources into the integral-extension section while marking the transition note as likely non-formalizable."
   },
   "Chapter1/01_17_Definition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#129",
-    "notes": "Stage 3.2 review for issue #129 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean covers both claims in the blob with explicit declarations: `integral_element_iff` bridges the textbook root-of-a-monic-polynomial wording to `IsIntegral A b`, and `integral_extension_iff` records the extension-level quantification as `Algebra.IsIntegral A B ↔ ∀ b, IsIntegral A b`. No review repair was needed.",
+    "issue": "#280",
+    "notes": "Stage 3.3 audit under issue #280 re-read `blobs/Chapter1/01_17_Definition.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean`, confirming that both sentences in the blob remain explicit. `integral_element_iff` still records the root-of-a-monic-polynomial criterion verbatim, and `integral_extension_iff` still exposes the extension-level quantification. No missing formalizable claim or import gap was found.",
     "stage3_2_review": {
       "issue": "#129",
       "decision": "verified",
@@ -846,13 +846,34 @@
         }
       ],
       "summary": "The Stage 3.1 scaffold was complete: each claim in the blob has an explicit Lean declaration, the extension-level wording has a local bridge theorem, and the file contains no definition-level `sorry`."
+    },
+    "stage3_3_audit": {
+      "issue": "#280",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "An element b in a ring extension A ⊆ B is integral over A iff it is a root of a monic polynomial in A[x].",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_element_iff",
+          "reason": "The Lean scaffold still states the lecture's defining criterion exactly, with no omitted qualification or missing bridge."
+        },
+        {
+          "n": 2,
+          "text": "The ring B is integral over A iff every element of B is integral over A.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_extension_iff",
+          "reason": "The extension-level sentence is already explicit as the equivalence between `Algebra.IsIntegral A B` and elementwise integrality."
+        }
+      ],
+      "summary": "Definition 1.17 was already complete after Stage 3.2, so the Stage 3.3 re-read closed cleanly without Lean edits."
     }
   },
   "Chapter1/01_18_Proposition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#127",
-    "notes": "Stage 3.2 review for issue #127 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean covers both claims in the blob with explicit declarations: `integral_add` records closure of integral elements under addition via `IsIntegral.add`, and `integral_mul` records closure under multiplication via `IsIntegral.mul`. No review repair was needed.",
+    "issue": "#280",
+    "notes": "Stage 3.3 audit under issue #280 re-read `blobs/Chapter1/01_18_Proposition.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean`, confirming that the proposition's two closure statements remain explicit and exact. The file still exposes `integral_add` and `integral_mul` directly from Mathlib's `IsIntegral.add` and `IsIntegral.mul`, and the audit found no omitted textbook distinction or import gap.",
     "stage3_2_review": {
       "issue": "#127",
       "decision": "verified",
@@ -873,6 +894,27 @@
         }
       ],
       "summary": "The Stage 3.1 scaffold was complete: each mathematical claim in the proposition blob maps to an explicit Lean theorem, the textbook wording is definitionally aligned with Mathlib's closure lemmas so no extra bridge theorem is needed, and there are no definition-level sorries."
+    },
+    "stage3_3_audit": {
+      "issue": "#280",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If α and β in B are integral over A, then α + β is integral over A.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_add",
+          "reason": "The current scaffold still states the sum-closure claim explicitly, and no auxiliary sentence from the blob is missing."
+        },
+        {
+          "n": 2,
+          "text": "If α and β in B are integral over A, then αβ is integral over A.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_mul",
+          "reason": "The product-closure claim is likewise already present verbatim as a named theorem, with no missing import or hidden assumption."
+        }
+      ],
+      "summary": "Proposition 1.18 contributes exactly the two closure claims already present in Lean, so the Stage 3.3 audit closed cleanly."
     }
   },
   "Chapter1/01_18_Proof": {
@@ -882,10 +924,45 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean as a proof-item wrapper over Chapter1/01_18_Proposition, exposing explicit declarations `proof_integral_add` and `proof_integral_mul` for the proof blob's two closure claims while documenting that Mathlib's abstract integrality lemmas replace the lecture's symmetric-polynomial construction."
   },
   "Chapter1/01_19_Definition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#128",
-    "notes": "Stage 3.2 review verified `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean`: the file now exposes the ambient and fraction-field integral-closure objects via `integralClosure.isIntegralClosure`, bridges the lecture's `\\widetilde A = A` wording to `integralClosure A B = ⊥`/`IsIntegrallyClosedIn A B`, and states the fraction-field specialization with `IsIntegrallyClosed A`."
+    "issue": "#280",
+    "notes": "Stage 3.3 audit under issue #280 re-read `blobs/Chapter1/01_19_Definition.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean`, confirming that the ambient integral-closure construction, the `\\widetilde A = A` integrally-closed-in-`B` criterion, and the domain/fraction-field normalization specialization all remain explicit. No missing formalizable claim or import gap was found.",
+    "stage3_3_audit": {
+      "issue": "#280",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Given a ring extension B/A, the ring `\\widetilde{A} = {b ∈ B : b is integral over A}` is the integral closure of A in B.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integralClosure_isIntegralClosure; SutherlandNumberTheoryLecture1.Chapter1.mem_integralClosure_iff_isIntegral",
+          "reason": "The file already names both the bundled object and its membership characterization, so the defining sentence is fully exposed."
+        },
+        {
+          "n": 2,
+          "text": "When `\\widetilde{A} = A` we say that A is integrally closed in B.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integralClosure_eq_bot_iff_isIntegrallyClosedIn",
+          "reason": "The scaffold already bridges the textbook equality wording to Mathlib's bundled `IsIntegrallyClosedIn A B` predicate."
+        },
+        {
+          "n": 3,
+          "text": "For a domain A, its normalization is the integral closure of A in its fraction field.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.normalization_isIntegralClosure; SutherlandNumberTheoryLecture1.Chapter1.mem_normalization_iff_isIntegral",
+          "reason": "The fraction-field specialization and its membership description are both already explicit in the Lean file."
+        },
+        {
+          "n": 4,
+          "text": "For a domain A, A is integrally closed (normal) iff it is integrally closed in its fraction field.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isIntegrallyClosed_iff_isIntegrallyClosedIn_fractionRing",
+          "reason": "The final sentence is already represented exactly by the named equivalence with `IsIntegrallyClosed`."
+        }
+      ],
+      "summary": "Definition 1.19 already covered every mathematical sentence in the blob after Stage 3.2, so the Stage 3.3 audit found no repair work."
+    }
   },
   "Chapter1/01_20_Proposition": {
     "status": "scaffolded",
