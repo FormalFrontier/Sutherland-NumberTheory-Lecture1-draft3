@@ -7,7 +7,8 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
 The lecture defers the converse direction of Lemma 1.4 to Problem Set 1. This
 module makes that deferred obligation explicit as Lean declarations on top of
 `Chapter1/01_04_Lemma`, rather than leaving the proof blob as prose-only
-metadata.
+metadata. The proof blob contains no further local mathematical content beyond
+this citation, so the two wrappers below are the complete scaffold for the item.
 -/
 
 namespace SutherlandNumberTheoryLecture1
