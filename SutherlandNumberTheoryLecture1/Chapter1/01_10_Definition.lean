@@ -11,8 +11,9 @@ object as `AddValuation k (WithTop ℝ)`, so this file records the lecture's
 definition directly in terms of the bundled additive valuation API.
 
 The derived nonarchimedean absolute value `|x|ᵥ = c ^ v(x)` for `0 < c < 1`
-is kept as an explicit declaration rather than prose-only commentary. The proof
-details are left at theorem level for later stages.
+is recorded by its pointwise formula, with the existence of the packaged
+`AbsoluteValue` deferred to theorem level for later stages. This keeps the
+definition layer free of placeholder data.
 
 For the valuation ring and DVR clauses, the lecture's constructions match
 Mathlib's bundled objects:
@@ -57,24 +58,29 @@ attached to the bundled valuation. -/
 noncomputable abbrev valuationSubring (v : RealValuation k) : ValuationSubring k :=
   (asValuation v).valuationSubring
 
-/-- The lecture's construction `|x|ᵥ = c ^ v(x)` for `0 < c < 1`. -/
-noncomputable def derivedAbsoluteValue (v : RealValuation k) (c : ℝ) (hc0 : 0 < c) (hc1 : c < 1) :
-    AbsoluteValue k ℝ := by
+/-- The lecture's pointwise formula `|x|ᵥ = c ^ v(x)` for `0 < c < 1`. -/
+noncomputable def derivedAbsoluteValue (v : RealValuation k) (c : ℝ) : k → ℝ :=
+  by
+    classical
+    exact fun x => if hx : x = 0 then 0 else c ^ ((v x).untop ((v.ne_top_iff).2 hx))
+
+@[simp] theorem derivedAbsoluteValue_apply_zero (v : RealValuation k) (c : ℝ) :
+    derivedAbsoluteValue v c 0 = 0 := by
   classical
-  refine
-    { toFun := fun x => if hx : x = 0 then 0 else c ^ ((v x).untop ((v.ne_top_iff).2 hx))
-      map_mul' := by
-        intro x y
-        sorry
-      nonneg' := by
-        intro x
-        sorry
-      eq_zero' := by
-        intro x
-        sorry
-      add_le' := by
-        intro x y
-        sorry }
+  simp [derivedAbsoluteValue]
+
+theorem derivedAbsoluteValue_apply_of_ne_zero (v : RealValuation k) (c : ℝ) {x : k} (hx : x ≠ 0) :
+    derivedAbsoluteValue v c x = c ^ ((v x).untop ((v.ne_top_iff).2 hx)) := by
+  classical
+  simp [derivedAbsoluteValue, hx]
+
+/-- For `0 < c < 1`, the lecture's pointwise formula packages to a nonarchimedean
+absolute value. We keep this as a theorem-level existence claim until the full
+bridge from `AddValuation` to `AbsoluteValue` is implemented in this project. -/
+theorem exists_nonarchimedean_absoluteValue_eq_derivedAbsoluteValue
+    (v : RealValuation k) {c : ℝ} (hc0 : 0 < c) (hc1 : c < 1) :
+    ∃ abv : AbsoluteValue k ℝ, IsNonarchimedean abv ∧ ∀ x, abv x = derivedAbsoluteValue v c x := by
+  sorry
 
 /-- A valuation ring coming from a cyclic nontrivial value group is a DVR in Mathlib's sense. -/
 instance instIsDiscreteValuationRing (v : RealValuation k)
