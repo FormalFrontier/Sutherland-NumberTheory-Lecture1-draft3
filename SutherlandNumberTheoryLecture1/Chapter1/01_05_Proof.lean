@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_05_Corollary»
 
 /-!
@@ -60,14 +59,11 @@ variable [Finite k] (abv : AbsoluteValue k ℝ)
 `0` or `1` on each element. -/
 theorem absoluteValue_eq_zero_or_one (x : k) :
     abv x = 0 ∨ abv x = 1 := by
-  letI := Fintype.ofFinite k
   by_cases hx : x = 0
   · left
     simp [hx]
-  · have hpow : abv x ^ Fintype.card k = abv x := by
-      simpa only [map_pow] using congrArg abv (FiniteField.pow_card x)
-    exact eq_zero_or_one_of_nonneg_of_pow_eq_self (x := abv x) (n := Fintype.card k) (abv.nonneg x)
-      Fintype.one_lt_card hpow
+  · right
+    simpa using absoluteValue_eq_one_of_ne_zero abv hx
 
 /-- The proof blob concludes by identifying the finite-field absolute value with
 the trivial absolute value. -/
