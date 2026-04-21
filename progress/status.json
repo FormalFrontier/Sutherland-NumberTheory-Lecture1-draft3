@@ -761,10 +761,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_25_Proof.refs.md, emphasizing that Stage 3 should likely derive the result from Mathlib's bundled valuation-ring theorem rather than replay the handwritten contradiction proof."
   },
   "Chapter1/01_26_Definition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_26_Definition.refs.md, matching the definition exactly with `NumberField` and `NumberField.RingOfIntegers`."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#132",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean by identifying number fields with Mathlib's bundled `NumberField` class and exposing `NumberField.RingOfIntegers K` as the integral closure of `ℤ` in `K`."
   },
   "Chapter1/01_27_Remark": {
     "status": "references_attached",
