@@ -761,10 +761,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean by turning the lecture's contradiction argument into the explicit witness theorem `proof_integral_element_mem` and then rebuilding the final proof item `proof_valuationRing_isIntegrallyClosed` from `isIntegrallyClosed_iff`, reusing the bundled valuation-ring theorem from `01_25_Proposition` rather than replaying the coefficient manipulation."
   },
   "Chapter1/01_26_Definition": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
     "issue": "#132",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean by identifying number fields with Mathlib's bundled `NumberField` class and exposing `NumberField.RingOfIntegers K` as the integral closure of `ℤ` in `K`."
+    "notes": "Stage 3.2 review confirmed SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean already matches Definition 1.26 exactly: `NumberField K` provides the finite extension of `ℚ`, and `NumberField.RingOfIntegers K` is definitionally the integral closure of `ℤ` in `K`."
   },
   "Chapter1/01_27_Remark": {
     "status": "scaffolded",
