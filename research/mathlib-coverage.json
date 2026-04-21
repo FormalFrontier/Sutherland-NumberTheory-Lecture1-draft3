@@ -3,15 +3,22 @@
     "Chapter1/01_00_Introduction": {
       "coverage": "partial",
       "declarations": [
+        "UniqueFactorizationMonoid.normalizedFactors",
+        "UniqueFactorizationMonoid.associated_iff_normalizedFactors_eq_normalizedFactors",
+        "PrincipalIdealRing.isMaximal_of_irreducible",
         "FiniteField.card",
         "Ideal.Quotient.field",
         "IsFractionRing",
+        "Field.powerBasisOfFiniteOfSeparable",
+        "IntermediateField.adjoinRootEquivAdjoin",
         "NumberField",
         "RatFunc",
         "FunctionField",
+        "Ring.KrullDimLE",
+        "Algebra.ringChar_eq",
         "FunctionField.inftyValuation"
       ],
-      "notes": "Mathlib has the core infrastructure for prime fields, residue fields of maximal ideals, fraction fields, number fields, rational-function fields, and the place at infinity on F_q(t). The lecture's high-level global-field comparison and its discussion of completions/local fields are only partially packaged at this level."
+      "notes": "Mathlib has the core infrastructure for prime fields, residue fields of maximal ideals, fraction fields, number fields, rational-function fields, and the place at infinity on F_q(t). It also has direct anchors for the repaired Stage 3.3 gaps: normalized-factor uniqueness for the fundamental theorem of arithmetic, maximality of principal prime ideals in a PID, primitive-element/AdjoinRoot presentations of number fields, Krull-dimension-one bounds for PIDs, and characteristic preservation along algebra extensions. The lecture's high-level completion/local-field survey remains only partially packaged at this level."
     },
     "Chapter1/01_01_Remark": {
       "coverage": "gap",
