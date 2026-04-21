@@ -557,10 +557,10 @@
     }
   },
   "Chapter1/01_11_Definition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_11_Definition.refs.md, pointing directly to Mathlib's exact `ValuationRing` predicate and the supporting prose references."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#136",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_11_Definition.lean as a direct wrapper around `ValuationRing`, with explicit fraction-field statements `valuationRing_iff_forall_isInteger_or_isInteger_inv` and `valuationRing_iff_forall_exists_eq_algebraMap_or_inv_eq_algebraMap` matching the lecture's membership phrasing."
   },
   "Chapter1/01_11a_Discussion": {
     "status": "references_attached",
