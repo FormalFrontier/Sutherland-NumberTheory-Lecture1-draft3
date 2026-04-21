@@ -1,4 +1,3 @@
-import Mathlib
 import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
 
 /-!
@@ -21,13 +20,13 @@ variable {A B : Type*} [CommRing A] [CommRing B] [Algebra A B]
 
 /-- The proof blob's sum claim is discharged by the previously scaffolded proposition. -/
 theorem proof_integral_add {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
-    IsIntegral A (α + β) := by
-  exact integral_add hα hβ
+    IsIntegral A (α + β) :=
+  integral_add hα hβ
 
 /-- The proof blob's product claim is discharged by the previously scaffolded proposition. -/
 theorem proof_integral_mul {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
-    IsIntegral A (α * β) := by
-  exact integral_mul hα hβ
+    IsIntegral A (α * β) :=
+  integral_mul hα hβ
 
 end Proof_01_18
 
