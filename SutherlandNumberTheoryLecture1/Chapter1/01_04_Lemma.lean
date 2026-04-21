@@ -37,7 +37,12 @@ theorem natCast_pos_le_one_of_isNonarchimedean (abv : AbsoluteValue k ℝ)
 theorem isNonarchimedean_of_natCast_le_one (abv : AbsoluteValue k ℝ)
     (h_nat : ∀ n : ℕ, abv n ≤ 1) :
     IsNonarchimedean abv := by
-  sorry
+  letI : NormedField k := abv.toNormedField
+  letI : IsUltrametricDist k :=
+    IsUltrametricDist.isUltrametricDist_of_forall_norm_natCast_le_one (R := k) <| by
+      simpa using h_nat
+  change IsNonarchimedean (‖·‖ : k → ℝ)
+  simpa using (IsUltrametricDist.isNonarchimedean_norm (R := k))
 
 /-- Lemma 1.4 in the lecture's original `n ≥ 1` form. -/
 theorem isNonarchimedean_iff_natCast_pos_le_one (abv : AbsoluteValue k ℝ) :
