@@ -1034,10 +1034,10 @@
     }
   },
   "Chapter1/01_15_Example": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#298",
-    "notes": "Stage 3.2 review for issue #298 confirmed that `blobs/Chapter1/01_15_Example.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean`. The scaffold packages the bundled `t`-adic valuation on `k((t))`, its valuation subring, the embedded power-series subring, and `PowerSeries.order` as order of vanishing at zero, while keeping the valuation-ring identification, the coefficient-vanishing consequence, and the expansion-at-`\\alpha` valuation as theorem-level placeholders only. No definition-level `sorry` or missing bridge theorem was found.",
+    "issue": "#329",
+    "notes": "Stage 3.3 audit for issue #329 re-read `blobs/Chapter1/01_15_Example.md` and `blobs/Chapter1/01_15_Example.refs.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean`. The existing scaffold already covers every formalizable sentence in the blob: the bundled Laurent-series valuation, the identification of its valuation ring with the embedded power-series subring, the order-of-vanishing-at-zero wrapper, and the expansion-at-`\\alpha` valuation existence statement. No additional declaration or scaffold repair was needed.",
     "stage3_2_review": {
       "issue": "#298",
       "decision": "clean",
@@ -1072,6 +1072,41 @@
         }
       ],
       "summary": "The Stage 3.2 review found complete scaffold coverage for the Laurent-series example. Every formalizable sentence is represented by a named declaration or explicit theorem placeholder, with no hidden definition gap and no need to widen the scaffold before Stage 3.3."
+    },
+    "stage3_3_audit": {
+      "issue": "#329",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For any field `k`, the Laurent series field `k((t))` carries the standard valuation given by the lowest exponent.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.laurentSeriesValuation",
+          "reason": "The scaffold already names Mathlib's bundled `X`-adic valuation on `LaurentSeries k`, so the lecture's valuation object is explicit with no missing bridge declaration."
+        },
+        {
+          "n": 2,
+          "text": "The valuation ring of this valuation is `k[[t]]`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.mem_laurentSeriesValuationRing_iff_exists_powerSeries; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.laurentSeriesValuationRing_eq_powerSeriesSubring",
+          "reason": "Both the membership characterization and the final subring equality are already present as explicit theorems, so Stage 3.3 found no omitted identification claim."
+        },
+        {
+          "n": 3,
+          "text": "For `f \\in k((t))^\\times`, the valuation is the order of vanishing of `f` at zero.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero_eq_order; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.coeff_eq_zero_of_lt_orderOfVanishingAtZero",
+          "reason": "The wrapper definition, the exact identification with `PowerSeries.order`, and the coefficient-vanishing consequence already represent the blob's order-of-vanishing sentence explicitly."
+        },
+        {
+          "n": 4,
+          "text": "For every `\\alpha \\in k`, one can similarly define an order-of-vanishing valuation by Laurent expansion about `\\alpha`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.exists_orderOfVanishingAtPoint_valuation",
+          "reason": "The expansion-about-`\\alpha` sentence is already recorded as a dedicated existence theorem for a valuation on `RatFunc k`, so the audit found no hidden follow-up claim."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found no additional formalizable sentence missing from the scaffold. `01_15_Example` is ready to advance from `definition_verified` to `claims_audited`, with the remaining work confined to proving the existing theorem statements."
     }
   },
   "Chapter1/01_15a_Discussion": {
