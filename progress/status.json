@@ -418,10 +418,10 @@
     }
   },
   "Chapter1/01_05_Corollary": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#367",
-    "notes": "Stage 3.2 review in issue #367 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` already captures both sentences of Corollary 1.5 faithfully: the positive-characteristic branch is stated as `absoluteValue_isNonarchimedean_of_pos_char`, and the finite-field branch is stated as `absoluteValue_eq_trivial_of_finite`, with the Frobenius nat-cast and nonzero-element helper lemmas exposed explicitly for downstream proof use.",
+    "issue": "#377",
+    "notes": "Stage 3.3 audit in issue #377 confirmed that `blobs/Chapter1/01_05_Corollary.md` still has no missing formalizable claim relative to `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean`: the positive-characteristic and finite-field conclusions, together with the explicit Frobenius helper lemmas the lecture uses, already cover the full blob.",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
@@ -442,13 +442,34 @@
         }
       ],
       "summary": "The Stage 3.2 review found complete scaffold coverage for Corollary 1.5. Both mathematical sentences in the blob already have explicit Lean counterparts, so no declaration repair was needed before later proof work."
+    },
+    "stage3_3_audit": {
+      "issue": "#377",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "In a field of positive characteristic every absolute value is nonarchimedean.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_isNonarchimedean_of_pos_char; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.natCast_absoluteValue_pow_char",
+          "reason": "The audit found no hidden subclaim beyond the existing positive-characteristic conclusion and its explicit Frobenius-on-natural-casts support theorem."
+        },
+        {
+          "n": 2,
+          "text": "The only absolute value on a finite field is the trivial one.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_trivial_of_finite; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_one_of_ne_zero",
+          "reason": "The finite-field sentence is already represented directly, and the nonzero-element helper keeps the lecture's intermediate step explicit rather than implicit."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found no additional formalizable sentence missing from the corollary scaffold. `01_05_Corollary` is ready to move from `definition_verified` to `claims_audited`, with remaining work confined to proving the existing declarations."
     }
   },
   "Chapter1/01_05_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#367",
-    "notes": "Stage 3.2 review in issue #367 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean` already mirrors the proof blob faithfully: it isolates the real-number fixed-point helper, packages the positive-characteristic Frobenius argument into `natCast_absoluteValue_eq_zero_or_one`, and packages the finite-field Frobenius argument into `absoluteValue_eq_zero_or_one` before citing the corollary-level triviality theorem.",
+    "issue": "#377",
+    "notes": "Stage 3.3 audit in issue #377 confirmed that `blobs/Chapter1/01_05_Proof.md` has no omitted formalizable sentence relative to `SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean`: the positive-characteristic route through Lemma 1.4 and the finite-field Frobenius-to-triviality route are both already explicit.",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
@@ -476,6 +497,34 @@
         }
       ],
       "summary": "The Stage 3.2 review found complete scaffold coverage for the proof blob. Every formalizable sentence in the lecture's proof is already represented explicitly, with no missing declaration or assumption mismatch to repair before Stage 3.3."
+    },
+    "stage3_3_audit": {
+      "issue": "#377",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If k has positive characteristic p, then every n in the prime field satisfies n^p = n, hence |n|^p = |n| and |n| is 0 or 1, so k is nonarchimedean by Lemma 1.4.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.eq_zero_or_one_of_nonneg_of_pow_eq_self; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.natCast_absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.positiveCharacteristic_nonarchimedean_proof",
+          "reason": "The audit found the full proof sentence already split into the necessary fixed-point helper, Frobenius consequence, and final nonarchimedean conclusion citing Lemma 1.4."
+        },
+        {
+          "n": 2,
+          "text": "If k is finite of cardinality q, then x^q = x for all x, so |x|^q = |x| is 0 or 1, with the former occurring only for x = 0.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_one_of_ne_zero",
+          "reason": "The finite-field fixed-point argument is already explicit in the proof file, and the stronger nonzero-element conclusion is recorded separately in the corollary file."
+        },
+        {
+          "n": 3,
+          "text": "Therefore the only absolute value on a finite field is the trivial one.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.finiteField_absoluteValue_eq_trivial; SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.absoluteValue_eq_trivial_of_finite",
+          "reason": "The closing sentence remains an explicit theorem rather than an implicit finish to the finite-field argument."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found no additional formalizable sentence missing from the proof scaffold. `01_05_Proof` is ready to move from `definition_verified` to `claims_audited`, with remaining work confined to proving the existing declarations."
     }
   },
   "Chapter1/01_06_Definition": {
