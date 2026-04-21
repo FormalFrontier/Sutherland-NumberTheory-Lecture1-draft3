@@ -17,30 +17,44 @@ section Example_01_03
 
 variable {k : Type*} [Field k]
 
-/-- The lecture's piecewise formula is Mathlib's packaged trivial absolute value. -/
-noncomputable example : AbsoluteValue k ℝ := by
+/-- The lecture's trivial absolute value is Mathlib's packaged `AbsoluteValue.trivial`. -/
+noncomputable def trivialAbsoluteValue : AbsoluteValue k ℝ := by
   classical
-  exact AbsoluteValue.trivial
+  exact AbsoluteValue.trivial (R := k) (S := ℝ)
+
+/-- The zero branch of the lecture's piecewise formula. -/
+@[simp] theorem trivialAbsoluteValue_apply_zero :
+    trivialAbsoluteValue (k := k) 0 = 0 := by
+  simp [trivialAbsoluteValue]
 
 /-- Away from zero, the trivial absolute value takes the constant value `1`. -/
-example {x : k} (hx : x ≠ 0) : (show AbsoluteValue k ℝ from by
-    classical
-    exact AbsoluteValue.trivial (R := k) (S := ℝ)) x = 1 := by
+theorem trivialAbsoluteValue_apply_of_ne_zero {x : k} (hx : x ≠ 0) :
+    trivialAbsoluteValue (k := k) x = 1 := by
   classical
-  simpa using AbsoluteValue.trivial_apply (S := ℝ) hx
+  simpa [trivialAbsoluteValue] using AbsoluteValue.trivial_apply (S := ℝ) hx
 
 /-- Example 1.3 explicitly records that the trivial absolute value is nonarchimedean. -/
-theorem trivial_isNonarchimedean : IsNonarchimedean (show AbsoluteValue k ℝ from by
-    classical
-    exact AbsoluteValue.trivial (R := k) (S := ℝ)) := by
+theorem trivialAbsoluteValue_isNonarchimedean :
+    IsNonarchimedean (trivialAbsoluteValue (k := k)) := by
   classical
   intro x y
   by_cases hx : x = 0
-  · simp [AbsoluteValue.trivial, hx]
+  · simp [trivialAbsoluteValue, hx]
   by_cases hy : y = 0
-  · simp [AbsoluteValue.trivial, hy]
-  simp [AbsoluteValue.trivial, hx, hy]
-  split_ifs <;> norm_num
+  · simp [trivialAbsoluteValue, hy]
+  by_cases hxy : x + y = 0
+  · have hx1 : trivialAbsoluteValue (k := k) x = 1 :=
+      trivialAbsoluteValue_apply_of_ne_zero (k := k) hx
+    have hy1 : trivialAbsoluteValue (k := k) y = 1 :=
+      trivialAbsoluteValue_apply_of_ne_zero (k := k) hy
+    simp [hxy, hx1, hy1]
+  · have hx1 : trivialAbsoluteValue (k := k) x = 1 :=
+      trivialAbsoluteValue_apply_of_ne_zero (k := k) hx
+    have hy1 : trivialAbsoluteValue (k := k) y = 1 :=
+      trivialAbsoluteValue_apply_of_ne_zero (k := k) hy
+    have hxy1 : trivialAbsoluteValue (k := k) (x + y) = 1 :=
+      trivialAbsoluteValue_apply_of_ne_zero (k := k) hxy
+    simp [hx1, hy1, hxy1]
 
 end Example_01_03
 
