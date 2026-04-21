@@ -745,10 +745,10 @@
     }
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#291",
-    "notes": "Stage 3.2 review for issue #291 confirmed complete scaffold coverage for `blobs/Chapter1/01_11a_Discussion.md`. The review added explicit wrappers `valuationSubring_isUniqueFactorizationMonoid` for the UFD sentence and `eq_maximalIdeal_of_isPrime_of_ne_bot` for the 'only nonzero prime ideal' clause, while leaving the pre-existing ideal-classification and factorization gaps at theorem-level `sorry` only.",
+    "issue": "#310",
+    "notes": "Stage 3.3 audit under issue #310 re-read `blobs/Chapter1/01_11a_Discussion.md` against the refs file and Lean scaffold and found no additional missing claims. The existing declarations already account for every formalizable sentence in the blob, and all remaining incompleteness stays at theorem-level `sorry` in the factorization and ideal-classification results.",
     "stage3_2_review": {
       "issue": "#291",
       "decision": "passes_with_minor_repairs",
@@ -839,6 +839,55 @@
         }
       ],
       "summary": "The Stage 3.2 review found one genuine coverage gap and one implicit-instance gap. Adding explicit theorems for the UFD sentence and the unique-nonzero-prime clause brings every mathematical sentence in the blob under a named declaration or an explicit later dependency, with all remaining incompleteness confined to theorem-level `sorry`s."
+    },
+    "stage3_3_audit": {
+      "issue": "#310",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The discrete valuation determining the valuation ring is uniquely determined.",
+          "classification": "forward_reference",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_13a_Discussion.isEquiv_dvrValuation_of_valuationSubring_eq",
+          "reason": "The parenthetical still points forward to the later valuation-recovery discussion rather than requiring an additional declaration in `01_11a_Discussion`."
+        },
+        {
+          "n": 2,
+          "text": "Uniformizers exist.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.exists_uniformizer",
+          "reason": "The file already exposes the lecture's existence claim directly in the valuation-subring setting."
+        },
+        {
+          "n": 3,
+          "text": "Every nonzero fraction-field element has a unique `u * pi^n` decomposition with `u` a unit.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.exists_unique_unit_mul_uniformizer_zpow",
+          "reason": "The exact decomposition statement is already scaffolded, so the audit found no missing bridge around the valuation exponent or uniqueness clause."
+        },
+        {
+          "n": 4,
+          "text": "The valuation ring is a UFD and in fact a PID.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.valuationSubring_isUniqueFactorizationMonoid; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.valuationSubring_isPrincipalIdealRing",
+          "reason": "Both structural consequences are already named explicitly rather than being left implicit in the instance search graph."
+        },
+        {
+          "n": 5,
+          "text": "Every nonzero ideal is `(pi^n) = {a in A : v(a) >= n}` for some `n >= 0`, independent of the choice of uniformizer.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.span_pow_uniformizer_eq_valuation_ge; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.exists_eq_span_pow_uniformizer_of_ne_bot; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.span_pow_uniformizer_eq_span_pow_uniformizer",
+          "reason": "The scaffold already splits the textbook sentence into the needed existence, valuation-cutoff, and change-of-uniformizer declarations."
+        },
+        {
+          "n": 6,
+          "text": "The ideals are totally ordered, `(pi)` is the unique maximal ideal, and it is the only nonzero prime ideal.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.ideals_are_totally_ordered; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.maximalIdeal_eq_span_uniformizer; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.eq_maximalIdeal_of_isMaximal; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.maximalIdeal_eq_positive_valuation_locus; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.eq_maximalIdeal_of_isPrime_of_ne_bot",
+          "reason": "The closing structural consequences all remain present as explicit theorems, including the valuation description of the maximal ideal and the uniqueness statements for maximal and nonzero prime ideals."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found no additional formalizable sentence missing from the scaffold. `01_11a_Discussion` is ready to move from `definition_verified` to `claims_audited`, with the remaining work confined to proving the existing theorem statements."
     }
   },
   "Chapter1/01_12_Definition": {
