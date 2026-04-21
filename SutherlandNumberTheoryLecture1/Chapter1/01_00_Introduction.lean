@@ -135,14 +135,27 @@ theorem quotientByIrreducibleOverFunctionFieldBaseField
 finite fields. We isolate that claim here for later proof refinement. -/
 theorem quotient_by_irreducible_over_finite_field_isFinite
     [Finite Fq] (f : Polynomial Fq) [Fact (Irreducible f)] : Finite (AdjoinRoot f) := by
-  sorry
+  let hf : f ≠ 0 := (Fact.out : Irreducible f).ne_zero
+  let pb := AdjoinRoot.powerBasis hf
+  letI : Fintype Fq := Fintype.ofFinite Fq
+  letI : Fintype (AdjoinRoot f) := Module.fintypeOfFintype pb.basis
+  exact Finite.of_fintype _
 
 /-- The lecture sharpens the previous residue-field claim by identifying the quotient with a
 finite field of size `q^d`, where `q = |F_q|` and `d = deg f`. -/
 theorem quotient_by_irreducible_over_finite_field_card
     [Finite Fq] (f : Polynomial Fq) [Fact (Irreducible f)] :
     Nat.card (AdjoinRoot f) = Nat.card Fq ^ f.natDegree := by
-  sorry
+  let hf : f ≠ 0 := (Fact.out : Irreducible f).ne_zero
+  let pb := AdjoinRoot.powerBasis hf
+  letI : Module.Finite Fq (AdjoinRoot f) := pb.finite
+  calc
+    Nat.card (AdjoinRoot f) = Nat.card Fq ^ Module.finrank Fq (AdjoinRoot f) :=
+      Module.natCard_eq_pow_finrank (K := Fq) (V := AdjoinRoot f)
+    _ = Nat.card Fq ^ pb.dim := by
+      rw [PowerBasis.finrank (R := Fq) (S := AdjoinRoot f) pb]
+    _ = Nat.card Fq ^ f.natDegree := by
+      rfl
 
 /-- Every residue field `F_q[t]/(f)` has the same characteristic as the base field `F_q`,
 so also the same characteristic as its fraction field `F_q(t)`. -/
