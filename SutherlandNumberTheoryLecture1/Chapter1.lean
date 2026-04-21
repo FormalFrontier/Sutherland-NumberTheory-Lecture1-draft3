@@ -14,6 +14,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_06a_Discussion»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Theorem»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Proof»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Theorem»
 
 /-!
 # Chapter 1 import spine
