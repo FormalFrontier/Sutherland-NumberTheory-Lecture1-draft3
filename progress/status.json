@@ -2136,6 +2136,7 @@
   },
   "Chapter1/01_22_Proof": {
     "status": "proof_polished",
+    "upstreaming_status": "rejected",
     "last_updated": "2026-04-21",
     "issue": "#582",
     "notes": "Issue #582 completed the Stage 3.6 proof-polish pass for `Chapter1/01_22_Proof`. Re-reading `blobs/Chapter1/01_22_Proof.md` confirmed that the file should stay a four-theorem wrapper around Mathlib's integral-rational API, so the cleanup tightened the proofs to direct range/destructuring arguments, reused `rat_num_eq_of_isIntegral` for the final existential wrapper, replaced `import Mathlib` with the specific rational-localization and rational-root imports, and preserved the empty direct dependency set; `lake build` succeeded after the polish pass.",
