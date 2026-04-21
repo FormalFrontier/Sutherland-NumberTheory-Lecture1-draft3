@@ -18,36 +18,37 @@
 
 ## Current Frontier
 
-- Since summarize issue `#362` closed on `2026-04-21T10:19:12Z`, ten PRs merged through `#388` (`2026-04-21T11:04:13Z`): `#370`, `#371`, `#372`, `#374`, `#379`, `#380`, `#381`, `#382`, `#387`, and `#388`.
-- That merge wave finished the early-Chapter Stage `3.2` and Stage `3.3` passes for the `01_05`, `01_08`, and `01_09` theorem/proof blocks, and also promoted `01_02_Definition`, `01_03_Example`, `01_04_Proof`, and `01_06_Definition` to honest `sorry_free` bookkeeping.
-- The old valuation/DVR queue described here previously is no longer the live bottleneck. The active proof frontier has moved back to the early absolute-value block:
-  - `Chapter1/01_05_Corollary` and `Chapter1/01_05_Proof` are the earliest `claims_audited` items that still contain theorem-level `sorry`s, and feature issue `#389` now covers that Stage `3.4` proof work.
-  - `Chapter1/01_09_Theorem` and `Chapter1/01_09_Proof` are the next hard-proof lane after `#389`; the theorem file still contains two `sorry`s while the proof wrapper is already zero-sorry.
-  - `Chapter1/01_08_Theorem` and `Chapter1/01_08_Proof`, plus several later `claims_audited` definitions/propositions, appear to be zero-sorry and now mainly need explicit verification/promotion passes rather than new theorem proving.
+- Since summarize issue `#390` closed on `2026-04-21T11:16:29Z`, `30` PRs have merged through `#451` (`2026-04-21T13:42:20Z`): first the `#392`-`#419` integrality/order wave, then the `#420`-`#451` scaffold-review and missing-claims-audit sweep.
+- Stage `3.4` moved first. The repo promoted `01_05_Corollary`/`01_05_Proof`, `01_08_Theorem`/`01_08_Proof`, `01_09_Theorem`/`01_09_Proof`, `01_11_Definition`, `01_12_Definition`, `01_13_Definition`/discussion, `01_17_Definition`, `01_18_Proposition`, `01_19_Definition`, `01_25_Proposition`, `01_26_Definition`, `01_27_Remark`, and `01_28_Proposition` to `sorry_free`.
+- The frontier then shifted into Stage `3.2` and Stage `3.3` cleanup across the mid-Chapter integrality block:
+  - `01_18_Proof` cleared Stage `3.2`, cleared Stage `3.3`, and then finalized as `sorry_free`.
+  - `01_20_Proposition` finalized as `sorry_free`, while `01_20_Proof` cleared Stage `3.2` and Stage `3.3`.
+  - `01_21_Corollary`/`01_21_Proof`, `01_22_Proposition`/`01_22_Proof`, and `01_23_Corollary`/`01_23_Proof` all cleared Stage `3.2` and Stage `3.3`.
+  - `01_25_Proof` and `01_28_Proof` also cleared Stage `3.2` and Stage `3.3`.
+- There are no active theorem-level `sorry`s left under `SutherlandNumberTheoryLecture1`; the only remaining `sorry` token in that tree is explanatory prose in `01_10_Definition.lean`.
 - Current item-level Chapter 1 counts from `progress/status.json`:
-  - `18` `sorry_free`
-  - `20` `claims_audited`
-  - `11` `scaffolded`
+  - `37` `sorry_free`
+  - `12` `claims_audited`
+  - `7` `structured`
   - `3` `non_formalizable`
 
 ## In-Flight Work
 
 - Open `agent-plan` issues right now:
-  - `#389` `feature`, claimed: prove `Chapter1/01_05_Corollary` / `Chapter1/01_05_Proof`
-  - `#390` `summarize`, claimed: this summary pass
+  - `#424` `summarize`, claimed: this summary pass
 - Queue-health metrics used for this pass:
-  - At `coordination orient` before claiming `#390`: `1` unclaimed issue (`#390`), `1` claimed issue (`#389`), `0` open PRs, `0` broken PRs, and no `human-oversight` issues.
-  - During the write-up after claiming `#390`: `2` open `agent-plan` issues, both claimed (`#389`, `#390`), `0` open PRs, `0` broken PRs.
+  - Immediately before claiming `#424`: `1` unclaimed issue (`#424`), `1` claimed issue (`#450`), `0` open PRs, `0` broken PRs, and no `human-oversight` issues.
+  - During the write-up after `#451` merged and `#424` was claimed: `1` open `agent-plan` issue (`#424`), `0` open PRs, `0` broken PRs.
 
 ## Queue Health And Risks
 
-- The main risk is no longer an empty queue; it is sequencing drift. The repo now has one active proof feature and no queued follow-on issues behind it.
-- The planner should not reopen work already covered by `#389`. The next action is to prepare the follow-on lane behind that issue, not to duplicate the same `01_05` proof task.
-- A second risk is letting zero-sorry `claims_audited` files sit indefinitely without promotion. That obscures the true proof frontier and makes status counts noisier than the actual Lean debt.
+- The main risk is status lag, not proof debt. Several `claims_audited` items in the `01_20`-`01_28` lane are already zero-sorry Lean files and mainly need Stage `3.4` promotion.
+- With no unclaimed work and no open PRs, planner latency is now the main way the queue can stall.
+- The remaining `structured` items are outside the already-clean integrality/order cluster, so the next planner cycle should avoid reopening `01_20`-`01_28` audit work that is already complete.
 
 ## Recommended Planner Sequence
 
-1. Let `#389` run as the current hard-feature lane for `01_05`; do not duplicate it.
-2. Queue the next hard-proof issue for `Chapter1/01_09_Theorem` / `Chapter1/01_09_Proof` once `#389` has a PR or merges.
-3. In parallel with that next proof lane, open small Stage `3.4` verification/promotion issues for zero-sorry `claims_audited` items, starting with `01_08_Theorem` / `01_08_Proof`, then the earliest unchanged `01_11`-`01_13` cluster if still zero-sorry.
-4. After the early absolute-value block is compressed, return to the later scaffold backlog beginning at `01_18_Proof` / `01_20`-`01_23` / `01_25_Proof` / `01_28_Proof`.
+1. Open a Stage `3.4` promotion issue for `Chapter1/01_20_Proof`, the earliest zero-sorry item still parked at `claims_audited`.
+2. Follow with a small batch-promotion issue for the zero-sorry `01_21`-`01_23` cluster: `01_21_Corollary`, `01_21_Proof`, `01_22_Proposition`, `01_22_Proof`, `01_23_Corollary`, and `01_23_Proof`.
+3. Then promote the later zero-sorry proof wrappers `01_25_Proof` and `01_28_Proof`, plus any terminal metadata cleanup such as `01_29a_Bibliography` if the planner wants the status file to reflect that it is already audit-complete and non-mathematical.
+4. Once that bookkeeping pass lands, re-open the next real formalization lane from the remaining `structured` items rather than generating more audit work inside the already-clean `01_18`-`01_28` block.
