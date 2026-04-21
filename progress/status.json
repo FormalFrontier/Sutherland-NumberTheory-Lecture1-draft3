@@ -616,10 +616,10 @@
     }
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#346",
-    "notes": "Stage 3.3 audit under issue #346 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` already covers every formalizable sentence in `blobs/Chapter1/01_10a_Discussion.md` at the right level. The valuation-ring structure claim remains ambient in the imported `ValuationSubring` API, while the local scaffold explicitly covers the integral-domain/fraction-field facts, the `x` or `x⁻¹` membership dichotomy, the valuation-zero unit characterization, the unit-locus set equality, the positive-valuation maximal-ideal bridge, and the sign-based partition. No Lean repair was needed; the only remaining incompleteness is the pre-existing theorem-level `sorry`s in `isUnit_iff_valuation_eq_zero`, `mem_maximalIdeal_iff_valuation_pos`, and `inv_mem_maximalIdeal_of_neg`.",
+    "issue": "#358",
+    "notes": "Stage 3.4 proof work under issue #358 discharged the remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean`. The file now proves the valuation-zero unit criterion by transporting `ValuationSubring.valuation_eq_one_iff` across `Valuation.isEquiv_valuation_valuationSubring`, derives the positive-valuation maximal-ideal criterion from the local-ring nonunit characterization plus that unit criterion, and shows that negative valuation forces the inverse into the maximal ideal via `v.map_inv`, leaving the sign-partition discussion sorry-free.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [

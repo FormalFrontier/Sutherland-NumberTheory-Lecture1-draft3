@@ -35,7 +35,12 @@ theorem mem_or_inv_mem_valuationSubring (v : RealValuation k) (x : kˣ) :
 /-- For an element of the valuation ring, being a unit is equivalent to vanishing valuation. -/
 theorem isUnit_iff_valuation_eq_zero (v : RealValuation k) (x : valuationSubring v) :
     IsUnit x ↔ v (x : k) = 0 := by
-  sorry
+  have hval : v (x : k) = 0 ↔ (valuationSubring v).valuation x = 1 := by
+    simpa [valuationSubring] using
+      ((Valuation.isEquiv_valuation_valuationSubring (asValuation v)).eq_one_iff_eq_one
+        (x := (x : k)))
+  rw [hval]
+  exact (valuationSubring v).valuation_eq_one_iff x
 
 /-- The lecture's description of the unit group as the valuation-zero locus. -/
 theorem unitGroup_eq_zeroValuation_set (v : RealValuation k) :
@@ -46,7 +51,18 @@ theorem unitGroup_eq_zeroValuation_set (v : RealValuation k) :
 /-- Positive valuation picks out the maximal ideal, hence the nonunits of the ring. -/
 theorem mem_maximalIdeal_iff_valuation_pos (v : RealValuation k) (x : valuationSubring v) :
     x ∈ IsLocalRing.maximalIdeal (valuationSubring v) ↔ 0 < v (x : k) := by
-  sorry
+  constructor
+  · intro hx
+    have h_not_unit : ¬ IsUnit x := by
+      simpa using hx
+    have hx_nonneg : 0 ≤ v (x : k) := (mem_valuationSubring_iff (v := v) _).1 x.2
+    exact lt_of_le_of_ne hx_nonneg fun hzero => h_not_unit ((isUnit_iff_valuation_eq_zero
+      (v := v) x).2 hzero.symm)
+  · intro hx
+    have h_not_unit : ¬ IsUnit x := by
+      intro h_unit
+      exact (ne_of_gt hx) ((isUnit_iff_valuation_eq_zero (v := v) x).1 h_unit)
+    simpa using h_not_unit
 
 /-- An element of strictly positive valuation lies in the valuation ring. -/
 theorem mem_valuationSubring_of_pos (v : RealValuation k) {x : k} (hx : 0 < v x) :
@@ -72,7 +88,9 @@ theorem inv_mem_maximalIdeal_of_neg (v : RealValuation k) {x : k} (hx : v x < 0)
       · exact False.elim <| not_mem_valuationSubring_of_neg (v := v) hx hxmem
       · exact hxinv
     ⟩ : valuationSubring v) ∈ IsLocalRing.maximalIdeal (valuationSubring v) := by
-  sorry
+  rw [mem_maximalIdeal_iff_valuation_pos]
+  rw [v.map_inv]
+  simpa using (Or.inl hx : v x < 0 ∨ x = 0)
 
 /-- The lecture's sign trichotomy for nonzero field elements, organized as usable cases. -/
 theorem valuation_sign_partition (v : RealValuation k) {x : k} (_hx : x ≠ 0) :
