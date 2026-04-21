@@ -1830,10 +1830,10 @@
     }
   },
   "Chapter1/01_18_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
     "issue": "#115",
-    "notes": "Stage 3.3 audit under issue #405 re-read `blobs/Chapter1/01_18_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean` and `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean`, confirming that the blob's only formalizable conclusions are closure of integral elements under addition and multiplication. The universal-quotient reduction and symmetric-polynomial discussion remain proof strategy rather than omitted standalone claims, so no Lean edit was required.",
+    "notes": "Stage 3.4 verification under issue #422 re-read `blobs/Chapter1/01_18_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean`, confirmed that the Lean file still captures the blob's only two formalizable conclusions via `proof_integral_add` and `proof_integral_mul`, verified `rg -n \"sorry\" SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean` is empty, and completed a successful `lake exe cache get` plus `lake build`.",
     "stage3_2_review": {
       "issue": "#400",
       "decision": "verified",
