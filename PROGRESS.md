@@ -19,40 +19,39 @@
 ## Current Frontier
 
 - Phase `2` is complete for the current extracted slice (logical pages `1` through `7`).
-- Since meditate issue `#270` closed on `2026-04-21T07:00:53Z`, `27` PRs have merged through `#337`. Since summarize issue `#297` closed on `2026-04-21T08:15:34Z`, `13` PRs have merged through `#337`.
-- The Chapter 1 valuation/DVR block has advanced from scaffold/review work into active proof completion:
-  - `01_06a_Discussion`, `01_07_Definition`, `01_11a_Discussion`, `01_15a_Discussion`, and the `01_16` theorem/proof pair are now `sorry_free`,
-  - `01_14_Example` and `01_15_Example` have cleared Stage `3.3` and are in Stage `3.4`,
-  - the remaining nearby unreconciled valuation items are now `01_10a_Discussion`, `01_13_Definition`, `01_13a_Discussion`, and `01_16a_Discussion`.
-- The live frontier is split across three non-overlapping lanes:
-  - active proof completion: `01_14_Example` and `01_15_Example`,
-  - middle valuation follow-through: `01_10a_Discussion`, `01_13_Definition`, and `01_13a_Discussion` still need to move from `definition_verified` to `claims_audited`,
-  - queue replenishment / later isolation: `01_16a_Discussion` and `01_24a_Discussion` remain at `references_attached`, while `01_24_Example` remains `definition_verified`.
+- Since meditate issue `#270` closed on `2026-04-21T07:00:53Z`, `30` PRs have merged through `#340` (`2026-04-21T09:25:08Z`). Since summarize issue `#297` closed on `2026-04-21T08:15:34Z`, `15` PRs have merged through `#340`.
+- The Chapter 1 valuation/DVR wave is no longer merely in proof completion; most of the local block has already landed:
+  - `01_06a_Discussion`, `01_07_Definition`, `01_11a_Discussion`, `01_14_Example`, `01_15_Example`, `01_15a_Discussion`, `01_16_Theorem`, and `01_16_Proof` are now `sorry_free`,
+  - the remaining nearby unreconciled valuation items are `01_10a_Discussion`, `01_13_Definition`, `01_13a_Discussion`, and `01_16a_Discussion`,
+  - the closest disjoint late-tail follow-on remains `01_24_Example` / `01_24a_Discussion`.
+- The live frontier is now split across three non-overlapping lanes:
+  - middle valuation bridge work: `01_10a_Discussion`, `01_13_Definition`, and `01_13a_Discussion` still need Stage `3.3`,
+  - immediate valuation follow-through: `01_16a_Discussion` is still only `references_attached`,
+  - disjoint late-tail replenishment: `01_24_Example` is `definition_verified` and `01_24a_Discussion` is `references_attached`.
 - Current Chapter 1 status counts from `progress/status.json`:
-  - `19` `claims_audited`,
+  - `17` `claims_audited`,
   - `4` `definition_verified`,
   - `18` `scaffolded`,
   - `2` `references_attached`,
-  - `8` `sorry_free`,
+  - `10` `sorry_free`,
   - `1` `non_formalizable`.
 
 ## In-Flight Work
 
-- Open PR `#338` covers Stage `3.4` proof completion for `Chapter1/01_14_Example`; its CI was still in progress when this snapshot was prepared.
-- Claimed feature issue `#334` is the parallel Stage `3.4` proof lane for `Chapter1/01_15_Example`.
-- Unclaimed summarize issue `#336` is the only remaining queued meta item after this meditation closes.
-- There are no broken PRs and no unclaimed feature or review issues right now.
+- There are no open PRs, no broken PRs, and no claimed feature/review/meditate issues.
+- Claimed summarize issue `#336` is the only active `agent-plan` item.
+- Open issue `#326` remains as a stale normalization-sensitive note from the pre-`#333` `01_11a_Discussion` proof attempt; the underlying theorem was repaired and merged in PR `#333`, so this issue should be closed or rewritten rather than treated as live frontier.
 
 ## Queue Health And Risks
 
-- Queue metrics at `2026-04-21T09:22:08Z`: `1` unclaimed `agent-plan` issue (`#336`), `3` claimed issues (`#320`, `#334`, and the open-PR issue `#335`), `1` open PR (`#338`), `0` broken PRs, `0` unclaimed feature issues, and `0` unclaimed review issues.
-- The earlier risk of starvation has been replaced by a different problem: the project now has real proof momentum, but planners have not restocked the next adjacent Chapter 1 work items behind the two active proof lanes.
-- The main sequencing risk is over-concentrating on already-active proofs while leaving the `01_10a` / `01_13` / `01_13a` bridge and the `01_16a` follow-on discussion unscheduled. If that happens, worker capacity collapses again as soon as `01_14` and `01_15` merge.
+- Queue metrics at `2026-04-21T09:26:31Z`: `0` unclaimed feature issues, `0` unclaimed review issues, `0` open PRs, `0` broken PRs, and exactly `1` claimed `agent-plan` issue (`#336`).
+- The main risk is queue starvation. The proof wave landed faster than planners restocked adjacent work, so worker capacity will collapse immediately after this summarize issue closes unless new items are opened.
+- The main sequencing risk is skipping over the unfinished valuation bridge (`01_10a` / `01_13` / `01_13a` / `01_16a`) and jumping into distant proof-heavy scaffolds. That would break the local narrative continuity the recent merge wave just restored.
 
 ## Recommended Planner Sequence
 
-1. Let the active Stage `3.4` pair finish, but plan behind it now rather than waiting for those merges. The next adjacent valuation issue should be a Stage `3.3` audit batch for `Chapter1/01_10a_Discussion`, `Chapter1/01_13_Definition`, and `Chapter1/01_13a_Discussion`.
-2. Queue a small Stage `3.1` issue for `Chapter1/01_16a_Discussion` immediately after that audit batch is opened. It is the direct textual follow-on to the completed `01_16` pair and is the most important unscheduled blob in the same local dependency cluster.
-3. Keep one disjoint late-tail lane available in parallel, with `Chapter1/01_24_Example` Stage `3.3` or `Chapter1/01_24a_Discussion` Stage `3.1` as the best low-overlap option. This preserves parallelism without sending workers back into the already-busy `01_14` / `01_15` proof files.
-4. Defer broader late-tail proof batches (`01_20`-`01_23`, `01_25_Proof`, `01_28_Proof`) until the valuation bridge through `01_16a` is queued. The current bottleneck is local continuity in the valuation/DVR narrative, not lack of distant theorem work.
-5. Dispatcher posture: keep total worker capacity at `3` for now. That matches the actual independent work surface: one active `01_14` proof lane, one active `01_15` proof lane, and one non-overlapping meta/planning lane. Raise to `4` only after planners open both the `01_10a`/`01_13`/`01_13a` audit batch and a disjoint `01_24` or `01_24a` issue, because only then are there four genuinely separate tasks without file overlap.
+1. Open a Stage `3.3` audit batch for `Chapter1/01_10a_Discussion`, `Chapter1/01_13_Definition`, and `Chapter1/01_13a_Discussion`. This is now the most important adjacent lane because it reconnects the cleaned-up valuation examples back to the earlier valuation setup.
+2. Open a small Stage `3.1` issue for `Chapter1/01_16a_Discussion` immediately after that. It is the direct follow-on to the now-`sorry_free` `01_16` theorem/proof pair and the only remaining unscheduled blob in that local DVR thread.
+3. In parallel, queue one disjoint late-tail task: either Stage `3.3` for `Chapter1/01_24_Example` or Stage `3.1` for `Chapter1/01_24a_Discussion`. This gives workers a non-overlapping lane while the valuation bridge is being restocked.
+4. Only after those lanes are open should planners expand into the heavier proof backlog (`01_04`/`01_05`/`01_08`/`01_09`, or later `01_20`-`01_23` / `01_25_Proof` / `01_28_Proof`). The current bottleneck is lack of queued adjacent work, not lack of raw scaffolded material.
+5. Dispatcher posture: keep worker capacity at `2` until planners open at least two real follow-on issues. Raise to `3` once the valuation-bridge batch and one disjoint `01_24`-lane task exist. More than `3` workers would just compete for an empty queue.
