@@ -837,16 +837,54 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_16_Theorem.refs.md, making `IsDiscreteValuationRing.TFAE` the primary Mathlib anchor while preserving the two bibliography references for the exact lecture formulation."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#288",
+    "notes": "Stage 3.1 scaffolding for issue #288 created `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`, packaging the lecture's seven DVR characterizations as explicit Lean predicates and a `List.TFAE` theorem statement anchored on `IsDiscreteValuationRing.TFAE`. The lecture's final \"maximal noetherian ring of dimension one\" clause is represented as an honest fraction-field maximal-subalgebra property rather than as a definition-level placeholder.",
+    "stage3_1_decision": {
+      "decision": "formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For an integral domain `A`, the lecture's seven bullets for recognizing a DVR can be made explicit as Lean predicates.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.IsDvr; IsNoetherianValuationRingNotField; IsLocalPidNotField; IsIntegrallyClosedNoetherianLocalDimOne; IsRegularNoetherianLocalDimOne; HasPrincipalNonzeroMaximalIdeal; IsMaximalNoetherianRingOfDimOne",
+          "reason": "Each bullet is packaged as a concrete Prop with any needed local/noetherian hypotheses carried by existential typeclass witnesses, so no definition body is left sorry'd."
+        },
+        {
+          "n": 2,
+          "text": "These seven predicates are intended to form a single TFAE theorem matching the lecture's statement of Theorem 1.16.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_characterization_tfae",
+          "reason": "The statement is explicit and compile-checked, but the full proof is deferred to the companion proof file because two lecture-specific bridges still need theorem-level work."
+        }
+      ]
+    }
   },
   "Chapter1/01_16_Proof": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_16_Proof.refs.md, recording that the deferred proof should start from `IsDiscreteValuationRing.TFAE` and use the bibliography references only for any remaining bridging implications."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#288",
+    "notes": "Stage 3.1 scaffolding for issue #288 created `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean`, proving the valuation-ring, local-PID, regular-local, and principal-maximal-ideal bridges from `IsDiscreteValuationRing.TFAE` and Discussion 1.15a. The integrally-closed dimension-one converse and the maximal-subring converse remain theorem-level placeholders, and the aggregated `List.TFAE` proof is deferred until those bridges are filled.",
+    "stage3_1_decision": {
+      "decision": "formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The lecture's proof can be scaffolded by splitting out the easy implications and equivalences that already follow from `IsDiscreteValuationRing.TFAE` and the previous discussion blob.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDvr_iff_isNoetherianValuationRingNotField; isDvr_iff_isLocalPidNotField; isDvr_of_isRegularNoetherianLocalDimOne; isDvr_implies_isRegularNoetherianLocalDimOne; isDvr_of_hasPrincipalNonzeroMaximalIdeal; isDvr_implies_hasPrincipalNonzeroMaximalIdeal; isDvr_implies_isIntegrallyClosedNoetherianLocalDimOne; isDvr_implies_isMaximalNoetherianRingOfDimOne",
+          "reason": "These directions map directly to existing Mathlib equivalences or previously scaffolded Chapter 1 bridge lemmas."
+        },
+        {
+          "n": 2,
+          "text": "The converse from the integrally closed one-dimensional local criterion to `IsDiscreteValuationRing`, the converse from the maximal-subring formulation, and the final aggregated TFAE proof still need theorem-level proofs.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDvr_of_isIntegrallyClosedNoetherianLocalDimOne; isDvr_of_isMaximalNoetherianRingOfDimOne; dvr_characterization_proof",
+          "reason": "These are explicit theorem statements with deferred proofs; no definition body or data construction is blocked."
+        }
+      ]
+    }
   },
   "Chapter1/01_16a_Discussion": {
     "status": "references_attached",
