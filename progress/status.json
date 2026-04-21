@@ -1830,10 +1830,10 @@
     }
   },
   "Chapter1/01_18_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
     "issue": "#115",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean as a proof-item wrapper over Chapter1/01_18_Proposition, exposing explicit declarations `proof_integral_add` and `proof_integral_mul` for the proof blob's two closure claims while documenting that Mathlib's abstract integrality lemmas replace the lecture's symmetric-polynomial construction.",
+    "notes": "Stage 3.3 audit under issue #405 re-read `blobs/Chapter1/01_18_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean` and `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean`, confirming that the blob's only formalizable conclusions are closure of integral elements under addition and multiplication. The universal-quotient reduction and symmetric-polynomial discussion remain proof strategy rather than omitted standalone claims, so no Lean edit was required.",
     "stage3_2_review": {
       "issue": "#400",
       "decision": "verified",
@@ -1854,6 +1854,27 @@
         }
       ],
       "summary": "The Stage 3.2 review found the existing proof wrapper sufficient. The blob's universal-quotient and symmetric-polynomial discussion is proof strategy for the two closure conclusions, and those conclusions are already represented exactly by `proof_integral_add` and `proof_integral_mul` via the previously scaffolded proposition."
+    },
+    "stage3_3_audit": {
+      "issue": "#405",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If `\\alpha` and `\\beta` are integral over `A`, then `\\alpha + \\beta` is integral over `A`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_integral_add; SutherlandNumberTheoryLecture1.Chapter1.integral_add",
+          "reason": "The proof blob's first conclusion is already represented explicitly in `01_18_Proof.lean`, which cites the proposition wrapper rather than replaying the textbook's universal-quotient argument."
+        },
+        {
+          "n": 2,
+          "text": "If `\\alpha` and `\\beta` are integral over `A`, then `\\alpha\\beta` is integral over `A`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_integral_mul; SutherlandNumberTheoryLecture1.Chapter1.integral_mul",
+          "reason": "The proof blob's second conclusion is likewise already represented explicitly, and the remaining discussion about algebraic closures and symmetric polynomials serves only as proof strategy for this same product-closure statement."
+        }
+      ],
+      "summary": "A skeptical re-read found exactly two formalizable claims in the blob, both already present in Lean. The reduction to the universal quotient and the root/symmetric-function construction explain the proof method but do not introduce extra standalone assertions that need separate declarations."
     }
   },
   "Chapter1/01_19_Definition": {
