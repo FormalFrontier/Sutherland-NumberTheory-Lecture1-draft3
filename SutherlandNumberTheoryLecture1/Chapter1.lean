@@ -28,6 +28,8 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_13a_Discussion»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_14_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_15_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_15a_Discussion»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_16_Theorem»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_16_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proof»
