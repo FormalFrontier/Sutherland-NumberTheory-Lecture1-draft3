@@ -1647,6 +1647,7 @@
   },
   "Chapter1/01_16_Proof": {
     "status": "proof_polished",
+    "upstreaming_status": "rejected",
     "last_updated": "2026-04-21",
     "issue": "#597",
     "notes": "Issue #597 completed the Stage 3.6 proof-polish pass for `Chapter1/01_16_Proof`. Re-reading `blobs/Chapter1/01_16_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean` confirmed that the cleanest honest formalization is still the existing import-only wrapper over `01_16_Theorem`: the file has no declarations of its own, no direct earlier-book dependencies, and no redundant imports or wrapper theorems to trim further.",
