@@ -701,10 +701,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean by formalizing the proof blob as the elementwise tower-transitivity step `isIntegral_of_isIntegral_tower`, citing Mathlib's `isIntegral_trans` and re-exporting Proposition 1.20 through `integral_extension_trans_from_proof`."
   },
   "Chapter1/01_21_Corollary": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_21_Corollary.refs.md, mapping the corollary directly onto `integralClosure` and `IsIntegrallyClosedIn.of_isIntegralClosure`."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#140",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_21_Corollary.lean by formalizing Corollary 1.21 as the bundled statement that `integralClosure A B` is integrally closed in `B`, proved via `IsIntegrallyClosedIn.of_isIntegralClosure`."
   },
   "Chapter1/01_21_Proof": {
     "status": "references_attached",
