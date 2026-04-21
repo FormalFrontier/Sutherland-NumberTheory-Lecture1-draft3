@@ -605,10 +605,10 @@
     }
   },
   "Chapter1/01_07_Definition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#309",
-    "notes": "Issue #309 completed the remaining Stage 3.4 proof work in `SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean`. The file now proves `padicValuation_eq_exponent_of_factorization` by reducing the lecture's `WithTop ℤ` valuation to `padicValRat`, splitting the signed prime-power product into the `p`-term and the erased support, and showing the off-`p` factors contribute zero valuation. This removes the last theorem-level `sorry` from the file.",
+    "issue": "#486",
+    "notes": "Issue #486 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean` against `blobs/Chapter1/01_07_Definition.md`. The finished file does not use the preceding discussion item `Chapter1/01_06a_Discussion`; instead, its direct textbook dependency is `Chapter1/01_02_Definition`, because Definition 1.7 packages a specific nonarchimedean absolute value and the finalized declarations are stated in terms of Mathlib's `AbsoluteValue` interface introduced there. Accordingly `dependencies/internal.json[\"Chapter1/01_07_Definition\"]` trims from `[\"Chapter1/01_06a_Discussion\"]` to `[\"Chapter1/01_02_Definition\"]`.",
     "stage3_3_audit": {
       "issue": "#262",
       "decision": "repaired",
