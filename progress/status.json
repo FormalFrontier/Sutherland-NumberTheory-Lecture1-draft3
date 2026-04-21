@@ -1919,10 +1919,10 @@
     }
   },
   "Chapter1/01_20_Proposition": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#421",
-    "notes": "Issue #421 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean`. Re-reading `blobs/Chapter1/01_20_Proposition.md` against the existing theorem `integral_extension_trans` confirmed that the blob contributes exactly one formalizable statement and no omitted auxiliary claim, and `lake build` still succeeds after the session cache bootstrap.",
+    "issue": "#429",
+    "notes": "Issue #429 completed the Stage 3.4 sorry-free verification for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean`. Re-reading `blobs/Chapter1/01_20_Proposition.md` against `integral_extension_trans` confirmed that the file still formalizes exactly the audited tower-transitivity statement, `rg -n \"sorry\"` returned no matches for the target file, and `lake build` succeeded after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#408",
       "decision": "verified",
