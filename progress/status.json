@@ -384,10 +384,10 @@
     }
   },
   "Chapter1/01_04_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#359",
-    "notes": "Stage 3.2 review in issue #359 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean` already captures the entire proof blob faithfully: the only formalizable content is the deferred Problem Set 1 converse direction of Lemma 1.4, represented both in the all-natural-numbers helper form and in the lecture's original `n ≥ 1` phrasing.",
+    "issue": "#366",
+    "notes": "Stage 3.3 audit in issue #366 re-read `blobs/Chapter1/01_04_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean` and found no missing formalizable claim: the blob is only the Problem Set 1 citation for the converse direction of Lemma 1.4, and the file already records that deferred result in both the all-natural-numbers helper form and the lecture's original `n ≥ 1` phrasing.",
     "stage3_2_review": {
       "issue": "#359",
       "decision": "clean",
@@ -401,6 +401,20 @@
         }
       ],
       "summary": "The Stage 3.2 review found complete scaffold coverage for `01_04_Proof`. The blob is only a pointer to Problem Set 1, and the existing two wrapper theorems already expose that deferred converse in the only two statement shapes needed locally, so no additional declaration or repair is required before Stage 3.3."
+    },
+    "stage3_3_audit": {
+      "issue": "#366",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Proof. See Problem Set 1.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_04_Proof.problemSet1_isNonarchimedean_of_natCast_le_one; SutherlandNumberTheoryLecture1.Chapter1.01_04_Proof.problemSet1_isNonarchimedean_of_natCast_pos_le_one",
+          "reason": "The blob contributes no local proof steps beyond deferring the converse direction of Lemma 1.4 to Problem Set 1, and the Lean file already packages that deferred result in the helper form used downstream and in the lecture's original `n ≥ 1` wording."
+        }
+      ],
+      "summary": "The Stage 3.3 audit found no missing claim. `01_04_Proof` is only a citation to Problem Set 1, and the existing wrapper theorems already capture the full formalizable content of that citation."
     }
   },
   "Chapter1/01_05_Corollary": {
