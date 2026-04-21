@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
+import Mathlib.RingTheory.Algebraic.Integral
 
 /-!
 # Proposition 1.20: Integrality is transitive in towers
