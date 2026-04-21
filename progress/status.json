@@ -357,10 +357,10 @@
     }
   },
   "Chapter1/01_04_Lemma": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#171",
-    "notes": "Stage 3.3 audit under issue #171 re-read blobs/Chapter1/01_04_Lemma.md against SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean and confirmed that the blob's single iff claim is fully covered by explicit Lean declarations, with both the lecture-exact `n ≥ 1` form and the stronger all-`ℕ` helper present.",
+    "issue": "#354",
+    "notes": "Issue #354 completed the remaining Stage 3.4 proof work in `SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean`. The converse bridge `isNonarchimedean_of_natCast_le_one` now passes through the `NormedField` induced by the absolute value, applies Mathlib's ultrametric criterion `∀ n, ‖n‖ ≤ 1`, and converts the resulting ultrametric norm back to the lecture's nonarchimedean statement. This removes the last theorem-level `sorry` from the file.",
     "stage3_3_audit": {
       "issue": "#171",
       "decision": "clean",
