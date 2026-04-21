@@ -737,10 +737,38 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean by formalizing the lecture's abbreviated proof as an explicit wrapper over `Chapter1/01_23_Corollary.ufd_isIntegrallyClosed`, reusing Mathlib's bundled `UniqueFactorizationMonoid.instIsIntegrallyClosed` infrastructure rather than replaying Proposition 1.22's rational-root argument."
   },
   "Chapter1/01_24_Example": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#150",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean by introducing the explicit fraction-field witness `(1 + √5) / 2` in `FractionRing (ℤ√5)`, stating its integrality over `ℤ` and `ℤ[√5]`, and deriving the lecture's non-integrally-closed / non-UFD / non-PID conclusions from that witness."
+    "issue": "#258",
+    "notes": "Stage 3.2 review for issue #258 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean now tracks the lecture's example tightly: `goldenRatioInFractionRing` names the witness `(1 + √5) / 2`, `goldenRatio_sq_sub_self_sub_one_eq_zero` makes the displayed relation `φ^2 - φ - 1 = 0` explicit, `goldenRatio_isIntegral_over_int` and `goldenRatio_isIntegral` preserve the distinction between integrality over `ℤ` and over `ℤ[√5]`, `goldenRatio_not_in_algebraMap_range` records non-membership in the chosen order, and the file concludes with the textbook non-integrally-closed / non-UFD / non-PID consequences without importing stronger infrastructure. No definition-level repair beyond the explicit polynomial-relation theorem was needed.",
+    "stage3_2_review": {
+      "issue": "#258",
+      "decision": "verified_after_minor_repair",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The ring `\\mathbf{Z}[\\sqrt{5}]` contains the fraction-field element `\\phi = (1 + \\sqrt{5}) / 2`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.goldenRatioInFractionRing",
+          "reason": "The file names the lecture's concrete witness explicitly in `FractionRing (ℤ√5)`."
+        },
+        {
+          "n": 2,
+          "text": "The witness satisfies `\\phi^2 - \\phi - 1 = 0`, hence is integral over `\\mathbf{Z}` and therefore over `\\mathbf{Z}[\\sqrt{5}]`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.goldenRatio_sq_sub_self_sub_one_eq_zero; SutherlandNumberTheoryLecture1.Chapter1.goldenRatio_isIntegral_over_int; SutherlandNumberTheoryLecture1.Chapter1.goldenRatio_isIntegral",
+          "reason": "The Stage 3.2 repair made the displayed quadratic relation itself explicit, and the two integrality theorems preserve the lecture's base-ring distinction."
+        },
+        {
+          "n": 3,
+          "text": "The witness does not lie in `\\mathbf{Z}[\\sqrt{5}]`, so `\\mathbf{Z}[\\sqrt{5}]` is not integrally closed and therefore is neither a UFD nor a PID.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.goldenRatio_not_in_algebraMap_range; SutherlandNumberTheoryLecture1.Chapter1.zsqrtdFive_not_isIntegrallyClosed; SutherlandNumberTheoryLecture1.Chapter1.zsqrtdFive_not_uniqueFactorizationMonoid; SutherlandNumberTheoryLecture1.Chapter1.zsqrtdFive_not_isPrincipalIdealRing",
+          "reason": "The file keeps the non-membership argument separate from the downstream ring-theoretic consequences, matching the lecture's example."
+        }
+      ],
+      "summary": "The reviewed scaffold now exposes every mathematical sentence in the blob explicitly. The only adjustment needed at Stage 3.2 was to promote the displayed equation `φ^2 - φ - 1 = 0` from a comment to a named theorem."
+    }
   },
   "Chapter1/01_24a_Discussion": {
     "status": "references_attached",
