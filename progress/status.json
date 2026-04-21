@@ -911,10 +911,52 @@
     }
   },
   "Chapter1/01_13_Definition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#142",
-    "notes": "Stage 3.2 review for issue #142 confirmed that blobs/Chapter1/01_13_Definition.md has one mathematical claim, fully covered by `residueField_eq_quotient`. The scaffold uses `IsLocalRing.ResidueField` and `IsLocalRing.residue` directly, makes the quotient field and canonical quotient map explicit via `residueField_eq_quotient` and `residue_eq_idealQuotient_mk`, introduces no project-local duplicate construction, and contains no definition-level `sorry`."
+    "issue": "#347",
+    "notes": "Stage 3.3 audit under issue #347 confirmed that `blobs/Chapter1/01_13_Definition.md` is fully covered by the existing scaffold: `residueField_eq_quotient` states the textbook definition directly, and `residue_eq_idealQuotient_mk` keeps the canonical quotient map explicit without introducing any project-local duplicate construction.",
+    "stage3_2_review": {
+      "issue": "#142",
+      "decision": "clean",
+      "definitions": [
+        {
+          "name": "IsLocalRing.ResidueField",
+          "status": "reused",
+          "location": "Mathlib",
+          "notes": "The residue field is taken directly from Mathlib's local-ring API."
+        },
+        {
+          "name": "IsLocalRing.residue",
+          "status": "reused",
+          "location": "Mathlib",
+          "notes": "The canonical quotient map is already bundled by Mathlib."
+        }
+      ],
+      "claims": [
+        {
+          "n": 1,
+          "text": "The residue field of a local ring `A` with maximal ideal `m` is the field `A/m`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_13_Definition.residueField_eq_quotient",
+          "reason": "The scaffold identifies Mathlib's bundled residue field directly with the quotient by the local ring's maximal ideal."
+        }
+      ],
+      "summary": "The Stage 3.2 review found no missing scaffolding. The item is an exact wrapper around Mathlib's residue-field construction and residue map."
+    },
+    "stage3_3_audit": {
+      "issue": "#347",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The residue field of a local ring `A` with maximal ideal `m` is the field `A/m`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_13_Definition.residueField_eq_quotient; SutherlandNumberTheoryLecture1.Chapter1.01_13_Definition.residue_eq_idealQuotient_mk",
+          "reason": "The single definition sentence is already present explicitly as the quotient identification, and the file also records the associated quotient map without overstating the textbook content."
+        }
+      ],
+      "summary": "No Stage 3.3 repair was necessary. `01_13_Definition` remains a clean wrapper around Mathlib's residue-field API."
+    }
   },
   "Chapter1/01_13a_Discussion": {
     "status": "claims_audited",
