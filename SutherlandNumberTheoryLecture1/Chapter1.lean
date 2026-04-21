@@ -41,6 +41,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_26_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_27_Remark»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_28_Proposition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_28_Proof»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_29_Example»
 
 /-!
 # Chapter 1 import spine
