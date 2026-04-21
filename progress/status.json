@@ -1363,10 +1363,10 @@
     "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proof.lean`: `minpoly_dvd_of_monic_lifted_root` records the textbook divisibility step via `minpoly.isIntegrallyClosed_dvd`, `minpoly_coeff_lifts_to_base` turns the coefficient argument into repeated uses of `minpoly.isIntegrallyClosed_eq_field_fractions'` plus `IsIntegrallyClosed.isIntegral_iff`, and `proof_isIntegral_iff_exists_map_eq_minpoly` restates the proof blob as an explicit theorem."
   },
   "Chapter1/01_29_Example": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#282",
-    "notes": "Stage 3.3 audit under issue #282 re-read `blobs/Chapter1/01_29_Example.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean`, confirming that the scaffold already covers every mathematical sentence from the example: it explicitly recalls the earlier integral witness `(1 + √5) / 2`, defines the new witness `(1 + √7) / 2`, records the polynomial `X^2 - X - 3/2` with named coefficient theorems, and states the final non-integrality conclusion over `ℤ`. The remaining theorem-level `sorry`s are proof work for already-recorded claims, not missing Stage 3.3 declarations.",
+    "issue": "#296",
+    "notes": "Stage 3.4 proof work under issue #296 discharged the remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean`. The file now explicitly proves the quadratic coefficient computation, verifies `((1 + √7) / 2)^2 - (1 + √7) / 2 - 3/2 = 0` in `FractionRing (ℤ√7)`, identifies `X^2 - X - 3/2` as the irreducible minimal polynomial over `ℚ`, rules out any lift from `ℤ[X]` by the constant-term denominator argument, and concludes that `(1 + √7) / 2` is not integral over `ℤ` via the integrally-closed minimal-polynomial criterion.",
     "stage3_3_audit": {
       "issue": "#282",
       "decision": "clean",
