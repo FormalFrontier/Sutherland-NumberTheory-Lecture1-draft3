@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_22_Proposition»
+import Mathlib
 
 /-!
 # Corollary 1.23: unique factorization domains and PIDs are integrally closed
