@@ -1072,10 +1072,10 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#288",
-    "notes": "Stage 3.1 scaffolding for issue #288 created `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`, packaging the lecture's seven DVR characterizations as explicit Lean predicates and a `List.TFAE` theorem statement anchored on `IsDiscreteValuationRing.TFAE`. The lecture's final \"maximal noetherian ring of dimension one\" clause is represented as an honest fraction-field maximal-subalgebra property rather than as a definition-level placeholder.",
+    "issue": "#301",
+    "notes": "Stage 3.2 review for issue #301 confirmed that `blobs/Chapter1/01_16_Theorem.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`. The file packages each of the lecture's seven DVR characterizations as an explicit predicate and states the full `List.TFAE` theorem, while keeping the remaining incompleteness entirely at theorem level. The review found no definition-level `sorry` and no missing bullet-to-predicate bridge.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1094,13 +1094,34 @@
           "reason": "The statement is explicit and compile-checked, but the full proof is deferred to the companion proof file because two lecture-specific bridges still need theorem-level work."
         }
       ]
+    },
+    "stage3_2_review": {
+      "issue": "#301",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For an integral domain A, each of the lecture's seven DVR characterizations is represented explicitly as a Lean predicate.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.IsDvr; IsNoetherianValuationRingNotField; IsLocalPidNotField; IsIntegrallyClosedNoetherianLocalDimOne; IsRegularNoetherianLocalDimOne; HasPrincipalNonzeroMaximalIdeal; IsMaximalNoetherianRingOfDimOne",
+          "reason": "The review verified that every bullet in the blob has a dedicated Prop-valued declaration with any needed local/noetherian structure carried by existential witnesses, so the theorem statement does not hide missing constructions."
+        },
+        {
+          "n": 2,
+          "text": "These seven predicates are packaged as a single TFAE statement matching Theorem 1.16.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_characterization_tfae",
+          "reason": "The theorem statement exactly reflects the lecture's bullet list, and the remaining incompleteness is confined to its proof term rather than to any definition body or omitted equivalence clause."
+        }
+      ],
+      "summary": "Stage 3.2 review found the theorem scaffold complete: all seven lecture bullets are spelled out as explicit predicates, the aggregate TFAE statement is present verbatim, and the only remaining gap is theorem-level proof work delegated to the companion proof file."
     }
   },
   "Chapter1/01_16_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#288",
-    "notes": "Stage 3.1 scaffolding for issue #288 created `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean`, proving the valuation-ring, local-PID, regular-local, and principal-maximal-ideal bridges from `IsDiscreteValuationRing.TFAE` and Discussion 1.15a. The integrally-closed dimension-one converse and the maximal-subring converse remain theorem-level placeholders, and the aggregated `List.TFAE` proof is deferred until those bridges are filled.",
+    "issue": "#301",
+    "notes": "Stage 3.2 review for issue #301 confirmed that `blobs/Chapter1/01_16_Proof.md` is adequately scaffolded by `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean`: the direct DVR equivalence bridges already supplied by `IsDiscreteValuationRing.TFAE` and Discussion 1.15a are stated explicitly, and the remaining incompleteness stays at theorem level in the two converse bridges plus the final aggregated proof. No definition-level `sorry` or missing proof-structure declaration was found.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1119,6 +1140,27 @@
           "reason": "These are explicit theorem statements with deferred proofs; no definition body or data construction is blocked."
         }
       ]
+    },
+    "stage3_2_review": {
+      "issue": "#301",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The proof of Theorem 1.16 can be scaffolded by isolating the implications and equivalences already supplied by `IsDiscreteValuationRing.TFAE` and the preceding DVR discussion.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDvr_iff_isNoetherianValuationRingNotField; isDvr_iff_isLocalPidNotField; isDvr_implies_isIntegrallyClosedNoetherianLocalDimOne; isDvr_of_isRegularNoetherianLocalDimOne; isDvr_implies_isRegularNoetherianLocalDimOne; isDvr_of_hasPrincipalNonzeroMaximalIdeal; isDvr_implies_hasPrincipalNonzeroMaximalIdeal; isDvr_implies_isMaximalNoetherianRingOfDimOne",
+          "reason": "The review verified that each nontrivial bridge already justified by Mathlib or Discussion 1.15a is exposed as its own theorem, so the proof scaffold does not rely on implicit imported equivalences."
+        },
+        {
+          "n": 2,
+          "text": "The converse from the integrally closed one-dimensional local criterion, the converse from the maximal noetherian subring formulation, and the final packaged TFAE proof remain to be proved.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDvr_of_isIntegrallyClosedNoetherianLocalDimOne; isDvr_of_isMaximalNoetherianRingOfDimOne; dvr_characterization_proof",
+          "reason": "Those remaining lecture-specific bridges are present as explicit theorem statements with theorem-level placeholders only, which is acceptable at Stage 3.2 because no data definition is missing."
+        }
+      ],
+      "summary": "Stage 3.2 review found the proof scaffold complete: the already-known bridges are made explicit, the unresolved converses are isolated as theorem-level placeholders, and the blob's external-reference proof sentence does not hide any additional formalizable structure."
     }
   },
   "Chapter1/01_16a_Discussion": {
