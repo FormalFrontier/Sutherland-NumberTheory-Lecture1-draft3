@@ -66,7 +66,42 @@ intermediate `A`-subalgebra inside its fraction field. -/
 theorem dvr_fractionRing_maximal_subalgebra
     (S : Subalgebra A (FractionRing A)) (hS : S ≠ ⊤) :
     S = ⊥ := by
-  sorry
+  let K := FractionRing A
+  let V : ValuationSubring K := dvrValuationSubring A K
+  let hV_le_S : V.toSubring ≤ S.toSubring := by
+    intro x hx
+    rw [dvrValuationSubring_toSubring_eq_image (A := A) (K := K)] at hx
+    rcases hx with ⟨a, -, rfl⟩
+    exact S.algebraMap_mem a
+  let W : ValuationSubring K := ValuationSubring.ofLE V S.toSubring hV_le_S
+  have hW_ne_top : W ≠ ⊤ := by
+    intro hW
+    apply hS
+    have hSTop : S.toSubring = ⊤ := by
+      change W.toSubring = ⊤
+      simpa using congrArg ValuationSubring.toSubring hW
+    exact Subalgebra.toSubring_injective hSTop
+  have hdimV : ringKrullDim V = 1 := by
+    rw [← dvr_ringKrullDim_eq_one (A := A)]
+    exact (ringKrullDim_eq_of_ringEquiv (equivDvrValuationSubring A K)).symm
+  letI : Ring.KrullDimLE 1 V := (Ring.krullDimLE_iff.mpr hdimV.le)
+  have hVW : V = W :=
+    ValuationSubring.eq_of_le_of_ne_top (A := V) (B := W) hV_le_S hW_ne_top
+  have hSubring : S.toSubring = V.toSubring := by
+    simpa [W] using congrArg ValuationSubring.toSubring hVW.symm
+  ext x
+  constructor
+  · intro hx
+    change x ∈ Set.range (algebraMap A K)
+    have hx' : x ∈ V.toSubring := by
+      have hxS : x ∈ S.toSubring := hx
+      rwa [hSubring] at hxS
+    change x ∈ (dvrValuationSubring A K).toSubring at hx'
+    rw [dvrValuationSubring_toSubring_eq_image (A := A) (K := K)] at hx'
+    rcases hx' with ⟨a, -, rfl⟩
+    exact ⟨a, rfl⟩
+  · intro hx
+    exact (show (⊥ : Subalgebra A K) ≤ S from bot_le) hx
 
 end Discussion_01_15a_Properties
 
