@@ -357,10 +357,10 @@
     }
   },
   "Chapter1/01_04_Lemma": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#354",
-    "notes": "Issue #354 completed the remaining Stage 3.4 proof work in `SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean`. The converse bridge `isNonarchimedean_of_natCast_le_one` now passes through the `NormedField` induced by the absolute value, applies Mathlib's ultrametric criterion `∀ n, ‖n‖ ≤ 1`, and converts the resulting ultrametric norm back to the lecture's nonarchimedean statement. This removes the last theorem-level `sorry` from the file.",
+    "issue": "#472",
+    "notes": "Issue #472 completed the Stage 3.5 dependency-trimming pass for `SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean`. Re-reading the blob against the sorry-free declarations confirmed that the conservative direct dependency on `Chapter1/01_02_Definition` is genuine: every theorem in the file is stated in terms of the `AbsoluteValue` and `IsNonarchimedean` notions introduced by Definition 1.2, so `dependencies/internal.json` correctly remains unchanged.",
     "stage3_3_audit": {
       "issue": "#171",
       "decision": "clean",
