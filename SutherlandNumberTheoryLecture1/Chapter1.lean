@@ -8,6 +8,7 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_00_Introduction»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_03_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
+import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_05_Corollary»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_06_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_06a_Discussion»
@@ -33,6 +34,7 @@ queue after this setup lands is:
 - `Chapter1/01_02_Definition`
 - `Chapter1/01_03_Example`
 - `Chapter1/01_04_Lemma`
+- `Chapter1/01_04_Proof`
 - `Chapter1/01_05_Corollary`
 - `Chapter1/01_06_Definition`
 - `Chapter1/01_06a_Discussion`
