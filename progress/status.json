@@ -1225,10 +1225,10 @@
     }
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#398",
-    "notes": "Issue #398 completed the Stage 3.4 sorry-free verification for `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. Re-reading the blob against the Lean file confirmed that the lecture's valuation reconstruction, valuation-ring identification, uniqueness-up-to-equivalence, and maximal-ideal-generator versus uniformizer bridge are all represented explicitly; `rg -n \"sorry\"` is empty on the file and `lake build` succeeds.",
+    "issue": "#508",
+    "notes": "Issue #508 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_13a_Discussion`. Re-reading `blobs/Chapter1/01_13a_Discussion.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean` showed that the finalized discussion still directly depends on `Chapter1/01_10_Definition` for the valuation/DVR setup and on `Chapter1/01_12_Definition` for the unique maximal ideal of the local ring; `Chapter1/01_13_Definition` is not a direct book dependency here, so the existing trimmed dependency entry already matched the finished file.",
     "stage3_2_review": {
       "issue": "#292",
       "decision": "passes_with_bridge_added",
