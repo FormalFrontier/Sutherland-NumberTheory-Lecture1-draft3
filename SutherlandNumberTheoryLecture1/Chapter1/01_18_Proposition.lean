@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
 
 /-!
 # Proposition 1.18: Integral elements are closed under addition and multiplication

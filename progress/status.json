@@ -1782,10 +1782,10 @@
     }
   },
   "Chapter1/01_18_Proposition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#399",
-    "notes": "Issue #399 completed Stage 3.4 verification for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean`. Re-reading `blobs/Chapter1/01_18_Proposition.md` confirmed that `integral_add` and `integral_mul` still cover the lecture text exactly, `rg -n \"sorry\"` is empty on the file, and `lake build` succeeds after the session cache bootstrap.",
+    "issue": "#528",
+    "notes": "Issue #528 repaired conflicted PR #527 and completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean` against `blobs/Chapter1/01_18_Proposition.md`. The finalized proposition uses Mathlib's `IsIntegral.add` and `IsIntegral.mul` directly, and the earlier-book import of `Chapter1/01_17_Definition` was unnecessary, so the Lean file now imports only `Mathlib` and `dependencies/internal.json[\"Chapter1/01_18_Proposition\"]` correctly trims to the empty direct-dependency list `[]`.",
     "stage3_2_review": {
       "issue": "#127",
       "decision": "verified",
