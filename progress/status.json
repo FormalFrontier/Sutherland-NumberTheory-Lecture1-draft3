@@ -1830,10 +1830,10 @@
     }
   },
   "Chapter1/01_18_Proof": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#115",
-    "notes": "Stage 3.4 verification under issue #422 re-read `blobs/Chapter1/01_18_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean`, confirmed that the Lean file still captures the blob's only two formalizable conclusions via `proof_integral_add` and `proof_integral_mul`, verified `rg -n \"sorry\" SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean` is empty, and completed a successful `lake exe cache get` plus `lake build`.",
+    "issue": "#529",
+    "notes": "Issue #529 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proof.lean` against `blobs/Chapter1/01_18_Proof.md`. The finalized proof blob is a wrapper that discharges its two claims via `proof_integral_add` and `proof_integral_mul`, each citing the previously formalized proposition lemmas `integral_add` and `integral_mul`, so `dependencies/internal.json[\"Chapter1/01_18_Proof\"]` correctly keeps the single direct earlier-book dependency `[`Chapter1/01_18_Proposition`]`.",
     "stage3_2_review": {
       "issue": "#400",
       "decision": "verified",
