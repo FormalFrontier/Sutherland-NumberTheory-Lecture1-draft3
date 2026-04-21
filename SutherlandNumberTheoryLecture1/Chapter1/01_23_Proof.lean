@@ -18,9 +18,9 @@ section Proof_01_23
 variable {R : Type*} [CommRing R] [IsDomain R] [UniqueFactorizationMonoid R]
 
 /-- The lecture's "same proof works for any UFD" sentence, discharged by the
-previous corollary scaffold. -/
-theorem proof_ufd_isIntegrallyClosed : IsIntegrallyClosed R := by
-  exact ufd_isIntegrallyClosed
+preceding corollary scaffold. -/
+theorem proof_ufd_isIntegrallyClosed : IsIntegrallyClosed R :=
+  ufd_isIntegrallyClosed
 
 end Proof_01_23
 
