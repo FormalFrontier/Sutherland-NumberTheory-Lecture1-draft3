@@ -384,10 +384,24 @@
     }
   },
   "Chapter1/01_04_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#110",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean by turning the proof blob's Problem Set 1 citation into explicit Lean declarations for the converse direction of Lemma 1.4, both in the all-natural-numbers helper form and in the lecture's original `n ≥ 1` phrasing."
+    "issue": "#359",
+    "notes": "Stage 3.2 review in issue #359 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_04_Proof.lean` already captures the entire proof blob faithfully: the only formalizable content is the deferred Problem Set 1 converse direction of Lemma 1.4, represented both in the all-natural-numbers helper form and in the lecture's original `n ≥ 1` phrasing.",
+    "stage3_2_review": {
+      "issue": "#359",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Problem Set 1 supplies the converse implication of Lemma 1.4.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_04_Proof.problemSet1_isNonarchimedean_of_natCast_le_one; SutherlandNumberTheoryLecture1.Chapter1.01_04_Proof.problemSet1_isNonarchimedean_of_natCast_pos_le_one",
+          "reason": "The proof blob contributes no new local argument beyond the deferred citation, and the file already records that citation in both the helper form used downstream and the lecture's original `n ≥ 1` phrasing."
+        }
+      ],
+      "summary": "The Stage 3.2 review found complete scaffold coverage for `01_04_Proof`. The blob is only a pointer to Problem Set 1, and the existing two wrapper theorems already expose that deferred converse in the only two statement shapes needed locally, so no additional declaration or repair is required before Stage 3.3."
+    }
   },
   "Chapter1/01_05_Corollary": {
     "status": "scaffolded",
