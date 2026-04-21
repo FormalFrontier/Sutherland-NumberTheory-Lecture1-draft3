@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.RingTheory.Localization.Rat
+import Mathlib.RingTheory.Polynomial.RationalRoot
 
 /-!
 # Proof of Proposition 1.22
@@ -25,21 +26,19 @@ theorem rat_isInteger_of_isIntegral (q : ℚ) (hq : IsIntegral ℤ q) :
 /-- The denominator of a rational integral over `ℤ` is `1`. -/
 theorem rat_den_eq_one_of_isIntegral (q : ℚ) (hq : IsIntegral ℤ q) :
     q.den = 1 := by
-  have hRange : q ∈ Set.range Int.cast := by
-    simpa using (Rat.isLocalizationIsInteger_iff q).mp (rat_isInteger_of_isIntegral q hq)
-  rcases hRange with ⟨z, hz⟩
-  simpa [hz] using Rat.den_intCast z
+  rcases (Rat.isLocalizationIsInteger_iff q).mp (rat_isInteger_of_isIntegral q hq) with ⟨z, rfl⟩
+  simp
 
 /-- The final textbook conclusion: an integral rational equals the integer given
 by its numerator. -/
 theorem rat_num_eq_of_isIntegral (q : ℚ) (hq : IsIntegral ℤ q) :
     (q.num : ℚ) = q := by
-  exact (Rat.den_eq_one_iff q).mp (rat_den_eq_one_of_isIntegral q hq)
+  simpa using (Rat.den_eq_one_iff q).mp (rat_den_eq_one_of_isIntegral q hq)
 
 /-- Rewriting the conclusion as explicit membership in `ℤ`. -/
 theorem rat_exists_int_of_isIntegral (q : ℚ) (hq : IsIntegral ℤ q) :
     ∃ z : ℤ, (z : ℚ) = q := by
-  exact ⟨q.num, Rat.coe_int_num_of_den_eq_one (rat_den_eq_one_of_isIntegral q hq)⟩
+  exact ⟨q.num, rat_num_eq_of_isIntegral q hq⟩
 
 end Proof_01_22
 
