@@ -713,10 +713,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_21_Proof.refs.md, showing the proof should combine transitivity of integrality with Mathlib's bundled integral-closure theorem."
   },
   "Chapter1/01_22_Proposition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_22_Proposition.refs.md, identifying the existing UFD-to-integrally-closed instance as the direct Lean target for `Z`."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#131",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean by formalizing Proposition 1.22 as the bundled instance `IsIntegrallyClosed ℤ`, relying on Mathlib's unique-factorization-to-integrally-closed instance chain."
   },
   "Chapter1/01_22_Proof": {
     "status": "references_attached",
