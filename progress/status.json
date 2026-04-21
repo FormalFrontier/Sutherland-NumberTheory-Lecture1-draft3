@@ -749,10 +749,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_24a_Discussion.refs.md, connecting the DVR discussion to Mathlib's stronger valuation-ring integrally-closed infrastructure."
   },
   "Chapter1/01_25_Proposition": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#149",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean by recording the valuation-ring fraction-field dichotomy as `valuationRing_integer_or_inv_integer` and the lecture's main claim as `valuationRing_isIntegrallyClosed`, both routed through Mathlib's bundled `ValuationRing` / `IsIntegrallyClosed` API rather than a bespoke reconstruction."
+    "issue": "#249",
+    "notes": "Stage 3.2 review for issue #249 confirmed that `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean` faithfully covers the blob's only mathematical claim, Proposition 1.25, via `valuationRing_isIntegrallyClosed`, while keeping the valuation-ring dichotomy available as the explicit bridge theorem `valuationRing_integer_or_inv_integer` used by the downstream proof file. No scaffold repair was needed, and no definition-level gaps remain."
   },
   "Chapter1/01_25_Proof": {
     "status": "scaffolded",
