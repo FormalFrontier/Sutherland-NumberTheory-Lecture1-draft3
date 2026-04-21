@@ -2367,10 +2367,31 @@
     }
   },
   "Chapter1/01_25_Proof": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#153",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean by turning the lecture's contradiction argument into the explicit witness theorem `proof_integral_element_mem` and then rebuilding the final proof item `proof_valuationRing_isIntegrallyClosed` from `isIntegrallyClosed_iff`, reusing the bundled valuation-ring theorem from `01_25_Proposition` rather than replaying the coefficient manipulation."
+    "issue": "#443",
+    "notes": "Issue #443 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proof.lean`. Re-reading `blobs/Chapter1/01_25_Proof.md` against the Lean file confirmed that the proof blob's contradiction step is already captured by `proof_integral_element_mem`, while the closing sentence is restated explicitly by `proof_valuationRing_isIntegrallyClosed`; `lake build` succeeded after the session cache bootstrap.",
+    "stage3_2_review": {
+      "issue": "#443",
+      "decision": "verified",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If an element of the fraction field of a valuation ring is integral over the ring, then it lies in the image of the ring.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_integral_element_mem",
+          "reason": "The proof's contradiction argument is recorded explicitly as an existential witness theorem, packaging the valuation-ring dichotomy together with integrally-closedness into the exact membership conclusion used in the blob."
+        },
+        {
+          "n": 2,
+          "text": "Every valuation ring is integrally closed.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.proof_valuationRing_isIntegrallyClosed",
+          "reason": "The file restates the proof blob's final sentence as an explicit theorem deduced from `isIntegrallyClosed_iff` and the witness theorem above, so no separate textbook claim is missing from the scaffold."
+        }
+      ],
+      "summary": "The Stage 3.2 review found the proof scaffold complete: the blob contributes exactly the contradiction-to-membership step and the concluding valuation-ring integrally-closed theorem, and both already appear explicitly in Lean."
+    }
   },
   "Chapter1/01_26_Definition": {
     "status": "sorry_free",
