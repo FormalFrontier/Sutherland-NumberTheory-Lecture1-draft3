@@ -62,7 +62,7 @@ noncomputable abbrev valuationSubring (v : RealValuation k) : ValuationSubring k
 noncomputable def derivedAbsoluteValueFn (v : RealValuation k) (c : ℝ) : k → ℝ :=
   by
     classical
-    exact fun x => if hx : x = 0 then 0 else c ^ ((v x).untop ((v.ne_top_iff).2 hx))
+    exact fun x => if x = 0 then 0 else c ^ (v x).untop₀
 
 /-- The lecture's set-level description of the valuation ring agrees with Mathlib's bundled one. -/
 theorem mem_valuationSubring_iff (v : RealValuation k) (x : k) :
@@ -75,7 +75,74 @@ theorem mem_valuationSubring_iff (v : RealValuation k) (x : k) :
 theorem exists_derivedAbsoluteValue (v : RealValuation k) (c : ℝ) (hc0 : 0 < c) (hc1 : c < 1) :
     ∃ abv : AbsoluteValue k ℝ, IsNonarchimedean abv ∧
       ∀ x, abv x = derivedAbsoluteValueFn v c x := by
-  sorry
+  have hnonneg : ∀ x, 0 ≤ derivedAbsoluteValueFn v c x := by
+    intro x
+    by_cases hx : x = 0
+    · simp [derivedAbsoluteValueFn, hx]
+    · simp [derivedAbsoluteValueFn, hx, Real.rpow_nonneg hc0.le]
+  have hle_max : ∀ x y, derivedAbsoluteValueFn v c (x + y) ≤
+      max (derivedAbsoluteValueFn v c x) (derivedAbsoluteValueFn v c y) := by
+    intro x y
+    by_cases hxy : x + y = 0
+    · have : 0 ≤ max (derivedAbsoluteValueFn v c x) (derivedAbsoluteValueFn v c y) :=
+        le_max_of_le_left (hnonneg x)
+      simpa [derivedAbsoluteValueFn, hxy] using this
+    · by_cases hx : x = 0
+      · have hy' : y ≠ 0 := by simpa [hx] using hxy
+        simpa [derivedAbsoluteValueFn, hx, hy'] using
+          (le_max_right (0 : ℝ) (c ^ (v y).untop₀))
+      · by_cases hy : y = 0
+        · have hx' : x ≠ 0 := hx
+          simpa [derivedAbsoluteValueFn, hy, hx'] using
+            (le_max_left (c ^ (v x).untop₀) (0 : ℝ))
+        · have hx' : v x ≠ ⊤ := (v.ne_top_iff).2 hx
+          have hy' : v y ≠ ⊤ := (v.ne_top_iff).2 hy
+          have hxy' : v (x + y) ≠ ⊤ := (v.ne_top_iff).2 hxy
+          have hmin : (min (v x) (v y)).untop₀ ≤ (v (x + y)).untop₀ := by
+            exact WithTop.untop₀_le_untop₀ hxy' (v.map_add x y)
+          have hpow :
+              c ^ (v (x + y)).untop₀ ≤ c ^ (min (v x) (v y)).untop₀ :=
+            (Real.strictAnti_rpow_of_base_lt_one hc0 hc1).antitone hmin
+          have hmin_eq :
+              c ^ (min (v x) (v y)).untop₀ =
+                max (c ^ (v x).untop₀) (c ^ (v y).untop₀) := by
+            rw [WithTop.untop₀_min hx' hy']
+            simpa using
+              (Antitone.map_min
+                (f := fun t : ℝ => c ^ t)
+                (Real.strictAnti_rpow_of_base_lt_one hc0 hc1).antitone)
+          simpa [derivedAbsoluteValueFn, hx, hy, hxy] using hpow.trans_eq hmin_eq
+  refine ⟨
+    { toFun := derivedAbsoluteValueFn v c
+      map_mul' := by
+        intro x y
+        by_cases hx : x = 0
+        · simp [derivedAbsoluteValueFn, hx]
+        · by_cases hy : y = 0
+          · simp [derivedAbsoluteValueFn, hy]
+          · have hxy : x * y ≠ 0 := mul_ne_zero hx hy
+            have hx' : v x ≠ ⊤ := (v.ne_top_iff).2 hx
+            have hy' : v y ≠ ⊤ := (v.ne_top_iff).2 hy
+            simp [derivedAbsoluteValueFn, hx, hy, hxy, v.map_mul, Real.rpow_add hc0, hx', hy']
+      nonneg' := hnonneg
+      eq_zero' := by
+        intro x
+        by_cases hx : x = 0
+        · simp [derivedAbsoluteValueFn, hx]
+        · have hpos : 0 < derivedAbsoluteValueFn v c x := by
+            simp [derivedAbsoluteValueFn, hx, Real.rpow_pos_of_pos hc0]
+          constructor
+          · intro h
+            exact False.elim ((ne_of_gt hpos) h)
+          · intro h
+            exact (hx h).elim
+      add_le' := by
+        intro x y
+        exact (hle_max x y).trans <|
+          max_le_iff.mpr
+            ⟨le_add_of_nonneg_right (hnonneg y), le_add_of_nonneg_left (hnonneg x)⟩ },
+    hle_max,
+    fun _ => rfl⟩
 
 /-- A valuation ring coming from a cyclic nontrivial value group is a DVR in Mathlib's sense. -/
 instance instIsDiscreteValuationRing (v : RealValuation k)
