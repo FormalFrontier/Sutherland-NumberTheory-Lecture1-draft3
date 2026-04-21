@@ -1,6 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
 
 /-!
 # Definition 1.19: Integral closure and integrally closed domains
