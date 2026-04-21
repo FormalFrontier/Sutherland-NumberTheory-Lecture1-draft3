@@ -95,6 +95,36 @@ theorem exists_uniformizer_dvrValuation :
   simpa [dvrValuationSubring] using
     (Valuation.exists_isUniformizer_of_isCyclic_of_nontrivial (v := dvrValuation A K))
 
+/-- A generator of the DVR maximal ideal has reconstructed valuation `1`. -/
+theorem dvrValuation_eq_exp_neg_one_of_maximalIdeal_eq_span (π : A)
+    (hπ : IsLocalRing.maximalIdeal A = Ideal.span ({π} : Set A)) :
+    dvrValuation A K (algebraMap A K π) = WithZero.exp (-1 : ℤ) := by
+  calc
+    dvrValuation A K (algebraMap A K π) = maximalIdealIntValuation A π := by
+      simpa [dvrValuation, maximalIdealIntValuation] using
+        (IsDedekindDomain.HeightOneSpectrum.valuation_of_algebraMap
+          (v := IsDiscreteValuationRing.maximalIdeal A) (K := K) π)
+    _ = WithZero.exp (-1 : ℤ) := by
+      simpa [maximalIdealIntValuation] using
+        (IsDedekindDomain.HeightOneSpectrum.intValuation_singleton
+      (v := IsDiscreteValuationRing.maximalIdeal A) (r := π)
+      (hr := by
+        intro hzero
+        rw [hzero, Ideal.span_singleton_zero] at hπ
+        exact IsDiscreteValuationRing.not_a_field A hπ)
+      hπ)
+
+/-- The original DVR has a maximal-ideal generator whose reconstructed valuation is `1`. -/
+theorem exists_maximalIdeal_generator_with_dvrValuation_eq_exp_neg_one :
+    ∃ π : A,
+      dvrValuation A K (algebraMap A K π) = WithZero.exp (-1 : ℤ) ∧
+        IsLocalRing.maximalIdeal A = Ideal.span ({π} : Set A) := by
+  obtain ⟨π, hπ⟩ := IsDiscreteValuationRing.exists_irreducible (R := A)
+  refine ⟨π,
+    dvrValuation_eq_exp_neg_one_of_maximalIdeal_eq_span
+      (A := A) (K := K) π hπ.maximalIdeal_eq,
+    hπ.maximalIdeal_eq⟩
+
 /-- For the recovered valuation, generators of the maximal ideal are exactly uniformizers. -/
 theorem maximalIdeal_eq_span_iff_isUniformizer (π : dvrValuationSubring A K) :
     IsLocalRing.maximalIdeal (dvrValuationSubring A K) = Ideal.span {π} ↔
