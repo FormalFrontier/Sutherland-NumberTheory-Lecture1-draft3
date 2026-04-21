@@ -1,4 +1,3 @@
-import Mathlib
 import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Theorem»
 
 /-!
@@ -20,13 +19,13 @@ open scoped BigOperators
 /-- Problem Set 1 proves that finite places outside the rational prime support are trivial. -/
 theorem problemSet1_padicAbsoluteValue_eq_one_of_not_mem_rationalPrimeSupport {x : ℚ} {p : ℕ}
     [Fact p.Prime] (hx : x ≠ 0) (hp : p ∉ rationalPrimeSupport x) :
-    Rat.AbsoluteValue.padic p x = 1 := by
-  exact padicAbsoluteValue_eq_one_of_not_mem_rationalPrimeSupport hx hp
+    Rat.AbsoluteValue.padic p x = 1 :=
+  padicAbsoluteValue_eq_one_of_not_mem_rationalPrimeSupport hx hp
 
 /-- Problem Set 1 supplies the finite-support product formula used in the lecture. -/
 theorem problemSet1_product_formula {x : ℚ} (hx : x ≠ 0) :
-    Rat.AbsoluteValue.real x * ∏ p : rationalPrimeSupport x, Rat.AbsoluteValue.padic p.1 x = 1 := by
-  exact product_formula hx
+    Rat.AbsoluteValue.real x * ∏ p : rationalPrimeSupport x, Rat.AbsoluteValue.padic p.1 x = 1 :=
+  product_formula hx
 
 end Proof_01_09
 
