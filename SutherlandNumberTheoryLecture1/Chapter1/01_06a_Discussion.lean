@@ -10,6 +10,7 @@ This prose blob isolates two concrete pieces of mathematics that the lecture use
 before introducing the `p`-adic places:
 
 - the usual absolute value on `ℚ`, denoted `|·|_∞`, coming from the real place;
+- the existence of infinitely many absolute values on `ℚ` besides `|·|_∞`;
 - the unique expansion of a nonzero rational as a sign times finitely many prime
   powers with integer exponents.
 
@@ -35,6 +36,11 @@ theorem ratArchimedeanAbsoluteValue_apply (q : ℚ) :
 /-- The lecture emphasizes that the real place is archimedean, i.e. not nonarchimedean. -/
 theorem ratArchimedeanAbsoluteValue_not_isNonarchimedean :
     ¬ IsNonarchimedean ratArchimedeanAbsoluteValue := by
+  sorry
+
+/-- Besides the archimedean place `|·|_∞`, `ℚ` admits infinitely many other absolute values. -/
+theorem infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean :
+    Set.Infinite {f : AbsoluteValue ℚ ℝ | ¬ f.IsEquiv ratArchimedeanAbsoluteValue} := by
   sorry
 
 /-- Every nonzero rational has a unique signed prime-power expansion with finite support. -/

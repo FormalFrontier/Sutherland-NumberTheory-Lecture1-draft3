@@ -408,10 +408,10 @@
     "notes": "Stage 3.2 review for issue #118 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean covers the blob's equivalence claim with explicit Lean bridges in both orientations: `isEquiv_iff_exists_rpow_eq_pointwise` records the pointwise power equation from `AbsoluteValue.isEquiv_iff_exists_rpow_eq`, and `isEquiv_iff_exists_rpow_eq_textbook` matches the lecture's exact `|x|' = |x|^α` wording. No definition-level sorries or coverage gaps remain."
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#120",
-    "notes": "Stage 3.1 scaffolding for issue #120 added SutherlandNumberTheoryLecture1/Chapter1/01_06a_Discussion.lean. The file packages the archimedean place on Q as `ratArchimedeanAbsoluteValue := Rat.AbsoluteValue.real`, proves its evaluation agrees with the usual absolute value, and states the archimedean/non-nonarchimedean and unique signed prime-factorization claims as theorem-level obligations. Later discussion about infinitely many other places and completions remains intentionally deferred.",
+    "issue": "#125",
+    "notes": "Stage 3.2 review for issue #125 closed the only coverage gap in SutherlandNumberTheoryLecture1/Chapter1/01_06a_Discussion.lean by adding `infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean` for the blob's sentence that Q has infinitely many absolute values besides `|.|_∞`. The file now covers all three blob-level claims with explicit declarations: `ratArchimedeanAbsoluteValue` and `ratArchimedeanAbsoluteValue_apply` bridge the real place to the lecture's `|.|_∞` notation, `ratArchimedeanAbsoluteValue_not_isNonarchimedean` records archimedeanness in the valuation-language used by the chapter, `infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean` captures the existence of infinitely many other places, and `existsUnique_signed_primeFactorization` formalizes the unique signed prime-factorization claim. Completion/local-field remarks remain intentionally outside this blob's reviewed claim set, and no definition-level sorries remain.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
