@@ -972,10 +972,10 @@
     }
   },
   "Chapter1/01_14_Example": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#323",
-    "notes": "Stage 3.3 audit for issue #323 re-read `blobs/Chapter1/01_14_Example.md` and `blobs/Chapter1/01_14_Example.refs.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean`. The existing scaffold already covers every formalizable sentence in the blob: the localization model for `\\mathbf{Z}_{(p)}`, the maximal-ideal identification, and the residue-field comparison to `\\mathbf{F}_p` via `ZMod p`. No additional declaration or scaffold repair was needed.",
+    "issue": "#335",
+    "notes": "Stage 3.4 proof work for issue #335 discharged the two remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean`. The maximal-ideal statement now rewrites the local maximal ideal via `IsLocalization.AtPrime.map_eq_maximalIdeal`, and the residue-field claim composes `IsLocalization.AtPrime.equivQuotMaximalIdeal` with `Int.quotientSpanNatEquivZMod`, leaving the item sorry-free. Earlier Stage 3.3 audit issue #323 still applies: no scaffold repair beyond proof completion was required.",
     "stage3_2_review": {
       "issue": "#298",
       "decision": "clean",
