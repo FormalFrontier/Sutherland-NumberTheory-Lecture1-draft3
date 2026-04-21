@@ -2097,10 +2097,10 @@
     }
   },
   "Chapter1/01_22_Proposition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#455",
-    "notes": "Issue #455 completed the Stage 3.4 promotion for `Chapter1/01_22_Proposition`. Re-reading `blobs/Chapter1/01_22_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean` confirmed that the proposition still contributes exactly `integers_isIntegrallyClosed : IsIntegrallyClosed ℤ`; the targeted `rg -n \"\\\\bsorry\\\\b\"` check was clean, `lake exe cache get` reused the local cache, and `lake build` succeeded.",
+    "issue": "#543",
+    "notes": "Issue #543 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_22_Proposition`. Re-reading `blobs/Chapter1/01_22_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean` confirmed that `integers_isIntegrallyClosed` is just `inferInstance` for Mathlib's bundled `IsIntegrallyClosed ℤ`, so no earlier-book declaration is actually used; the stale `Chapter1/01_19_Definition` import was removed, `dependencies/internal.json[\"Chapter1/01_22_Proposition\"]` trims to `[]`, and `lake build` succeeded after the cleanup.",
     "stage3_2_review": {
       "issue": "#432",
       "decision": "verified",

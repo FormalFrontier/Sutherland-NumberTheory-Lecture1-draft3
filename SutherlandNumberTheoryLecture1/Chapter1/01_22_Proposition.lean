@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
 
 /-!
 # Proposition 1.22: `ℤ` is integrally closed
