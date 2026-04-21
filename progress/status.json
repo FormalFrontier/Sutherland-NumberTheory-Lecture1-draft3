@@ -390,10 +390,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_04_Proof.refs.md, marking MIT Problem Set 1 as the primary proof reference and keeping the partial Mathlib support visible."
   },
   "Chapter1/01_05_Corollary": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#82",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_05_Corollary.refs.md, capturing the Frobenius declarations already in Mathlib and the need for short local absolute-value glue lemmas in positive characteristic."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#107",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean by making both corollary claims explicit: `absoluteValue_isNonarchimedean_of_pos_char` derives the positive-characteristic conclusion from Lemma 1.4 plus Frobenius on nat-casts, and `absoluteValue_eq_trivial_of_finite` packages the finite-field conclusion via `FiniteField.pow_card_sub_one_eq_one` and an explicit nonzero-value bridge lemma."
   },
   "Chapter1/01_05_Proof": {
     "status": "references_attached",
