@@ -42,10 +42,10 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#361",
-    "notes": "Issue #361 completed the remaining Stage 3.4 proof work in `SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean`. The two residue-field theorems for irreducible quotients of `F_q[t]` are now proved via `AdjoinRoot.powerBasis`: the quotient is finite over a finite base field, and its cardinality is `|F_q|^deg(f)`. The completion/local-field survey sentence remains separately recorded as the existing `formalizable_later` claim rather than as a Stage 3.3 omission.",
+    "issue": "#469",
+    "notes": "Issue #469 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean` against `blobs/Chapter1/01_00_Introduction.md`. The introduction formalizes standalone background vocabulary with Mathlib imports only and no earlier book-item references, so `dependencies/internal.json[\"Chapter1/01_00_Introduction\"]` correctly remains the empty direct-dependency list `[]`. The completion/local-field survey sentence remains separately recorded as the existing `formalizable_later` claim rather than as a Stage 3.3 omission.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
