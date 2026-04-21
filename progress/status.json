@@ -309,10 +309,10 @@
     }
   },
   "Chapter1/01_04_Lemma": {
-    "status": "scaffolded",
-    "last_updated": "2026-04-20",
-    "issue": "#104",
-    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean with the lecture's full nonarchimedean iff criterion, using Mathlib for the forward direction and isolating the converse as `isNonarchimedean_of_natCast_le_one` for later proof work."
+    "status": "definition_verified",
+    "last_updated": "2026-04-21",
+    "issue": "#122",
+    "notes": "Stage 3.2 reviewed SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean against the blob's single iff claim, kept the explicit converse bridge `isNonarchimedean_of_natCast_le_one`, and added the lecture-exact `n ≥ 1` criterion as `isNonarchimedean_iff_natCast_pos_le_one` alongside the stronger all-`ℕ` helper."
   },
   "Chapter1/01_04_Proof": {
     "status": "references_attached",
