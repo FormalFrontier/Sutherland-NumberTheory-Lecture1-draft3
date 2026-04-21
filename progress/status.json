@@ -679,10 +679,10 @@
     }
   },
   "Chapter1/01_09_Theorem": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#383",
-    "notes": "Stage 3.3 audit under issue #383 confirmed that `blobs/Chapter1/01_09_Theorem.md` is fully covered by the existing scaffold: `rationalPrimeSupport`, the outside-support triviality lemma, and `product_formula` already package the lecture's infinite product formula honestly as an equivalent finite-support statement.",
+    "issue": "#394",
+    "notes": "Stage 3.4 issue #394 discharged the remaining theorem-level obligations in `SutherlandNumberTheoryLecture1/Chapter1/01_09_Theorem.lean`: primes outside `rationalPrimeSupport` now give the trivial `p`-adic factor `1`, and the finite-support product formula is proved sorry-free.",
     "stage3_2_review": {
       "issue": "#373",
       "decision": "clean",
@@ -713,10 +713,10 @@
     }
   },
   "Chapter1/01_09_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#383",
-    "notes": "Stage 3.3 audit under issue #383 confirmed that `blobs/Chapter1/01_09_Proof.md` is fully covered by the existing scaffold: the proof blob's entire formal content is the `See Problem Set 1` deferral, and the current Lean file already records that honestly through wrapper theorems around the deferred outside-support triviality lemma and finite-support product formula.",
+    "issue": "#394",
+    "notes": "Stage 3.4 issue #394 finished the deferred Problem Set 1 wrappers honestly: `SutherlandNumberTheoryLecture1/Chapter1/01_09_Proof.lean` now re-exports the proved outside-support triviality lemma and finite-support product formula with no remaining `sorry` in the `01_09` theorem/proof pair.",
     "stage3_2_review": {
       "issue": "#373",
       "decision": "clean",
