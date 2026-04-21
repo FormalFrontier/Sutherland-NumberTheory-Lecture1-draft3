@@ -1953,10 +1953,10 @@
     }
   },
   "Chapter1/01_20_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#135",
-    "notes": "Issue #417 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean`. Re-reading `blobs/Chapter1/01_20_Proof.md` confirmed that the proof blob contributes only the standard citation for transitivity of integrality in towers, and the existing wrappers `isIntegral_of_isIntegral_tower` and `integral_extension_trans_from_proof` already capture that content without any definition-level repair; `lake build` succeeds after the session cache bootstrap.",
+    "issue": "#428",
+    "notes": "Issue #428 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean`. A skeptical re-read of the one-line proof blob against the Lean module confirmed that the citation contributes no hidden formalizable claim beyond the existing wrappers `isIntegral_of_isIntegral_tower` and `integral_extension_trans_from_proof`; `lake build` succeeds after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#417",
       "decision": "verified",
@@ -1977,6 +1977,27 @@
         }
       ],
       "summary": "The Stage 3.2 review found the proof scaffold complete as written. The blob is only a citation to the standard transitivity argument, and the existing elementwise and extension-level wrappers already represent that formalizable content exactly."
+    },
+    "stage3_3_audit": {
+      "issue": "#428",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If `B` is integral over `A` and `c` is integral over `B`, then `c` is integral over `A`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isIntegral_of_isIntegral_tower",
+          "reason": "The proof blob is only a citation to the standard elementwise transitivity argument, and the Lean file already packages that exact step via `isIntegral_trans` under the matching tower hypotheses."
+        },
+        {
+          "n": 2,
+          "text": "If `C / B / A` is a tower of ring extensions with `B` integral over `A` and `C` integral over `B`, then `C` is integral over `A`.",
+          "classification": "already_covered",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_extension_trans_from_proof; SutherlandNumberTheoryLecture1.Chapter1.integral_extension_trans",
+          "reason": "The only proposition-level content cited by the blob is already present both in the proof wrapper and in Proposition 1.20 itself, so the audit found no additional standalone declaration to formalize."
+        }
+      ],
+      "summary": "The Stage 3.3 audit is clean: the proof blob is a bare reference to the transitivity theorem for integral extensions, and the current Lean declarations already capture every formalizable claim it contains."
     }
   },
   "Chapter1/01_21_Corollary": {
