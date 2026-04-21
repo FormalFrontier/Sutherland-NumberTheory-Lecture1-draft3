@@ -1,0 +1,605 @@
+{
+  "items": {
+    "Chapter1/01_00_Introduction": {
+      "coverage": "partial",
+      "declarations": [
+        "FiniteField.card",
+        "Ideal.Quotient.field",
+        "IsFractionRing",
+        "NumberField",
+        "RatFunc",
+        "FunctionField",
+        "FunctionField.inftyValuation"
+      ],
+      "notes": "Mathlib has the core infrastructure for prime fields, residue fields of maximal ideals, fraction fields, number fields, rational-function fields, and the place at infinity on F_q(t). The lecture's high-level global-field comparison and its discussion of completions/local fields are only partially packaged at this level."
+    },
+    "Chapter1/01_01_Remark": {
+      "coverage": "gap",
+      "declarations": [],
+      "notes": "This remark is mostly ambient convention. Later formalization should rely on Lean's standard typeclass assumptions such as commutativity and `1`, rather than a dedicated Mathlib theorem."
+    },
+    "Chapter1/01_01a_Discussion": {
+      "coverage": "gap",
+      "declarations": [],
+      "notes": "This is a bibliographic transition note, not a mathematical claim with direct Mathlib coverage."
+    },
+    "Chapter1/01_02_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "AbsoluteValue"
+      ],
+      "notes": "Mathlib's bundled `AbsoluteValue` matches the three defining axioms exactly."
+    },
+    "Chapter1/01_03_Example": {
+      "coverage": "exact",
+      "declarations": [
+        "AbsoluteValue.trivial",
+        "AbsoluteValue.trivial_apply"
+      ],
+      "notes": "The trivial absolute value is already bundled, so this example should formalize directly with Mathlib's `AbsoluteValue.trivial`."
+    },
+    "Chapter1/01_04_Lemma": {
+      "coverage": "partial",
+      "declarations": [
+        "AbsoluteValue.apply_nat_le_self"
+      ],
+      "notes": "Mathlib provides general absolute-value inequalities on natural numbers, but not this exact nonarchimedean characterization in terms of `|1 + ... + 1| <= 1`."
+    },
+    "Chapter1/01_04_Proof": {
+      "coverage": "partial",
+      "declarations": [
+        "AbsoluteValue.apply_nat_le_self"
+      ],
+      "notes": "The proof can reuse the general `AbsoluteValue` API, but the book's equivalence still appears to need a local lemma."
+    },
+    "Chapter1/01_05_Corollary": {
+      "coverage": "partial",
+      "declarations": [
+        "AbsoluteValue.isEquiv_trivial_iff_eq_trivial",
+        "FiniteField.card",
+        "FiniteField.pow_card"
+      ],
+      "notes": "Mathlib supplies the Frobenius identity on finite fields and the trivial-absolute-value equivalence test, but not the exact corollary that every absolute value on a positive-characteristic field is nonarchimedean or that finite-field absolute values are trivial."
+    },
+    "Chapter1/01_05_Proof": {
+      "coverage": "partial",
+      "declarations": [
+        "FiniteField.pow_card"
+      ],
+      "notes": "The proof's key identity `x^q = x` is already in Mathlib as `FiniteField.pow_card`; the surrounding absolute-value argument still needs local glue lemmas."
+    },
+    "Chapter1/01_06_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "AbsoluteValue.IsEquiv",
+        "AbsoluteValue.isEquiv_iff_exists_rpow_eq"
+      ],
+      "notes": "Mathlib packages equivalence of real-valued absolute values exactly in the same sense used by the lecture."
+    },
+    "Chapter1/01_06a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "Rat.AbsoluteValue.real"
+      ],
+      "notes": "Mathlib has the standard real absolute value on `Q`, but the survey discussion of all completions of `Q` is broader than the declarations used here."
+    },
+    "Chapter1/01_07_Definition": {
+      "coverage": "partial",
+      "declarations": [
+        "padicValRat",
+        "padicNorm",
+        "padicNorm.nonarchimedean",
+        "padicNorm.triangle_ineq",
+        "Rat.AbsoluteValue.padic"
+      ],
+      "notes": "Mathlib directly defines the p-adic valuation on `Q` and the induced p-adic norm/absolute value. The only mismatch is that the lecture's `v_p(0) = infinity` convention is not packaged literally as part of `padicValRat`."
+    },
+    "Chapter1/01_08_Theorem": {
+      "coverage": "exact",
+      "declarations": [
+        "Rat.AbsoluteValue.real",
+        "Rat.AbsoluteValue.padic",
+        "Rat.AbsoluteValue.equiv_real_or_padic",
+        "Rat.AbsoluteValue.not_real_isEquiv_padic"
+      ],
+      "notes": "Ostrowski's theorem for `Q` is already formalized in Mathlib with the same real-vs-p-adic classification."
+    },
+    "Chapter1/01_08_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "Rat.AbsoluteValue.equiv_real_or_padic"
+      ],
+      "notes": "Since the theorem itself is formalized, the deferred proof can cite Mathlib directly."
+    },
+    "Chapter1/01_09_Theorem": {
+      "coverage": "gap",
+      "declarations": [
+        "Rat.AbsoluteValue.real",
+        "Rat.AbsoluteValue.padic",
+        "padicValRat",
+        "padicNorm"
+      ],
+      "notes": "Mathlib has the local ingredients for the places of `Q`, but no packaged product-formula theorem for rationals was found."
+    },
+    "Chapter1/01_09_Proof": {
+      "coverage": "gap",
+      "declarations": [
+        "padicValRat",
+        "padicNorm"
+      ],
+      "notes": "The proof will likely need a local finite-support/product computation over prime multiplicities; no exact Mathlib statement was found in this search pass."
+    },
+    "Chapter1/01_09a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "Valuation",
+        "IsDiscreteValuationRing"
+      ],
+      "notes": "Mathlib already has the main valuation and discrete-valuation-ring abstractions needed for the next section, but this heading itself carries no standalone theorem."
+    },
+    "Chapter1/01_10_Definition": {
+      "coverage": "partial",
+      "declarations": [
+        "Valuation",
+        "AddValuation",
+        "Valuation.valuationSubring",
+        "IsDiscreteValuationRing"
+      ],
+      "notes": "Mathlib has bundled multiplicative and additive valuations, valuation subrings, and the DVR predicate. The lecture's exact package of an additive valuation into `R \u222a {\u221e}`, its rescaling-to-`Z` discussion, and the derived absolute value `c^v` are not presented verbatim as one declaration."
+    },
+    "Chapter1/01_10a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "ValuationSubring.valuation_le_one_iff",
+        "ValuationSubring.valuation_eq_one_iff",
+        "ValuationSubring.valuation_lt_one_iff"
+      ],
+      "notes": "The main valuation-ring facts about membership, units, and maximal-ideal elements are already packaged for `ValuationSubring`. The surrounding discussion that identifies the fraction field and partitions all elements by sign of the valuation still needs local exposition glue."
+    },
+    "Chapter1/01_11_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "ValuationRing"
+      ],
+      "notes": "Mathlib's `ValuationRing` predicate matches the defining property that for every element of the fraction field, either it or its inverse lies in the ring."
+    },
+    "Chapter1/01_11a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "IsDiscreteValuationRing.exists_irreducible",
+        "IsDiscreteValuationRing.irreducible_iff_uniformizer",
+        "IsDiscreteValuationRing.not_isField"
+      ],
+      "notes": "Mathlib exposes uniformizer existence and the characterization of uniformizers via irreducibility inside a DVR. The fuller textbook discussion about unique `u * \u03c0^n` factorization, every nonzero ideal being `(\u03c0^n)`, and the total ordering of ideals is only partially packaged at this level."
+    },
+    "Chapter1/01_12_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsLocalRing",
+        "IsLocalRing.maximalIdeal"
+      ],
+      "notes": "The lecture's definition of a local ring is exactly Mathlib's `IsLocalRing`, with the unique maximal ideal available as `IsLocalRing.maximalIdeal`."
+    },
+    "Chapter1/01_13_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsLocalRing.ResidueField",
+        "IsLocalRing.residue"
+      ],
+      "notes": "Mathlib defines the residue field of a local ring and its quotient map exactly in the form used here."
+    },
+    "Chapter1/01_13a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "ValuationSubring.valuation",
+        "Valuation.isEquiv_valuation_valuationSubring",
+        "ValuationSubring.valuationSubring_valuation",
+        "ValuationSubring.integer_valuation"
+      ],
+      "notes": "Mathlib has the valuation-subring correspondence in both directions and shows that passing from a valuation to its valuation subring and back recovers an equivalent valuation. The lecture's specific reconstruction from powers of the maximal ideal and its uniqueness proof for DVRs are not bundled exactly as stated."
+    },
+    "Chapter1/01_14_Example": {
+      "coverage": "partial",
+      "declarations": [
+        "Localization.AtPrime",
+        "Localization.AtPrime.map_eq_maximalIdeal",
+        "Ideal.bijective_algebraMap_quotient_residueField"
+      ],
+      "notes": "Mathlib has the general localization-at-a-prime construction, identifies the image of the prime as the maximal ideal, and compares quotient and residue fields. The concrete notation `Z_(p)` and the explicit identification with `F_p` still need item-specific specialization."
+    },
+    "Chapter1/01_15_Example": {
+      "coverage": "partial",
+      "declarations": [
+        "LaurentSeries",
+        "PowerSeries",
+        "PowerSeries.order",
+        "PowerSeries.residueFieldOfPowerSeries"
+      ],
+      "notes": "Mathlib already has Laurent series, power series, the order function on power series, and the residue-field identification for `k[[X]]`. The lecture's exact valuation on `k((t))` and its extension to order of vanishing at arbitrary `\u03b1` are not exposed as one ready-made theorem."
+    },
+    "Chapter1/01_15a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "IsNoetherianRing",
+        "IsPrincipalIdealRing",
+        "IsLocalRing",
+        "ringKrullDim",
+        "IsRegularLocalRing",
+        "IsIntegrallyClosed"
+      ],
+      "notes": "Mathlib has predicates for the structural properties listed in the survey of DVRs: noetherian, PID, local, dimension, regular local, and integrally closed. The textbook's prose about DVRs being \"maximal\" among subrings of their fraction field is not packaged as a single standard declaration."
+    },
+    "Chapter1/01_16_Theorem": {
+      "coverage": "partial",
+      "declarations": [
+        "IsDiscreteValuationRing.TFAE",
+        "ValuationRing",
+        "IsIntegrallyClosed",
+        "IsRegularLocalRing",
+        "ringKrullDim"
+      ],
+      "notes": "Mathlib already proves a substantial TFAE for DVRs, covering the local-PID viewpoint together with valuation-ring, integrally-closed, cotangent-space, and maximal-ideal-power formulations. The lecture's exact seven-bullet theorem is close but not verbatim identical, so downstream formalization will still need some statement-bridging."
+    },
+    "Chapter1/01_16_Proof": {
+      "coverage": "partial",
+      "declarations": [
+        "IsDiscreteValuationRing.TFAE"
+      ],
+      "notes": "The book defers the proof externally, but Mathlib already contains an internal TFAE proof for many equivalent DVR characterizations. Because the list of equivalences is not word-for-word the same as the lecture, the proof obligation is largely bridged rather than eliminated outright."
+    },
+    "Chapter1/01_16a_Discussion": {
+      "coverage": "gap",
+      "declarations": [],
+      "notes": "This is only a section-transition remark introducing integral extensions; it does not carry a standalone mathematical API target."
+    },
+    "Chapter1/01_17_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsIntegral"
+      ],
+      "notes": "The lecture's definition of an element being integral over a subring is exactly Mathlib's predicate `IsIntegral`."
+    },
+    "Chapter1/01_18_Proposition": {
+      "coverage": "exact",
+      "declarations": [
+        "IsIntegral.add",
+        "IsIntegral.mul"
+      ],
+      "notes": "Mathlib already proves exactly that sums and products of integral elements remain integral."
+    },
+    "Chapter1/01_18_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "IsIntegral.add",
+        "IsIntegral.mul",
+        "Polynomial.isIntegral_iff_isIntegral_coeff",
+        "IsIntegral.of_aeval_monic_of_isIntegral_coeff"
+      ],
+      "notes": "The abstract closure lemmas `IsIntegral.add` and `IsIntegral.mul` already discharge the claim. The supporting polynomial-integrality lemmas in Mathlib explain how the library avoids the textbook's explicit algebraic-closure and symmetric-polynomial argument."
+    },
+    "Chapter1/01_19_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "integralClosure",
+        "IsIntegrallyClosed"
+      ],
+      "notes": "Mathlib has both the bundled integral closure `integralClosure R A` and the predicate `IsIntegrallyClosed`, matching the lecture's definition directly."
+    },
+    "Chapter1/01_20_Proposition": {
+      "coverage": "exact",
+      "declarations": [
+        "isIntegral_trans"
+      ],
+      "notes": "Mathlib already has the transitivity theorem for integrality in towers, matching the proposition directly once the intermediate algebra is registered as integral."
+    },
+    "Chapter1/01_20_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "isIntegral_trans"
+      ],
+      "notes": "The cited proof reduces exactly to Mathlib's transitivity lemma for integral elements in a scalar tower."
+    },
+    "Chapter1/01_21_Corollary": {
+      "coverage": "exact",
+      "declarations": [
+        "integralClosure",
+        "IsIntegrallyClosedIn.of_isIntegralClosure"
+      ],
+      "notes": "The integral closure is bundled as `integralClosure`, and Mathlib proves that any integral closure is integrally closed in the ambient ring."
+    },
+    "Chapter1/01_21_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "isIntegral_trans",
+        "IsIntegrallyClosedIn.of_isIntegralClosure"
+      ],
+      "notes": "The book's proof is directly supported by transitivity of integrality together with Mathlib's theorem that the integral closure is integrally closed in the ambient ring."
+    },
+    "Chapter1/01_22_Proposition": {
+      "coverage": "exact",
+      "declarations": [
+        "UniqueFactorizationMonoid.instIsIntegrallyClosed"
+      ],
+      "notes": "Since `ℤ` is already a unique factorization domain in Mathlib, its integrally closed property is available immediately by instance."
+    },
+    "Chapter1/01_22_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "isInteger_of_is_root_of_monic",
+        "Rat.den_eq_one_iff",
+        "Rat.coe_int_num_of_den_eq_one"
+      ],
+      "notes": "Mathlib packages the rational-root argument as the integral-root theorem for monic polynomials, and the remaining step that a rational with denominator `1` is an integer is also explicit."
+    },
+    "Chapter1/01_23_Corollary": {
+      "coverage": "exact",
+      "declarations": [
+        "UniqueFactorizationMonoid.instIsIntegrallyClosed"
+      ],
+      "notes": "Mathlib already exposes that every UFD is integrally closed, so the PID specialization follows through the standard instance chain."
+    },
+    "Chapter1/01_23_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "isInteger_of_is_root_of_monic",
+        "UniqueFactorizationMonoid.instIsIntegrallyClosed"
+      ],
+      "notes": "The book's 'same proof as Proposition 1.22' is already absorbed into Mathlib's UFD-level integral-root theorem and resulting integrally-closed instance."
+    },
+    "Chapter1/01_24_Example": {
+      "coverage": "partial",
+      "declarations": [
+        "IsIntegral",
+        "Zsqrtd"
+      ],
+      "notes": "Mathlib has the ambient integrality predicate and quadratic-integer type `ℤ√d`, but not a packaged theorem that `ℤ[√5]` is not integrally closed with the witness `(1 + √5) / 2` in the presentation used here."
+    },
+    "Chapter1/01_24a_Discussion": {
+      "coverage": "partial",
+      "declarations": [
+        "Valuation.Integers.isIntegrallyClosed",
+        "ValuationRing.iff_isInteger_or_isInteger"
+      ],
+      "notes": "Mathlib's valuation infrastructure already supports the stronger statement that rings of integers of valuations are integrally closed, but the exact discussion sentence about DVRs is not packaged as its own theorem."
+    },
+    "Chapter1/01_25_Proposition": {
+      "coverage": "partial",
+      "declarations": [
+        "Valuation.Integers.isIntegrallyClosed",
+        "ValuationRing.iff_isInteger_or_isInteger"
+      ],
+      "notes": "Mathlib can recover this result through the valuation-ring API and the theorem that valuation integers are integrally closed, but the textbook statement is not presented under one standalone declaration name."
+    },
+    "Chapter1/01_25_Proof": {
+      "coverage": "partial",
+      "declarations": [
+        "Valuation.Integers.isIntegrallyClosed",
+        "ValuationRing.iff_isInteger_or_isInteger"
+      ],
+      "notes": "The proof strategy is aligned with Mathlib's valuation-ring characterization, though downstream formalization will still need to bridge from the book's argument to the library's bundled API."
+    },
+    "Chapter1/01_26_Definition": {
+      "coverage": "exact",
+      "declarations": [
+        "NumberField",
+        "NumberField.RingOfIntegers"
+      ],
+      "notes": "Mathlib defines number fields and their ring of integers exactly as finite extensions of `ℚ` with integral closure over `ℤ`."
+    },
+    "Chapter1/01_27_Remark": {
+      "coverage": "partial",
+      "declarations": [
+        "NumberField.RingOfIntegers"
+      ],
+      "notes": "The ring of integers itself is bundled, but this remark's broader order/maximal-order discussion is not packaged as a single ready-made API surface in the files checked here."
+    },
+    "Chapter1/01_28_Proposition": {
+      "coverage": "exact",
+      "declarations": [
+        "minpoly.isIntegrallyClosed_eq_field_fractions'",
+        "minpoly.isIntegrallyClosed_dvd"
+      ],
+      "notes": "Mathlib already proves that over an integrally closed domain the minimal polynomial over the fraction field is the image of the minimal polynomial over the base ring, which is the proposition's content."
+    },
+    "Chapter1/01_28_Proof": {
+      "coverage": "exact",
+      "declarations": [
+        "minpoly.isIntegrallyClosed_eq_field_fractions'",
+        "minpoly.isIntegrallyClosed_dvd",
+        "IsIntegrallyClosed.isIntegral_iff"
+      ],
+      "notes": "The proof's conjugate-and-coefficient argument is subsumed by Mathlib's integrally-closed minimal-polynomial lemmas, together with the standard characterization of integral elements in a fraction field."
+    },
+    "Chapter1/01_29_Example": {
+      "coverage": "partial",
+      "declarations": [
+        "minpoly.isIntegrallyClosed_eq_field_fractions'",
+        "Rat.cast_def"
+      ],
+      "notes": "Mathlib has the general minimal-polynomial criterion needed to show non-integrality, but this concrete `(1 + √7) / 2` computation is not packaged as a ready-made example."
+    },
+    "Chapter1/01_29a_Bibliography": {
+      "coverage": "gap",
+      "declarations": [],
+      "notes": "This bibliography blob is citation metadata rather than a mathematical statement with direct Mathlib coverage."
+    }
+  },
+  "external_dependencies": [
+    {
+      "category": "undergraduate_prerequisite",
+      "description": "Basic algebraic language for unital commutative rings and fields, including ideals, maximal ideals, residue fields, fraction fields, characteristic, and prime fields.",
+      "items": [
+        "Chapter1/01_00_Introduction",
+        "Chapter1/01_01_Remark",
+        "Chapter1/01_02_Definition",
+        "Chapter1/01_05_Corollary"
+      ],
+      "coverage": "partial",
+      "declarations": [
+        "Ideal.Quotient.field",
+        "IsFractionRing"
+      ],
+      "notes": "The basic quotient-field and fraction-field infrastructure is present, but the lecture's narrative package of elementary algebra facts is not distilled into one reusable theorem."
+    },
+    {
+      "category": "undergraduate_prerequisite",
+      "description": "Standard structure theory for Z, Q, finite fields, and polynomial rings over finite fields: fundamental theorem of arithmetic, unique factorization of rationals, existence of finite fields F_q, irreducible-polynomial quotients F_q[t]/(f), and the basic comparison between number fields and global function fields.",
+      "items": [
+        "Chapter1/01_00_Introduction",
+        "Chapter1/01_06a_Discussion",
+        "Chapter1/01_07_Definition",
+        "Chapter1/01_09_Theorem"
+      ],
+      "coverage": "partial",
+      "declarations": [
+        "FiniteField.card",
+        "NumberField",
+        "RatFunc",
+        "FunctionField",
+        "FunctionField.inftyValuation"
+      ],
+      "notes": "Mathlib covers the main ambient objects, but not the entire comparative story in a single API surface."
+    },
+    {
+      "category": "undergraduate_prerequisite",
+      "description": "Classical real and local-field background: the usual absolute value on Q inherited from R, completions with respect to absolute values, and the existence of the p-adic fields Q_p.",
+      "items": [
+        "Chapter1/01_00_Introduction",
+        "Chapter1/01_06a_Discussion"
+      ],
+      "coverage": "partial",
+      "declarations": [
+        "Rat.AbsoluteValue.real"
+      ],
+      "notes": "The real absolute value on `Q` is available directly, but this pass did not find a single packaged theorem matching the lecture's overview of completions and the fields `Q_p`."
+    },
+    {
+      "category": "folklore_or_well_known_fact",
+      "description": "Characteristic-p and finite-field identities used without proof, especially n^p = n in F_p and x^q = x in a finite field of cardinality q.",
+      "items": [
+        "Chapter1/01_05_Proof"
+      ],
+      "coverage": "exact",
+      "declarations": [
+        "FiniteField.pow_card"
+      ],
+      "notes": "The finite-field Frobenius identity is already available in Mathlib."
+    },
+    {
+      "category": "folklore_or_well_known_fact",
+      "description": "The p-adic absolute value is a well-defined absolute value on Q, which requires the standard valuation arithmetic v_p(xy) = v_p(x) + v_p(y) and v_p(x + y) >= min(v_p(x), v_p(y)).",
+      "items": [
+        "Chapter1/01_07_Definition"
+      ],
+      "coverage": "exact",
+      "declarations": [
+        "padicValRat",
+        "padicNorm",
+        "padicNorm.nonarchimedean",
+        "padicNorm.triangle_ineq",
+        "Rat.AbsoluteValue.padic"
+      ],
+      "notes": "Mathlib already packages the valuation arithmetic needed to treat the p-adic norm as an absolute value."
+    },
+    {
+      "category": "results_from_other_books",
+      "description": "Ostrowski's theorem classifying the nontrivial absolute values on Q up to equivalence; the text explicitly defers the proof to Problem Set 1 and cites Chapter 1 of reference [3] for much of the section.",
+      "items": [
+        "Chapter1/01_08_Theorem",
+        "Chapter1/01_08_Proof"
+      ],
+      "coverage": "exact",
+      "declarations": [
+        "Rat.AbsoluteValue.equiv_real_or_padic",
+        "Rat.AbsoluteValue.not_real_isEquiv_padic"
+      ],
+      "notes": "This external dependency is already fully formalized in Mathlib."
+    },
+    {
+      "category": "folklore_or_well_known_fact",
+      "description": "The product formula on Q depends on unique prime factorization and the fact that only finitely many places p <= infinity contribute nontrivially to the product for a fixed x in Q^times.",
+      "items": [
+        "Chapter1/01_09_Theorem",
+        "Chapter1/01_09_Proof"
+      ],
+      "coverage": "gap",
+      "declarations": [
+        "padicValRat",
+        "padicNorm"
+      ],
+      "notes": "The local place-by-place ingredients exist, but an exact packaged product-formula theorem for `Q` was not found."
+    },
+    {
+      "category": "results_from_other_books",
+      "description": "Transitivity of integrality in a tower A ⊆ B ⊆ C: if B is integral over A and C is integral over B, then C is integral over A; the text explicitly cites Altman-Kleiman, Thm. 10.27, and Atiyah-MacDonald, Cor. 5.4.",
+      "items": [
+        "Chapter1/01_20_Proposition",
+        "Chapter1/01_20_Proof"
+      ],
+      "coverage": "exact",
+      "declarations": [
+        "isIntegral_trans"
+      ],
+      "notes": "The cited external theorem is already present in Mathlib as the standard transitivity lemma for integral elements."
+    },
+    {
+      "category": "folklore_or_well_known_fact",
+      "description": "The rational-root/divisibility argument for monic polynomials over an integral domain, especially the standard UFD lemma that a reduced fraction r/s satisfying a monic polynomial relation must have s a unit.",
+      "items": [
+        "Chapter1/01_22_Proof",
+        "Chapter1/01_23_Proof"
+      ],
+      "coverage": "exact",
+      "declarations": [
+        "isInteger_of_is_root_of_monic",
+        "exists_integer_of_is_root_of_monic",
+        "Rat.den_eq_one_iff"
+      ],
+      "notes": "Mathlib already packages the rational-root theorem and its monic corollaries in exactly the form needed for these proofs."
+    },
+    {
+      "category": "undergraduate_prerequisite",
+      "description": "Elementary algebraic-number and quadratic-extension computations: working in Q(√d), viewing Z[√d] inside its fraction field, checking whether a quadratic irrational lies in the order, and forming minimal polynomials by direct expansion.",
+      "items": [
+        "Chapter1/01_24_Example",
+        "Chapter1/01_29_Example"
+      ],
+      "coverage": "partial",
+      "declarations": [
+        "Zsqrtd",
+        "Rat.cast_def"
+      ],
+      "notes": "Mathlib has supporting quadratic-integer and rational-cast infrastructure, but not these specific textbook witness computations as ready-made declarations."
+    },
+    {
+      "category": "folklore_or_well_known_fact",
+      "description": "Standard algebraic-number-theory background on orders in finite-dimensional Q-algebras: an order is equivalently a rank-r free Z-submodule (a Z-lattice) that is a subring, and the full ring of integers is the maximal order containing every order.",
+      "items": [
+        "Chapter1/01_27_Remark"
+      ],
+      "coverage": "partial",
+      "declarations": [
+        "NumberField.RingOfIntegers"
+      ],
+      "notes": "Mathlib bundles the ring of integers itself, but the order/maximal-order discussion around it is not exposed as one concise API theorem in this search pass."
+    },
+    {
+      "category": "undergraduate_prerequisite",
+      "description": "Basic field-theory facts about finite algebraic extensions: existence of algebraic closures, minimal polynomials, embeddings sending an element to its conjugates, and Vieta/symmetric-polynomial expressions for coefficients from the roots.",
+      "items": [
+        "Chapter1/01_26_Definition",
+        "Chapter1/01_28_Proposition",
+        "Chapter1/01_28_Proof",
+        "Chapter1/01_29_Example"
+      ],
+      "coverage": "partial",
+      "declarations": [
+        "NumberField",
+        "minpoly",
+        "minpoly.isIntegrallyClosed_eq_field_fractions'",
+        "IsAdjoinRootMonic.minpoly_eq"
+      ],
+      "notes": "Mathlib has the core minimal-polynomial and finite-extension infrastructure, but the full conjugates-and-symmetric-polynomials narrative of the book is still spread across several declarations."
+    }
+  ]
+}
