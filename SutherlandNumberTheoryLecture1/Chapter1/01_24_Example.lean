@@ -39,6 +39,11 @@ noncomputable def goldenRatioInFractionRing : FractionRing ZSqrtFive :=
   (algebraMap ZSqrtFive (FractionRing ZSqrtFive) ((1 : ZSqrtFive) + sqrtd)) *
     (2 : FractionRing ZSqrtFive)⁻¹
 
+/-- The lecture's explicit arithmetic step for `φ = (1 + √5) / 2`. -/
+theorem goldenRatio_sq_sub_self_sub_one_eq_zero :
+    goldenRatioInFractionRing ^ 2 - goldenRatioInFractionRing - 1 = 0 := by
+  sorry
+
 /-- The element `φ = (1 + √5) / 2` is integral over `ℤ` because it satisfies
 `X^2 - X - 1 = 0`.
 
