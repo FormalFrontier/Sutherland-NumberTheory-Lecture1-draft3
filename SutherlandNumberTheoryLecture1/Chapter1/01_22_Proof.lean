@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_22_Proposition»
 
 /-!
 # Proof of Proposition 1.22
