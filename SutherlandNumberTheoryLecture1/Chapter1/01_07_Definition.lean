@@ -17,6 +17,8 @@ the lecture's valuation as a `WithTop ℤ`-valued wrapper and records the zero a
 nonzero formulas explicitly.
 -/
 
+open scoped BigOperators
+
 namespace SutherlandNumberTheoryLecture1
 namespace Chapter1
 
@@ -36,6 +38,12 @@ def padicValuation (x : ℚ) : WithTop ℤ :=
 theorem padicValuation_of_ne_zero {x : ℚ} (hx : x ≠ 0) :
     padicValuation p x = (padicValRat p x : WithTop ℤ) := by
   simp [padicValuation, hx]
+
+/-- On a signed prime-power expansion, the lecture's valuation returns the exponent of `p`. -/
+theorem padicValuation_eq_exponent_of_factorization [Fact p.Prime]
+    (u : ℤˣ) (e : ℕ →₀ ℤ) (hprime : ∀ q ∈ e.support, Nat.Prime q) :
+    padicValuation p ((((u : ℤ) : ℚ) * e.prod (fun q n => (q : ℚ) ^ n))) = (e p : WithTop ℤ) := by
+  sorry
 
 end Definition_01_07
 

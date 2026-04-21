@@ -402,16 +402,30 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_05_Proof.lean by making the proof blob explicit: `eq_zero_or_one_of_nonneg_of_pow_eq_self` records the local real-valued helper, `natCast_absoluteValue_eq_zero_or_one` packages the positive-characteristic Frobenius step from `Chapter1/01_05_Corollary`, and `absoluteValue_eq_zero_or_one` cites `FiniteField.pow_card` for the finite-field fixed-point argument before concluding with the trivial absolute value."
   },
   "Chapter1/01_06_Definition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#118",
-    "notes": "Stage 3.2 review for issue #118 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean covers the blob's equivalence claim with explicit Lean bridges in both orientations: `isEquiv_iff_exists_rpow_eq_pointwise` records the pointwise power equation from `AbsoluteValue.isEquiv_iff_exists_rpow_eq`, and `isEquiv_iff_exists_rpow_eq_textbook` matches the lecture's exact `|x|' = |x|^α` wording. No definition-level sorries or coverage gaps remain."
+    "issue": "#262",
+    "notes": "Stage 3.3 audit under issue #262 re-read blobs/Chapter1/01_06_Definition.md against SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean and confirmed that the blob's single equivalence criterion is already represented explicitly in both orientations, with no missing declaration.",
+    "stage3_3_audit": {
+      "issue": "#262",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Two absolute values on the same field are equivalent if and only if there exists α > 0 with |x|' = |x|^α for all x.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_06_Definition.isEquiv_iff_exists_rpow_eq_textbook",
+          "reason": "The file already exposes the lecture's exact textbook wording, together with the pointwise bridge back to Mathlib's `AbsoluteValue.IsEquiv`."
+        }
+      ],
+      "summary": "No missing import or missing declaration was found. Definition 1.6 already passed the Stage 3.3 audit bar."
+    }
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#125",
-    "notes": "Stage 3.2 review for issue #125 closed the only coverage gap in SutherlandNumberTheoryLecture1/Chapter1/01_06a_Discussion.lean by adding `infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean` for the blob's sentence that Q has infinitely many absolute values besides `|.|_∞`. The file now covers all three blob-level claims with explicit declarations: `ratArchimedeanAbsoluteValue` and `ratArchimedeanAbsoluteValue_apply` bridge the real place to the lecture's `|.|_∞` notation, `ratArchimedeanAbsoluteValue_not_isNonarchimedean` records archimedeanness in the valuation-language used by the chapter, `infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean` captures the existence of infinitely many other places, and `existsUnique_signed_primeFactorization` formalizes the unique signed prime-factorization claim. Completion/local-field remarks remain intentionally outside this blob's reviewed claim set, and no definition-level sorries remain.",
+    "issue": "#262",
+    "notes": "Stage 3.3 audit under issue #262 re-read blobs/Chapter1/01_06a_Discussion.md against SutherlandNumberTheoryLecture1/Chapter1/01_06a_Discussion.lean and confirmed that the archimedean place, the existence of infinitely many other absolute values on Q, and the unique signed prime-factorization claim are all already represented explicitly; the completion/local-field aside remains intentionally excluded from this blob.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -434,13 +448,69 @@
           "reason": "This is a concrete factorization statement suitable for a theorem/example scaffold even if proof details are deferred."
         }
       ]
+    },
+    "stage3_3_audit": {
+      "issue": "#262",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The usual absolute value on Q inherited from R is denoted |.|_∞ and is archimedean.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_06a_Discussion.ratArchimedeanAbsoluteValue / ratArchimedeanAbsoluteValue_apply / ratArchimedeanAbsoluteValue_not_isNonarchimedean",
+          "reason": "The Lean file already names the real place, identifies its action with the usual absolute value, and records the archimedean/non-nonarchimedean distinction explicitly."
+        },
+        {
+          "n": 2,
+          "text": "There are infinitely many absolute values on Q besides |.|_∞.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_06a_Discussion.infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean",
+          "reason": "The file already exposes the lecture's existence claim as an explicit infinitude theorem."
+        },
+        {
+          "n": 3,
+          "text": "Every nonzero rational can be written uniquely as ± ∏ q q^(e_q), with integer exponents and finite support.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_06a_Discussion.existsUnique_signed_primeFactorization",
+          "reason": "The unique signed prime-power expansion is already present as a dedicated theorem on `ℚˣ`."
+        }
+      ],
+      "summary": "No missing import or missing declaration was found. The previously repaired discussion file now passes the Stage 3.3 audit cleanly."
     }
   },
   "Chapter1/01_07_Definition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#124",
-    "notes": "Stage 3.2 review for issue #124 confirmed that SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean covers the blob's explicit claims with declarations: `padicValuation` gives the lecture's `WithTop ℤ` wrapper with `v_p(0) = ∞`, `padicValuation_of_ne_zero` exposes the nonzero `padicValRat` branch, `padicAbsoluteValue_apply_zero` and `padicAbsoluteValue_apply_of_ne_zero` make the zero and nonzero formulas for `|·|_p` explicit, and `padicAbsoluteValue_isNonarchimedean` records the nonarchimedean property. No review repair was needed."
+    "issue": "#262",
+    "notes": "Stage 3.3 audit under issue #262 found one missing bridge in SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean: the file now adds `padicValuation_eq_exponent_of_factorization` so the lecture's defining formula `v_p(± ∏ q^{e_q}) = e_p` is represented explicitly, alongside the existing zero/nonzero formulas for `v_p` and `|.|_p`.",
+    "stage3_3_audit": {
+      "issue": "#262",
+      "decision": "repaired",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For a prime p, the p-adic valuation satisfies v_p(± ∏ q q^(e_q)) = e_p.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_07_Definition.padicValuation_eq_exponent_of_factorization",
+          "reason": "This textbook-defining bridge was missing after Stage 3.2 and is now recorded explicitly."
+        },
+        {
+          "n": 2,
+          "text": "We define v_p(0) = ∞.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_07_Definition.padicValuation / padicValuation_zero",
+          "reason": "The `WithTop ℤ` wrapper and its zero simp theorem expose the lecture's convention directly."
+        },
+        {
+          "n": 3,
+          "text": "The p-adic absolute value on Q is |x|_p = p^(-v_p(x)), with |0|_p understood to be 0.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_07_Definition.padicAbsoluteValue_apply_zero / padicAbsoluteValue_apply_of_ne_zero",
+          "reason": "The file already records both the zero case and the nonzero `p^(-v_p(x))` formula."
+        }
+      ],
+      "summary": "Stage 3.3 uncovered one omitted textbook bridge for the valuation on signed prime-power factorizations; after adding it, Definition 1.7 now covers every formalizable sentence in the blob."
+    }
   },
   "Chapter1/01_08_Theorem": {
     "status": "scaffolded",
