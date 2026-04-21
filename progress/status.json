@@ -778,10 +778,10 @@
     }
   },
   "Chapter1/01_10_Definition": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#303",
-    "notes": "Issue #303 completed the remaining Stage 3.4 proof work in `SutherlandNumberTheoryLecture1/Chapter1/01_10_Definition.lean`. The file now constructs the lecture's derived absolute value explicitly from `c ^ v(x)` using `WithTop.untop₀`, proves multiplicativity and the ultrametric bound from the `AddValuation` API plus `Real.strictAnti_rpow_of_base_lt_one`, and eliminates the last theorem-level `sorry` in `exists_derivedAbsoluteValue`.",
+    "issue": "#494",
+    "notes": "Issue #494 completed the Stage 3.5 dependency review for `SutherlandNumberTheoryLecture1/Chapter1/01_10_Definition.lean`. Re-reading the blob against the sorry-free declarations showed that this file defines valuations, value groups, valuation rings, and the derived absolute value directly from Mathlib's `AddValuation` and `Valuation` APIs, so the earlier absolute-value item `Chapter1/01_02_Definition` is only transitive context and the direct dependency set trims to `[]`.",
     "stage3_3_audit": {
       "issue": "#263",
       "decision": "clean",
