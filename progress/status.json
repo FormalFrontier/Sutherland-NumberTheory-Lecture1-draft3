@@ -1919,10 +1919,10 @@
     }
   },
   "Chapter1/01_20_Proposition": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#408",
-    "notes": "Issue #408 completed the Stage 3.2 scaffolding review for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean`. Re-reading `blobs/Chapter1/01_20_Proposition.md` confirmed that the blob's single mathematical claim is represented exactly by `integral_extension_trans`, with no missing bridge theorem or definition-level repair required, and `lake build` succeeds after the session cache bootstrap.",
+    "issue": "#421",
+    "notes": "Issue #421 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean`. Re-reading `blobs/Chapter1/01_20_Proposition.md` against the existing theorem `integral_extension_trans` confirmed that the blob contributes exactly one formalizable statement and no omitted auxiliary claim, and `lake build` still succeeds after the session cache bootstrap.",
     "stage3_2_review": {
       "issue": "#408",
       "decision": "verified",
@@ -1936,6 +1936,20 @@
         }
       ],
       "summary": "The Stage 3.2 review found the scaffold complete as written: Proposition 1.20 contributes one mathematical statement, and `integral_extension_trans` already formalizes it without any missing declaration or repair."
+    },
+    "stage3_3_audit": {
+      "issue": "#421",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "If `C/B/A` is a tower of ring extensions in which `B` is integral over `A` and `C` is integral over `B`, then `C` is integral over `A`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.integral_extension_trans",
+          "reason": "A skeptical re-read of the proposition blob found only the tower-transitivity statement itself; the Lean file already exposes that exact theorem with the same hypotheses and no hidden subsidiary assertion."
+        }
+      ],
+      "summary": "The Stage 3.3 audit is clean: Proposition 1.20 contains just the single transitivity statement, already formalized by `integral_extension_trans`, and the blob adds no extra standalone claim."
     }
   },
   "Chapter1/01_20_Proof": {
