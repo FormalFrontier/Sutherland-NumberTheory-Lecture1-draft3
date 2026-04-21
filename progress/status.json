@@ -745,10 +745,10 @@
     }
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "claims_audited",
+    "status": "proof_formalized",
     "last_updated": "2026-04-21",
-    "issue": "#310",
-    "notes": "Stage 3.3 audit under issue #310 re-read `blobs/Chapter1/01_11a_Discussion.md` against the refs file and Lean scaffold and found no additional missing claims. The existing declarations already account for every formalizable sentence in the blob, and all remaining incompleteness stays at theorem-level `sorry` in the factorization and ideal-classification results.",
+    "issue": "#318",
+    "notes": "Stage 3.4 proof work under issue #318 discharged the fraction-field uniformizer factorization theorem together with the change-of-uniformizer, nonzero-ideal classification, total-ordering, and unique-maximal-ideal proofs in `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean`. The file is not yet `sorry_free`: `span_pow_uniformizer_eq_valuation_ge` remains a theorem-level placeholder because its current statement appears to require an additional normalization hypothesis or an invariant restatement, now tracked in issue `#326`.",
     "stage3_2_review": {
       "issue": "#291",
       "decision": "passes_with_minor_repairs",
