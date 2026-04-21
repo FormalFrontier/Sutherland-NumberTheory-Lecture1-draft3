@@ -773,10 +773,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_27_Remark.refs.md, documenting the partial Mathlib coverage for orders and the best external source for the maximal-order discussion."
   },
   "Chapter1/01_28_Proposition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
     "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_28_Proposition.refs.md, pointing the minimal-polynomial criterion directly at the existing integrally-closed `minpoly` lemmas."
+    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`: `minpoly_dvd_of_fractionRing_aeval_eq_zero` packages the textbook divisibility step via `minpoly.isIntegrallyClosed_dvd`, and `isIntegral_iff_exists_map_eq_minpoly` records Proposition 1.28 as the equivalence between integrality over `A` and the minimal polynomial over the fraction field lifting from `A[X]`."
   },
   "Chapter1/01_28_Proof": {
     "status": "references_attached",

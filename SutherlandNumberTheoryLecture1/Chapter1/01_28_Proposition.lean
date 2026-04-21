@@ -1,0 +1,67 @@
+import Mathlib
+import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
+
+/-!
+# Proposition 1.28: minimal polynomials and integrality over an integrally closed domain
+
+The lecture proves that if `A` is an integrally closed domain with fraction field
+`K`, and `L / K` is a finite extension, then an element `α : L` is integral over
+`A` exactly when its minimal polynomial over `K` has coefficients in `A`.
+
+Mathlib already packages the two key ingredients for this criterion:
+
+- `minpoly.isIntegrallyClosed_eq_field_fractions'` identifies the minimal
+  polynomial over the fraction field with the base-ring minimal polynomial when
+  the element is integral over an integrally closed domain.
+- `minpoly.isIntegrallyClosed_dvd` shows that the base-ring minimal polynomial
+  divides any base-ring polynomial having the integral element as a root.
+-/
+
+namespace SutherlandNumberTheoryLecture1
+namespace Chapter1
+
+section Proposition_01_28
+
+open Polynomial
+
+variable {A K L : Type*}
+variable [CommRing A] [IsDomain A] [Field K] [Field L]
+variable [Algebra A K] [IsFractionRing A K]
+variable [Algebra A L] [Algebra K L] [IsScalarTower A K L]
+variable [FiniteDimensional K L] [IsIntegrallyClosed A] [Module.IsTorsionFree A L]
+
+/-- Any lifted base-ring polynomial vanishing at an integral element is divisible by the
+base-ring minimal polynomial. This is the packaged divisibility step used in the lecture's proof.
+-/
+theorem minpoly_dvd_of_fractionRing_aeval_eq_zero {α : L} (hα : IsIntegral A α) {f : A[X]}
+    (hf : aeval α (f.map (algebraMap A K)) = 0) :
+    minpoly A α ∣ f := by
+  have hf' : aeval α f = 0 := by
+    rw [Polynomial.aeval_map_algebraMap K α f] at hf
+    exact hf
+  exact minpoly.isIntegrallyClosed_dvd hα hf'
+
+/-- Proposition 1.28: over an integrally closed domain, integrality is equivalent to the
+minimal polynomial over the fraction field having coefficients in the base ring.
+-/
+theorem isIntegral_iff_exists_map_eq_minpoly {α : L} :
+    IsIntegral A α ↔ ∃ f : A[X], f.Monic ∧ f.map (algebraMap A K) = minpoly K α := by
+  constructor
+  · intro hα
+    refine ⟨minpoly A α, minpoly.monic hα, ?_⟩
+    symm
+    exact minpoly.isIntegrallyClosed_eq_field_fractions' K hα
+  · rintro ⟨f, hf_monic, hf_eq⟩
+    have hf_rootK : aeval α (f.map (algebraMap A K)) = 0 := by
+      rw [hf_eq]
+      exact minpoly.aeval K α
+    have hf_rootA : aeval α f = 0 := by
+      rw [← Polynomial.aeval_map_algebraMap K α f]
+      exact hf_rootK
+    refine ⟨f, hf_monic, ?_⟩
+    exact hf_rootA
+
+end Proposition_01_28
+
+end Chapter1
+end SutherlandNumberTheoryLecture1
