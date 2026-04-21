@@ -749,10 +749,10 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_24a_Discussion.refs.md, connecting the DVR discussion to Mathlib's stronger valuation-ring integrally-closed infrastructure."
   },
   "Chapter1/01_25_Proposition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_25_Proposition.refs.md, recording the valuation-ring declarations and external references needed to bridge the book's statement to Mathlib."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#149",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean by recording the valuation-ring fraction-field dichotomy as `valuationRing_integer_or_inv_integer` and the lecture's main claim as `valuationRing_isIntegrallyClosed`, both routed through Mathlib's bundled `ValuationRing` / `IsIntegrallyClosed` API rather than a bespoke reconstruction."
   },
   "Chapter1/01_25_Proof": {
     "status": "references_attached",
