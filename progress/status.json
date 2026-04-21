@@ -747,10 +747,101 @@
     }
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "scaffolded",
+    "status": "definition_verified",
     "last_updated": "2026-04-21",
-    "issue": "#269",
-    "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean` with explicit DVR-structure declarations for uniformizer existence, unit-times-uniformizer-power factorization in the fraction field, the principal-ideal/valuation-cutoff description, total ordering of ideals, and the maximal-ideal identifications. The substantive ideal-classification and factorization proofs remain theorem-level `sorry`s only; no definition-level gaps were introduced."
+    "issue": "#291",
+    "notes": "Stage 3.2 review for issue #291 confirmed complete scaffold coverage for `blobs/Chapter1/01_11a_Discussion.md`. The review added explicit wrappers `valuationSubring_isUniqueFactorizationMonoid` for the UFD sentence and `eq_maximalIdeal_of_isPrime_of_ne_bot` for the 'only nonzero prime ideal' clause, while leaving the pre-existing ideal-classification and factorization gaps at theorem-level `sorry` only.",
+    "stage3_2_review": {
+      "issue": "#291",
+      "decision": "passes_with_minor_repairs",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The discrete valuation determining the valuation ring is uniquely determined.",
+          "classification": "forward_reference",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_13a_Discussion.isEquiv_dvrValuation_of_valuationSubring_eq",
+          "reason": "The parenthetical points forward to the later recovery/uniqueness blob rather than introducing a missing declaration in `01_11a_Discussion` itself."
+        },
+        {
+          "n": 2,
+          "text": "Uniformizers exist.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.exists_uniformizer",
+          "reason": "The scaffold already exposes Mathlib's DVR uniformizer existence theorem in the lecture's valuation-subring setting."
+        },
+        {
+          "n": 3,
+          "text": "Any two uniformizers differ by multiplication by a unit.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.associated_of_uniformizer",
+          "reason": "The file records the associatedness statement explicitly, matching the lecture's 'differs by a unit' phrasing."
+        },
+        {
+          "n": 4,
+          "text": "Every nonzero fraction-field element can be written uniquely as `u * π^n` with `u` a unit and `n = v(x)`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.exists_unique_unit_mul_uniformizer_zpow",
+          "reason": "The scaffold already contains the exact factorization statement as a theorem-level placeholder."
+        },
+        {
+          "n": 5,
+          "text": "The valuation ring is a unique factorization domain.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.valuationSubring_isUniqueFactorizationMonoid",
+          "reason": "Issue #291 added an explicit theorem wrapper so the UFD sentence no longer relies on an implicit instance chain."
+        },
+        {
+          "n": 6,
+          "text": "The valuation ring is a principal ideal domain.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.valuationSubring_isPrincipalIdealRing",
+          "reason": "The PID sentence was already represented explicitly as a theorem."
+        },
+        {
+          "n": 7,
+          "text": "Every nonzero ideal has the form `(π^n) = {a in A : v(a) >= n}` for some `n >= 0`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.span_pow_uniformizer_eq_valuation_ge; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.exists_eq_span_pow_uniformizer_of_ne_bot",
+          "reason": "The scaffold splits the textbook sentence into an existence theorem for nonzero ideals and a separate valuation-cutoff identification."
+        },
+        {
+          "n": 8,
+          "text": "The ideal `(π^n)` depends only on `n`, not on the chosen uniformizer.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.span_pow_uniformizer_eq_span_pow_uniformizer",
+          "reason": "The change-of-uniformizer invariance is already stated directly."
+        },
+        {
+          "n": 9,
+          "text": "The ideals of the valuation ring are totally ordered by inclusion.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.ideals_are_totally_ordered",
+          "reason": "The total-order claim is already present as an explicit theorem."
+        },
+        {
+          "n": 10,
+          "text": "The ideal `(π)` is the unique maximal ideal.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.maximalIdeal_eq_span_uniformizer; SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.eq_maximalIdeal_of_isMaximal",
+          "reason": "The scaffold separately identifies `(π)` with the maximal ideal and records uniqueness of the maximal ideal among all maximal ideals."
+        },
+        {
+          "n": 11,
+          "text": "The maximal ideal is exactly `{a in A : v(a) > 0}`.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.maximalIdeal_eq_positive_valuation_locus",
+          "reason": "The positive-valuation characterization was already formalized directly."
+        },
+        {
+          "n": 12,
+          "text": "The maximal ideal is also the only nonzero prime ideal.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_11a_Discussion.eq_maximalIdeal_of_isPrime_of_ne_bot",
+          "reason": "Issue #291 added the missing explicit bridge from Mathlib's DVR characterization theorem to the lecture's final clause."
+        }
+      ],
+      "summary": "The Stage 3.2 review found one genuine coverage gap and one implicit-instance gap. Adding explicit theorems for the UFD sentence and the unique-nonzero-prime clause brings every mathematical sentence in the blob under a named declaration or an explicit later dependency, with all remaining incompleteness confined to theorem-level `sorry`s."
+    }
   },
   "Chapter1/01_12_Definition": {
     "status": "claims_audited",
