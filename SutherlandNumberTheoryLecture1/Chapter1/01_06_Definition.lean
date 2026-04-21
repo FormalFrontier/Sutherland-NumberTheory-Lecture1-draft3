@@ -31,6 +31,16 @@ theorem isEquiv_iff_exists_rpow_eq_pointwise (abv abv' : AbsoluteValue k ℝ) :
   · rintro ⟨α, hα, hpow⟩
     exact ⟨α, hα, funext hpow⟩
 
+/-- This is the lecture's `|x|' = |x|^α` phrasing written verbatim. -/
+theorem isEquiv_iff_exists_rpow_eq_textbook (abv abv' : AbsoluteValue k ℝ) :
+    abv.IsEquiv abv' ↔ ∃ α : ℝ, 0 < α ∧ ∀ x : k, abv' x = abv x ^ α := by
+  rw [isEquiv_iff_exists_rpow_eq_pointwise]
+  constructor
+  · rintro ⟨α, hα, hpow⟩
+    exact ⟨α, hα, fun x => (hpow x).symm⟩
+  · rintro ⟨α, hα, hpow⟩
+    exact ⟨α, hα, fun x => (hpow x).symm⟩
+
 end Definition_01_06
 
 end Chapter1
