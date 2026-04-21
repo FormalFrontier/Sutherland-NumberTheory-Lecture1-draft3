@@ -435,10 +435,57 @@
     "notes": "Stage 2.6 attached blobs/Chapter1/01_10_Definition.refs.md, linking the valuation and DVR definitions to `Valuation`, `AddValuation`, `Valuation.valuationSubring`, and the main course/reference sources."
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#86",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_10a_Discussion.refs.md, centering the valuation-subring membership and unit lemmas that package the sign-based partition of elements."
+    "status": "needs_definition",
+    "last_updated": "2026-04-21",
+    "issue": "#168",
+    "notes": "Stage 3.1 claim audit under issue #168 re-read blobs/Chapter1/01_10a_Discussion.md and found multiple formalizable valuation-subring lemmas already foreshadowed by the refs file, so the blob cannot be dropped as terminal prose and needs a dedicated scaffolding issue.",
+    "stage3_1_decision": {
+      "decision": "formalizable",
+      "claims": [
+        {
+          "n": 1,
+          "text": "Every valuation ring A is a ring.",
+          "classification": "formalizable",
+          "reason": "This is a mathematical structure claim already packaged by Mathlib's `ValuationSubring` API and should be represented explicitly in the blob's own Lean file."
+        },
+        {
+          "n": 2,
+          "text": "Every valuation ring A is an integral domain, because nonzero x and y have nonzero product.",
+          "classification": "formalizable",
+          "reason": "This is a concrete algebraic property of the valuation ring, with the textbook's valuation proof available as local glue if needed."
+        },
+        {
+          "n": 3,
+          "text": "The ambient field k is the fraction field of the valuation ring A.",
+          "classification": "formalizable",
+          "reason": "This is a structural statement about the valuation-subring construction and belongs in the formal interface rather than prose."
+        },
+        {
+          "n": 4,
+          "text": "For every x in k^times, at least one of x and 1 / x has nonnegative valuation and lies in A.",
+          "classification": "formalizable",
+          "reason": "This is the core valuation-ring membership dichotomy and can be formalized directly from valuation identities."
+        },
+        {
+          "n": 5,
+          "text": "An element x in A is invertible in A if and only if v(x) = 0.",
+          "classification": "formalizable",
+          "reason": "This is an explicit unit characterization already close to Mathlib's `valuation_eq_one_iff` bridge and should not remain implicit."
+        },
+        {
+          "n": 6,
+          "text": "The unit group of A is A^times = {x in k : v(x) = 0}.",
+          "classification": "formalizable",
+          "reason": "This is the set-level restatement of the previous characterization and should be exposed as a declaration or bundled theorem."
+        },
+        {
+          "n": 7,
+          "text": "The nonzero elements of k partition according to whether their valuation is zero, positive, or negative: zero gives units of A, positive gives non-units in A, and negative gives elements outside A whose inverses are non-units in A.",
+          "classification": "formalizable",
+          "reason": "This is a genuine case-split theorem about membership and units/non-units, not merely motivational prose."
+        }
+      ]
+    }
   },
   "Chapter1/01_11_Definition": {
     "status": "references_attached",
