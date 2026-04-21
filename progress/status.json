@@ -1697,10 +1697,10 @@
     "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_23_Proof.lean by formalizing the lecture's abbreviated proof as an explicit wrapper over `Chapter1/01_23_Corollary.ufd_isIntegrallyClosed`, reusing Mathlib's bundled `UniqueFactorizationMonoid.instIsIntegrallyClosed` infrastructure rather than replaying Proposition 1.22's rational-root argument."
   },
   "Chapter1/01_24_Example": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#341",
-    "notes": "Stage 3.3 audit under issue #341 re-read `blobs/Chapter1/01_24_Example.md` against the refs note and `SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean`, confirming that the scaffold still captures every formalizable sentence from the lecture example: the witness `(1 + √5) / 2`, its quadratic relation and integrality over `ℤ`, the induced integrality over `ℤ[√5]`, the non-membership statement, and the non-integrally-closed / non-UFD / non-PID consequences. No missing claim or scaffold repair was needed.",
+    "issue": "#351",
+    "notes": "Stage 3.4 proof work under issue #351 discharged the remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean`. The file now proves the explicit quadratic relation `((1 + √5) / 2)^2 - (1 + √5) / 2 - 1 = 0` inside `FractionRing (ℤ√5)`, packages that witness as integral over `ℤ` and hence over `ℤ[√5]`, and completes the parity-based argument that `(1 + √5) / 2` cannot come from any element of `ℤ[√5]`, leaving the non-integrally-closed / non-UFD / non-PID consequences sorry-free.",
     "stage3_2_review": {
       "issue": "#258",
       "decision": "verified_after_minor_repair",
