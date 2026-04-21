@@ -1953,10 +1953,10 @@
     }
   },
   "Chapter1/01_20_Proof": {
-    "status": "claims_audited",
+    "status": "sorry_free",
     "last_updated": "2026-04-21",
-    "issue": "#428",
-    "notes": "Issue #428 completed the Stage 3.3 missing-claims audit for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean`. A skeptical re-read of the one-line proof blob against the Lean module confirmed that the citation contributes no hidden formalizable claim beyond the existing wrappers `isIntegral_of_isIntegral_tower` and `integral_extension_trans_from_proof`; `lake build` succeeds after the session cache bootstrap.",
+    "issue": "#454",
+    "notes": "Issue #454 completed the Stage 3.4 sorry-free verification for `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proof.lean`. Re-reading `blobs/Chapter1/01_20_Proof.md` against the Lean file confirmed that the one-line citation is still represented exactly by `isIntegral_of_isIntegral_tower` and `integral_extension_trans_from_proof`, `rg -n \"sorry\"` returned no matches for the target file, and `lake exe cache get` plus `lake build` succeeded in this session.",
     "stage3_2_review": {
       "issue": "#417",
       "decision": "verified",
