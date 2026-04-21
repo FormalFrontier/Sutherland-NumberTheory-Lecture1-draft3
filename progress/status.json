@@ -826,10 +826,10 @@
     }
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "sorry_free",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
-    "issue": "#358",
-    "notes": "Stage 3.4 proof work under issue #358 discharged the remaining theorem-level placeholders in `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean`. The file now proves the valuation-zero unit criterion by transporting `ValuationSubring.valuation_eq_one_iff` across `Valuation.isEquiv_valuation_valuationSubring`, derives the positive-valuation maximal-ideal criterion from the local-ring nonunit characterization plus that unit criterion, and shows that negative valuation forces the inverse into the maximal ideal via `v.map_inv`, leaving the sign-partition discussion sorry-free.",
+    "issue": "#499",
+    "notes": "Issue #499 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` against `blobs/Chapter1/01_10a_Discussion.md`. The finished discussion file still depends directly on `Chapter1/01_10_Definition`: it imports that module and uses its `RealValuation`, `valuationSubring`, and `mem_valuationSubring_iff` declarations throughout the valuation-ring structure and sign-partition theorems, so `dependencies/internal.json[\"Chapter1/01_10a_Discussion\"]` correctly remains `[\"Chapter1/01_10_Definition\"]`.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
