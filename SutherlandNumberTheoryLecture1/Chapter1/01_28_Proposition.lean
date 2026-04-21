@@ -1,6 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
-
 /-!
 # Proposition 1.28: minimal polynomials and integrality over an integrally closed domain
 
