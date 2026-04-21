@@ -422,10 +422,10 @@
     }
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "claims_audited",
+    "status": "proof_formalized",
     "last_updated": "2026-04-21",
-    "issue": "#262",
-    "notes": "Stage 3.3 audit under issue #262 re-read blobs/Chapter1/01_06a_Discussion.md against SutherlandNumberTheoryLecture1/Chapter1/01_06a_Discussion.lean and confirmed that the archimedean place, the existence of infinitely many other absolute values on Q, and the unique signed prime-factorization claim are all already represented explicitly; the completion/local-field aside remains intentionally excluded from this blob.",
+    "issue": "#308",
+    "notes": "Stage 3.4 proof work under issue #308 discharged `ratArchimedeanAbsoluteValue_not_isNonarchimedean` by evaluating the nonarchimedean bound at `2`, and proved `infinitelyMany_ratAbsoluteValues_not_isEquiv_archimedean` by embedding the infinite family of `p`-adic places indexed by `Nat.Primes`. The remaining theorem-level placeholder is `existsUnique_signed_primeFactorization`, whose proof still needs the explicit reduced numerator/denominator factorization argument.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
