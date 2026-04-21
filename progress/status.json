@@ -1156,10 +1156,10 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#301",
-    "notes": "Stage 3.2 review for issue #301 confirmed that `blobs/Chapter1/01_16_Theorem.md` is fully covered by `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`. The file packages each of the lecture's seven DVR characterizations as an explicit predicate and states the full `List.TFAE` theorem, while keeping the remaining incompleteness entirely at theorem level. The review found no definition-level `sorry` and no missing bullet-to-predicate bridge.",
+    "issue": "#315",
+    "notes": "Stage 3.3 audit for issue #315 re-read `blobs/Chapter1/01_16_Theorem.md` and `blobs/Chapter1/01_16_Theorem.refs.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`. The audit was clean: the seven lecture bullets are already packaged as explicit predicates, the aggregate `List.TFAE` statement is present, and no additional declaration, bridge theorem, or import is needed beyond the existing theorem-level proof obligations.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1199,13 +1199,34 @@
         }
       ],
       "summary": "Stage 3.2 review found the theorem scaffold complete: all seven lecture bullets are spelled out as explicit predicates, the aggregate TFAE statement is present verbatim, and the only remaining gap is theorem-level proof work delegated to the companion proof file."
+    },
+    "stage3_3_audit": {
+      "issue": "#315",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "For an integral domain A, each of the lecture's seven DVR characterizations is represented explicitly as a Lean predicate.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.IsDvr; IsNoetherianValuationRingNotField; IsLocalPidNotField; IsIntegrallyClosedNoetherianLocalDimOne; IsRegularNoetherianLocalDimOne; HasPrincipalNonzeroMaximalIdeal; IsMaximalNoetherianRingOfDimOne",
+          "reason": "The Stage 3.3 re-read found no hidden qualification or omitted side remark in the theorem blob: every bullet of Theorem 1.16 still has a dedicated declaration in the scaffold."
+        },
+        {
+          "n": 2,
+          "text": "These seven predicates are packaged as a single TFAE statement matching Theorem 1.16.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.dvr_characterization_tfae",
+          "reason": "The aggregate equivalence statement already accounts for the entire theorem blob, and the remaining incompleteness is only the explicit theorem-level proof placeholder rather than a missing claim."
+        }
+      ],
+      "summary": "The Stage 3.3 audit was clean. Re-reading the theorem blob and refs file against the Lean scaffold found no missing bullet, aside, or bridge declaration beyond the already-recorded theorem-level proof work."
     }
   },
   "Chapter1/01_16_Proof": {
-    "status": "definition_verified",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
-    "issue": "#301",
-    "notes": "Stage 3.2 review for issue #301 confirmed that `blobs/Chapter1/01_16_Proof.md` is adequately scaffolded by `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean`: the direct DVR equivalence bridges already supplied by `IsDiscreteValuationRing.TFAE` and Discussion 1.15a are stated explicitly, and the remaining incompleteness stays at theorem level in the two converse bridges plus the final aggregated proof. No definition-level `sorry` or missing proof-structure declaration was found.",
+    "issue": "#315",
+    "notes": "Stage 3.3 audit for issue #315 re-read `blobs/Chapter1/01_16_Proof.md` and `blobs/Chapter1/01_16_Proof.refs.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean`. The audit was clean: the proof blob contributes only the external-reference sentence, and the Lean file already exposes every formalizable bridge theorem needed for the deferred proof. No extra declaration, import, or proof-structure claim was missing.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1245,6 +1266,27 @@
         }
       ],
       "summary": "Stage 3.2 review found the proof scaffold complete: the already-known bridges are made explicit, the unresolved converses are isolated as theorem-level placeholders, and the blob's external-reference proof sentence does not hide any additional formalizable structure."
+    },
+    "stage3_3_audit": {
+      "issue": "#315",
+      "decision": "clean",
+      "claims": [
+        {
+          "n": 1,
+          "text": "The proof of Theorem 1.16 can be scaffolded by isolating the implications and equivalences already supplied by `IsDiscreteValuationRing.TFAE` and the preceding DVR discussion.",
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDvr_iff_isNoetherianValuationRingNotField; isDvr_iff_isLocalPidNotField; isDvr_implies_isIntegrallyClosedNoetherianLocalDimOne; isDvr_of_isRegularNoetherianLocalDimOne; isDvr_implies_isRegularNoetherianLocalDimOne; isDvr_of_hasPrincipalNonzeroMaximalIdeal; isDvr_implies_hasPrincipalNonzeroMaximalIdeal; isDvr_implies_isMaximalNoetherianRingOfDimOne",
+          "reason": "The proof blob's formalizable content is fully represented by these scaffold theorems; the Stage 3.3 re-read found no omitted bridge or hidden intermediate claim."
+        },
+        {
+          "n": 2,
+          "text": "The converse from the integrally closed one-dimensional local criterion, the converse from the maximal noetherian subring formulation, and the final packaged TFAE proof remain to be proved.",
+          "classification": "formalized_with_sorry",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.isDvr_of_isIntegrallyClosedNoetherianLocalDimOne; isDvr_of_isMaximalNoetherianRingOfDimOne; dvr_characterization_proof",
+          "reason": "Those remaining theorem-level placeholders already account for the deferred proof work; the citation-only proof blob does not require any further declaration at Stage 3.3."
+        }
+      ],
+      "summary": "The Stage 3.3 audit was clean. The proof blob itself adds no hidden formalizable sentence beyond its bibliographic deferral, and the Lean scaffold already records every explicit bridge theorem needed for the later proof stage."
     }
   },
   "Chapter1/01_16a_Discussion": {
