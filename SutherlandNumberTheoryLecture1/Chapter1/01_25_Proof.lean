@@ -1,14 +1,15 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_25_Proposition»
+import Mathlib.Algebra.GCDMonoid.IntegrallyClosed
+import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
+import Mathlib.RingTheory.Valuation.ValuationRing
 
 /-!
 # Proof of Proposition 1.25
 
 The lecture proves that a valuation ring is integrally closed by contradiction:
-an element of the fraction field that is integral over the ring cannot lie in
-the "inverse is in the ring" branch of the valuation-ring dichotomy, so it must
-already come from the ring itself. Mathlib already packages the final theorem,
-so this proof blob is formalized as an explicit "integral elements lie in the
-ring" witness theorem together with the resulting integrally-closed conclusion.
+an element of the fraction field that is integral over the ring must already lie
+in the ring. Mathlib already packages both the witness-extraction step as
+`IsIntegrallyClosed.algebraMap_eq_of_integral` and the valuation-ring conclusion
+through typeclass search, so this proof blob cites those declarations directly.
 -/
 
 namespace SutherlandNumberTheoryLecture1
@@ -22,15 +23,12 @@ variable {A K : Type*} [CommRing A] [IsDomain A] [Field K] [Algebra A K] [IsFrac
 integral over a valuation ring already comes from the ring. -/
 theorem proof_integral_element_mem [ValuationRing A] {x : K} (hx : IsIntegral A x) :
     ∃ a : A, algebraMap A K a = x := by
-  rcases valuationRing_integer_or_inv_integer (A := A) (K := K) x with hxA | _
-  · exact hxA
-  · exact (isIntegrallyClosed_iff K).mp
-      (valuationRing_isIntegrallyClosed (A := A)) hx
+  simpa using
+    (IsIntegrallyClosed.algebraMap_eq_of_integral (R := A) (K := K) hx)
 
 /-- The proof blob's final conclusion: every valuation ring is integrally closed. -/
-theorem proof_valuationRing_isIntegrallyClosed [ValuationRing A] : IsIntegrallyClosed A :=
-  (isIntegrallyClosed_iff (FractionRing A)).2 fun {_} hx =>
-    proof_integral_element_mem (A := A) (K := FractionRing A) hx
+theorem proof_valuationRing_isIntegrallyClosed [ValuationRing A] : IsIntegrallyClosed A := by
+  infer_instance
 
 end Proof_01_25
 
