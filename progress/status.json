@@ -681,9 +681,9 @@
   },
   "Chapter1/01_29a_Bibliography": {
     "status": "non_formalizable",
-    "last_updated": "2026-04-20",
-    "issue": "#154",
-    "notes": "Stage 3.1 audited blobs/Chapter1/01_29a_Bibliography.md claim-by-claim and confirmed that it is citation metadata only, with no standalone mathematical declaration to scaffold.",
+    "last_updated": "2026-04-21",
+    "issue": "#167",
+    "notes": "Stage 3.2 review for issue #167 re-read blobs/Chapter1/01_29a_Bibliography.md against the Stage 3.1 audit and confirmed that the blob contains only three bibliographic citations. The candidate-claim enumeration from issue #154 is complete, each exclusion reason is technically sound, and no standalone mathematical declaration was missed.",
     "reason": "Enumerated candidate claims reviewed in Stage 3.1: (1) Altman and Kleiman's A term of commutative algebra is a cited reference; excluded because bibliographic entries identify sources rather than assert mathematics inside the lecture formalization. (2) Atiyah and Macdonald's Introduction to commutative algebra is a cited reference; excluded for the same reason. (3) Serre's Local fields is a cited reference; excluded for the same reason.",
     "stage3_1_decision": {
       "decision": "non_formalizable",
