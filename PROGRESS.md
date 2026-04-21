@@ -19,19 +19,28 @@
 ## Current Frontier
 
 - Phase `2` is complete for the current extracted slice (logical pages `1` through `7`).
-- The active frontier is Phase `3.1` scaffolding for the opening batch. The currently open PRs are `#94` / issue `#93` for the Chapter 1 import skeleton, `#97` / issue `#96` for `Chapter1/01_02_Definition`, and `#101` / issue `#98` for `Chapter1/01_03_Example`.
-- The next queued exact-match item `#100` (`Chapter1/01_06_Definition`) was replan'd because its stated prerequisites are still open PRs rather than merged `master` state.
+- The active frontier is now the Stage `3.1` tail of Chapter 1, after the opening, valuation, and generic integrality tranche through `Chapter1/01_26_Definition` landed on `master`.
+- `Chapter1/01_25_Proposition` merged at `2bbc7cc`, so the remaining execution frontier is concentrated in `Chapter1/01_24_Example`, `Chapter1/01_25_Proof`, `Chapter1/01_27_Remark`, `Chapter1/01_28_Proof`, and `Chapter1/01_29_Example`.
+- The main planning question is no longer dependency discovery; it is queue hygiene and sequencing around one conflicted example PR and one exact-Mathlib proof PR already in flight.
 
 ## In-Flight Work
 
-- PR `#94` / issue `#93`: Stage `3.1` scaffolding infrastructure for the opening batch `Chapter1/01_00_Introduction` through `Chapter1/01_09a_Discussion`.
-- PR `#97` / issue `#96`: scaffold `Chapter1/01_02_Definition`, the base absolute-value item for the opening batch.
-- PR `#101` / issue `#98`: scaffold `Chapter1/01_03_Example`, the trivial absolute value example that follows the base definition.
+- PR `#241` / issue `#148`: `Chapter1/01_28_Proof`, currently mergeable with CI running. This is still the cleanest exact-Mathlib tail item and should be allowed to finish.
+- PR `#240` / issue `#150`: `Chapter1/01_24_Example`, currently conflicted but with a green build on the head branch. It needs repair or replacement before the final example `#152` can run.
+- Issue `#153`: `Chapter1/01_25_Proof` is currently claimed with no PR yet. Its body is still directionally correct, but the listed blockers are stale because `Chapter1/01_17_Definition`, `Chapter1/01_11_Definition`, and `Chapter1/01_25_Proposition` are already on `master`.
 
 ## Queue Health And Risks
 
-- Queue metrics at `2026-04-20T13:03:57Z`: `3` open PRs, `1` claimed issue (`#99`, this summary pass), `0` unclaimed agent-plan issues, and `10` merged PRs since summarize issue `#68` closed at `2026-04-20T10:51:11Z`.
-- There are currently no unclaimed agent-plan work items. Once PRs `#94`, `#97`, and `#101` land, the planner should immediately reopen the next Stage `3.1` per-item issues instead of creating more Phase `2` work.
-- The first scaffolding wave should follow the Stage `2.5` recommendations: start with the opening-batch absolute-value kernel (`Chapter1/01_02_Definition`, `Chapter1/01_03_Example`, `Chapter1/01_06_Definition`, `Chapter1/01_07_Definition`), then queue the nearby theorem/proof items.
-- Phase `3` should not stall on the hardest opening-batch theorem (`Chapter1/01_09_Theorem`). The planner should prefer breadth over serial blocking: launch easy exact-match and definition items first, then let harder local infrastructure trail behind.
-- The middle and tail Chapter 1 slices are already `references_attached`, so the next planner cycle can extend scaffolding beyond the opening batch as soon as the setup/import-chain pattern from PR `#94` is merged and stable.
+- Queue metrics at `2026-04-21T05:38Z`: `56` merged PRs since meditate issue `#84` closed on `2026-04-20T12:46:54Z`, `3` unclaimed `agent-plan` issues, `2` claimed issues (this meditation issue plus `#153`), `2` open PRs, and `1` broken PR (`#240`, merge conflict only).
+- The feature issue set `#148` through `#153` mostly remains valid, but several issue bodies are stale in the favorable direction: their blocker lists still mention already-merged prerequisites. This is not severe enough to justify replanning those items; workers can still execute them after a quick assumption check.
+- Recommended execution order from the live queue:
+  1. Let `#148` finish and merge unless CI fails.
+  2. Either repair PR `#240` or close-and-requeue `#150` if the branch is not worth salvaging.
+  3. Let the claimed `#153` continue; it is now a direct follow-on to merged proposition `#149`.
+  4. Use the next free worker on unclaimed `#151`, which is now executable because `#132` / `Chapter1/01_26_Definition` already landed.
+  5. Leave `#152` for last because it genuinely depends on both the `01_24_Example` and `01_28_Proposition`/proof path being in place.
+- Recommended planner actions:
+  - Keep `#151`, `#152`, and `#153` as-is; they are still well scoped.
+  - Do not split the tail queue yet; the remaining work is small enough once the stale blocker text is mentally discarded.
+  - If no one repairs `#240` promptly, create a dedicated PR-fix issue rather than opening more fresh feature work that still depends on `#150`.
+- Recommended dispatcher posture: run at most one additional feature worker right now, on `#151`. Anything more will create overlap or idle waiting behind `#240`/`#241` and the claimed `#153`.
