@@ -689,10 +689,10 @@
     "notes": "Stage 3.1 scaffolded `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean` with explicit declarations for membership in `integralClosure A B`, the bundled `IsIntegrallyClosedIn A B` property via `integralClosure A B = ⊥`, and the fraction-field specialization using `IsIntegrallyClosed A`."
   },
   "Chapter1/01_20_Proposition": {
-    "status": "references_attached",
-    "last_updated": "2026-04-20",
-    "issue": "#90",
-    "notes": "Stage 2.6 attached blobs/Chapter1/01_20_Proposition.refs.md, recording the exact tower-integrality lemma in Mathlib together with the two cited commutative-algebra sources used by the text."
+    "status": "scaffolded",
+    "last_updated": "2026-04-21",
+    "issue": "#130",
+    "notes": "Stage 3.1 scaffolded SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean by formalizing Proposition 1.20 as the extension-level transitivity of integrality in a tower `C / B / A`, proved directly from Mathlib's `isIntegral_trans`."
   },
   "Chapter1/01_20_Proof": {
     "status": "references_attached",
