@@ -31,7 +31,7 @@
       ],
       "reason": "This is the closest statement-level match to the opening-batch blobs: it contains the introduction, the absolute-value definitions, the nonarchimedean criterion, the p-adic definition, Ostrowski's theorem, and the product formula in essentially the same form as the transcribed lecture.",
       "formalization_leads": [
-        "Use this as the canonical prose reference when Stage 3 formalization needs the exact wording or surrounding context of the opening batch.",
+        "Use this as the canonical prose reference when Stage 3 formalization needs the exact wording or surrounding context of the opening batch, including the introduction's FTA / maximal-ideal / number-field-presentation / F_q[t] comparison sentences.",
         "It confirms that Lemma 1.4, Theorem 1.8, and Theorem 1.9 are intentionally deferred to Problem Set 1 rather than proved in the lecture notes."
       ]
     },

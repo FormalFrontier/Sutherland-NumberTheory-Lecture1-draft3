@@ -42,10 +42,10 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "needs_definition",
+    "status": "claims_audited",
     "last_updated": "2026-04-21",
     "issue": "#182",
-    "notes": "Stage 3.3 audit under issue #171 re-read blobs/Chapter1/01_00_Introduction.md against SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean and found four mathematically formalizable claims that are still missing explicit declarations or recalls: the fundamental theorem of arithmetic over `ℤ`, maximality of `(p)` in `ℤ`, the converse quotient presentation of arbitrary number fields, and the dimension/characteristic comparison sentences for `F_q[t]`. Follow-up issue #182 now tracks the required missing-claim repair. The completion/local-field survey sentence remains separately recorded as the existing `formalizable_later` claim rather than as a newly discovered gap.",
+    "notes": "Issue #182 repaired the four Stage 3.3 gaps found by issue #171. `SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean` now contains explicit declarations for normalized prime factorization over `ℤ`, maximality of `(p)` in `ℤ`, the primitive-element / `AdjoinRoot` quotient presentation of arbitrary number fields, and the missing Krull-dimension / characteristic-comparison claims for `F_q[t]`. The completion/local-field survey sentence remains separately recorded as the existing `formalizable_later` claim rather than as a Stage 3.3 omission.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -82,8 +82,8 @@
       ]
     },
     "stage3_3_audit": {
-      "issue": "#171",
-      "decision": "gaps_found",
+      "issue": "#182",
+      "decision": "clean_after_repair",
       "claims": [
         {
           "n": 1,
@@ -95,30 +95,30 @@
         {
           "n": 2,
           "text": "By the fundamental theorem of arithmetic, every element of Z can be written uniquely as a product of primes up to multiplication by a unit.",
-          "classification": "missing_declaration",
-          "issue": "#182",
-          "reason": "The introduction uses this as mathematical setup, but the current Lean file has no declaration or recall for the factorization statement."
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.int_prime_factorization_via_normalizedFactors; SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.int_associated_iff_normalizedFactors_eq",
+          "reason": "The repaired scaffold now records the introduction's factorization existence and packaged uniqueness-up-to-units statement via Mathlib's normalized-factors API."
         },
         {
           "n": 3,
           "text": "If p is a prime, the ideal (p) in Z is maximal.",
-          "classification": "missing_declaration",
-          "issue": "#182",
-          "reason": "The quotient/residue-field side is formalized, but the maximal-ideal claim itself is not yet stated."
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.int_span_prime_isMaximal",
+          "reason": "The repaired scaffold now states the maximal-ideal claim explicitly, alongside the existing quotient/residue-field declaration."
         },
         {
           "n": 4,
           "text": "Finite extensions of Q are number fields and each number field can be presented as Q[x]/(f) for a monic irreducible polynomial.",
-          "classification": "partially_formalized",
-          "issue": "#182",
-          "reason": "The current file formalizes the forward example direction via `AdjoinRoot`, but it does not yet state the converse quotient presentation for an arbitrary number field."
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.numberField_exists_irreducible_quotient_presentation",
+          "reason": "The file still keeps the forward `AdjoinRoot` example, and now also states the converse primitive-element quotient presentation for an arbitrary number field."
         },
         {
           "n": 5,
           "text": "F_q[t] is a PID of dimension one, and its residue fields have the same characteristic as F_q(t).",
-          "classification": "partially_formalized",
-          "issue": "#182",
-          "reason": "PID-ness, finite residue fields, and the global-function-field finite-extension statement are present, but the dimension-one and characteristic-comparison claims are still missing."
+          "classification": "formalized_here",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.polynomial_over_field_krullDimLEOne; SutherlandNumberTheoryLecture1.Chapter1.01_00_Introduction.adjoinRoot_char_eq_baseField_char",
+          "reason": "The repaired scaffold now states the missing Krull-dimension-one bound and the same-characteristic residue-field comparison explicitly."
         },
         {
           "n": 6,
@@ -127,7 +127,7 @@
           "reason": "This sentence was already recorded in Stage 3.1 as `formalizable_later`, so it is not a newly discovered Stage 3.3 omission."
         }
       ],
-      "summary": "The introduction does not clear the Stage 3.3 gate yet. Issue #182 groups the missing declaration work needed before this blob can return to `claims_audited`."
+      "summary": "Issue #182 repaired each missing declaration found by the original Stage 3.3 audit, so the introduction now clears the audit gate. The only intentionally deferred sentence remains the later completion/local-field survey."
     }
   },
   "Chapter1/01_01_Remark": {
