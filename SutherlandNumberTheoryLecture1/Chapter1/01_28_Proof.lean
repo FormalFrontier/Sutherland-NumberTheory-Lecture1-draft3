@@ -7,7 +7,8 @@ The lecture proves the forward implication by factoring the minimal polynomial
 over an algebraic closure and then observing that its coefficients are integral
 over the base ring. Mathlib already packages that argument in the
 integrally-closed `minpoly` API, so this file records the textbook proof as a
-small collection of explicit theorem-level wrappers around those lemmas.
+small collection of explicit theorem-level wrappers around those lemmas, while
+keeping the proof blob's assumptions slightly lighter than the proposition file.
 -/
 
 namespace SutherlandNumberTheoryLecture1
@@ -28,12 +29,11 @@ textbook's factor-by-factor argument in an algebraic closure. -/
 theorem minpoly_dvd_of_monic_lifted_root [Module.IsTorsionFree A L]
     {α : L} {g : A[X]} (hg : g.Monic) (hroot : aeval α (g.map (algebraMap A K)) = 0) :
     minpoly A α ∣ g := by
-  have hrootA : aeval α g = 0 := by
+  exact minpoly.isIntegrallyClosed_dvd ⟨g, hg, by
     rw [Polynomial.aeval_map_algebraMap K α g] at hroot
-    exact hroot
-  have hα : IsIntegral A α := by
-    exact ⟨g, hg, hrootA⟩
-  exact minpoly.isIntegrallyClosed_dvd hα hrootA
+    exact hroot⟩ <| by
+      rw [Polynomial.aeval_map_algebraMap K α g] at hroot
+      exact hroot
 
 /-- If `α` is integral over `A`, then every coefficient of its minimal
 polynomial over the fraction field `K` already comes from `A`. This packages the
@@ -51,18 +51,15 @@ theorem proof_isIntegral_iff_exists_map_eq_minpoly [IsFractionRing A K] {α : L}
     IsIntegral A α ↔ ∃ f : A[X], f.Monic ∧ f.map (algebraMap A K) = minpoly K α := by
   constructor
   · intro hα
-    refine ⟨minpoly A α, minpoly.monic hα, ?_⟩
-    symm
-    exact minpoly.isIntegrallyClosed_eq_field_fractions' K hα
+    exact ⟨minpoly A α, minpoly.monic hα,
+      (minpoly.isIntegrallyClosed_eq_field_fractions' K hα).symm⟩
   · rintro ⟨f, hf_monic, hf_eq⟩
     have hrootK : aeval α (f.map (algebraMap A K)) = 0 := by
       rw [hf_eq]
       exact minpoly.aeval K α
-    have hrootA : aeval α f = 0 := by
-      rw [Polynomial.aeval_map_algebraMap K α f] at hrootK
-      exact hrootK
     refine ⟨f, hf_monic, ?_⟩
-    exact hrootA
+    rw [Polynomial.aeval_map_algebraMap K α f] at hrootK
+    exact hrootK
 
 end Proof_01_28
 
