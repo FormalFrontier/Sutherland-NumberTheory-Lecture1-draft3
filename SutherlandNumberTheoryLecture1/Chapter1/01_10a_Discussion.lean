@@ -102,7 +102,7 @@ theorem valuation_sign_partition (v : RealValuation k) {x : k} (_hx : x ≠ 0) :
       ⟨hlt, not_mem_valuationSubring_of_neg (v := v) hlt,
         ((valuationSubring v).mem_or_inv_mem x).resolve_left
           (not_mem_valuationSubring_of_neg (v := v) hlt)⟩
-  · exact Or.inl ⟨hEq, (mem_valuationSubring_iff (v := v) x).2 (by simpa [hEq])⟩
+  · exact Or.inl ⟨hEq, (mem_valuationSubring_iff (v := v) x).2 (by simp [hEq])⟩
   · exact Or.inr <| Or.inl ⟨hgt, mem_valuationSubring_of_pos (v := v) hgt⟩
 
 end Discussion_01_10a

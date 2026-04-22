@@ -24,14 +24,15 @@ open Polynomial
 
 variable {A K L : Type*}
 variable [CommRing A] [IsDomain A] [Field K] [Field L]
-variable [Algebra A K] [IsFractionRing A K]
+variable [Algebra A K]
 variable [Algebra A L] [Algebra K L] [IsScalarTower A K L]
-variable [FiniteDimensional K L] [IsIntegrallyClosed A] [Module.IsTorsionFree A L]
+variable [IsIntegrallyClosed A]
 
 /-- Any lifted base-ring polynomial vanishing at an integral element is divisible by the
 base-ring minimal polynomial. This is the packaged divisibility step used in the lecture's proof.
 -/
-theorem minpoly_dvd_of_fractionRing_aeval_eq_zero {α : L} (hα : IsIntegral A α) {f : A[X]}
+theorem minpoly_dvd_of_fractionRing_aeval_eq_zero [Module.IsTorsionFree A L]
+    {α : L} (hα : IsIntegral A α) {f : A[X]}
     (hf : aeval α (f.map (algebraMap A K)) = 0) :
     minpoly A α ∣ f := by
   have hf' : aeval α f = 0 := by
@@ -42,7 +43,7 @@ theorem minpoly_dvd_of_fractionRing_aeval_eq_zero {α : L} (hα : IsIntegral A �
 /-- Proposition 1.28: over an integrally closed domain, integrality is equivalent to the
 minimal polynomial over the fraction field having coefficients in the base ring.
 -/
-theorem isIntegral_iff_minpoly_eq_map {α : L} :
+theorem isIntegral_iff_minpoly_eq_map [IsFractionRing A K] [FiniteDimensional K L] {α : L} :
     IsIntegral A α ↔ ∃ f : A[X], f.map (algebraMap A K) = minpoly K α := by
   constructor
   · intro hα
@@ -65,7 +66,7 @@ theorem isIntegral_iff_minpoly_eq_map {α : L} :
     exact hf_rootA
 
 /-- Compatibility wrapper exposing Proposition 1.28 with an explicit monic lift. -/
-theorem isIntegral_iff_exists_map_eq_minpoly {α : L} :
+theorem isIntegral_iff_exists_map_eq_minpoly [IsFractionRing A K] [FiniteDimensional K L] {α : L} :
     IsIntegral A α ↔ ∃ f : A[X], f.Monic ∧ f.map (algebraMap A K) = minpoly K α := by
   constructor
   · intro hα

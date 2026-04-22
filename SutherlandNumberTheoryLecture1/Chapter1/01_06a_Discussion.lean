@@ -97,7 +97,8 @@ theorem existsUnique_signed_primeFactorization (q : ℚˣ) :
   have hq_ne_zero : (q : ℚ) ≠ 0 := Units.ne_zero q
   have hnum_ne_zero : q.1.num ≠ 0 := Rat.num_ne_zero.mpr hq_ne_zero
   have hn_ne_zero : n ≠ 0 := by
-    simpa [n] using Int.natAbs_ne_zero.mpr hnum_ne_zero
+    change q.1.num.natAbs ≠ 0
+    exact Int.natAbs_ne_zero.mpr hnum_ne_zero
   have hd_ne_zero : d ≠ 0 := Rat.den_ne_zero _
   let u : ℤˣ := if hnonneg : 0 ≤ q.1.num then 1 else -1
   have hu_eq_sign : (u : ℤ) = q.1.num.sign := by

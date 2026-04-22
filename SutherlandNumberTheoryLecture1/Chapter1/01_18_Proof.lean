@@ -23,7 +23,8 @@ theorem proof_integral_add {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral
     IsIntegral A (α + β) := by
   simpa using IsIntegral.add (R := A) (A := B) hα hβ
 
-/-- The proof blob's product claim is Mathlib's closure of integral elements under multiplication. -/
+/-- The proof blob's product claim is Mathlib's closure of integral
+elements under multiplication. -/
 theorem proof_integral_mul {α β : B} (hα : IsIntegral A α) (hβ : IsIntegral A β) :
     IsIntegral A (α * β) := by
   simpa using IsIntegral.mul (R := A) (A := B) hα hβ
