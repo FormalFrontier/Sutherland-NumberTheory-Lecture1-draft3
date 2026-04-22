@@ -2460,10 +2460,10 @@
     }
   },
   "Chapter1/01_26_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#563",
-    "notes": "Stage 3.5 dependency trimming under issue #563 re-read `blobs/Chapter1/01_26_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean`, confirming that the finalized module uses only Mathlib's bundled `NumberField` and `NumberField.RingOfIntegers` APIs. The stale `Chapter1/01_19_Definition` import and internal dependency were removed, leaving no direct local dependencies for this item.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#713",
+    "notes": "Stage 3.6 polish under issue #713 re-checked `blobs/Chapter1/01_26_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean`, confirmed the file stays dependency-free beyond `Mathlib`, and normalized the instance-witness theorems to polished `by infer_instance` style without changing the mathematical content.",
     "stage3_3_audit": {
       "issue": "#272",
       "decision": "clean",

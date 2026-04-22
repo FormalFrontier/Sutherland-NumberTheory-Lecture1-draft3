@@ -23,8 +23,8 @@ variable (K : Type*) [Field K]
 
 /-- Definition 1.26's "number field" structure includes finite dimensionality over `ℚ`. -/
 theorem numberField_to_finiteDimensional [NumberField K] :
-    FiniteDimensional ℚ K :=
-  inferInstance
+    FiniteDimensional ℚ K := by
+  infer_instance
 
 /-- Definition 1.26's ring of integers is literally the integral closure of `ℤ` in `K`. -/
 theorem ringOfIntegers_eq_integralClosure :
@@ -33,8 +33,8 @@ theorem ringOfIntegers_eq_integralClosure :
 
 /-- Mathlib's bundled ring of integers carries the lecture's integral-closure structure. -/
 theorem ringOfIntegers_isIntegralClosure :
-    IsIntegralClosure (NumberField.RingOfIntegers K) ℤ K :=
-  inferInstance
+    IsIntegralClosure (NumberField.RingOfIntegers K) ℤ K := by
+  infer_instance
 
 end Definition_01_26
 
