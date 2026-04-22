@@ -1229,10 +1229,10 @@
     }
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#508",
-    "notes": "Issue #508 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_13a_Discussion`. Re-reading `blobs/Chapter1/01_13a_Discussion.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean` showed that the finalized discussion still directly depends on `Chapter1/01_10_Definition` for the valuation/DVR setup and on `Chapter1/01_12_Definition` for the unique maximal ideal of the local ring; `Chapter1/01_13_Definition` is not a direct book dependency here, so the existing trimmed dependency entry already matched the finished file.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#691",
+    "notes": "Issue #691 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean`. The discussion was already sorry-free and scoped to the blob, so the cleanup was limited to dropping the stale `Chapter1/01_13_Definition` import while leaving the Stage 3.5 dependency judgment otherwise unchanged.",
     "stage3_2_review": {
       "issue": "#292",
       "decision": "passes_with_bridge_added",
