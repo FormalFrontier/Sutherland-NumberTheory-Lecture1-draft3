@@ -1,4 +1,3 @@
-import Mathlib
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 
 /-!
@@ -7,9 +6,9 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 The lecture characterizes the nonarchimedean property of an absolute value on a
 field `k` by bounding the values of the natural-number sums `1 + ⋯ + 1`.
 Mathlib already provides the forward implication: a nonarchimedean absolute
-value satisfies `|n| ≤ 1` for every natural number `n`. This file records the
-full iff statement from the lecture and isolates the converse as the remaining
-book-level bridge lemma.
+value satisfies `|n| ≤ 1` for every natural number `n`. This file packages that
+estimate together with the converse bridge lemma to record the lecture's full
+iff criterion.
 -/
 
 namespace SutherlandNumberTheoryLecture1
