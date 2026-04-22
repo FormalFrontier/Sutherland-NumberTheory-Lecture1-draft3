@@ -1471,10 +1471,10 @@
     }
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#516",
-    "notes": "Issue #516 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean` against `blobs/Chapter1/01_15a_Discussion.md`. The finalized discussion still depends directly on `Chapter1/01_10_Definition`, `Chapter1/01_12_Definition`, and `Chapter1/01_13_Definition` for the lecture's DVR/local/residue-field vocabulary, and it now also depends directly on `Chapter1/01_13a_Discussion` because the maximality theorem is proved by importing the recovered-valuation subring machinery from that discussion. No conservative edge trimmed away here; the Stage 3.5 pass adds the previously missing direct dependency while preserving the Stage 3.4 theorem-level completion from issue #324.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#695",
+    "notes": "Issue #695 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean` against `blobs/Chapter1/01_15a_Discussion.md`. The cleanup kept the sorry-free DVR discussion statements intact, dropped the redundant top-level `Mathlib` import and unused namespace opening, and preserved the direct dependency snapshot on `Chapter1/01_10_Definition`, `Chapter1/01_12_Definition`, `Chapter1/01_13_Definition`, and `Chapter1/01_13a_Discussion` because the maximality theorem still uses the recovered-valuation machinery from that discussion.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
