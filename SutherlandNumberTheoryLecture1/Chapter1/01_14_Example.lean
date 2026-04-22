@@ -1,5 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_13_Definition»
+import Mathlib
 
 /-!
 # Example 1.14: the `p`-adic valuation ring on `ℚ`
