@@ -145,14 +145,6 @@ polynomial in `ℤ[X]`, contradicting the explicit coefficient calculation above
 -/
 theorem sqrtSevenWitness_not_isIntegral :
     ¬ IsIntegral ℤ sqrtSevenWitness := by
-  /-
-  Intended Stage 3.2 proof: apply Proposition 1.28 with `A = ℤ`, `K = ℚ`, and
-  `L = FractionRing (ℤ√7)`. If `sqrtSevenWitness` were integral over `ℤ`, then
-  `minpoly ℚ sqrtSevenWitness` would be the image of some monic polynomial in
-  `ℤ[X]`; `minpoly_sqrtSevenWitness` identifies that minimal polynomial with
-  `sqrtSevenWitnessPolynomial`, contradicting
-  `sqrtSevenWitnessPolynomial_not_in_integer_subring`.
-  -/
   intro hIntegral
   let towerA :
       @IsScalarTower ℤ ℚ (FractionRing ZSqrtSeven) Algebra.toSMul Algebra.toSMul Algebra.toSMul :=
