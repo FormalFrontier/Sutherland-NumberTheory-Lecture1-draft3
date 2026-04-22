@@ -1925,10 +1925,10 @@
     }
   },
   "Chapter1/01_20_Proposition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#535",
-    "notes": "Issue #535 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_20_Proposition`. Re-reading `blobs/Chapter1/01_20_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean` showed that `integral_extension_trans` is just a pointwise wrapper around Mathlib's `isIntegral_trans` plus the bundled typeclass assumptions `[Algebra.IsIntegral A B]` and `[Algebra.IsIntegral B C]`; it does not invoke any earlier book-specific declaration. The inherited dependency on `Chapter1/01_17_Definition` was therefore unnecessary, so `dependencies/internal.json[\"Chapter1/01_20_Proposition\"]` trims to `[]`, and the unused earlier-book import was removed before re-running `lake build`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#703",
+    "notes": "Issue #703 completed the Stage 3.6 polish pass for `Chapter1/01_20_Proposition`. Re-reading `blobs/Chapter1/01_20_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean` showed that the module could state the result directly via Mathlib's bundled extension-level theorem `Algebra.IsIntegral.trans` rather than re-deriving it pointwise from `isIntegral_trans`, so the proof and module docstring were tightened without changing the proposition's scope or introducing any book-item dependencies. The file still depends only on Mathlib's integrality API and `dependencies/internal.json[\"Chapter1/01_20_Proposition\"]` remains `[]` after re-running `lake build`.",
     "stage3_2_review": {
       "issue": "#408",
       "decision": "verified",
