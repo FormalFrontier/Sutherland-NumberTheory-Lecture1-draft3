@@ -782,10 +782,10 @@
     }
   },
   "Chapter1/01_10_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#494",
-    "notes": "Issue #494 completed the Stage 3.5 dependency review for `SutherlandNumberTheoryLecture1/Chapter1/01_10_Definition.lean`. Re-reading the blob against the sorry-free declarations showed that this file defines valuations, value groups, valuation rings, and the derived absolute value directly from Mathlib's `AddValuation` and `Valuation` APIs, so the earlier absolute-value item `Chapter1/01_02_Definition` is only transitive context and the direct dependency set trims to `[]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#681",
+    "notes": "Issue #681 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_10_Definition.lean`. Re-reading the blob against the sorry-free declarations confirmed that the file's valuation, value-group, valuation-ring, derived-absolute-value, and DVR interface is already Mathlib-aligned; the only cleanup needed was dropping the stale import of `Chapter1/01_02_Definition`, leaving the module with only the `Mathlib` import it actually uses.",
     "stage3_3_audit": {
       "issue": "#263",
       "decision": "clean",
