@@ -14,8 +14,6 @@ recall IsLocalRing.maximalIdeal (R : Type*) [CommSemiring R] [IsLocalRing R] : I
 namespace SutherlandNumberTheoryLecture1
 namespace Chapter1
 
-section Definition_01_12
-
 variable {R : Type*} [CommRing R]
 
 /-- Definition 1.12's unique-maximal-ideal condition is exactly `IsLocalRing`. -/
@@ -28,12 +26,10 @@ theorem localRing_iff_existsUnique_maximalIdeal :
   · intro h
     exact IsLocalRing.of_unique_max_ideal h
 
-/-- In a local ring, Mathlib's `maximalIdeal` is the lecture's distinguished maximal ideal. -/
+/-- In a local ring, Mathlib's `maximalIdeal` is maximal. -/
 theorem maximalIdeal_isMaximal [IsLocalRing R] :
     (IsLocalRing.maximalIdeal R).IsMaximal :=
   inferInstance
-
-end Definition_01_12
 
 end Chapter1
 end SutherlandNumberTheoryLecture1
