@@ -1787,10 +1787,10 @@
     }
   },
   "Chapter1/01_18_Proposition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#528",
-    "notes": "Issue #528 repaired conflicted PR #527 and completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean` against `blobs/Chapter1/01_18_Proposition.md`. The finalized proposition uses Mathlib's `IsIntegral.add` and `IsIntegral.mul` directly, and the earlier-book import of `Chapter1/01_17_Definition` was unnecessary, so the Lean file now imports only `Mathlib` and `dependencies/internal.json[\"Chapter1/01_18_Proposition\"]` correctly trims to the empty direct-dependency list `[]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#700",
+    "notes": "Issue #700 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean`. The proposition already matched `blobs/Chapter1/01_18_Proposition.md` and stayed dependency-free; the polish pass kept the file on a lone `Mathlib` import while tightening the finished module documentation around the direct use of `IsIntegral.add` and `IsIntegral.mul`.",
     "stage3_2_review": {
       "issue": "#127",
       "decision": "verified",
