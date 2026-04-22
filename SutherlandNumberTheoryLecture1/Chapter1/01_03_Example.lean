@@ -42,17 +42,13 @@ theorem trivialAbsoluteValue_isNonarchimedean :
   · simp [trivialAbsoluteValue, hx]
   by_cases hy : y = 0
   · simp [trivialAbsoluteValue, hy]
+  have hx1 : trivialAbsoluteValue (k := k) x = 1 :=
+    trivialAbsoluteValue_apply_of_ne_zero (k := k) hx
+  have hy1 : trivialAbsoluteValue (k := k) y = 1 :=
+    trivialAbsoluteValue_apply_of_ne_zero (k := k) hy
   by_cases hxy : x + y = 0
-  · have hx1 : trivialAbsoluteValue (k := k) x = 1 :=
-      trivialAbsoluteValue_apply_of_ne_zero (k := k) hx
-    have hy1 : trivialAbsoluteValue (k := k) y = 1 :=
-      trivialAbsoluteValue_apply_of_ne_zero (k := k) hy
-    simp [hxy, hx1, hy1]
-  · have hx1 : trivialAbsoluteValue (k := k) x = 1 :=
-      trivialAbsoluteValue_apply_of_ne_zero (k := k) hx
-    have hy1 : trivialAbsoluteValue (k := k) y = 1 :=
-      trivialAbsoluteValue_apply_of_ne_zero (k := k) hy
-    have hxy1 : trivialAbsoluteValue (k := k) (x + y) = 1 :=
+  · simp [hxy, hx1, hy1]
+  · have hxy1 : trivialAbsoluteValue (k := k) (x + y) = 1 :=
       trivialAbsoluteValue_apply_of_ne_zero (k := k) hxy
     simp [hx1, hy1, hxy1]
 
