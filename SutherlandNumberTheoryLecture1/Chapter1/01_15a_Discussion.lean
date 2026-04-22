@@ -1,4 +1,3 @@
-import Mathlib
 import SutherlandNumberTheoryLecture1.Chapter1.«01_13a_Discussion»
 
 /-!
@@ -26,8 +25,6 @@ in Mathlib, so it is retained here as an explicit theorem statement about
 namespace SutherlandNumberTheoryLecture1
 namespace Chapter1
 
-open IsLocalRing
-
 section Discussion_01_15a_Properties
 
 variable (A : Type*) [CommRing A] [IsDomain A] [IsDiscreteValuationRing A]
@@ -54,7 +51,7 @@ theorem dvr_isRegularLocalRing : IsRegularLocalRing A := by
 
 /-- The cotangent-space formulation of regularity specializes to dimension one for DVRs. -/
 theorem dvr_finrank_cotangentSpace_eq_one :
-    Module.finrank (ResidueField A) (CotangentSpace A) = 1 := by
+    Module.finrank (IsLocalRing.ResidueField A) (IsLocalRing.CotangentSpace A) = 1 := by
   simpa using IsLocalRing.finrank_CotangentSpace_eq_one (R := A)
 
 /-- A DVR is integrally closed in its fraction field. -/
@@ -121,20 +118,23 @@ theorem isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_pr
 /-- The regular-local characterization can be expressed through the cotangent
 space having dimension one over the residue field. -/
 theorem isDiscreteValuationRing_iff_finrank_cotangentSpace_eq_one :
-    IsDiscreteValuationRing A ↔ Module.finrank (ResidueField A) (CotangentSpace A) = 1 := by
+    IsDiscreteValuationRing A ↔
+      Module.finrank (IsLocalRing.ResidueField A) (IsLocalRing.CotangentSpace A) = 1 := by
   exact (IsLocalRing.finrank_CotangentSpace_eq_one_iff (R := A)).symm
 
 /-- A regular local domain of Krull dimension one is a DVR. -/
-theorem isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one
+  theorem isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one
     [IsRegularLocalRing A] (hA : ringKrullDim A = 1) :
     IsDiscreteValuationRing A := by
   have hreg :
-      Module.finrank (ResidueField A) (CotangentSpace A) = ringKrullDim A := by
+      Module.finrank (IsLocalRing.ResidueField A) (IsLocalRing.CotangentSpace A) =
+        ringKrullDim A := by
     exact (IsRegularLocalRing.iff_finrank_cotangentSpace (R := A)).mp inferInstance
   have hfin_cast :
-      (Module.finrank (ResidueField A) (CotangentSpace A) : ℕ∞) = 1 := by
+      (Module.finrank (IsLocalRing.ResidueField A) (IsLocalRing.CotangentSpace A) : ℕ∞) = 1 := by
     simpa [hA] using hreg
-  have hfin : Module.finrank (ResidueField A) (CotangentSpace A) = 1 := by
+  have hfin :
+      Module.finrank (IsLocalRing.ResidueField A) (IsLocalRing.CotangentSpace A) = 1 := by
     exact_mod_cast hfin_cast
   exact (IsLocalRing.finrank_CotangentSpace_eq_one_iff (R := A)).mp hfin
 
