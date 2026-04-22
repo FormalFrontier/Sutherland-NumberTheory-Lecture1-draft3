@@ -1739,10 +1739,10 @@
     }
   },
   "Chapter1/01_17_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#524",
-    "notes": "Issue #524 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_17_Definition`. Re-reading `blobs/Chapter1/01_17_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean` showed that the file only recalls Mathlib's `IsIntegral` / `Algebra.IsIntegral` notions and packages them into the two equivalence theorems `integral_element_iff` and `integral_extension_iff`; it does not invoke any earlier book-specific declaration. The previous dependency on `Chapter1/01_16a_Discussion` was therefore motivational context rather than a direct formal dependency, so `dependencies/internal.json[\"Chapter1/01_17_Definition\"]` trims to `[]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#699",
+    "notes": "Issue #699 completed the Stage 3.6 polish pass for `Chapter1/01_17_Definition`. The Lean file already matched the blob cleanly, so the pass tightened the module prose and declaration docstrings while preserving the Mathlib-only dependency footprint and the two equivalence theorems `integral_element_iff` and `integral_extension_iff` unchanged.",
     "stage3_2_review": {
       "issue": "#129",
       "decision": "verified",
