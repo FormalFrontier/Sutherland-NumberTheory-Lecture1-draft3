@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.NumberTheory.Ostrowski
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 
 /-!
