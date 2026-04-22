@@ -1,0 +1,160 @@
+#!/usr/bin/env bash
+# scripts/ff-status — summarise item progression for a FormalFrontier project.
+#
+# Intended for agents working inside the project; the human-facing `ff` CLI
+# does not include this. Reads `progress/status.json` and
+# `dependencies/internal.json` from the project root.
+#
+# The known-status set is hardcoded below and must be kept in sync with the
+# status enumeration in PLAN.md. Anything outside the known set is reported as
+# UNRECOGNISED — there is no backward-compatibility alias for legacy names.
+#
+# Requires: jq.
+
+set -euo pipefail
+
+STATUS_FILE="progress/status.json"
+DEPS_FILE="dependencies/internal.json"
+
+KNOWN_STATUSES='[
+  "identified",
+  "extracted",
+  "scaffolded",
+  "definition_verified",
+  "claims_audited",
+  "proof_formalized",
+  "sorry_free",
+  "dependency_trimmed",
+  "polished",
+  "non_formalizable",
+  "structured"
+]'
+
+TERMINAL_STATUSES='["polished", "non_formalizable", "structured"]'
+
+usage() {
+  cat <<EOF
+Usage: scripts/ff-status [MODE]
+
+Modes:
+  (no args)         Summary: totals, non-terminal count, UNRECOGNISED count,
+                    and per-phase counts.
+  --non-terminal    List items whose status is not terminal. Includes both
+                    known-non-terminal statuses and UNRECOGNISED values.
+                    Output: <item_id><TAB><status>
+  --phase NAME      List items in that phase. Pass "UNRECOGNISED" to list
+                    items whose status is not in the known set.
+                    Output: <item_id><TAB><status>
+  --deps ITEM       List the direct dependencies of ITEM with their current
+                    statuses. Output: <dep_id><TAB><status>
+                    MISSING if a dependency has no entry in status.json.
+  -h | --help       Show this help.
+
+The known-status set, sorted by pipeline order:
+  identified extracted scaffolded definition_verified claims_audited
+  proof_formalized sorry_free dependency_trimmed polished
+plus two off-branch terminals: non_formalizable, structured.
+
+Terminal set: polished, non_formalizable, structured.
+EOF
+}
+
+need_file() {
+  if [ ! -f "$1" ]; then
+    echo "ff-status: $1 not found (run from project root)" >&2
+    exit 2
+  fi
+}
+
+case "${1:-}" in
+  -h|--help)
+    usage
+    exit 0
+    ;;
+
+  "")
+    need_file "$STATUS_FILE"
+    jq -r --argjson known "$KNOWN_STATUSES" --argjson terminal "$TERMINAL_STATUSES" '
+      [to_entries[] | select(.value | type == "object") | .value.status] as $statuses
+      | ($statuses | length) as $total
+      | ($statuses
+          | group_by(.)
+          | map({status: .[0], count: length})
+          | sort_by(-.count)) as $buckets
+      | ($statuses | map(. as $s | select($known | index($s) | not)) | length) as $bad
+      | ($statuses
+          | map(. as $s | select(($terminal | index($s) | not) and ($known | index($s))))
+          | length) as $nonterm
+      | "Total items: \($total)",
+        "Non-terminal: \($nonterm)",
+        "UNRECOGNISED: \($bad)",
+        "",
+        "Phase totals:",
+        ($buckets[]
+          | .status as $s
+          | "  \($s)\(if ($known | index($s)) then "" else " [UNRECOGNISED]" end): \(.count)")
+    ' "$STATUS_FILE"
+    ;;
+
+  --non-terminal)
+    need_file "$STATUS_FILE"
+    jq -r --argjson terminal "$TERMINAL_STATUSES" '
+      to_entries[]
+      | select(.value | type == "object")
+      | select(.value.status as $s | $terminal | index($s) | not)
+      | "\(.key)\t\(.value.status)"
+    ' "$STATUS_FILE"
+    ;;
+
+  --phase)
+    shift
+    phase="${1:-}"
+    if [ -z "$phase" ]; then
+      echo "ff-status: --phase requires a phase name" >&2
+      exit 2
+    fi
+    need_file "$STATUS_FILE"
+    if [ "$phase" = "UNRECOGNISED" ]; then
+      jq -r --argjson known "$KNOWN_STATUSES" '
+        to_entries[]
+        | select(.value | type == "object")
+        | select(.value.status as $s | $known | index($s) | not)
+        | "\(.key)\t\(.value.status)"
+      ' "$STATUS_FILE"
+    else
+      jq -r --arg p "$phase" '
+        to_entries[]
+        | select(.value | type == "object")
+        | select(.value.status == $p)
+        | "\(.key)\t\(.value.status)"
+      ' "$STATUS_FILE"
+    fi
+    ;;
+
+  --deps)
+    shift
+    item="${1:-}"
+    if [ -z "$item" ]; then
+      echo "ff-status: --deps requires an item id" >&2
+      exit 2
+    fi
+    need_file "$STATUS_FILE"
+    need_file "$DEPS_FILE"
+    if ! jq -e --arg i "$item" 'has($i)' "$DEPS_FILE" >/dev/null; then
+      echo "ff-status: $item has no entry in $DEPS_FILE" >&2
+      exit 3
+    fi
+    jq -r --arg i "$item" --slurpfile s "$STATUS_FILE" '
+      .[$i][]
+      | . as $d
+      | ($s[0][$d] // null) as $entry
+      | "\($d)\t\(if $entry == null then "MISSING" else ($entry.status // "MISSING") end)"
+    ' "$DEPS_FILE"
+    ;;
+
+  *)
+    echo "ff-status: unknown mode: $1" >&2
+    usage >&2
+    exit 2
+    ;;
+esac

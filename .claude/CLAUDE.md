@@ -32,6 +32,9 @@ Store only **direct** dependencies. The conservative default is a linear chain: 
 ### Zero Warnings
 `lake build` is configured with `warningAsError = true` in `lakefile.toml`, and CI runs `lake build --wfail`. A file that emits any warning — including every linter warning — will not build. Fix the warning; do not suppress it. The only acceptable escape is a narrowly-scoped `set_option linter.X false in` attached to a single declaration, with a one-line comment explaining why. A project-wide `set_option warningAsError false` is never acceptable.
 
+### Plan-vs-Status Audit (planner)
+Before `coordination return-to-human`, run `scripts/ff-status --non-terminal`. For each item listed, use `scripts/ff-status --deps ITEM` and the stage description in `PLAN.md` to judge whether the item is ready to advance; create an issue for each.
+
 ## When Stuck
 
 ### Read the book first (mandatory)

@@ -830,8 +830,6 @@ Each status is set by a specific stage:
 | `dependency_trimmed` | Stage 3.5 | Actual dependencies analyzed and recorded |
 | `polished` | Stage 3.6 | `.lean` file builds clean under `warningAsError = true` and meets Mathlib style (for proof blobs, also tactic cleanup) |
 
-Migration note: projects initialized before this plan revision may still have entries with status `proof_polished`. Treat `proof_polished` as equivalent to `polished` for the purpose of gating Stage 3.7, and migrate entries to `polished` when any other change is made to them.
-
 Special statuses (set during review):
 - `needs_definition` — the item has a definition-level sorry or coverage gap that must be resolved before downstream theorems are meaningful. Set by Stage 3.2 (scaffolding review fails) or Stage 3.3 (missing-claims audit finds gaps). Returns to `definition_verified` / `claims_audited` once resolved.
 - `attention_needed` — requires specialized agent attention (e.g., wrong statement, repeated failures)
