@@ -46,7 +46,7 @@ theorem isUnit_iff_valuation_eq_zero (v : RealValuation k) (x : valuationSubring
 theorem unitGroup_eq_zeroValuation_set (v : RealValuation k) :
     {x : valuationSubring v | IsUnit x} = {x : valuationSubring v | v (x : k) = 0} := by
   ext x
-  exact isUnit_iff_valuation_eq_zero (v := v) x
+  simp [isUnit_iff_valuation_eq_zero]
 
 /-- Positive valuation picks out the maximal ideal, hence the nonunits of the ring. -/
 theorem mem_maximalIdeal_iff_valuation_pos (v : RealValuation k) (x : valuationSubring v) :
@@ -77,15 +77,16 @@ theorem not_mem_valuationSubring_of_neg (v : RealValuation k) {x : k} (hx : v x 
 
 /-- Strictly positive valuation means the corresponding ring element is a nonunit. -/
 theorem not_isUnit_of_pos (v : RealValuation k) {x : k} (hx : 0 < v x) :
-    ¬IsUnit (⟨x, mem_valuationSubring_of_pos (v := v) hx⟩ : valuationSubring v) := by
+    ¬ IsUnit (⟨x, mem_valuationSubring_of_pos (v := v) hx⟩ : valuationSubring v) := by
   rw [isUnit_iff_valuation_eq_zero]
   exact ne_of_gt hx
 
 /-- If `v(x) < 0`, then `x⁻¹` lies in the maximal ideal of the valuation ring. -/
 theorem inv_mem_maximalIdeal_of_neg (v : RealValuation k) {x : k} (hx : v x < 0) :
     (⟨x⁻¹, by
+      have hx_not_mem : x ∉ valuationSubring v := not_mem_valuationSubring_of_neg (v := v) hx
       rcases (valuationSubring v).mem_or_inv_mem x with hxmem | hxinv
-      · exact False.elim <| not_mem_valuationSubring_of_neg (v := v) hx hxmem
+      · exact False.elim <| hx_not_mem hxmem
       · exact hxinv
     ⟩ : valuationSubring v) ∈ IsLocalRing.maximalIdeal (valuationSubring v) := by
   rw [mem_maximalIdeal_iff_valuation_pos]
