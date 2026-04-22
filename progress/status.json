@@ -682,10 +682,10 @@
     }
   },
   "Chapter1/01_09_Theorem": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#490",
-    "notes": "Issue #490 completed the Stage 3.5 dependency-trimming review for `blobs/Chapter1/01_09_Theorem.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_09_Theorem.lean`. The finished product-formula module still depends directly on `Chapter1/01_07_Definition`: its declarations use `Rat.AbsoluteValue.real` and `Rat.AbsoluteValue.padic`, and the finite-support theorem adds no other direct book-item inputs, so `dependencies/internal.json[\"Chapter1/01_09_Theorem\"]` correctly remains `[\"Chapter1/01_07_Definition\"]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#680",
+    "notes": "Issue #680 completed the Stage 3.6 polish pass for `blobs/Chapter1/01_09_Theorem.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_09_Theorem.lean`. The cleanup kept the theorem statements and the direct book-item dependency on `Chapter1/01_07_Definition` unchanged, narrowed the blanket `Mathlib` import to `Mathlib.NumberTheory.Ostrowski`, and simplified a pair of reducible `rfl` rewrites in the finite-support product proof without changing scope.",
     "stage3_2_review": {
       "issue": "#373",
       "decision": "clean",
