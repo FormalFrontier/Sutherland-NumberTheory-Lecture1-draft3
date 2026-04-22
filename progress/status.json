@@ -1161,10 +1161,10 @@
     }
   },
   "Chapter1/01_12_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#504",
-    "notes": "Issue #504 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_12_Definition.lean` against `blobs/Chapter1/01_12_Definition.md`. The finished file is a standalone Mathlib wrapper around `IsLocalRing`, proving the lecture's unique-maximal-ideal characterization and the maximality of `IsLocalRing.maximalIdeal` without importing or using any earlier project item, so `dependencies/internal.json[\"Chapter1/01_12_Definition\"]` trims from the conservative `Chapter1/01_11a_Discussion` edge to the empty direct-dependency list `[]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#688",
+    "notes": "Issue #688 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_12_Definition.lean` against `blobs/Chapter1/01_12_Definition.md`. The file was already a sorry-free standalone Mathlib wrapper for the lecture's local-ring definition, so the cleanup kept the same theorem statements and empty direct-dependency list while trimming namespace scaffolding and confirming the minimal import footprint remains just `Mathlib`.",
     "stage3_3_audit": {
       "issue": "#263",
       "decision": "clean",
