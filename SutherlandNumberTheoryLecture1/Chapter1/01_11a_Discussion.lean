@@ -15,8 +15,6 @@ namespace Chapter1
 
 section Discussion_01_11a
 
-open scoped BigOperators
-
 variable {k : Type*} [Field k]
 variable (v : RealValuation k)
 
