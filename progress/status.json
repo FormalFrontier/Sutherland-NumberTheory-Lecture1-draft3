@@ -42,7 +42,7 @@
     "notes": "Stage 1.6 structure analysis assigned every line on logical pages 1 through 7 to ordered items in items.json; page 7 covers Definition 1.26, Remark 1.27, Proposition 1.28 with proof, Example 1.29, and the references bibliography."
   },
   "Chapter1/01_00_Introduction": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#469",
     "notes": "Issue #469 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_00_Introduction.lean` against `blobs/Chapter1/01_00_Introduction.md`. The introduction formalizes standalone background vocabulary with Mathlib imports only and no earlier book-item references, so `dependencies/internal.json[\"Chapter1/01_00_Introduction\"]` correctly remains the empty direct-dependency list `[]`. The completion/local-field survey sentence remains separately recorded as the existing `formalizable_later` claim rather than as a Stage 3.3 omission.",
@@ -276,7 +276,7 @@
     }
   },
   "Chapter1/01_02_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#468",
     "notes": "Issue #468 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_02_Definition`. Re-reading blobs/Chapter1/01_02_Definition.md against SutherlandNumberTheoryLecture1/Chapter1/01_02_Definition.lean showed that the file imports only `Mathlib`, recalls `AbsoluteValue`, and proves `isNonarchimedean_iff` by `Iff.rfl`, so the conservative placeholder dependency on `Chapter1/01_01a_Discussion` was removed and the trimmed direct dependency set is `[]`.",
@@ -316,7 +316,7 @@
     }
   },
   "Chapter1/01_03_Example": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#467",
     "notes": "Issue #467 performed the Stage 3.5 dependency review for SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean against blobs/Chapter1/01_03_Example.md and confirmed that the direct dependency on Chapter1/01_02_Definition survives trimming because the example's claims are precisely that the displayed map is an absolute value and that it is nonarchimedean, both notions introduced in Definition 1.2; the conservative dependency entry therefore remains unchanged.",
@@ -357,7 +357,7 @@
     }
   },
   "Chapter1/01_04_Lemma": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#472",
     "notes": "Issue #472 completed the Stage 3.5 dependency-trimming pass for `SutherlandNumberTheoryLecture1/Chapter1/01_04_Lemma.lean`. Re-reading the blob against the sorry-free declarations confirmed that the conservative direct dependency on `Chapter1/01_02_Definition` is genuine: every theorem in the file is stated in terms of the `AbsoluteValue` and `IsNonarchimedean` notions introduced by Definition 1.2, so `dependencies/internal.json` correctly remains unchanged.",
@@ -419,7 +419,7 @@
     "upstreaming_status": "rejected"
   },
   "Chapter1/01_05_Corollary": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#477",
     "notes": "Issue #477 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` against `blobs/Chapter1/01_05_Corollary.md`. The positive-characteristic declaration still directly invokes Lemma 1.4 through `isNonarchimedean_of_natCast_le_one`, while the finite-field declaration is self-contained once the corollary file is loaded, so `dependencies/internal.json[\"Chapter1/01_05_Corollary\"]` correctly remains `[\"Chapter1/01_04_Lemma\"]` with no additional direct book-item dependencies.",
@@ -530,7 +530,7 @@
     }
   },
   "Chapter1/01_06_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#483",
     "notes": "Issue #483 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_06_Definition.lean` against `blobs/Chapter1/01_06_Definition.md`. The conservative direct dependency on `Chapter1/01_02_Definition` is genuine: Definition 1.6 introduces equivalence only for previously defined absolute values, and both finalized theorems are parameterized by `AbsoluteValue k ℝ`, so `dependencies/internal.json[\"Chapter1/01_06_Definition\"]` correctly remains `[\"Chapter1/01_02_Definition\"]`.",
@@ -550,7 +550,7 @@
     }
   },
   "Chapter1/01_06a_Discussion": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#482",
     "notes": "Stage 3.5 dependency trimming under issue #482 re-read `blobs/Chapter1/01_06a_Discussion.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_06a_Discussion.lean`. The completed file does not use `Chapter1/01_06_Definition`: the archimedean absolute-value declarations and the infinitude-of-nonarchimedean-places theorem are proved directly from Mathlib, while the uniqueness part of `existsUnique_signed_primeFactorization` actually uses `padicValuation` and `padicValuation_eq_exponent_of_factorization` from `Chapter1/01_07_Definition`. Accordingly `dependencies/internal.json[\"Chapter1/01_06a_Discussion\"]` trims to `[\"Chapter1/01_07_Definition\"]`.",
@@ -607,7 +607,7 @@
     }
   },
   "Chapter1/01_07_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#486",
     "notes": "Issue #486 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_07_Definition.lean` against `blobs/Chapter1/01_07_Definition.md`. The finished file does not use the preceding discussion item `Chapter1/01_06a_Discussion`; instead, its direct textbook dependency is `Chapter1/01_02_Definition`, because Definition 1.7 packages a specific nonarchimedean absolute value and the finalized declarations are stated in terms of Mathlib's `AbsoluteValue` interface introduced there. Accordingly `dependencies/internal.json[\"Chapter1/01_07_Definition\"]` trims from `[\"Chapter1/01_06a_Discussion\"]` to `[\"Chapter1/01_02_Definition\"]`.",
@@ -641,7 +641,7 @@
     }
   },
   "Chapter1/01_08_Theorem": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#487",
     "notes": "Issue #487 completed the Stage 3.5 dependency-trimming review for `blobs/Chapter1/01_08_Theorem.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_08_Theorem.lean`. The finished module only recalls Mathlib's Ostrowski classification API (`Rat.AbsoluteValue.real`, `Rat.AbsoluteValue.padic`, `Rat.AbsoluteValue.equiv_real_or_padic`, and `Rat.AbsoluteValue.not_real_isEquiv_padic`) and does not invoke the project declarations from `Chapter1/01_06_Definition` or `Chapter1/01_07_Definition`, so `dependencies/internal.json[\"Chapter1/01_08_Theorem\"]` trims to `[]`.",
@@ -682,7 +682,7 @@
     }
   },
   "Chapter1/01_09_Theorem": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#490",
     "notes": "Issue #490 completed the Stage 3.5 dependency-trimming review for `blobs/Chapter1/01_09_Theorem.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_09_Theorem.lean`. The finished product-formula module still depends directly on `Chapter1/01_07_Definition`: its declarations use `Rat.AbsoluteValue.real` and `Rat.AbsoluteValue.padic`, and the finite-support theorem adds no other direct book-item inputs, so `dependencies/internal.json[\"Chapter1/01_09_Theorem\"]` correctly remains `[\"Chapter1/01_07_Definition\"]`.",
@@ -782,7 +782,7 @@
     }
   },
   "Chapter1/01_10_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#494",
     "notes": "Issue #494 completed the Stage 3.5 dependency review for `SutherlandNumberTheoryLecture1/Chapter1/01_10_Definition.lean`. Re-reading the blob against the sorry-free declarations showed that this file defines valuations, value groups, valuation rings, and the derived absolute value directly from Mathlib's `AddValuation` and `Valuation` APIs, so the earlier absolute-value item `Chapter1/01_02_Definition` is only transitive context and the direct dependency set trims to `[]`.",
@@ -830,7 +830,7 @@
     }
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#499",
     "notes": "Issue #499 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` against `blobs/Chapter1/01_10a_Discussion.md`. The finished discussion file still depends directly on `Chapter1/01_10_Definition`: it imports that module and uses its `RealValuation`, `valuationSubring`, and `mem_valuationSubring_iff` declarations throughout the valuation-ring structure and sign-partition theorems, so `dependencies/internal.json[\"Chapter1/01_10a_Discussion\"]` correctly remains `[\"Chapter1/01_10_Definition\"]`.",
@@ -995,7 +995,7 @@
     }
   },
   "Chapter1/01_11_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#498",
     "notes": "Issue #498 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_11_Definition.lean` against `blobs/Chapter1/01_11_Definition.md`. The finished file imports only `Mathlib` and proves both valuation-ring equivalences directly from Mathlib's `ValuationRing.iff_isInteger_or_isInteger_inv`, so the lecture definition no longer has any direct dependency on `Chapter1/01_10a_Discussion`; `dependencies/internal.json[\"Chapter1/01_11_Definition\"]` is now `[]`.",
@@ -1015,7 +1015,7 @@
     }
   },
   "Chapter1/01_11a_Discussion": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#503",
     "notes": "Issue #503 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_11a_Discussion.lean` against `blobs/Chapter1/01_11a_Discussion.md`. The finished discussion file directly depends on `Chapter1/01_10_Definition` for the lecture's `RealValuation`, `asValuation`, and `valuationSubring` interface, and on `Chapter1/01_10a_Discussion` for the closing theorem `mem_maximalIdeal_iff_valuation_pos`; the `Chapter1/01_11_Definition` import was stale and trimmed away, so `dependencies/internal.json[\"Chapter1/01_11a_Discussion\"]` is now `[\"Chapter1/01_10_Definition\", \"Chapter1/01_10a_Discussion\"]`.",
@@ -1161,7 +1161,7 @@
     }
   },
   "Chapter1/01_12_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#504",
     "notes": "Issue #504 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_12_Definition.lean` against `blobs/Chapter1/01_12_Definition.md`. The finished file is a standalone Mathlib wrapper around `IsLocalRing`, proving the lecture's unique-maximal-ideal characterization and the maximality of `IsLocalRing.maximalIdeal` without importing or using any earlier project item, so `dependencies/internal.json[\"Chapter1/01_12_Definition\"]` trims from the conservative `Chapter1/01_11a_Discussion` edge to the empty direct-dependency list `[]`.",
@@ -1181,7 +1181,7 @@
     }
   },
   "Chapter1/01_13_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#509",
     "notes": "Issue #509 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_13_Definition`. Re-reading `blobs/Chapter1/01_13_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_13_Definition.lean` confirmed that the finished residue-field wrapper still depends directly on `Chapter1/01_12_Definition`: the item is stated in terms of a local ring and its maximal ideal, and no earlier book items are used directly beyond that prerequisite. The existing `dependencies/internal.json` entry already matched the trimmed direct-dependency set, so no dependency-list edit was needed.",
@@ -1229,7 +1229,7 @@
     }
   },
   "Chapter1/01_13a_Discussion": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#508",
     "notes": "Issue #508 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_13a_Discussion`. Re-reading `blobs/Chapter1/01_13a_Discussion.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_13a_Discussion.lean` showed that the finalized discussion still directly depends on `Chapter1/01_10_Definition` for the valuation/DVR setup and on `Chapter1/01_12_Definition` for the unique maximal ideal of the local ring; `Chapter1/01_13_Definition` is not a direct book dependency here, so the existing trimmed dependency entry already matched the finished file.",
@@ -1333,7 +1333,7 @@
     }
   },
   "Chapter1/01_14_Example": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#513",
     "notes": "Issue #513 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_14_Example.lean` against `blobs/Chapter1/01_14_Example.md`. The finished example still depends directly on `Chapter1/01_10_Definition` for the lecture's valuation-ring viewpoint and on `Chapter1/01_13_Definition` for the residue-field wrapper used by the closing identification, but `Chapter1/01_07_Definition` is only contextual: the finalized declarations never invoke the project-specific `p`-adic valuation construction, so that edge trims away. The Stage 3.4 proof completion from issue #335 remains in force with no further scaffold changes.",
@@ -1395,7 +1395,7 @@
     }
   },
   "Chapter1/01_15_Example": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#517",
     "notes": "Issue #517 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean` against `blobs/Chapter1/01_15_Example.md`. The finalized Laurent-series example no longer has any genuine direct earlier-book dependencies: its valuation object, valuation-ring characterization, order-of-vanishing wrapper, and valuation-at-`\\alpha` theorem all use Mathlib's bundled `LaurentSeries`, `PowerSeries`, and `RatFunc` APIs directly, so the old conservative edge to `Chapter1/01_10_Definition` trims away. The Stage 3.4 proof completion from issue #334 remains in force with no scaffold changes.",
@@ -1471,7 +1471,7 @@
     }
   },
   "Chapter1/01_15a_Discussion": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#516",
     "notes": "Issue #516 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_15a_Discussion.lean` against `blobs/Chapter1/01_15a_Discussion.md`. The finalized discussion still depends directly on `Chapter1/01_10_Definition`, `Chapter1/01_12_Definition`, and `Chapter1/01_13_Definition` for the lecture's DVR/local/residue-field vocabulary, and it now also depends directly on `Chapter1/01_13a_Discussion` because the maximality theorem is proved by importing the recovered-valuation subring machinery from that discussion. No conservative edge trimmed away here; the Stage 3.5 pass adds the previously missing direct dependency while preserving the Stage 3.4 theorem-level completion from issue #324.",
@@ -1580,7 +1580,7 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#521",
     "notes": "Issue #521 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean` against `blobs/Chapter1/01_16_Theorem.md` and the imported core implementation in `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean`. The theorem wrapper is still just a re-export, but the finalized seven-way DVR characterization genuinely depends on `Chapter1/01_15a_Discussion`: `01_16_Core.lean` imports that discussion and uses its direct helper theorems `dvr_isIntegrallyClosed`, `dvr_ringKrullDim_eq_one`, `dvr_fractionRing_maximal_subalgebra`, `isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_prime`, and `isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one`. No further earlier-book dependency is referenced, so the Stage 3.5 pass retains the single direct edge while preserving the Stage 3.4 proof completion from issue #325.",
@@ -1739,7 +1739,7 @@
     }
   },
   "Chapter1/01_17_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#524",
     "notes": "Issue #524 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_17_Definition`. Re-reading `blobs/Chapter1/01_17_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_17_Definition.lean` showed that the file only recalls Mathlib's `IsIntegral` / `Algebra.IsIntegral` notions and packages them into the two equivalence theorems `integral_element_iff` and `integral_extension_iff`; it does not invoke any earlier book-specific declaration. The previous dependency on `Chapter1/01_16a_Discussion` was therefore motivational context rather than a direct formal dependency, so `dependencies/internal.json[\"Chapter1/01_17_Definition\"]` trims to `[]`.",
@@ -1787,7 +1787,7 @@
     }
   },
   "Chapter1/01_18_Proposition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#528",
     "notes": "Issue #528 repaired conflicted PR #527 and completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_18_Proposition.lean` against `blobs/Chapter1/01_18_Proposition.md`. The finalized proposition uses Mathlib's `IsIntegral.add` and `IsIntegral.mul` directly, and the earlier-book import of `Chapter1/01_17_Definition` was unnecessary, so the Lean file now imports only `Mathlib` and `dependencies/internal.json[\"Chapter1/01_18_Proposition\"]` correctly trims to the empty direct-dependency list `[]`.",
@@ -1884,7 +1884,7 @@
     }
   },
   "Chapter1/01_19_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#530",
     "notes": "Issue #530 re-read `blobs/Chapter1/01_19_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean`, confirmed the file only packages bundled Mathlib facts about `integralClosure`, `IsIntegrallyClosedIn`, and `IsIntegrallyClosed`, removed unused imports of `01_17_Definition` and `01_18_Proposition`, trimmed `dependencies/internal.json[\"Chapter1/01_19_Definition\"]` to `[]`, and verified the metadata edit with `lake build` after the session cache bootstrap.",
@@ -1925,7 +1925,7 @@
     }
   },
   "Chapter1/01_20_Proposition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#535",
     "notes": "Issue #535 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_20_Proposition`. Re-reading `blobs/Chapter1/01_20_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_20_Proposition.lean` showed that `integral_extension_trans` is just a pointwise wrapper around Mathlib's `isIntegral_trans` plus the bundled typeclass assumptions `[Algebra.IsIntegral A B]` and `[Algebra.IsIntegral B C]`; it does not invoke any earlier book-specific declaration. The inherited dependency on `Chapter1/01_17_Definition` was therefore unnecessary, so `dependencies/internal.json[\"Chapter1/01_20_Proposition\"]` trims to `[]`, and the unused earlier-book import was removed before re-running `lake build`.",
@@ -2007,7 +2007,7 @@
     }
   },
   "Chapter1/01_21_Corollary": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#539",
     "notes": "Issue #539 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_21_Corollary`. Re-reading `blobs/Chapter1/01_21_Corollary.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_21_Corollary.lean` showed that `integralClosure_isIntegrallyClosedIn` is a direct wrapper around Mathlib's `IsIntegrallyClosedIn.of_isIntegralClosure`; it does not invoke any earlier book-specific declaration, so the inherited dependencies on `Chapter1/01_19_Definition` and `Chapter1/01_20_Proposition` were removed along with their unused imports. `dependencies/internal.json[\"Chapter1/01_21_Corollary\"]` therefore trims to `[]`, and the result was verified with `lake build` after the session cache bootstrap.",
@@ -2104,7 +2104,7 @@
     }
   },
   "Chapter1/01_22_Proposition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#543",
     "notes": "Issue #543 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_22_Proposition`. Re-reading `blobs/Chapter1/01_22_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_22_Proposition.lean` confirmed that `integers_isIntegrallyClosed` is just `inferInstance` for Mathlib's bundled `IsIntegrallyClosed ℤ`, so no earlier-book declaration is actually used; the stale `Chapter1/01_19_Definition` import was removed, `dependencies/internal.json[\"Chapter1/01_22_Proposition\"]` trims to `[]`, and `lake build` succeeded after the cleanup.",
@@ -2215,7 +2215,7 @@
     }
   },
   "Chapter1/01_23_Corollary": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#547",
     "notes": "Issue #547 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_23_Corollary`. Re-reading `blobs/Chapter1/01_23_Corollary.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_23_Corollary.lean` confirmed that both corollary clauses are direct Mathlib instance wrappers (`UniqueFactorizationMonoid.instIsIntegrallyClosed` and `infer_instance` for PIDs), so no earlier Chapter 1 declaration is used; the stale `Chapter1/01_22_Proposition` import was removed, `dependencies/internal.json[\"Chapter1/01_23_Corollary\"]` trims to `[]`, and the targeted `lake build` check succeeded.",
@@ -2298,7 +2298,7 @@
     }
   },
   "Chapter1/01_24_Example": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#557",
     "notes": "Issue #557 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_24_Example`. Re-reading `blobs/Chapter1/01_24_Example.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_24_Example.lean` showed that the finalized example is self-contained except for its use of `ufd_isIntegrallyClosed` and `pid_isIntegrallyClosed` from `Chapter1/01_23_Corollary` in the closing non-UFD / non-PID consequences, so the stale transitive dependency on `Chapter1/01_17_Definition` was removed and the direct dependency set trims to `[\"Chapter1/01_23_Corollary\"]`.",
@@ -2391,7 +2391,7 @@
     }
   },
   "Chapter1/01_25_Proposition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#558",
     "notes": "Issue #558 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_25_Proposition`. Re-reading `blobs/Chapter1/01_25_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_25_Proposition.lean` confirmed that the finalized file still uses exactly the direct Chapter 1 notions already recorded: `Chapter1/01_11_Definition` for the valuation-ring dichotomy exposed by `valuationRing_integer_or_inv_integer`, and `Chapter1/01_19_Definition` for the integrally closed predicate in the proposition statement. No stale transitive import or dependency remained to remove, `dependencies/internal.json[\"Chapter1/01_25_Proposition\"]` stays `[\"Chapter1/01_11_Definition\", \"Chapter1/01_19_Definition\"]`, and `lake build` succeeded after the session cache bootstrap.",
@@ -2460,7 +2460,7 @@
     }
   },
   "Chapter1/01_26_Definition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#563",
     "notes": "Stage 3.5 dependency trimming under issue #563 re-read `blobs/Chapter1/01_26_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_26_Definition.lean`, confirming that the finalized module uses only Mathlib's bundled `NumberField` and `NumberField.RingOfIntegers` APIs. The stale `Chapter1/01_19_Definition` import and internal dependency were removed, leaving no direct local dependencies for this item.",
@@ -2487,7 +2487,7 @@
     }
   },
   "Chapter1/01_27_Remark": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#564",
     "notes": "Stage 3.5 dependency review under issue #564 re-read `blobs/Chapter1/01_27_Remark.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean`, confirming that the finalized remark uses only Mathlib's `NumberField` and `NumberField.RingOfIntegers` APIs directly. The stale import of `Chapter1/01_26_Definition` was removed, `dependencies/internal.json` was trimmed to no internal predecessors, and the module still builds after the import cleanup.",
@@ -2521,7 +2521,7 @@
     }
   },
   "Chapter1/01_28_Proposition": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#569",
     "notes": "Stage 3.5 dependency trimming under issue #569 re-read `blobs/Chapter1/01_28_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`, confirmed the finalized module uses only Mathlib's bundled minimal-polynomial and integrally closed APIs, removed the stale import of `Chapter1/01_19_Definition`, and trimmed `dependencies/internal.json` so `Chapter1/01_28_Proposition` now has no direct local dependencies. `lake build` succeeded after the cleanup.",
@@ -2604,7 +2604,7 @@
     }
   },
   "Chapter1/01_29_Example": {
-    "status": "polished",
+    "status": "dependency_trimmed",
     "last_updated": "2026-04-21",
     "issue": "#570",
     "notes": "Issue #570 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_29_Example`. Re-reading `blobs/Chapter1/01_29_Example.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_29_Example.lean` confirmed that the finalized file still directly uses both `goldenRatio_isIntegral_over_int` from `Chapter1/01_24_Example` for the opening comparison and Proposition `1.28` from `Chapter1/01_28_Proposition` in the final non-integrality argument, so the existing direct dependency set `[\"Chapter1/01_24_Example\", \"Chapter1/01_28_Proposition\"]` was already minimal and was retained unchanged.",
