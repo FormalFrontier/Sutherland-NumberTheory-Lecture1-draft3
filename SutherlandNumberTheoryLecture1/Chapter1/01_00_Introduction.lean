@@ -1,7 +1,4 @@
 import Mathlib
-import Mathlib.RingTheory.UniqueFactorizationDomain.NormalizedFactors
-
-open Polynomial
 
 /-!
 # Introduction 1.0: Global-field vocabulary
