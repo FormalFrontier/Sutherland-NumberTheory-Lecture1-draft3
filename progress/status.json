@@ -2487,10 +2487,10 @@
     }
   },
   "Chapter1/01_27_Remark": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#564",
-    "notes": "Stage 3.5 dependency review under issue #564 re-read `blobs/Chapter1/01_27_Remark.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean`, confirming that the finalized remark uses only Mathlib's `NumberField` and `NumberField.RingOfIntegers` APIs directly. The stale import of `Chapter1/01_26_Definition` was removed, `dependencies/internal.json` was trimmed to no internal predecessors, and the module still builds after the import cleanup.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#714",
+    "notes": "Stage 3.6 polish under issue #714 rechecked `blobs/Chapter1/01_27_Remark.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_27_Remark.lean` and simplified the reverse direction of `isOrder_iff_isZLattice_and_isRingSubmodule` to a shorter Mathlib-style proof, without changing scope or dependencies.",
     "stage3_3_audit": {
       "issue": "#272",
       "decision": "clean_after_repair",
