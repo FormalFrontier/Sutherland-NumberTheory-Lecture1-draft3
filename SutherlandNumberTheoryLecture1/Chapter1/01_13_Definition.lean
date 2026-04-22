@@ -6,8 +6,8 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_12_Definition»
 
 The lecture defines the residue field of a local ring `A` with maximal ideal
 `\mathfrak m` to be the quotient field `A / \mathfrak m`. Mathlib already
-bundles exactly this construction as `IsLocalRing.ResidueField A`, together
-with the canonical quotient map `IsLocalRing.residue A`.
+bundles this construction as `IsLocalRing.ResidueField A`, together with the
+canonical quotient map `IsLocalRing.residue A`.
 -/
 
 recall IsLocalRing.ResidueField (R : Type*) [CommRing R] [IsLocalRing R] : Type _
@@ -19,7 +19,7 @@ namespace Chapter1
 
 section Definition_01_13
 
-variable (A : Type*) [CommRing A] [IsLocalRing A]
+variable {A : Type*} [CommRing A] [IsLocalRing A]
 
 /-- Definition 1.13's residue field is the quotient by the local ring's maximal ideal. -/
 theorem residueField_eq_quotient :
