@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Analysis.AbsoluteValue.Equivalence
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 
 /-!
@@ -11,9 +11,6 @@ real-valued absolute values this is equivalent to the lecture's exponentiation
 criterion. This file records both viewpoints explicitly.
 -/
 
-recall AbsoluteValue.IsEquiv {R : Type u_1} [Semiring R] {S : Type u_2} [Semiring S]
-  [PartialOrder S] (v w : AbsoluteValue R S) : Prop
-
 namespace SutherlandNumberTheoryLecture1
 namespace Chapter1
 
@@ -24,7 +21,7 @@ variable {k : Type*} [Field k]
 /-- The lecture's definition is exactly Mathlib's `AbsoluteValue.IsEquiv`. -/
 theorem isEquiv_iff_exists_rpow_eq_pointwise (abv abv' : AbsoluteValue k ℝ) :
     abv.IsEquiv abv' ↔ ∃ α : ℝ, 0 < α ∧ ∀ x : k, abv x ^ α = abv' x := by
-  rw [AbsoluteValue.isEquiv_iff_exists_rpow_eq]
+  rw [abv.isEquiv_iff_exists_rpow_eq]
   constructor
   · rintro ⟨α, hα, hpow⟩
     exact ⟨α, hα, fun x => by simpa using congrFun hpow x⟩
