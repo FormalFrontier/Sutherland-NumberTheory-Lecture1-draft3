@@ -1,4 +1,4 @@
-import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
+import Mathlib
 
 /-!
 # Example 1.15: the Laurent-series valuation
@@ -64,7 +64,7 @@ theorem coeff_eq_zero_of_lt_orderOfVanishingAtZero (f : PowerSeries k) {n : ℕ}
     PowerSeries.coeff n f = 0 := by
   exact PowerSeries.coeff_of_lt_order n hn
 
-/-- The lecture's order-of-vanishing valuation at a point `α` is the Laurent expansion analogue
+/-- The lecture's order-of-vanishing valuation at a point `α` is the Laurent-expansion analogue
 of the `t`-adic case. -/
 theorem exists_orderOfVanishingAtPoint_valuation (α : k) :
     ∃ v : Valuation (RatFunc k) (WithZero (Multiplicative ℤ)),
