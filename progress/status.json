@@ -1395,10 +1395,10 @@
     }
   },
   "Chapter1/01_15_Example": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#517",
-    "notes": "Issue #517 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean` against `blobs/Chapter1/01_15_Example.md`. The finalized Laurent-series example no longer has any genuine direct earlier-book dependencies: its valuation object, valuation-ring characterization, order-of-vanishing wrapper, and valuation-at-`\\alpha` theorem all use Mathlib's bundled `LaurentSeries`, `PowerSeries`, and `RatFunc` APIs directly, so the old conservative edge to `Chapter1/01_10_Definition` trims away. The Stage 3.4 proof completion from issue #334 remains in force with no scaffold changes.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#694",
+    "notes": "Issue #694 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_15_Example.lean`. The cleanup removed the stale import of `Chapter1/01_10_Definition`, leaving the Laurent-series valuation example expressed directly in Mathlib's `LaurentSeries`, `PowerSeries`, and `RatFunc` APIs with the same statements and no direct earlier-book dependencies.",
     "stage3_2_review": {
       "issue": "#298",
       "decision": "clean",
