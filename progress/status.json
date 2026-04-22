@@ -830,10 +830,10 @@
     }
   },
   "Chapter1/01_10a_Discussion": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#499",
-    "notes": "Issue #499 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` against `blobs/Chapter1/01_10a_Discussion.md`. The finished discussion file still depends directly on `Chapter1/01_10_Definition`: it imports that module and uses its `RealValuation`, `valuationSubring`, and `mem_valuationSubring_iff` declarations throughout the valuation-ring structure and sign-partition theorems, so `dependencies/internal.json[\"Chapter1/01_10a_Discussion\"]` correctly remains `[\"Chapter1/01_10_Definition\"]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#683",
+    "notes": "Issue #683 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_10a_Discussion.lean` against `blobs/Chapter1/01_10a_Discussion.md`. The sorry-free discussion file kept the same valuation-ring interface and direct dependency on `Chapter1/01_10_Definition`, while the cleanup tightened the unit-group extensionality proof and factored the inverse-membership contradiction into a local hypothesis instead of repeating the negative-valuation nonmembership argument.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
