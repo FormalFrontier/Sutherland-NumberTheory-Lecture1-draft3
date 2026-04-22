@@ -1,5 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 
 /-!
 # Definition 1.10: Valuations, valuation rings, and DVRs
