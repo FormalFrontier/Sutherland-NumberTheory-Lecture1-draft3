@@ -995,10 +995,10 @@
     }
   },
   "Chapter1/01_11_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#498",
-    "notes": "Issue #498 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_11_Definition.lean` against `blobs/Chapter1/01_11_Definition.md`. The finished file imports only `Mathlib` and proves both valuation-ring equivalences directly from Mathlib's `ValuationRing.iff_isInteger_or_isInteger_inv`, so the lecture definition no longer has any direct dependency on `Chapter1/01_10a_Discussion`; `dependencies/internal.json[\"Chapter1/01_11_Definition\"]` is now `[]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#684",
+    "notes": "Issue #684 completed the Stage 3.6 polish review for `SutherlandNumberTheoryLecture1/Chapter1/01_11_Definition.lean` against `blobs/Chapter1/01_11_Definition.md`. The module was already sorry-free and Mathlib-aligned, so no Lean edits were needed beyond confirming that the `Mathlib`-only import set remains minimal, the two equivalence theorems stay scoped to the lecture definition, and the item is ready to advance from `dependency_trimmed` to `polished`.",
     "stage3_3_audit": {
       "issue": "#263",
       "decision": "clean",
