@@ -5,17 +5,13 @@ import Mathlib
 
 The lecture defines an absolute value on a field `k` as a function `k → ℝ_{\ge 0}`
 satisfying positive-definiteness, multiplicativity, and the triangle inequality.
-Mathlib packages exactly this data as `AbsoluteValue k ℝ`: the codomain is `ℝ`,
-and the bundled structure includes the nonnegativity proof that keeps all values in
-`ℝ_{\ge 0}`.
+Mathlib packages this data as `AbsoluteValue k ℝ`: the codomain is `ℝ`, and the
+bundled structure records the nonnegativity proof that keeps values in `ℝ_{\ge 0}`.
 
-This file therefore records the lecture's Definition 1.2 by recalling the bundled
+This file therefore records the lecture's Definition 1.2 by pointing to the bundled
 Mathlib structure and isolating the stronger nonarchimedean axiom as a separate
 declaration.
 -/
-
-recall AbsoluteValue (R : Type u_1) (S : Type u_2) [Semiring R] [Semiring S] [PartialOrder S] :
-  Type (max u_1 u_2)
 
 namespace SutherlandNumberTheoryLecture1
 namespace Chapter1
