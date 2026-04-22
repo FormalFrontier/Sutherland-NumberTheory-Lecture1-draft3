@@ -89,12 +89,10 @@ theorem exists_derivedAbsoluteValue (v : RealValuation k) (c : ℝ) (hc0 : 0 < c
       simpa [derivedAbsoluteValueFn, hxy] using this
     · by_cases hx : x = 0
       · have hy' : y ≠ 0 := by simpa [hx] using hxy
-        simpa [derivedAbsoluteValueFn, hx, hy'] using
-          (le_max_right (0 : ℝ) (c ^ (v y).untop₀))
+        simp [derivedAbsoluteValueFn, hx, hy']
       · by_cases hy : y = 0
         · have hx' : x ≠ 0 := hx
-          simpa [derivedAbsoluteValueFn, hy, hx'] using
-            (le_max_left (c ^ (v x).untop₀) (0 : ℝ))
+          simp [derivedAbsoluteValueFn, hy, hx']
         · have hx' : v x ≠ ⊤ := (v.ne_top_iff).2 hx
           have hy' : v y ≠ ⊤ := (v.ne_top_iff).2 hy
           have hxy' : v (x + y) ≠ ⊤ := (v.ne_top_iff).2 hxy

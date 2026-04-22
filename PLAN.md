@@ -695,49 +695,51 @@ This is when we learn the true dependency structure of the book, which may diffe
 
 **Output:** Updated `dependencies/internal.json` reflecting actual dependencies.
 
-### Stage 3.6: Proof Polishing
+### Stage 3.6: Polishing
 
-Polish sorry-free proofs to Mathlib quality standards. This is a cleanup pass — the proofs work, but may be verbose, use suboptimal tactics, or not follow Mathlib conventions.
+Polish every `dependency_trimmed` item to Mathlib quality standards. This is a cleanup pass that applies to **all** items with a non-empty `.lean` file, not only proof blobs — definitions, theorem statements, examples, discussions, and introductions each have their own `.lean` file and each gets its own polishing pass.
+
+The acceptance criterion is mechanical: `lake build` succeeds. Because `lakefile.toml` sets `warningAsError = true` and CI runs `lake build --wfail`, any linter or style warning is a hard failure. "Zero warnings" is not a convention — it is the definition of "polished".
 
 Can begin per-item as soon as that item's dependency trimming (Stage 3.5) is complete.
 
 #### Setup
 
-Create `gh label create proof-polish --color c5def5` (ignore error if exists). Create one issue per item:
+Create `gh label create polish --color c5def5` (ignore error if exists). Create one issue per item:
 - Title: `Polish <ItemID>`
-- Label: `proof-polish`
+- Label: `polish`
 
 #### Agent workflow
 
-Each agent assigned to a proof-polish issue:
+Each agent assigned to a polish issue:
 
-1. Reviews the sorry-free proof
-2. Applies cleanup:
-   - Combine redundant steps (`rw [a]; rw [b]` → `rw [a, b]`)
-   - Replace verbose tactic sequences with more powerful single tactics where appropriate
-   - Remove unnecessary intermediate steps (test by deleting and checking if the proof still works)
-   - Ensure `simp` calls use minimal lemma sets where practical
-   - Follow Mathlib naming conventions and style
-3. Verifies the polished proof still compiles
-4. Submits a PR with auto-merge enabled
+1. Reviews the item's `.lean` file.
+2. Applies cleanup appropriate to the item's content:
+   - **For every file:** resolve every warning emitted by `lake build` (unused section variables, unused simp args, `try 'simp' instead of 'simpa'`, long lines, unused variables, etc.). Never suppress a warning with a project-wide option — fix the underlying code, or (rarely) attach a narrowly-scoped `set_option linter.X false in` to a single declaration with a one-line justification.
+   - **For proof blobs:** combine redundant steps (`rw [a]; rw [b]` → `rw [a, b]`), replace verbose tactic sequences with a more powerful single tactic where appropriate, remove unnecessary intermediate steps (test by deleting and re-building), and keep `simp` calls to minimal lemma sets.
+   - **For definitions, theorem statements, discussions, examples, and introductions:** ensure declaration names follow Mathlib conventions, docstrings are tight and accurate, section variables are used where declared (or omitted), and the file's public surface matches the blob's mathematical content.
+3. Verifies `lake build` succeeds on the item's file with no warnings. (With `warningAsError = true`, a warning causes the build to fail — so a successful build is itself the verification.)
+4. Submits a PR with auto-merge enabled.
 
 #### Status transitions
 
-After polishing: items move from `dependency_trimmed` → `proof_polished` in `progress/status.json`.
+After polishing: items move from `dependency_trimmed` → `polished` in `progress/status.json`.
 
 **Output:** Polished `.lean` files. Updated `progress/status.json`.
 
-**Verify:** All previously sorry-free items have status `proof_polished`. `lake build` succeeds.
+**Verify:** Every `dependency_trimmed` item has advanced to `polished`. `lake build` succeeds on a clean tree (no warnings, since `warningAsError = true`).
 
 ### Stage 3.7: Upstreaming Analysis
 
 Identify formalized results that may be worth contributing to Mathlib. The output is a non-binding `UPSTREAMING.md` report — no actual upstreaming happens here.
 
-Can begin per-item as soon as that item's proof is polished (Stage 3.6). Create one issue per item for the triage and research below.
+This stage applies only to `polished` items whose principal content is a proof (theorems, propositions, lemmas, corollaries, and proof blobs). Definitions, discussions, examples, and introductions are not candidates for upstreaming as standalone Mathlib contributions; their content is typically already covered by Mathlib infrastructure, or is too tied to the book's exposition to lift out.
+
+Can begin per-item as soon as that item is polished (Stage 3.6). Create one issue per proof-bearing item for the triage and research below.
 
 #### Phase 1: Lightweight triage
 
-Scan all proof-polished items. Reject immediately if the proof is a one-liner delegating to a named Mathlib theorem, or trivial glue between two or three existing Mathlib facts. Keep as candidate if the proof is substantive and the result appears absent from Mathlib's API.
+Scan all polished proof-bearing items. Reject immediately if the proof is a one-liner delegating to a named Mathlib theorem, or trivial glue between two or three existing Mathlib facts. Keep as candidate if the proof is substantive and the result appears absent from Mathlib's API.
 
 #### Phase 2: Deep Mathlib research
 
@@ -756,7 +758,7 @@ Write `UPSTREAMING.md` at the repository root. For each included candidate: the 
 
 Update `progress/status.json` with `"upstreaming_status"`: `"candidate"`, `"mathlib_covered"`, or `"rejected"`.
 
-**Verify:** `UPSTREAMING.md` exists. Every proof-polished item has an `upstreaming_status` in `progress/status.json`.
+**Verify:** `UPSTREAMING.md` exists. Every polished proof-bearing item has an `upstreaming_status` in `progress/status.json`.
 
 ---
 
@@ -812,7 +814,7 @@ Commits made during a turn should mention the corresponding progress file in the
 ### Item-level progress: `progress/status.json`
 
 Item statuses flow through:
-`identified` → `extracted` → `scaffolded` → `definition_verified` → `claims_audited` → `proof_formalized` → `sorry_free` → `dependency_trimmed` → `proof_polished`
+`identified` → `extracted` → `scaffolded` → `definition_verified` → `claims_audited` → `proof_formalized` → `sorry_free` → `dependency_trimmed` → `polished`
 
 Each status is set by a specific stage:
 
@@ -826,7 +828,9 @@ Each status is set by a specific stage:
 | `proof_formalized` | Stage 3.4 | Proof work submitted (may still contain sorries) |
 | `sorry_free` | Stage 3.4 | All sorries removed from the item's `.lean` file |
 | `dependency_trimmed` | Stage 3.5 | Actual dependencies analyzed and recorded |
-| `proof_polished` | Stage 3.6 | Proof cleaned up to Mathlib quality |
+| `polished` | Stage 3.6 | `.lean` file builds clean under `warningAsError = true` and meets Mathlib style (for proof blobs, also tactic cleanup) |
+
+Migration note: projects initialized before this plan revision may still have entries with status `proof_polished`. Treat `proof_polished` as equivalent to `polished` for the purpose of gating Stage 3.7, and migrate entries to `polished` when any other change is made to them.
 
 Special statuses (set during review):
 - `needs_definition` — the item has a definition-level sorry or coverage gap that must be resolved before downstream theorems are meaningful. Set by Stage 3.2 (scaffolding review fails) or Stage 3.3 (missing-claims audit finds gaps). Returns to `definition_verified` / `claims_audited` once resolved.

@@ -29,6 +29,9 @@ After Stage 3.2 scaffolding review, every blob undergoes a Stage 3.3 missing-cla
 ### Conservative Dependencies
 Store only **direct** dependencies. The conservative default is a linear chain: each item depends only on its immediate predecessor. Never store transitive closure — that creates an O(N²) file with no useful information. We trim to actual direct dependencies later (Stage 3.4) once proofs exist.
 
+### Zero Warnings
+`lake build` is configured with `warningAsError = true` in `lakefile.toml`, and CI runs `lake build --wfail`. A file that emits any warning — including every linter warning — will not build. Fix the warning; do not suppress it. The only acceptable escape is a narrowly-scoped `set_option linter.X false in` attached to a single declaration, with a one-line comment explaining why. A project-wide `set_option warningAsError false` is never acceptable.
+
 ## When Stuck
 
 ### Read the book first (mandatory)

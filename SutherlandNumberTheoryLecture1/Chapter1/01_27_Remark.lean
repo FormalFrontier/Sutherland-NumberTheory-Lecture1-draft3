@@ -51,7 +51,8 @@ def IsRingSubmodule (L : Submodule ℤ K) : Prop :=
 
 /-- The alternate notation `\mathbf{Z}_K` denotes the same ring of integers as
 `\mathcal{O}_K`. -/
-theorem zk_eq_ringOfIntegers : ZK K = NumberField.RingOfIntegers K :=
+theorem zk_eq_ringOfIntegers (K : Type*) [Field K] [NumberField K] :
+    ZK K = NumberField.RingOfIntegers K :=
   rfl
 
 /-- Remark 1.27's two descriptions of an order are equivalent for a bundled
