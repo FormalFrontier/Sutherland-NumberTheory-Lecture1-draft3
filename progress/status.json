@@ -1181,10 +1181,10 @@
     }
   },
   "Chapter1/01_13_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#509",
-    "notes": "Issue #509 completed the Stage 3.5 dependency-trimming review for `Chapter1/01_13_Definition`. Re-reading `blobs/Chapter1/01_13_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_13_Definition.lean` confirmed that the finished residue-field wrapper still depends directly on `Chapter1/01_12_Definition`: the item is stated in terms of a local ring and its maximal ideal, and no earlier book items are used directly beyond that prerequisite. The existing `dependencies/internal.json` entry already matched the trimmed direct-dependency set, so no dependency-list edit was needed.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#689",
+    "notes": "Issue #689 completed the Stage 3.6 polish pass for `Chapter1/01_13_Definition`. The residue-field wrapper in `SutherlandNumberTheoryLecture1/Chapter1/01_13_Definition.lean` remained mathematically unchanged, but its module prose and local parameter style were tightened to match the surrounding polished definition files while preserving the existing direct dependency on `Chapter1/01_12_Definition` and introducing no new imports or book-item edges.",
     "stage3_2_review": {
       "issue": "#142",
       "decision": "clean",
