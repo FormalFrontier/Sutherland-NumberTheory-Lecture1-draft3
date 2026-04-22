@@ -319,7 +319,7 @@
     "status": "polished",
     "last_updated": "2026-04-22",
     "issue": "#669",
-    "notes": "Issue #669 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean` against `blobs/Chapter1/01_03_Example.md`. The cleanup kept the direct dependency on `Chapter1/01_02_Definition`, replaced the wrapped `AbsoluteValue.trivial` definition with a direct one, and simplified the nonarchimedean proof to the blob's explicit zero and sum-zero case split without changing scope or statements.",
+    "notes": "Issue #669 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_03_Example.lean` against `blobs/Chapter1/01_03_Example.md`. The cleanup kept the direct dependency on `Chapter1/01_02_Definition` and simplified the nonarchimedean proof by factoring out the repeated nonzero-value reductions before the final sum-zero case split, without changing scope or statements.",
     "stage3_3_audit": {
       "issue": "#172",
       "decision": "clean",
