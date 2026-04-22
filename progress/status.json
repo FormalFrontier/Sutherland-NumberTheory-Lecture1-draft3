@@ -276,10 +276,10 @@
     }
   },
   "Chapter1/01_02_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#468",
-    "notes": "Issue #468 completed the Stage 3.5 dependency-trimming pass for `Chapter1/01_02_Definition`. Re-reading blobs/Chapter1/01_02_Definition.md against SutherlandNumberTheoryLecture1/Chapter1/01_02_Definition.lean showed that the file imports only `Mathlib`, recalls `AbsoluteValue`, and proves `isNonarchimedean_iff` by `Iff.rfl`, so the conservative placeholder dependency on `Chapter1/01_01a_Discussion` was removed and the trimmed direct dependency set is `[]`.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#667",
+    "notes": "Issue #667 completed the Stage 3.6 polish pass for `Chapter1/01_02_Definition`. The file remains scoped to the lecture's absolute-value definition with no direct book-item dependencies, but the scaffold-only `recall AbsoluteValue` line was removed and the module documentation was tightened so the sorry-free file now presents the existing `isNonarchimedean_iff` declaration in cleaner Mathlib style.",
     "stage3_3_audit": {
       "issue": "#172",
       "decision": "clean",
