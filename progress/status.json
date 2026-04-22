@@ -419,10 +419,10 @@
     "upstreaming_status": "rejected"
   },
   "Chapter1/01_05_Corollary": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#477",
-    "notes": "Issue #477 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` against `blobs/Chapter1/01_05_Corollary.md`. The positive-characteristic declaration still directly invokes Lemma 1.4 through `isNonarchimedean_of_natCast_le_one`, while the finite-field declaration is self-contained once the corollary file is loaded, so `dependencies/internal.json[\"Chapter1/01_05_Corollary\"]` correctly remains `[\"Chapter1/01_04_Lemma\"]` with no additional direct book-item dependencies.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#672",
+    "notes": "Issue #672 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_05_Corollary.lean` against `blobs/Chapter1/01_05_Corollary.md`. The cleanup confirmed the existing sorry-free corollary proofs already matched the blob, removed the redundant direct `Mathlib` import, and preserved the direct book-item dependency list `dependencies/internal.json[\"Chapter1/01_05_Corollary\"] = [\"Chapter1/01_04_Lemma\"]`.",
     "stage3_2_review": {
       "issue": "#367",
       "decision": "clean",
