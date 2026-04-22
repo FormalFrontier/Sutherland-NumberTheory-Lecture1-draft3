@@ -1,5 +1,4 @@
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_13_Definition»
 
 /-!
 # Discussion 1.13a: recovering the valuation from a DVR

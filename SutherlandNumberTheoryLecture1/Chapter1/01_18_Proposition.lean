@@ -5,9 +5,9 @@ import Mathlib
 
 The lecture proves that if `α, β : B` are integral over the base ring `A`, then
 so are `α + β` and `α * β`. Mathlib already packages these exact closure facts
-as `IsIntegral.add` and `IsIntegral.mul`, so this scaffold records the
-proposition directly against the existing API rather than reproducing the
-textbook proof.
+as `IsIntegral.add` and `IsIntegral.mul`, so the formalization records the
+proposition directly against that existing API rather than reproducing the
+textbook proof line by line.
 -/
 
 namespace SutherlandNumberTheoryLecture1

@@ -24,7 +24,7 @@ theorem integralClosure_isIntegralClosure :
     IsIntegralClosure (integralClosure A B) A B :=
   integralClosure.isIntegralClosure A B
 
-/-- Definition 1.19's ambient-extension object is Mathlib's `integralClosure A B`. -/
+/-- An element of the integral closure is exactly an element integral over `A`. -/
 theorem mem_integralClosure_iff_isIntegral {b : B} :
     b ∈ integralClosure A B ↔ IsIntegral A b := by
   rw [mem_integralClosure_iff]
@@ -46,7 +46,7 @@ theorem normalization_isIntegralClosure [IsDomain A] :
     IsIntegralClosure (integralClosure A (FractionRing A)) A (FractionRing A) :=
   integralClosure.isIntegralClosure A (FractionRing A)
 
-/-- For a domain, the lecture's normalization is the integral closure in its fraction field. -/
+/-- An element of the normalization is exactly an integral element of the fraction field. -/
 theorem mem_normalization_iff_isIntegral [IsDomain A] {x : FractionRing A} :
     x ∈ integralClosure A (FractionRing A) ↔ IsIntegral A x := by
   rw [mem_integralClosure_iff]

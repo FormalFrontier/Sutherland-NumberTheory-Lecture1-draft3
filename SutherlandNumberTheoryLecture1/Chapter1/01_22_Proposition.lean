@@ -3,11 +3,9 @@ import Mathlib
 /-!
 # Proposition 1.22: `ℤ` is integrally closed
 
-The lecture's proposition states that the integers form an integrally closed
-domain. Mathlib already packages this through the standard instance chain from
-unique factorization domains to integrally closed domains, so the scaffold can
-record the claim directly as `IsIntegrallyClosed ℤ` instead of replaying the
-lecture's rational-root argument.
+The lecture records that the integers form an integrally closed domain.
+Mathlib already exposes this through the standard instance chain, so the
+formalization can state the claim directly as `IsIntegrallyClosed ℤ`.
 -/
 
 namespace SutherlandNumberTheoryLecture1
@@ -15,7 +13,7 @@ namespace Chapter1
 
 section Proposition_01_22
 
-/-- Proposition 1.22: the ring of integers is integrally closed. -/
+/-- Proposition 1.22: `ℤ` is an integrally closed domain. -/
 theorem integers_isIntegrallyClosed : IsIntegrallyClosed ℤ :=
   inferInstance
 

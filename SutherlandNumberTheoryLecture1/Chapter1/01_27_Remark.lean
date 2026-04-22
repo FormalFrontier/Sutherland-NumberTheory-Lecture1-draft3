@@ -71,13 +71,10 @@ theorem isOrder_iff_isZLattice_and_isRingSubmodule (O : Subalgebra ℤ K) :
       · exact O.one_mem
       · intro x y hx hy
         exact O.mul_mem hx hy
-  · intro h
-    rcases h with ⟨hLattice, _⟩
-    unfold IsZLattice at hLattice
+  · rintro ⟨hLattice, _⟩
     rcases hLattice with ⟨hfree, hfinite, hrank⟩
-    unfold IsOrder
     refine ⟨by simpa using hfree, by simpa using hfinite, ?_⟩
-    simpa [Subalgebra.finrank_toSubmodule] using hrank
+    simpa [IsZLattice, Subalgebra.finrank_toSubmodule] using hrank
 
 /-- Any order is integral over `ℤ`, since it is finite as a `ℤ`-module. -/
 theorem isIntegral_order (O : Subalgebra ℤ K) (hO : IsOrder K O) :

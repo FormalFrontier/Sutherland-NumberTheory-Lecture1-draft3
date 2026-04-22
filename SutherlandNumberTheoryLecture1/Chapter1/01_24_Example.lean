@@ -59,11 +59,7 @@ theorem goldenRatio_sq_sub_self_sub_one_eq_zero :
   ring
 
 /-- The element `φ = (1 + √5) / 2` is integral over `ℤ` because it satisfies
-`X^2 - X - 1 = 0`.
-
-The remaining work here is the explicit polynomial calculation in the fraction
-field of `ℤ[√5]`.
--/
+`X^2 - X - 1 = 0`. -/
 theorem goldenRatio_isIntegral_over_int :
     IsIntegral ℤ (goldenRatioInFractionRing) := by
   refine ⟨X ^ 2 - X - 1, ?_, ?_⟩
@@ -78,7 +74,7 @@ theorem goldenRatio_isIntegral_over_int :
 /-- Since `ℤ[√5]` is a `ℤ`-algebra, the same witness is integral over `ℤ[√5]`. -/
 theorem goldenRatio_isIntegral :
     IsIntegral ZSqrtFive (goldenRatioInFractionRing) := by
-  exact goldenRatio_isIntegral_over_int.tower_top
+  simpa using goldenRatio_isIntegral_over_int.tower_top
 
 /-- The witness `φ = (1 + √5) / 2` does not come from an element of `ℤ[√5]`.
 
@@ -122,8 +118,7 @@ theorem zsqrtdFive_not_isIntegrallyClosed :
     ¬ IsIntegrallyClosed ZSqrtFive := by
   intro hclosed
   rw [isIntegrallyClosed_iff (R := ZSqrtFive) (K := FractionRing ZSqrtFive)] at hclosed
-  obtain ⟨z, hz⟩ := hclosed goldenRatio_isIntegral
-  exact goldenRatio_not_in_algebraMap_range ⟨z, hz⟩
+  exact goldenRatio_not_in_algebraMap_range (hclosed goldenRatio_isIntegral)
 
 /-- The lecture's first consequence: `ℤ[√5]` cannot be a UFD. -/
 theorem zsqrtdFive_not_uniqueFactorizationMonoid [UniqueFactorizationMonoid ZSqrtFive] :
