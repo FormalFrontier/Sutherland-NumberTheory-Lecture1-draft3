@@ -2521,10 +2521,10 @@
     }
   },
   "Chapter1/01_28_Proposition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#569",
-    "notes": "Stage 3.5 dependency trimming under issue #569 re-read `blobs/Chapter1/01_28_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`, confirmed the finalized module uses only Mathlib's bundled minimal-polynomial and integrally closed APIs, removed the stale import of `Chapter1/01_19_Definition`, and trimmed `dependencies/internal.json` so `Chapter1/01_28_Proposition` now has no direct local dependencies. `lake build` succeeded after the cleanup.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#716",
+    "notes": "Stage 3.6 polish under issue #716 re-read `blobs/Chapter1/01_28_Proposition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_28_Proposition.lean`, kept the existing minimal-API statement package intact, tightened the proof steps to standard `simpa` forms around `aeval_map_algebraMap` and `minpoly.monic`, and preserved the empty direct book-item dependency list `dependencies/internal.json[\"Chapter1/01_28_Proposition\"] = []`. `lake build` succeeded after the cleanup.",
     "stage3_3_audit": {
       "issue": "#282",
       "decision": "clean",

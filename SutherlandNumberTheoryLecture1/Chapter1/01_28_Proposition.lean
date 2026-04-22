@@ -36,8 +36,7 @@ theorem minpoly_dvd_of_fractionRing_aeval_eq_zero [Module.IsTorsionFree A L]
     (hf : aeval α (f.map (algebraMap A K)) = 0) :
     minpoly A α ∣ f := by
   have hf' : aeval α f = 0 := by
-    rw [Polynomial.aeval_map_algebraMap K α f] at hf
-    exact hf
+    simpa [Polynomial.aeval_map_algebraMap K α f] using hf
   exact minpoly.isIntegrallyClosed_dvd hα hf'
 
 /-- Proposition 1.28: over an integrally closed domain, integrality is equivalent to the
@@ -54,14 +53,12 @@ theorem isIntegral_iff_minpoly_eq_map [IsFractionRing A K] [FiniteDimensional K 
     have hαK : IsIntegral K α := Algebra.IsIntegral.isIntegral (R := K) α
     have hf_monic : f.Monic := by
       apply Polynomial.monic_of_injective (f := algebraMap A K) (IsFractionRing.injective A K)
-      rw [hf_eq]
-      exact minpoly.monic hαK
+      simpa [hf_eq] using minpoly.monic hαK
     have hf_rootK : aeval α (f.map (algebraMap A K)) = 0 := by
       rw [hf_eq]
       exact minpoly.aeval K α
     have hf_rootA : aeval α f = 0 := by
-      rw [← Polynomial.aeval_map_algebraMap K α f]
-      exact hf_rootK
+      simpa [Polynomial.aeval_map_algebraMap K α f] using hf_rootK
     refine ⟨f, hf_monic, ?_⟩
     exact hf_rootA
 
@@ -74,8 +71,7 @@ theorem isIntegral_iff_exists_map_eq_minpoly [IsFractionRing A K] [FiniteDimensi
     have hαK : IsIntegral K α := Algebra.IsIntegral.isIntegral (R := K) α
     have hf_monic : f.Monic := by
       apply Polynomial.monic_of_injective (f := algebraMap A K) (IsFractionRing.injective A K)
-      rw [hf_eq]
-      exact minpoly.monic hαK
+      simpa [hf_eq] using minpoly.monic hαK
     exact ⟨f, hf_monic, hf_eq⟩
   · rintro ⟨f, _, hf_eq⟩
     exact (isIntegral_iff_minpoly_eq_map (A := A) (K := K) (L := L) (α := α)).mpr ⟨f, hf_eq⟩
