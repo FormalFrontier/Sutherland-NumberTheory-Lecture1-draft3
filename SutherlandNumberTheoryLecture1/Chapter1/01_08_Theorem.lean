@@ -1,6 +1,4 @@
 import Mathlib
-import SutherlandNumberTheoryLecture1.Chapter1.«01_06_Definition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
 
 /-!
 # Theorem 1.8: Ostrowski's theorem
