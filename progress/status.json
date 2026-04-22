@@ -1884,10 +1884,10 @@
     }
   },
   "Chapter1/01_19_Definition": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#530",
-    "notes": "Issue #530 re-read `blobs/Chapter1/01_19_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean`, confirmed the file only packages bundled Mathlib facts about `integralClosure`, `IsIntegrallyClosedIn`, and `IsIntegrallyClosed`, removed unused imports of `01_17_Definition` and `01_18_Proposition`, trimmed `dependencies/internal.json[\"Chapter1/01_19_Definition\"]` to `[]`, and verified the metadata edit with `lake build` after the session cache bootstrap.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#702",
+    "notes": "Issue #702 completed the Stage 3.6 polish pass for `Chapter1/01_19_Definition`. Re-reading `blobs/Chapter1/01_19_Definition.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_19_Definition.lean` confirmed the module already reduced cleanly to bundled Mathlib APIs, so the cleanup stayed narrow: it tightened the wrapper documentation around the two membership characterizations without changing any statements, kept the file on a single `import Mathlib` with no direct book-item dependencies, and re-verified the item with `lake build` after `lake exe cache get`.",
     "stage3_3_audit": {
       "issue": "#280",
       "decision": "clean",
