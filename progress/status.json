@@ -1580,10 +1580,10 @@
     }
   },
   "Chapter1/01_16_Theorem": {
-    "status": "dependency_trimmed",
-    "last_updated": "2026-04-21",
-    "issue": "#521",
-    "notes": "Issue #521 completed the Stage 3.5 dependency-trimming review for `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean` against `blobs/Chapter1/01_16_Theorem.md` and the imported core implementation in `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean`. The theorem wrapper is still just a re-export, but the finalized seven-way DVR characterization genuinely depends on `Chapter1/01_15a_Discussion`: `01_16_Core.lean` imports that discussion and uses its direct helper theorems `dvr_isIntegrallyClosed`, `dvr_ringKrullDim_eq_one`, `dvr_fractionRing_maximal_subalgebra`, `isDiscreteValuationRing_iff_integrallyClosed_and_existsUnique_nonzero_prime`, and `isDiscreteValuationRing_of_isRegularLocalRing_of_ringKrullDim_eq_one`. No further earlier-book dependency is referenced, so the Stage 3.5 pass retains the single direct edge while preserving the Stage 3.4 proof completion from issue #325.",
+    "status": "polished",
+    "last_updated": "2026-04-22",
+    "issue": "#697",
+    "notes": "Issue #697 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`. Re-reading `blobs/Chapter1/01_16_Theorem.md` against the wrapper module and its imported implementation in `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean` confirmed that the right polished shape is still a thin re-export: the file now documents that intent explicitly while preserving the single direct dependency on `Chapter1/01_15a_Discussion` carried by the core formalization and introducing no extra imports or book-item edges.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
