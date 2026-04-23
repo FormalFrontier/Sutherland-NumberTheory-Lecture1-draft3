@@ -11,5 +11,5 @@
 - Andrew V. Sutherland, 18.785 Number Theory I, Lecture #13: Global fields and the product formula (MIT, Fall 2021). <https://math.mit.edu/classes/18.785/2021fa/LectureNotes13.pdf>
 
 ## Formalization notes
-- Internal prerequisites: `Chapter1/01_09_Proof`
+- Internal prerequisites: `Chapter1/01_09_Theorem`
 - Useful as a bridge note for later valuation/DVR scaffolding; likely `non_formalizable` unless Stage 3 review extracts a concrete claim from the heading.

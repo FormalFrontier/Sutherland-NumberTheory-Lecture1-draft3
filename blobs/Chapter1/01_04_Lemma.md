@@ -6,3 +6,4 @@ $$
 
 for all $n \ge 1$.
 
+*Proof.* See Problem Set 1.

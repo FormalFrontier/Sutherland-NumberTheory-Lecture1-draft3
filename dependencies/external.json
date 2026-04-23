@@ -45,16 +45,14 @@
     "category": "results_from_other_books",
     "description": "Ostrowski's theorem classifying the nontrivial absolute values on Q up to equivalence; the text explicitly defers the proof to Problem Set 1 and cites Chapter 1 of reference [3] for much of the section.",
     "items": [
-      "Chapter1/01_08_Theorem",
-      "Chapter1/01_08_Proof"
+      "Chapter1/01_08_Theorem"
     ]
   },
   {
     "category": "folklore_or_well_known_fact",
     "description": "The product formula on Q depends on unique prime factorization and the fact that only finitely many places p <= infinity contribute nontrivially to the product for a fixed x in Q^times.",
     "items": [
-      "Chapter1/01_09_Theorem",
-      "Chapter1/01_09_Proof"
+      "Chapter1/01_09_Theorem"
     ]
   },
   {
@@ -111,24 +109,21 @@
     "category": "folklore_or_well_known_fact",
     "description": "Standard algebra used in the proof that sums and products of integral elements remain integral: existence of an algebraic closure of the fraction field, factorization of monic polynomials there, and the fundamental theorem of symmetric polynomials expressing coefficients of \\prod_{i,j}(z-(alpha_i+beta_j)) and \\prod_{i,j}(z-alpha_i beta_j) as polynomials in the coefficients of the original monic polynomials.",
     "items": [
-      "Chapter1/01_18_Proposition",
-      "Chapter1/01_18_Proof"
+      "Chapter1/01_18_Proposition"
     ]
   },
   {
     "category": "results_from_other_books",
     "description": "Transitivity of integrality in a tower A ⊆ B ⊆ C: if B is integral over A and C is integral over B, then C is integral over A; the text explicitly cites Altman-Kleiman, Thm. 10.27, and Atiyah-MacDonald, Cor. 5.4.",
     "items": [
-      "Chapter1/01_20_Proposition",
-      "Chapter1/01_20_Proof"
+      "Chapter1/01_20_Proposition"
     ]
   },
   {
     "category": "folklore_or_well_known_fact",
     "description": "The rational-root/divisibility argument for monic polynomials over an integral domain, especially the standard UFD lemma that a reduced fraction r/s satisfying a monic polynomial relation must have s a unit.",
     "items": [
-      "Chapter1/01_22_Proof",
-      "Chapter1/01_23_Proof"
+      "Chapter1/01_22_Proof"
     ]
   },
   {

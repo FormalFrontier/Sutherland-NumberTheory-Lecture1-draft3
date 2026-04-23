@@ -54,15 +54,6 @@
     "end_line": 20
   },
   {
-    "id": "Chapter1/01_04_Proof",
-    "type": "proof",
-    "title": "Proof of Lemma 1.4",
-    "start_page": "2",
-    "end_page": "2",
-    "start_line": 21,
-    "end_line": 22
-  },
-  {
     "id": "Chapter1/01_05_Corollary",
     "type": "corollary",
     "title": "Absolute values in positive characteristic and on finite fields",
@@ -117,15 +108,6 @@
     "end_line": 48
   },
   {
-    "id": "Chapter1/01_08_Proof",
-    "type": "proof",
-    "title": "Proof of Theorem 1.8",
-    "start_page": "2",
-    "end_page": "2",
-    "start_line": 49,
-    "end_line": 50
-  },
-  {
     "id": "Chapter1/01_09_Theorem",
     "type": "theorem",
     "title": "Product Formula",
@@ -133,15 +115,6 @@
     "end_page": "2",
     "start_line": 51,
     "end_line": 56
-  },
-  {
-    "id": "Chapter1/01_09_Proof",
-    "type": "proof",
-    "title": "Proof of Theorem 1.9",
-    "start_page": "2",
-    "end_page": "2",
-    "start_line": 57,
-    "end_line": 59
   },
   {
     "id": "Chapter1/01_09a_Discussion",
@@ -288,15 +261,6 @@
     "end_line": 24
   },
   {
-    "id": "Chapter1/01_18_Proof",
-    "type": "proof",
-    "title": "Proof of Proposition 1.18",
-    "start_page": "5",
-    "end_page": "5",
-    "start_line": 25,
-    "end_line": 56
-  },
-  {
     "id": "Chapter1/01_19_Definition",
     "type": "definition",
     "title": "Integral closure and normalization",
@@ -313,15 +277,6 @@
     "end_page": "6",
     "start_line": 3,
     "end_line": 4
-  },
-  {
-    "id": "Chapter1/01_20_Proof",
-    "type": "proof",
-    "title": "Proof of Proposition 1.20",
-    "start_page": "6",
-    "end_page": "6",
-    "start_line": 5,
-    "end_line": 6
   },
   {
     "id": "Chapter1/01_21_Corollary",
@@ -369,15 +324,6 @@
     "end_line": 28
   },
   {
-    "id": "Chapter1/01_23_Proof",
-    "type": "proof",
-    "title": "Proof of Corollary 1.23",
-    "start_page": "6",
-    "end_page": "6",
-    "start_line": 29,
-    "end_line": 30
-  },
-  {
     "id": "Chapter1/01_24_Example",
     "type": "example",
     "title": "Z[sqrt(5)] is not integrally closed",
@@ -403,15 +349,6 @@
     "end_page": "6",
     "start_line": 35,
     "end_line": 36
-  },
-  {
-    "id": "Chapter1/01_25_Proof",
-    "type": "proof",
-    "title": "Proof of Proposition 1.25",
-    "start_page": "6",
-    "end_page": "6",
-    "start_line": 37,
-    "end_line": 51
   },
   {
     "id": "Chapter1/01_26_Definition",
