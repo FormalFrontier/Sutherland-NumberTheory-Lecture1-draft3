@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Analysis.AbsoluteValue.Equivalence
 
 /-!
 # Definition 1.2: Absolute values

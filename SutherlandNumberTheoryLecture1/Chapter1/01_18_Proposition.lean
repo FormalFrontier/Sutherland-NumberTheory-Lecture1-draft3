@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.RingTheory.Algebraic.Integral
 
 /-!
 # Proposition 1.18: Integral elements are closed under addition and multiplication

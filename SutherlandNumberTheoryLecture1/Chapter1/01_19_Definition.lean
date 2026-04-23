@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
 
 /-!
 # Definition 1.19: Integral closure and integrally closed domains
