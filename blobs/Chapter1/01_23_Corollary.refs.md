@@ -10,5 +10,5 @@
 - Michael F. Atiyah and Ian G. Macdonald, *Introduction to Commutative Algebra*, Addison-Wesley, 1969. <https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/AtiyahMacDonald.pdf>
 
 ## Formalization notes
-- Internal prerequisites: `Chapter1/01_22_Proposition`
+- Internal prerequisites: `Chapter1/01_22_Proposition`, `Chapter1/01_22_Proof`
 - The PID clause should be a short corollary from the UFD instance rather than a separate proof branch.

@@ -8,16 +8,13 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_00_Introduction»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_03_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_05_Corollary»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_05_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_06_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_06a_Discussion»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Theorem»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_08_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Theorem»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_09_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_10a_Discussion»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_11_Definition»
@@ -32,19 +29,15 @@ import SutherlandNumberTheoryLecture1.Chapter1.«01_16_Theorem»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_16_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_17_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proposition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_18_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_19_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_20_Proposition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_20_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_21_Corollary»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_21_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_22_Proposition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_22_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_23_Corollary»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_23_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_24_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_25_Proposition»
-import SutherlandNumberTheoryLecture1.Chapter1.«01_25_Proof»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_26_Definition»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_27_Remark»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_28_Proposition»
@@ -66,15 +59,12 @@ queue after this setup lands is:
 - `Chapter1/01_02_Definition`
 - `Chapter1/01_03_Example`
 - `Chapter1/01_04_Lemma`
-- `Chapter1/01_04_Proof`
 - `Chapter1/01_05_Corollary`
 - `Chapter1/01_06_Definition`
 - `Chapter1/01_06a_Discussion`
 - `Chapter1/01_07_Definition`
 - `Chapter1/01_08_Theorem`
-- `Chapter1/01_08_Proof`
 - `Chapter1/01_09_Theorem`
-- `Chapter1/01_09_Proof`
 
 The remaining opening-batch prose blobs were assessed in `progress/status.json`
 and are currently terminal `non_formalizable` candidates pending Stage 3.2 review:

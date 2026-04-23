@@ -4,3 +4,4 @@ $$
 \prod_{p \le \infty} |x|_p = 1.
 $$
 
+*Proof.* See Problem Set 1.
