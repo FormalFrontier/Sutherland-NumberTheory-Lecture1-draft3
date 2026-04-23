@@ -445,7 +445,7 @@
           "n": 1,
           "text": "If k has positive characteristic p, then every n in the prime field satisfies n^p = n, hence |n|^p = |n| and |n| is 0 or 1, so k is nonarchimedean by Lemma 1.4.",
           "classification": "formalized_here",
-          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.eq_zero_or_one_of_nonneg_of_pow_eq_self; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.natCast_absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.positiveCharacteristic_nonarchimedean_proof",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.eq_zero_or_one_of_nonneg_of_pow_eq_self; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.natCast_absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.positiveCharacteristic_nonarchimedean_proof",
           "reason": "The proof file keeps the fixed-point-over-ℝ helper explicit, then exposes the positive-characteristic Frobenius step and the final citation of Lemma 1.4's criterion as separate reusable theorems."
         },
         {
@@ -473,7 +473,7 @@
           "n": 1,
           "text": "If k has positive characteristic p, then every n in the prime field satisfies n^p = n, hence |n|^p = |n| and |n| is 0 or 1, so k is nonarchimedean by Lemma 1.4.",
           "classification": "already_covered",
-          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.eq_zero_or_one_of_nonneg_of_pow_eq_self; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.natCast_absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.positiveCharacteristic_nonarchimedean_proof",
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_05_Corollary.eq_zero_or_one_of_nonneg_of_pow_eq_self; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.natCast_absoluteValue_eq_zero_or_one; SutherlandNumberTheoryLecture1.Chapter1.01_05_Proof.positiveCharacteristic_nonarchimedean_proof",
           "reason": "The audit found the full proof sentence already split into the necessary fixed-point helper, Frobenius consequence, and final nonarchimedean conclusion citing Lemma 1.4."
         },
         {
