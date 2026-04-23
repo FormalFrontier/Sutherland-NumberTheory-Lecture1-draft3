@@ -1490,9 +1490,9 @@
   },
   "Chapter1/01_16_Theorem": {
     "status": "polished",
-    "last_updated": "2026-04-22",
-    "issue": "#697",
-    "notes": "Issue #697 completed the Stage 3.6 polish pass for `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean`. Re-reading `blobs/Chapter1/01_16_Theorem.md` against the wrapper module and its imported implementation in `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean` confirmed that the right polished shape is still a thin re-export: the file now documents that intent explicitly while preserving the single direct dependency on `Chapter1/01_15a_Discussion` carried by the core formalization and introducing no extra imports or book-item edges.",
+    "last_updated": "2026-04-23",
+    "issue": "#769",
+    "notes": "Issue #769 removed the untracked `SutherlandNumberTheoryLecture1/Chapter1/01_16_Core.lean` side-channel. `SutherlandNumberTheoryLecture1/Chapter1/01_16_Theorem.lean` now carries the seven explicit DVR-characterization predicates directly, preserving the same single direct book-item dependency on `Chapter1/01_15a_Discussion` while keeping all definition bodies inside the audited theorem item file.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
@@ -1558,9 +1558,9 @@
   "Chapter1/01_16_Proof": {
     "status": "polished",
     "upstreaming_status": "rejected",
-    "last_updated": "2026-04-21",
-    "issue": "#597",
-    "notes": "Issue #597 completed the Stage 3.6 proof-polish pass for `Chapter1/01_16_Proof`. Re-reading `blobs/Chapter1/01_16_Proof.md` against `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean` confirmed that the cleanest honest formalization is still the existing import-only wrapper over `01_16_Theorem`: the file has no declarations of its own, no direct earlier-book dependencies, and no redundant imports or wrapper theorems to trim further.",
+    "last_updated": "2026-04-23",
+    "issue": "#769",
+    "notes": "Issue #769 moved the 1.16 equivalence lemmas and final `List.TFAE` assembly out of the untracked `01_16_Core.lean` module and into `SutherlandNumberTheoryLecture1/Chapter1/01_16_Proof.lean`. The proof item now contains the actual bridge proofs for the lecture's bibliography-cited argument while still adding no new earlier-book dependencies beyond the theorem item's predicate package.",
     "stage3_1_decision": {
       "decision": "formalizable",
       "claims": [
