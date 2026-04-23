@@ -1,4 +1,7 @@
-import Mathlib
+import Mathlib.Data.ZMod.QuotientRing
+import Mathlib.RingTheory.Ideal.Int
+import Mathlib.RingTheory.Localization.AtPrime.Basic
+import Mathlib.RingTheory.LocalRing.ResidueField.Basic
 
 /-!
 # Example 1.14: the `p`-adic valuation ring on `ℚ`

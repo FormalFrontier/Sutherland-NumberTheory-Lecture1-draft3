@@ -1,3 +1,5 @@
+import Mathlib.RingTheory.KrullDimension.PID
+import Mathlib.RingTheory.RegularLocalRing.Defs
 import SutherlandNumberTheoryLecture1.Chapter1.«01_13a_Discussion»
 
 /-!
