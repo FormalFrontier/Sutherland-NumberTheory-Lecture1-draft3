@@ -1,4 +1,7 @@
-import Mathlib
+import Mathlib.Algebra.Polynomial.SpecificDegree
+import Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed
+import Mathlib.NumberTheory.Zsqrtd.ToReal
+import Mathlib.Tactic
 import SutherlandNumberTheoryLecture1.Chapter1.«01_24_Example»
 import SutherlandNumberTheoryLecture1.Chapter1.«01_28_Proposition»
 
@@ -77,6 +80,8 @@ theorem sqrtSevenWitnessPolynomial_coeff_two :
 field of `ℤ[√7]`. -/
 theorem sqrtSevenWitness_aeval_eq_zero :
     aeval sqrtSevenWitness sqrtSevenWitnessPolynomial = 0 := by
+  have htwo_ne_zero : (2 : FractionRing ZSqrtSeven) ≠ 0 := by
+    norm_num
   have hs2 : (algebraMap ZSqrtSeven (FractionRing ZSqrtSeven) sqrtd) ^ 2 =
       (7 : FractionRing ZSqrtSeven) := by
     calc
@@ -88,9 +93,10 @@ theorem sqrtSevenWitness_aeval_eq_zero :
       _ = (7 : FractionRing ZSqrtSeven) := by
             simpa using map_intCast (algebraMap ZSqrtSeven (FractionRing ZSqrtSeven)) (7 : ℤ)
   simp [sqrtSevenWitnessPolynomial, sqrtSevenWitness]
+  field_simp [htwo_ne_zero]
   ring_nf
   rw [hs2]
-  ring
+  norm_num
 
 /-- The minimal polynomial of `α = (1 + √7) / 2` over `ℚ` is the lecture's
 `X^2 - X - 3/2`. -/

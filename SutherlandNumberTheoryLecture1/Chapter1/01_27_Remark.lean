@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.NumberTheory.NumberField.Basic
+import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
 
 /-!
 # Remark 1.27: orders and the maximal order `O_K`

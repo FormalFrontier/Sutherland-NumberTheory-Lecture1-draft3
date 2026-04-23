@@ -1,4 +1,8 @@
-import Mathlib
+import Mathlib.NumberTheory.Zsqrtd.ToReal
+import Mathlib.RingTheory.Ideal.Span
+import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
+import Mathlib.RingTheory.UniqueFactorizationDomain.Basic
+import Mathlib.Tactic
 import SutherlandNumberTheoryLecture1.Chapter1.«01_23_Corollary»
 
 /-!
@@ -42,6 +46,8 @@ noncomputable def goldenRatioInFractionRing : FractionRing ZSqrtFive :=
 /-- The lecture's explicit arithmetic step for `φ = (1 + √5) / 2`. -/
 theorem goldenRatio_sq_sub_self_sub_one_eq_zero :
     goldenRatioInFractionRing ^ 2 - goldenRatioInFractionRing - 1 = 0 := by
+  have htwo_ne_zero : (2 : FractionRing ZSqrtFive) ≠ 0 := by
+    norm_num
   have hs2 : (algebraMap ZSqrtFive (FractionRing ZSqrtFive) sqrtd) ^ 2 =
       (5 : FractionRing ZSqrtFive) := by
     calc
@@ -54,9 +60,10 @@ theorem goldenRatio_sq_sub_self_sub_one_eq_zero :
             simpa using
               map_intCast (algebraMap ZSqrtFive (FractionRing ZSqrtFive)) (5 : ℤ)
   simp [goldenRatioInFractionRing]
+  field_simp [htwo_ne_zero]
   ring_nf
   rw [hs2]
-  ring
+  norm_num
 
 /-- The element `φ = (1 + √5) / 2` is integral over `ℤ` because it satisfies
 `X^2 - X - 1 = 0`. -/

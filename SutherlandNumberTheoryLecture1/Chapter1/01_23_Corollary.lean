@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.RingTheory.Polynomial.RationalRoot
 
 /-!
 # Corollary 1.23: unique factorization domains and PIDs are integrally closed
