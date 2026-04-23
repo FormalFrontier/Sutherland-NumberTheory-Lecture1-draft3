@@ -1,3 +1,4 @@
+import Mathlib.Algebra.GCDMonoid.IntegrallyClosed
 import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
 
 /-!
