@@ -21,7 +21,7 @@ section Corollary_01_05_PositiveCharacteristic
 variable {k : Type*} [Field k]
 
 /-- A nonnegative real fixed by a power `> 1` is `0` or `1`. -/
-private theorem eq_zero_or_one_of_nonneg_of_pow_eq_self {x : ℝ} {n : ℕ} (hx : 0 ≤ x)
+theorem eq_zero_or_one_of_nonneg_of_pow_eq_self {x : ℝ} {n : ℕ} (hx : 0 ≤ x)
     (hn : 1 < n) (hpow : x ^ n = x) : x = 0 ∨ x = 1 := by
   by_cases hx0 : x = 0
   · exact Or.inl hx0

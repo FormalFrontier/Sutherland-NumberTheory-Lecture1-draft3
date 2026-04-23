@@ -17,20 +17,6 @@ section Proof_01_05
 
 variable {k : Type*} [Field k]
 
-/-- A nonnegative real fixed by a positive power is forced to be `0` or `1`. -/
-theorem eq_zero_or_one_of_nonneg_of_pow_eq_self {x : ℝ} {n : ℕ} (hx : 0 ≤ x) (hn : 1 < n)
-    (hpow : x ^ n = x) : x = 0 ∨ x = 1 := by
-  by_cases hx0 : x = 0
-  · exact Or.inl hx0
-  · right
-    rcases n with _ | _ | m
-    · omega
-    · omega
-    · have hmul : x ^ (m + 1) * x = 1 * x := by
-        simpa [pow_succ, mul_assoc] using hpow
-      have hpow' : x ^ (m + 1) = 1 := mul_right_cancel₀ hx0 hmul
-      exact (pow_eq_one_iff_of_nonneg hx (Nat.succ_ne_zero m)).1 hpow'
-
 section PositiveCharacteristic
 
 variable (abv : AbsoluteValue k ℝ)
