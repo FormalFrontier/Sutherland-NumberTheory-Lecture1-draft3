@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.RingTheory.Polynomial.RationalRoot
 
 /-!
 # Proposition 1.22: `ℤ` is integrally closed

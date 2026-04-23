@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.FieldTheory.Minpoly.IsIntegrallyClosed
+import Mathlib.RingTheory.IntegralClosure.IntegrallyClosed
 /-!
 # Proposition 1.28: minimal polynomials and integrality over an integrally closed domain
 
