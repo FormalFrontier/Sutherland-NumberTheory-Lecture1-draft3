@@ -1,3 +1,4 @@
+import Mathlib.FieldTheory.Finite.Basic
 import SutherlandNumberTheoryLecture1.Chapter1.«01_04_Lemma»
 
 /-!

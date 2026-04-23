@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Analysis.AbsoluteValue.Equivalence
 import SutherlandNumberTheoryLecture1.Chapter1.«01_02_Definition»
 
 /-!

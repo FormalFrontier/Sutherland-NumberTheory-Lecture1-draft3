@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.NumberTheory.Ostrowski
+import Mathlib.Tactic.Recall
 
 /-!
 # Theorem 1.8: Ostrowski's theorem

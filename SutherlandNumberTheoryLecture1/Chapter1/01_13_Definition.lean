@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.RingTheory.LocalRing.ResidueField.Basic
+import Mathlib.Tactic.Recall
 import SutherlandNumberTheoryLecture1.Chapter1.«01_12_Definition»
 
 /-!

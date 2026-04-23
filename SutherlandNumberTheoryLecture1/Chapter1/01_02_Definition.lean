@@ -1,4 +1,6 @@
-import Mathlib
+import Mathlib.Analysis.AbsoluteValue.Equivalence
+import Mathlib.Algebra.Order.Ring.IsNonarchimedean
+import Mathlib.Analysis.Normed.Field.Ultra
 
 /-!
 # Definition 1.2: Absolute values

@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.RingTheory.Algebraic.Integral
+import Mathlib.Tactic.Recall
 
 /-!
 # Definition 1.17: Integral elements and integral extensions

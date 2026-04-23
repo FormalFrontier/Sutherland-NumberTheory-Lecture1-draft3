@@ -1,4 +1,5 @@
-import Mathlib
+import Mathlib.NumberTheory.NumberField.Basic
+import Mathlib.Tactic.Recall
 
 /-!
 # Definition 1.26: Number fields and rings of integers
