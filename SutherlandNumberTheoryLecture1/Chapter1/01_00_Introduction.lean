@@ -1,4 +1,14 @@
-import Mathlib
+import Mathlib.Algebra.Algebra.ZMod
+import Mathlib.AlgebraicGeometry.FunctionField
+import Mathlib.Data.ZMod.QuotientRing
+import Mathlib.FieldTheory.PrimitiveElement
+import Mathlib.NumberTheory.FunctionField
+import Mathlib.NumberTheory.NumberField.Basic
+import Mathlib.RingTheory.AdjoinRoot
+import Mathlib.RingTheory.Ideal.Int
+import Mathlib.RingTheory.KrullDimension.PID
+import Mathlib.RingTheory.PrincipalIdealDomain
+import Mathlib.RingTheory.UniqueFactorizationDomain.NormalizedFactors
 
 /-!
 # Introduction 1.0: Global-field vocabulary

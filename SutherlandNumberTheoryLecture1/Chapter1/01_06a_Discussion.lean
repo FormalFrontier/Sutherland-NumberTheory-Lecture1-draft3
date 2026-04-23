@@ -1,4 +1,6 @@
-import Mathlib
+import Mathlib.NumberTheory.Ostrowski
+import Mathlib.NumberTheory.Padics.PadicNorm
+import Mathlib.Tactic
 import SutherlandNumberTheoryLecture1.Chapter1.«01_07_Definition»
 
 open scoped BigOperators
