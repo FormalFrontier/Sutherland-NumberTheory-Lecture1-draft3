@@ -47,8 +47,8 @@ theorem natCast_absoluteValue_pow_char (abv : AbsoluteValue k ℝ) {p : ℕ}
 theorem absoluteValue_isNonarchimedean_of_pos_char (abv : AbsoluteValue k ℝ) {p : ℕ}
     [Fact p.Prime] [CharP k p] :
     IsNonarchimedean abv := by
-  apply isNonarchimedean_of_natCast_le_one
-  intro n
+  refine (isNonarchimedean_iff_natCast_pos_le_one abv).2 ?_
+  intro n hn
   have hpow : abv n ^ p = abv n := natCast_absoluteValue_pow_char abv (p := p) n
   have hp : 1 < p := (Fact.out : p.Prime).one_lt
   obtain hzero | hone :=

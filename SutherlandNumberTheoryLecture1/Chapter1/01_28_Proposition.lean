@@ -41,14 +41,13 @@ theorem minpoly_dvd_of_fractionRing_aeval_eq_zero [Module.IsTorsionFree A L]
   exact minpoly.isIntegrallyClosed_dvd hα hf'
 
 /-- Proposition 1.28: over an integrally closed domain, integrality is equivalent to the
-minimal polynomial over the fraction field having coefficients in the base ring.
+minimal polynomial over the fraction field coming from a base-ring polynomial.
 -/
-theorem isIntegral_iff_minpoly_eq_map [IsFractionRing A K] [FiniteDimensional K L] {α : L} :
-    IsIntegral A α ↔ ∃ f : A[X], f.map (algebraMap A K) = minpoly K α := by
+theorem integral_iff_minpoly_over_base [IsFractionRing A K] [FiniteDimensional K L] {α : L} :
+    IsIntegral A α ↔ ∃ f : A[X], minpoly K α = f.map (algebraMap A K) := by
   constructor
   · intro hα
     refine ⟨minpoly A α, ?_⟩
-    symm
     exact minpoly.isIntegrallyClosed_eq_field_fractions' K hα
   · rintro ⟨f, hf_eq⟩
     have hαK : IsIntegral K α := Algebra.IsIntegral.isIntegral (R := K) α
@@ -56,26 +55,12 @@ theorem isIntegral_iff_minpoly_eq_map [IsFractionRing A K] [FiniteDimensional K 
       apply Polynomial.monic_of_injective (f := algebraMap A K) (IsFractionRing.injective A K)
       simpa [hf_eq] using minpoly.monic hαK
     have hf_rootK : aeval α (f.map (algebraMap A K)) = 0 := by
-      rw [hf_eq]
+      rw [← hf_eq]
       exact minpoly.aeval K α
     have hf_rootA : aeval α f = 0 := by
       simpa [Polynomial.aeval_map_algebraMap K α f] using hf_rootK
     refine ⟨f, hf_monic, ?_⟩
     exact hf_rootA
-
-/-- Compatibility wrapper exposing Proposition 1.28 with an explicit monic lift. -/
-theorem isIntegral_iff_exists_map_eq_minpoly [IsFractionRing A K] [FiniteDimensional K L] {α : L} :
-    IsIntegral A α ↔ ∃ f : A[X], f.Monic ∧ f.map (algebraMap A K) = minpoly K α := by
-  constructor
-  · intro hα
-    rcases (isIntegral_iff_minpoly_eq_map (A := A) (K := K) (L := L) (α := α)).mp hα with ⟨f, hf_eq⟩
-    have hαK : IsIntegral K α := Algebra.IsIntegral.isIntegral (R := K) α
-    have hf_monic : f.Monic := by
-      apply Polynomial.monic_of_injective (f := algebraMap A K) (IsFractionRing.injective A K)
-      simpa [hf_eq] using minpoly.monic hαK
-    exact ⟨f, hf_monic, hf_eq⟩
-  · rintro ⟨f, _, hf_eq⟩
-    exact (isIntegral_iff_minpoly_eq_map (A := A) (K := K) (L := L) (α := α)).mpr ⟨f, hf_eq⟩
 
 end Proposition_01_28
 
