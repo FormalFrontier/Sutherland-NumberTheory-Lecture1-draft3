@@ -1330,8 +1330,8 @@
           "n": 3,
           "text": "For `f \\in k((t))^\\times`, the valuation is the order of vanishing of `f` at zero.",
           "classification": "formalized_with_sorry",
-          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero_eq_order; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.coeff_eq_zero_of_lt_orderOfVanishingAtZero",
-          "reason": "The scaffold introduces an explicit order-of-vanishing wrapper and a companion coefficient-vanishing theorem. The behavioral theorem is present, but one proof is still deferred at theorem level."
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.coeff_eq_zero_of_lt_orderOfVanishingAtZero",
+          "reason": "The scaffold keeps the lecture's order-of-vanishing terminology as a thin abbreviation of `PowerSeries.order` and includes the coefficient-vanishing consequence. The behavioral theorem remains present, with only the valuation-side proofs still deferred."
         },
         {
           "n": 4,
@@ -1365,8 +1365,8 @@
           "n": 3,
           "text": "For `f \\in k((t))^\\times`, the valuation is the order of vanishing of `f` at zero.",
           "classification": "already_covered",
-          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero_eq_order; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.coeff_eq_zero_of_lt_orderOfVanishingAtZero",
-          "reason": "The wrapper definition, the exact identification with `PowerSeries.order`, and the coefficient-vanishing consequence already represent the blob's order-of-vanishing sentence explicitly."
+          "location": "SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.orderOfVanishingAtZero; SutherlandNumberTheoryLecture1.Chapter1.01_15_Example.coeff_eq_zero_of_lt_orderOfVanishingAtZero",
+          "reason": "The thin abbreviation exposing `PowerSeries.order` under the lecture's terminology, together with the coefficient-vanishing consequence, already represents the blob's order-of-vanishing sentence explicitly."
         },
         {
           "n": 4,

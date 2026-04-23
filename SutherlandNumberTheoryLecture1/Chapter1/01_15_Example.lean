@@ -36,7 +36,7 @@ noncomputable abbrev powerSeriesSubring : Subring (LaurentSeries k) :=
   LaurentSeries.powerSeries_as_subring k
 
 /-- The order of vanishing at `0` for a power series. -/
-noncomputable def orderOfVanishingAtZero (f : PowerSeries k) : ℕ∞ :=
+noncomputable abbrev orderOfVanishingAtZero (f : PowerSeries k) : ℕ∞ :=
   PowerSeries.order f
 
 /-- The elements with nonnegative valuation are exactly the power series. -/
@@ -53,10 +53,6 @@ theorem laurentSeriesValuationRing_eq_powerSeriesSubring :
   rw [Subring.mem_map]
   simpa [powerSeriesSubring] using
     (mem_laurentSeriesValuationRing_iff_exists_powerSeries (k := k) f)
-
-/-- This wrapper keeps the lecture's "order of vanishing" terminology visible. -/
-theorem orderOfVanishingAtZero_eq_order (f : PowerSeries k) :
-    orderOfVanishingAtZero k f = PowerSeries.order f := rfl
 
 /-- The order of vanishing records that coefficients below the valuation cutoff vanish. -/
 theorem coeff_eq_zero_of_lt_orderOfVanishingAtZero (f : PowerSeries k) {n : ℕ}
